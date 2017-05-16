@@ -1,0 +1,45 @@
+@import '../../vars';
+
+.Menu {
+  align-items: center;
+  color: $dark;
+  display: flex;
+  justify-content: space-between;
+  padding: 4rem 13.5%;
+  text-transform: uppercase;
+  > ul {
+    display: flex;
+  }
+}
+
+.Menu-logo {
+  width: 7.5rem;
+}
+
+.Menu-item {
+  font-size: 0.75rem;
+  position: relative;
+
+  &.is-active {
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+
+  & + & {
+    padding-left: 2.5rem;
+  }
+
+  &:not(:last-child)::after {
+    content: '';
+    background-image: url('decorator.svg');
+    background-size: 0.5rem;
+    background-repeat: no-repeat;
+    width: 0.5rem;
+    height: 0.5rem;
+    display: block;
+    position: absolute;
+    top: 0;
+    right: -1.25rem;
+    transform: translate(50%, 5%);
+  }
+}

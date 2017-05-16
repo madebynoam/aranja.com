@@ -1,0 +1,87 @@
+@import './functions';
+@import './vars';
+@import './utils';
+
+* {
+  box-sizing: inherit;
+}
+
+:root {
+    font-size: between(18px, 12px, $lg, $sm);
+  @media (min-width: $lg) {
+    font-size: 18px;
+  }
+}
+
+html, body {
+  box-sizing: border-box;
+  height: 100%;
+  font-family: 'Averta';
+}
+
+.Page {
+  position: relative;
+}
+
+.Container {
+  // padding: 4rem 5rem;
+  min-height: 200vh;
+  // max-width: 1440px;
+  margin: auto;
+  background: $white;
+  // box-shadow: 0 0 1.875rem 0.625rem rgba(0,0,0,.16);
+  position: relative;
+}
+
+
+/* Brown font */
+@font-face {
+  font-family: 'Brown Pro';
+  src: url('assets/lineto-brown-bold.woff2') format('woff2');
+  font-weight: 700
+}
+
+@font-face {
+  font-family: 'Brown Pro';
+  src: url('assets/lineto-brown-light.woff') format('woff');
+  font-weight: 300
+}
+
+@font-face {
+  font-family: 'Brown Pro';
+  src: url('assets/lineto-brown-regular.woff2') format('woff2');
+  font-weight: 400
+}
+
+/* Averta font */
+
+@font-face {
+  font-family: 'Averta';
+  src: url('assets/Averta-Regular.woff') format('woff');
+  font-weight: 400
+}
+
+@font-face {
+  font-family: 'Averta';
+  src: url('assets/Averta-Regular-Italic.woff') format('woff');
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Averta';
+  src: url('assets/Averta-Semibold.woff') format('woff');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Averta';
+  src: url('assets/Averta-Thin.woff') format('woff');
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: 'Averta';
+  src: url('assets/Averta-Extra-Bold.woff') format('woff');
+  font-weight: 600;
+}

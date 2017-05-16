@@ -1,0 +1,37 @@
+.Lines {
+  pointer-events: none;
+  position: fixed;
+  left: 0;
+  // top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  span {
+    border: none;
+    opacity: 0.8;
+    background: url(linesprite.png) repeat-y right 0;
+    width: 20%;
+    height: 100%;
+    float: left;
+    position: relative;
+    &:nth-child(1) {
+     width: 13.5%;
+    }
+    &:nth-child(2) {
+     background-position: right -150px;
+     width: 18.25%;
+    }
+    &:nth-child(3) {
+      background-position: right -500px;
+      width: 18.25%;
+    }
+    &:nth-child(4) {
+      background-position: right -900px;
+      width: 18.25%;
+    }
+    &:nth-child(5) {
+      background-position: right -1400px;
+      width: 18.25%;
+    }
+  }
+}
