@@ -1,8 +1,9 @@
-import React from 'react';
-import Intro from './components/Intro';
-import Service from './components/Service';
-import Lines from './components/Lines';
-import Menu from './components/Menu';
+import React from "react";
+import Intro from "./components/Intro";
+import Services from "./components/Services";
+import Recent from "./components/Recent";
+import Lines from "./components/Lines";
+import Menu from "./components/Menu";
 
 const Home = () => {
   return (
@@ -11,7 +12,7 @@ const Home = () => {
       <div className="Container">
         <Menu />
         <Intro />
-        <Service />
+        <Services />
       </div>
     </div>
   );
