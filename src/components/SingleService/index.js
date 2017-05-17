@@ -1,41 +1,136 @@
 import React from "react";
 import "./styles.css";
-import { Motion, spring, presets } from "react-motion";
+import { Motion, StaggeredMotion, spring, presets } from "react-motion";
 import Delay from "../Delay";
+import VisibilitySensor from "react-visibility-sensor";
 
-const Service = ({ title, image, number }) => (
-  <div className="Service">
-    <div className="Service-content">
-      <p className="Service-number">{number}</p>
-      <h1 className="Service-heading">{title}</h1>
-      <a href="#" className="Service-link">See details</a>
-    </div>
-    <div className="Service-imageWrapper">
-      <Delay initial={-110} value={0} period={500}>
-        {delayed => (
-          <Motion style={{ x: spring(delayed) }}>
+class Service extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      isVisible: false,
+      shouldStart: false,
+    };
+  }
+
+  onChange(isVisible) {
+    if (isVisible) {
+      console.log("is visible");
+      this.setState({
+        isVisible: true,
+      });
+    }
+  }
+
+  render() {
+    const { title, image, number } = this.props;
+    const { isVisible } = this.state;
+    return (
+      <VisibilitySensor
+        onChange={isVisible => this.onChange(isVisible)}
+        active={isVisible ? false : true}
+        intervalDelay={500}
+        minTopValue={200}
+        partialVisibility
+      >
+        <div className="Service">
+          <Motion style={{ y: spring(isVisible ? 0 : -80, { stiffness: 110, damping: 20 }) }}>
             {value => (
-              <div
-                className="Service-image"
-                style={{
-                  backgroundImage: `url(${image})`,
-                  transform: `translateX(${value.x}%)`,
-                }}
-              />
+              <div className="Service-content">
+                <p className="Service-number">
+                  <span className="u-mask">
+                    <span
+                      className="u-maskInner"
+                      style={{
+                        transform: `translateY(${value.y}px)`,
+                      }}
+                    >
+                      {number}
+                    </span>
+                  </span>
+                </p>
+                <h1 className="Service-heading">
+                  {title.split(" ").map((word, i) => {
+                    return (
+                      <span className="u-mask" key={i}>
+                        <span
+                          className="u-maskInner"
+                          style={{
+                            transform: `translateY(${value.y * (i + 1.5)}px)`,
+                          }}
+                        >
+                          {word}
+                        </span>
+                      </span>
+                    );
+                  })}
+                </h1>
+                <a href="#" className="Service-link">
+                  <span className="u-mask u-flex u-flexAlignCenter">
+                    <span
+                      className="u-lineDecorator"
+                      style={{
+                        transform: `translateX(${value.y * 5}px)`,
+                      }}
+                    />
+                    <span
+                      className="u-maskInner u-textIndent1"
+                      style={{
+                        transform: `translateY(${value.y * 5}px)`,
+                      }}
+                    >
+                      See details
+                    </span>
+                  </span>
+                </a>
+              </div>
             )}
           </Motion>
-        )}
-      </Delay>
-      <Motion defaultStyle={{ x: 50 }} style={{ x: spring(0, presets.stiff) }}>
-        {value => (
-          <div
-            className="Service-imageBackground"
-            style={{ transform: `translateX(${value.x}%)` }}
-          />
-        )}
-      </Motion>
-    </div>
-  </div>
-);
+          <Motion style={{ h: spring(isVisible ? 600 : 0, { stiffness: 100, damping: 50 }) }}>
+            {value => (
+              <div
+                className="Service-imageWrapper"
+                style={{
+                  height: `${value.h * 1.5}px`,
+                }}
+              >
+                <Motion
+                  style={{
+                    x: spring(isVisible ? 0 : 120, { stiffness: 100, damping: 25 }),
+                  }}
+                >
+                  {value => (
+                    <div
+                      className="Service-image"
+                      style={{
+                        backgroundImage: `url(${image})`,
+                        transform: `translateY(${value.x}%)`,
+                      }}
+                    />
+                  )}
+                </Motion>
+                <Motion
+                  style={{
+                    x: spring(isVisible ? 0 : -100, { stiffness: 60, damping: 25 }),
+                    s: spring(isVisible ? 1 : 0, { stiffness: 150, damping: 25 }),
+                  }}
+                >
+                  {value => (
+                    <div
+                      className="Service-imageBackground"
+                      style={{
+                        transform: `translateX(${value.x}%) scaleY(${value.s})`,
+                      }}
+                    />
+                  )}
+                </Motion>
+              </div>
+            )}
+          </Motion>
+        </div>
+      </VisibilitySensor>
+    );
+  }
+}
 
 export default Service;

@@ -39,37 +39,12 @@
 }
 
 .Service-link {
-  $fz: 1.25rem;
   text-decoration: none;
-  font-size: $fz;
+  font-size: 1.25rem;
   color: inherit;
-  padding-left: $fz + 1rem;
-  display: block;
+  display: inline-block;
   position: relative;
   text-transform: uppercase;
-
-  &::before {
-    content: '';
-    width: $fz;
-    height: 2px;
-    background: $dark;
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    margin: auto;
-
-    .Service:nth-child(even) & {
-      left: auto;
-      right: 0;
-    }
-  }
-
-  .Service:nth-child(even) & {
-    text-indent: 0;
-    padding-left: 0;
-    padding-right: $fz + 1rem;
-  }
 }
 
 .Service-imageWrapper {
@@ -77,6 +52,8 @@
   overflow: hidden;
   position: relative;
   max-width: 50%;
+  max-height: 28.333rem;
+  padding: 1rem;
 
   .Service:nth-child(even) & {
     order: 1;
@@ -92,9 +69,15 @@
 
 .Service-imageBackground {
   position: absolute;
+  transform-origin: bottom left;
   width: 100%;
   height: 100%;
   top: 0;
   left: 0;
-  background: lightgray;
+  background: $light;
+}
+
+.Service:nth-child(even) .u-lineDecorator {
+  left: auto;
+  right: 0;
 }
