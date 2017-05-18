@@ -1,5 +1,5 @@
 .ShadowText {
-  color: rgba(#000,0.05);
+  color: rgba(#000,0.0333);
   font-family: 'Brown Pro';
   font-size: 8rem;
   font-weight: 600;
@@ -8,4 +8,6 @@
   text-transform: uppercase;
   top: -4rem;
   z-index: -1;
+  transform: translateX(calc(var(--parallax) * 7%));
+  transition: transform 0.05s ease-out;
 }

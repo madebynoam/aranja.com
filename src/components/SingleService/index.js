@@ -1,8 +1,7 @@
 import React from "react";
 import "./styles.css";
-import { Motion, StaggeredMotion, spring, presets } from "react-motion";
-import Delay from "../Delay";
 import VisibilitySensor from "react-visibility-sensor";
+import { Motion, StaggeredMotion, spring, presets } from "react-motion";
 
 class Service extends React.Component {
   constructor() {

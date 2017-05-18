@@ -6,18 +6,20 @@ import Lines from "./components/Lines";
 import Menu from "./components/Menu";
 import Seller from "./components/Seller";
 
-const Home = () => {
-  return (
-    <div className="Page Home">
-      <Lines />
-      <div className="Container">
-        <Menu />
-        <Intro />
-        <Services />
-        <Seller />
+class Home extends React.Component {
+  render() {
+    return (
+      <div className="Page Home">
+        <Lines />
+        <div className="Container">
+          <Menu />
+          <Intro />
+          <Services />
+          <Seller />
+        </div>
       </div>
-    </div>
-  );
-};
+    );
+  }
+}
 
 export default Home;
