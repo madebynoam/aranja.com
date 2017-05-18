@@ -5,23 +5,10 @@ const Intro = ({}) => (
   <div className="Intro-wrapper">
     <div className="Intro">
       <div className="Intro-content">
-        <div className="Intro-decoratorBefore" />
         <h1 className="Intro-heading">
-          <span className="u-bold">Pushing</span>
-          {" "}
-          the standard
-          {" "}
-          <br />
-          {" "}
-          forward with
-          {" "}
-          <span className="u-bold">Kolibri</span>
+          <span className="u-bold">Development</span> Studio <br />
+          based in <span className="u-bold">Reykjavik</span>
         </h1>
-        <blockquote className="Intro-quote">
-          “We chose Aranja for the job because we know <br />
-          they strive for perfection and that’s exactly <br />
-          what we wanted - perfection.” — Olav CEO of Kolibri
-        </blockquote>
         <div className="Intro-decoratorAfter" />
       </div>
     </div>

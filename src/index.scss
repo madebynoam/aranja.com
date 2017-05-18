@@ -20,6 +20,11 @@ html, body {
   font-family: 'Averta';
 }
 
+body {
+  padding: 25px;
+  background: $blue;
+}
+
 .Page {
   position: relative;
 }

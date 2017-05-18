@@ -98,7 +98,6 @@ class Service extends React.Component {
                       stiffness: 100,
                       damping: 25,
                     }),
-                    o: spring(isVisible ? 1 : 0, { stiffness: 50, damping: 15 }),
                   }}
                 >
                   {value => (
@@ -107,7 +106,6 @@ class Service extends React.Component {
                       style={{
                         backgroundImage: `url(${image})`,
                         transform: `translateY(${value.x}%)`,
-                        opacity: value.o,
                       }}
                     />
                   )}
