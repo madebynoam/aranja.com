@@ -5,12 +5,12 @@
 }
 
 .Seller-content {
-  padding: 3rem 0;
+  padding: 5rem 0;
   position: relative;
   background: $white;
   &::after {
     content: '';
-    width: 3rem;
+    width: 5rem;
     background: $white;
     transform: translateX(100%);
     position: absolute;
@@ -44,6 +44,6 @@
 
 .Seller-image {
   flex: 1;
-  height: 29rem;
+  height: 33rem;
   background-size: cover;
 }
