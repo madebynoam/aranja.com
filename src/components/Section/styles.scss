@@ -2,8 +2,5 @@
   position: relative;
   z-index: 1;
   margin: 0;
-  padding: 200px 13.5%;
-  & + & {
-    padding-top: 0;
-  }
+  padding: 0 13.5%;
 }

@@ -9,7 +9,7 @@ const Intro = ({}) => (
           <span className="u-bold">Development</span> Studio <br />
           based in <span className="u-bold">Reykjavik</span>
         </h1>
-        <div className="Intro-decoratorAfter" />
+        <div className="Intro-image" />
       </div>
     </div>
     <div className="DownArrow" />

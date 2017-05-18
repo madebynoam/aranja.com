@@ -4,8 +4,7 @@
   position: relative;
   z-index: 3;
   display: flex;
-  min-height: 500px;
-  margin-bottom: 8rem;
+  margin-bottom: 10rem;
 }
 
 .Service-content {
@@ -62,6 +61,7 @@
 
 .Service-image {
   background-size: cover;
+  background-position: center;
   z-index: 1;
   position: absolute;
   top: 0;
