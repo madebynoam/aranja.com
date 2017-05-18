@@ -15,9 +15,8 @@ class Service extends React.Component {
 
   onChange(isVisible) {
     if (isVisible) {
-      console.log("is visible");
       this.setState({
-        isVisible: true,
+        isVisible,
       });
     }
   }
@@ -56,7 +55,7 @@ class Service extends React.Component {
                         <span
                           className="u-maskInner"
                           style={{
-                            transform: `translateY(${value.y * (i + 1.5)}px)`,
+                            transform: `translateY(${value.y * (i + 1)}px)`,
                           }}
                         >
                           {word}
@@ -86,17 +85,21 @@ class Service extends React.Component {
               </div>
             )}
           </Motion>
-          <Motion style={{ h: spring(isVisible ? 600 : 0, { stiffness: 100, damping: 50 }) }}>
+          <Motion
+            style={{
+              x: spring(isVisible ? 0 : 110, { stiffness: 60, damping: 25 }),
+              s: spring(isVisible ? 1 : 0, { stiffness: 160, damping: 25 }),
+            }}
+          >
             {value => (
-              <div
-                className="Service-imageWrapper"
-                style={{
-                  height: `${value.h * 1.5}px`,
-                }}
-              >
+              <div className="Service-imageWrapper">
                 <Motion
                   style={{
-                    x: spring(isVisible ? 0 : 120, { stiffness: 100, damping: 25 }),
+                    x: spring(isVisible && value.x < 50 ? 0 : 120, {
+                      stiffness: 100,
+                      damping: 25,
+                    }),
+                    o: spring(isVisible ? 1 : 0, { stiffness: 50, damping: 15 }),
                   }}
                 >
                   {value => (
@@ -105,25 +108,17 @@ class Service extends React.Component {
                       style={{
                         backgroundImage: `url(${image})`,
                         transform: `translateY(${value.x}%)`,
+                        opacity: value.o,
                       }}
                     />
                   )}
                 </Motion>
-                <Motion
+                <div
+                  className="Service-imageBackground"
                   style={{
-                    x: spring(isVisible ? 0 : -100, { stiffness: 60, damping: 25 }),
-                    s: spring(isVisible ? 1 : 0, { stiffness: 150, damping: 25 }),
+                    transform: `translateX(${value.x}%) scaleX(${value.s})`,
                   }}
-                >
-                  {value => (
-                    <div
-                      className="Service-imageBackground"
-                      style={{
-                        transform: `translateX(${value.x}%) scaleY(${value.s})`,
-                      }}
-                    />
-                  )}
-                </Motion>
+                />
               </div>
             )}
           </Motion>

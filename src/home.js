@@ -4,6 +4,7 @@ import Services from "./components/Services";
 import Recent from "./components/Recent";
 import Lines from "./components/Lines";
 import Menu from "./components/Menu";
+import Seller from "./components/Seller";
 
 const Home = () => {
   return (
@@ -13,6 +14,7 @@ const Home = () => {
         <Menu />
         <Intro />
         <Services />
+        <Seller />
       </div>
     </div>
   );

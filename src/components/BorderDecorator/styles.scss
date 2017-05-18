@@ -1,0 +1,25 @@
+@import '../../vars.scss';
+
+.BorderDecorator {
+
+}
+
+.BorderDecorator-line {
+  $width: 5px;
+  position: absolute;
+  &:nth-child(1) {
+    height: calc(100% + #{$width});
+    width: 35px;
+    background: $blue;
+    top: -$width;
+    left: -$width;
+  }
+  &:nth-child(2) {
+    height: 35px;
+    width: calc(100% + #{$width * 2});
+    background: $blue;
+    bottom: -$width;
+    left: -$width;
+  }
+
+}

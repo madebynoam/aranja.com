@@ -1,0 +1,50 @@
+@import '../../vars.scss';
+
+.Seller {
+  display: flex;
+}
+
+.Seller-content {
+  padding: 3rem;
+  padding-right: 0;
+  position: relative;
+  background: $white;
+  &::after {
+    content: '';
+    width: 3rem;
+    background: $white;
+    transform: translateX(100%);
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    z-index: -1;
+  }
+}
+
+.Seller-wrap {
+  margin-top: 2rem;
+  position: relative;
+  width: 50%;
+  z-index: 1;
+
+}
+
+.Seller-title {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  line-height: 1.15;
+  color: #535454;
+  font-weight: 500;
+}
+
+.Seller-copy {
+  color: rgba($dark, 0.75);
+  line-height: 1.5;
+}
+
+.Seller-image {
+  height: 23.333rem;
+  background-size: cover;
+  width: 80%;
+}
