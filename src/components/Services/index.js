@@ -1,9 +1,9 @@
-import React from "react";
-import Service from "../SingleService";
-import Section from "../Section";
-import image1 from "./image1.jpeg";
-import image2 from "./image2.jpeg";
-import image3 from "./image3.jpeg";
+import React from 'react';
+import Service from './Service';
+import Section from '../Section';
+import image1 from './image1.jpeg';
+import image2 from './image2.jpeg';
+import image3 from './image3.jpeg';
 
 class Services extends React.Component {
   constructor(props) {
@@ -11,15 +11,15 @@ class Services extends React.Component {
     this.state = {
       services: [
         {
-          title: "Application Development",
+          title: 'Application Development',
           image: image1,
         },
         {
-          title: "Technical Consultancy",
+          title: 'Technical Consultancy',
           image: image2,
         },
         {
-          title: "Performance Engineering",
+          title: 'Performance Engineering',
           image: image3,
         },
       ],
@@ -27,7 +27,7 @@ class Services extends React.Component {
   }
 
   render() {
-    const { services } = this.state;
+    const {services} = this.state;
     return (
       <Section>
         <div className="Services">

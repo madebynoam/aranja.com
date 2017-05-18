@@ -1,8 +1,9 @@
 @import '../../vars.scss';
+@import '../../functions.scss';
 
 .Intro-wrapper {
   position: relative;
-  padding-bottom: 32rem;
+  padding-bottom: 30rem;
 }
 
 .Intro {
@@ -18,23 +19,19 @@
 
 .Intro-image {
   background: rgba(242, 242, 242, 0.5);
-  right: calc(13.5% + #{$bodyPadding});
+  right: 15%;
   position: absolute;
   top: 0;
-  width: 51%;
+  max-width: 800px;
+  height: 38.8rem;
+  width: 50%;
   background: url(https://images.unsplash.com/photo-1491873872717-cf71266de354?dpr=2&auto=format&fit=crop&w=1500&h=1500&q=80&cs=tinysrgb&crop=&bg=);
   background-size: cover;
-
-  &::before {
-    display: block;
-    content: '';
-    padding-top: 100%;
-  }
 
   &::after {
     content: '';
     width: 100%;
-    padding-top: 100%;
+    height: 38.8rem;
     display: block;
     z-index: -1;
     position: absolute;
@@ -47,12 +44,14 @@
 }
 
 .Intro-heading {
-  font-size: 3.5rem;
+  font-size: between(30px, 80px, $sm, $lg);
   margin-top: 11.5rem;
   margin-bottom: 2.5rem;
   position: relative;
   z-index: 1;
-
+  @media (min-width: $lg) {
+    font-size: 80px;
+  }
   > * {
     display: inline-block;
     text-indent: -5px;
@@ -63,7 +62,7 @@
   position: absolute;
   left: 50%;
   transform: translate(-0.4rem, 0);
-  bottom: 6rem;
+  bottom: 5%;
   z-index: 2;
 
   &::before {

@@ -1,7 +1,8 @@
-import React from "react";
-import "./styles.css";
-import VisibilitySensor from "react-visibility-sensor";
-import { Motion, StaggeredMotion, spring, presets } from "react-motion";
+import React from 'react';
+import './styles.css';
+import {Motion, StaggeredMotion, spring, presets} from 'react-motion';
+import Delay from '../Delay';
+import VisibilitySensor from 'react-visibility-sensor';
 
 class Service extends React.Component {
   constructor() {
@@ -14,15 +15,16 @@ class Service extends React.Component {
 
   onChange(isVisible) {
     if (isVisible) {
+      console.log('is visible');
       this.setState({
-        isVisible,
+        isVisible: true,
       });
     }
   }
 
   render() {
-    const { title, image, number } = this.props;
-    const { isVisible } = this.state;
+    const {title, image, number} = this.props;
+    const {isVisible} = this.state;
     return (
       <VisibilitySensor
         onChange={isVisible => this.onChange(isVisible)}
@@ -32,7 +34,11 @@ class Service extends React.Component {
         partialVisibility
       >
         <div className="Service">
-          <Motion style={{ y: spring(isVisible ? 0 : -80, { stiffness: 110, damping: 20 }) }}>
+          <Motion
+            style={{
+              y: spring(isVisible ? 0 : -80, {stiffness: 110, damping: 20}),
+            }}
+          >
             {value => (
               <div className="Service-content">
                 <p className="Service-number">
@@ -48,13 +54,13 @@ class Service extends React.Component {
                   </span>
                 </p>
                 <h1 className="Service-heading">
-                  {title.split(" ").map((word, i) => {
+                  {title.split(' ').map((word, i) => {
                     return (
                       <span className="u-mask" key={i}>
                         <span
                           className="u-maskInner"
                           style={{
-                            transform: `translateY(${value.y * (i + 1)}px)`,
+                            transform: `translateY(${value.y * (i + 1.5)}px)`,
                           }}
                         >
                           {word}
@@ -86,15 +92,19 @@ class Service extends React.Component {
           </Motion>
           <Motion
             style={{
-              x: spring(isVisible ? 0 : 110, { stiffness: 60, damping: 25 }),
-              s: spring(isVisible ? 1 : 0, { stiffness: 160, damping: 25 }),
+              y: spring(isVisible ? 0 : 10, {stiffness: 100, damping: 40}),
             }}
           >
             {value => (
-              <div className="Service-imageWrapper">
+              <div
+                className="Service-imageWrapper"
+                style={{
+                  transform: `translateY(${value.y}%)`,
+                }}
+              >
                 <Motion
                   style={{
-                    x: spring(isVisible && value.x < 50 ? 0 : 120, {
+                    x: spring(isVisible ? 0 : 120, {
                       stiffness: 100,
                       damping: 25,
                     }),
@@ -110,12 +120,23 @@ class Service extends React.Component {
                     />
                   )}
                 </Motion>
-                <div
-                  className="Service-imageBackground"
+                <Motion
                   style={{
-                    transform: `translateX(${value.x}%) scaleX(${value.s})`,
+                    x: spring(isVisible ? 0 : -100, {
+                      stiffness: 160,
+                      damping: 25,
+                    }),
                   }}
-                />
+                >
+                  {value => (
+                    <div
+                      className="Service-imageBackground"
+                      style={{
+                        transform: `translateX(${value.x}%) `,
+                      }}
+                    />
+                  )}
+                </Motion>
               </div>
             )}
           </Motion>

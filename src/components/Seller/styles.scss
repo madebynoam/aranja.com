@@ -5,8 +5,7 @@
 }
 
 .Seller-content {
-  padding: 3rem;
-  padding-right: 0;
+  padding: 3rem 0;
   position: relative;
   background: $white;
   &::after {
@@ -25,26 +24,26 @@
 .Seller-wrap {
   margin-top: 2rem;
   position: relative;
-  width: 50%;
   z-index: 1;
-
+  flex: 0;
 }
 
 .Seller-title {
-  font-size: 3rem;
-  margin-bottom: 1rem;
+  font-size: 4rem;
+  margin-bottom: 1.25rem;
   line-height: 1.15;
-  color: #535454;
+  color: #111;
   font-weight: 500;
 }
 
 .Seller-copy {
+  font-size: 1.25rem;
   color: rgba($dark, 0.75);
   line-height: 1.5;
 }
 
 .Seller-image {
-  height: 23.333rem;
+  flex: 1;
+  height: 29rem;
   background-size: cover;
-  width: 80%;
 }
