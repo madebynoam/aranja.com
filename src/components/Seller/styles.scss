@@ -39,11 +39,12 @@
   margin-bottom: 1.25rem;
   line-height: 1.15;
   font-weight: 500;
+  text-transform: capitalize;
 }
 
 .Seller-copy {
   font-size: 1rem;
-  color: rgba($dark, 0.75);
+  color: $copy;
   line-height: 1.5;
 }
 

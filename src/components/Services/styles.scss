@@ -34,7 +34,7 @@
 .Service-link {
   text-decoration: none;
   font-size: 0.95rem;
-  color: inherit;
+  color: $blue;
   display: inline-block;
   position: relative;
   text-transform: lowercase;
@@ -45,7 +45,7 @@
   line-height: 1.5;
   font-size: 1rem;
   margin-bottom: 2rem;
-  color: #6f7489;
+  color: $copy;
   padding-right: 10%;
 
   .Service:nth-child(even) & {
