@@ -26,7 +26,6 @@ class Portfolio extends React.Component {
     super(props);
     this.state = {
       isVisible: false,
-      isHovered: false,
     };
   }
 
@@ -51,17 +50,20 @@ class Portfolio extends React.Component {
           defaultStyles={items.map(() => ({
             x: 10,
             o: 0,
+            s: 0.8,
           }))}
           styles={prevInterpolatedStyles =>
             prevInterpolatedStyles.map((_, i) => {
               return i === 0
                 ? {
-                    x: spring(isVisible ? 0 : 10, { stiffness: 150, damping: 20 }),
+                    x: spring(isVisible ? 0 : 50, { stiffness: 200, damping: 15 }),
                     o: spring(isVisible ? 1 : 0, { stiffness: 140, damping: 30 }),
+                    s: spring(isVisible ? 1 : 0.8, { stiffness: 200, damping: 15 }),
                   }
                 : {
                     x: spring(prevInterpolatedStyles[i - 1].x),
                     o: spring(prevInterpolatedStyles[i - 1].o),
+                    s: spring(prevInterpolatedStyles[i - 1].s),
                   };
             })}
         >
@@ -73,25 +75,31 @@ class Portfolio extends React.Component {
               )}
             >
               {items.map((item, index) => (
-                <div key={item.title} className="Portfolio-item">
-                  {item.year &&
-                    <p
-                      className="Portfolio-itemText"
+                <div key={item.title} className="Portfolio-itemWrap">
+                  <div
+                    className="Portfolio-item"
+                    style={{
+                      transform: `translateY(${-interpolatingStyles[index].x}%) scale(${interpolatingStyles[index].s})`,
+                    }}
+                  >
+                    {item.year &&
+                      <p
+                        className="Portfolio-itemText"
+                        style={{
+                          opacity: interpolatingStyles[index].o,
+                        }}
+                      >
+                        {item.year}
+                      </p>}
+                    <div
+                      className="Portfolio-image"
                       style={{
-                        transform: `translateY(${interpolatingStyles[index].x * 5}%)`,
+                        backgroundImage: `url(${item.image})`,
+                        transform: `translateY(${interpolatingStyles[index].x}%) scale(1.05)`,
                         opacity: interpolatingStyles[index].o,
                       }}
-                    >
-                      {item.year}
-                    </p>}
-                  <div
-                    className="Portfolio-image"
-                    style={{
-                      backgroundImage: `url(${item.image})`,
-                      transform: `translateX(${interpolatingStyles[index].x}%) scale(1.05)`,
-                      opacity: interpolatingStyles[index].o,
-                    }}
-                  />
+                    />
+                  </div>
                 </div>
               ))}
             </div>
