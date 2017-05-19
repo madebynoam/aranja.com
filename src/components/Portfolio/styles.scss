@@ -12,19 +12,34 @@
 .Portfolio-item {
   display: flex;
   justify-content: center;
+  align-items: center;
+  overflow: hidden;
   background-size: cover;
   background-position: center;
-  align-items: center;
   font-size: 4.6rem;
   font-style: italic;
   font-family: serif;
+  position: relative;
 
   &::before {
     content: '';
     display: block;
     padding-top: 70%;
   }
-  &:first-child {
-    // grid-column: 2;
+
+}
+
+.Portfolio-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  &:hover {
+    transform: scale(1.15) !important;
+  }
+
+  .Portfolio.is-visible & {
+    transition: transform 0.25s ease-in;
   }
 }
