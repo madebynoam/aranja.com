@@ -2,11 +2,12 @@
 
 .Menu {
   align-items: center;
-  color: $dark;
   display: flex;
   justify-content: space-between;
   padding: 5rem 13.5%;
+  position: relative;
   text-transform: uppercase;
+  z-index: 1;
 
   > ul {
     display: flex;

@@ -14,7 +14,6 @@ class Service extends React.Component {
 
   onChange(isVisible) {
     if (isVisible) {
-      console.log("is visible");
       this.setState({
         isVisible: true,
       });
@@ -22,7 +21,7 @@ class Service extends React.Component {
   }
 
   render() {
-    const { title, copy, image, number } = this.props;
+    const { title, copy, image } = this.props;
     const { isVisible } = this.state;
     return (
       <VisibilitySensor
@@ -39,54 +38,44 @@ class Service extends React.Component {
             }}
           >
             {value => (
-              <div className="Service-content">
-                <p className="Service-number">
-                  <span className="u-mask">
-                    <span
-                      className="u-maskInner"
-                      style={{
-                        transform: `translateY(${value.y}px)`,
-                      }}
-                    >
-                      {number}
-                    </span>
-                  </span>
-                </p>
-                <h1 className="Service-heading">
-                  {title.split(" ").map((word, i) => {
-                    return (
-                      <span className="u-mask" key={i}>
-                        <span
-                          className="u-maskInner"
-                          style={{
-                            transform: `translateY(${value.y * (i + 1.5)}px)`,
-                          }}
-                        >
-                          {word}
+              <div className="Service-contentWrap">
+                <div className="Service-content">
+                  <h1 className="Service-heading">
+                    {title.split(" ").map((word, i) => {
+                      return (
+                        <span className="u-mask" key={i}>
+                          <span
+                            className="u-maskInner"
+                            style={{
+                              transform: `translateY(${value.y * (i + 1.5)}px)`,
+                            }}
+                          >
+                            {word}
+                          </span>
                         </span>
+                      );
+                    })}
+                  </h1>
+                  <p className="Service-copy">{copy}</p>
+                  <a href="#" className="Service-link">
+                    <span className="u-mask u-flex u-flexAlignCenter">
+                      <span
+                        className="u-lineDecorator"
+                        style={{
+                          transform: `translateX(${value.y * 5}px)`,
+                        }}
+                      />
+                      <span
+                        className="u-maskInner u-textIndent1"
+                        style={{
+                          transform: `translateY(${value.y * 5}px)`,
+                        }}
+                      >
+                        See details
                       </span>
-                    );
-                  })}
-                </h1>
-                <p className="Service-copy">{copy}</p>
-                <a href="#" className="Service-link">
-                  <span className="u-mask u-flex u-flexAlignCenter">
-                    <span
-                      className="u-lineDecorator"
-                      style={{
-                        transform: `translateX(${value.y * 5}px)`,
-                      }}
-                    />
-                    <span
-                      className="u-maskInner u-textIndent1"
-                      style={{
-                        transform: `translateY(${value.y * 5}px)`,
-                      }}
-                    >
-                      See details
                     </span>
-                  </span>
-                </a>
+                  </a>
+                </div>
               </div>
             )}
           </Motion>

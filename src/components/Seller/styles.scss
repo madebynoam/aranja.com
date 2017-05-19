@@ -1,13 +1,19 @@
 @import '../../vars.scss';
 
+.Sellers {
+  margin-top: 10rem;
+}
+
 .Seller {
   display: flex;
 }
 
 .Seller-content {
-  padding: 5rem 0;
-  position: relative;
   background: $white;
+  height: 28rem;
+  padding: 4rem 0;
+  padding-left: 4rem;
+  position: relative;
   &::after {
     content: '';
     width: 5rem;
@@ -29,21 +35,20 @@
 }
 
 .Seller-title {
-  font-size: 4rem;
+  font-size: 2.5rem;
   margin-bottom: 1.25rem;
   line-height: 1.15;
-  color: #111;
   font-weight: 500;
 }
 
 .Seller-copy {
-  font-size: 1.25rem;
+  font-size: 1rem;
   color: rgba($dark, 0.75);
   line-height: 1.5;
 }
 
 .Seller-image {
   flex: 1;
-  height: 33rem;
+  height: 30rem;
   background-size: cover;
 }

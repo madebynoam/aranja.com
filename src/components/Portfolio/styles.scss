@@ -1,10 +1,8 @@
 .Portfolio {
-  margin-top: 5rem;
+  margin-top: 10rem;
   position: relative;
   z-index: 1;
   display: grid;
-  // grid-template-columns: repeat(4, 1fr);
-  // padding: 0 13.5%;
   grid-template-columns: 31.75% 36.5% 31.75%;
   grid-template-rows: auto;
 }

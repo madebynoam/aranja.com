@@ -20,11 +20,11 @@ class Services extends React.Component {
           copy: "If you want to level up your whole organization, we’ll lead on-site training tailored to your needs",
           image: image2,
         },
-        {
-          title: "Performance Engineering",
-          copy: "If you want to level up your whole organization, we’ll lead on-site training tailored to your needs",
-          image: image3,
-        },
+        // {
+        //   title: "Performance Engineering",
+        //   copy: "If you want to level up your whole organization, we’ll lead on-site training tailored to your needs",
+        //   image: image3,
+        // },
       ],
     };
   }
@@ -40,7 +40,6 @@ class Services extends React.Component {
               title={service.title}
               image={service.image}
               copy={service.copy}
-              number={`0${i + 1}`}
             />
           ))}
         </div>
