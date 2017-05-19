@@ -7,7 +7,7 @@
 }
 
 .Intro {
-  color: $dark;
+  color: #3c435f;
   display: flex;
   font-family: 'Brown Pro';
   font-weight: 300;
@@ -45,13 +45,13 @@
 }
 
 .Intro-heading {
-  font-size: between(30px, 80px, $sm, $lg);
+  font-size: between(30px, 70px, $sm, $lg);
   margin-top: 11.5rem;
   margin-bottom: 2.5rem;
   position: relative;
   z-index: 1;
   @media (min-width: $lg) {
-    font-size: 80px;
+    font-size: 70px;
   }
   > * {
     display: inline-block;

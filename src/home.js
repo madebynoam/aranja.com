@@ -4,6 +4,7 @@ import Services from "./components/Services";
 import Recent from "./components/Recent";
 import Lines from "./components/Lines";
 import Menu from "./components/Menu";
+import Portfolio from "./components/Portfolio";
 import Seller from "./components/Seller";
 
 class Home extends React.Component {
@@ -16,6 +17,7 @@ class Home extends React.Component {
           <Intro />
           <Services />
           <Seller />
+          <Portfolio />
         </div>
       </div>
     );

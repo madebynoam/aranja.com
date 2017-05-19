@@ -19,7 +19,7 @@
 
 .Service-heading {
   font-size: 3.5rem;
-  margin-bottom: 2.5rem;
+  margin-bottom: 2rem;
   line-height: 1.25;
 }
 
@@ -33,17 +33,32 @@
 
 .Service-link {
   text-decoration: none;
-  font-size: 1.25rem;
+  font-size: 1rem;
   color: inherit;
   display: inline-block;
   position: relative;
   text-transform: uppercase;
 }
 
+
+.Service-copy {
+  line-height: 1.5;
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  color: #6f7489;
+  padding-right: 10%;
+
+  .Service:nth-child(even) & {
+    padding-right: 0;
+    padding-left: 10%;
+  }
+}
+
 .Service-imageWrapper {
   flex: 2;
   overflow: hidden;
   position: relative;
+  max-height: 26.667rem;
   max-width: calc(50% + 2rem);
   left: 1rem;
 
