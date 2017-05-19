@@ -12,7 +12,7 @@ class Portfolio extends React.Component {
     super();
     this.state = {
       items: [
-        { title: "Title1", image: image1, href: "/" },
+        { title: "Title1", image: "", href: "/", year: "2017" },
         { title: "Title2", image: image2, href: "/" },
         { title: "Title3", image: image3, href: "/" },
         { title: "Title4", image: image4, href: "/" },
@@ -33,7 +33,7 @@ class Portfolio extends React.Component {
               backgroundImage: `url(${item.image})`,
             }}
           >
-            {/* <h1 className="Portfolio-itemHeading">{item.title}</h1> */}
+            {item.year}
           </div>
         ))}
       </div>

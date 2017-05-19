@@ -11,8 +11,13 @@
 
 .Portfolio-item {
   display: flex;
+  justify-content: center;
   background-size: cover;
   background-position: center;
+  align-items: center;
+  font-size: 4.6rem;
+  font-style: italic;
+  font-family: serif;
 
   &::before {
     content: '';
