@@ -31,15 +31,17 @@
 
 .Portfolio-image {
   position: absolute;
+  background-size: cover;
   top: 0;
   left: 0;
   height: 100%;
   width: 100%;
-  &:hover {
-    transform: scale(1.15) !important;
-  }
 
   .Portfolio.is-visible & {
-    transition: transform 0.25s ease-in;
+    transition: transform 0.1s cubic-bezier(.3,.27,.35,.77);
+    &:hover {
+      transform: scale(1.15) !important;
+      transition: transform 0.2s cubic-bezier(.3,.27,.35,.77);
+    }
   }
 }
