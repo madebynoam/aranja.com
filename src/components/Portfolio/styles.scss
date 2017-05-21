@@ -10,18 +10,41 @@
 .Portfolio-itemWrap {
   display: flex;
   overflow: hidden;
+  justify-content: center;
   font-style: italic;
   font-family: serif;
   position: relative;
   transform-origin: bottom right;
 
-  .Portfolio.is-visible &:hover {
+  &.has-content {
+    cursor: pointer;
+  }
+
+  .Portfolio.is-visible &.has-content:hover {
+    &::after {
+      background: rgba(0,0,0,0.1);
+    }
     .Portfolio-item {
       transform: scale(0.9) !important;
     }
     .Portfolio-image {
       transform: scale(1.1) !important;
     }
+    .Portfolio-caption {
+      opacity: 1;
+      transform: translateY(-50%);
+    }
+  }
+
+  &.has-content::after {
+    content: '';
+    display: block;
+    height: 90%;
+    pointer-events: none;
+    position: absolute;
+    width: 90%;
+    top: 5%;
+    left: 5%;
   }
 }
 
@@ -33,6 +56,7 @@
   justify-content: center;
   align-items: center;
   flex: 1;
+
   .Portfolio.is-visible & {
     transition: transform 0.1s cubic-bezier(.3,.27,.35,.77);
   }
@@ -42,6 +66,17 @@
     display: block;
     padding-top: 70%;
   }
+}
+
+.Portfolio-caption {
+  z-index: 1;
+  font-size: 3rem;
+  color: white;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-100%);
+  opacity: 0;
+  transition: all 0.1s ease-in-out;
 }
 
 .Portfolio-image {

@@ -13,12 +13,12 @@ import image5 from './image5.png';
 import image6 from './image6.jpg';
 
 let defaultItems = [
-  {title: 'Title1', image: undefined, href: '/', year: '2017'},
-  {title: 'Title2', image: image2, href: '/', year: undefined},
-  {title: 'Title3', image: image3, href: '/', year: undefined},
-  {title: 'Title4', image: image4, href: '/', year: undefined},
-  {title: 'Title5', image: image5, href: '/', year: undefined},
-  {title: 'Title6', image: image6, href: '/', year: undefined},
+  {title: undefined, image: undefined, href: '/', year: '2017'},
+  {title: 'Amazing', image: image2, href: '/', year: undefined},
+  {title: 'Transitions', image: image3, href: '/', year: undefined},
+  {title: 'So cool', image: image4, href: '/', year: undefined},
+  {title: 'Swizz swooz', image: image5, href: '/', year: undefined},
+  {title: 'Agree', image: image6, href: '/', year: undefined},
 ];
 
 class Portfolio extends React.Component {
@@ -89,7 +89,17 @@ class Portfolio extends React.Component {
               )}
             >
               {items.map((item, index) => (
-                <div key={item.title} className="Portfolio-itemWrap">
+                <div
+                  key={index}
+                  className={classnames(
+                    'Portfolio-itemWrap',
+                    item.title && 'has-content',
+                  )}
+                >
+                  {item.title &&
+                    <p className="Portfolio-caption">
+                      {item.title}
+                    </p>}
                   <div
                     className="Portfolio-item"
                     style={{
