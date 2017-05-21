@@ -28,7 +28,7 @@ class Service extends React.Component {
         onChange={isVisible => this.onChange(isVisible)}
         active={isVisible ? false : true}
         intervalDelay={500}
-        minTopValue={200}
+        minTopValue={300}
         partialVisibility
       >
         <div className="Service">
@@ -56,13 +56,24 @@ class Service extends React.Component {
                       );
                     })}
                   </h1>
-                  <p className="Service-copy">{copy}</p>
+                  <p className="Service-copy">
+                    <span className="u-mask">
+                      <span
+                        className="u-maskInner"
+                        style={{
+                          transform: `translateY(${value.y * 3}px)`,
+                        }}
+                      >
+                        {copy}
+                      </span>
+                    </span>
+                  </p>
                   <a href="#" className="Service-link">
                     <span className="u-mask u-flex u-flexAlignCenter">
                       <span
                         className="u-lineDecorator"
                         style={{
-                          transform: `translateX(${value.y * 5}px)`,
+                          transform: `translateX(${value.y * 30}px)`,
                         }}
                       />
                       <span
@@ -104,7 +115,7 @@ class Service extends React.Component {
                       className="Service-image"
                       style={{
                         backgroundImage: `url(${image})`,
-                        transform: `translateY(${value.x}%)`,
+                        transform: `translateY(${value.x * 10}%)`,
                       }}
                     />
                   )}
@@ -121,7 +132,7 @@ class Service extends React.Component {
                     <div
                       className="Service-imageBackground"
                       style={{
-                        transform: `translateX(${value.x}%) `,
+                        transform: `translateX(${value.x * 10}%) `,
                       }}
                     />
                   )}

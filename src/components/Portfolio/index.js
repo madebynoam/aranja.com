@@ -43,12 +43,12 @@ class Portfolio extends React.Component {
         onChange={isVisible => this.onChange(isVisible)}
         active={!isVisible}
         intervalDelay={500}
-        minTopValue={400}
+        minTopValue={500}
         partialVisibility
       >
         <StaggeredMotion
           defaultStyles={items.map(() => ({
-            y: 200,
+            y: 100,
             o: 0,
             s1: 0.75,
             s2: 1.25,
@@ -57,18 +57,18 @@ class Portfolio extends React.Component {
             prevInterpolatedStyles.map((_, i) => {
               return i === 0
                 ? {
-                    y: spring(isVisible && 0, {
-                      stiffness: 150,
-                      damping: 25,
+                    y: spring(isVisible ? 0 : 100, {
+                      stiffness: 600,
+                      damping: 50,
                     }),
-                    o: spring(isVisible ? 1 : 0, {stiffness: 300, damping: 35}),
+                    o: spring(isVisible ? 1 : 0, {stiffness: 100, damping: 35}),
                     s1: spring(isVisible ? 1 : 0.75, {
-                      stiffness: 300,
-                      damping: 35,
+                      stiffness: 500,
+                      damping: 100,
                     }),
                     s2: spring(isVisible ? 1 : 1.25, {
-                      stiffness: 300,
-                      damping: 35,
+                      stiffness: 500,
+                      damping: 100,
                     }),
                   }
                 : {
@@ -95,6 +95,10 @@ class Portfolio extends React.Component {
                     'Portfolio-itemWrap',
                     item.title && 'has-content',
                   )}
+                  style={{
+                    transform: `translateY(${interpolatingStyles[index].y}px)`,
+                    opacity: interpolatingStyles[index].o,
+                  }}
                 >
                   {item.title &&
                     <p className="Portfolio-caption">
