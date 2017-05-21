@@ -1,12 +1,12 @@
 import React from 'react';
 import image1 from './image1.jpeg';
 import image2 from './image2.jpeg';
-import SingleSeller from './Seller';
+import SingleShowoff from './Showoff';
 import Section from '../Section';
 import ShadowText from '../ShadowText';
 import './styles.css';
 
-class Seller extends React.Component {
+class Showoff extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -27,9 +27,9 @@ class Seller extends React.Component {
     return (
       <Section>
         <ShadowText text="Performance" />
-        <div className="Sellers">
+        <div className="Showoffs">
           {content.map((content, i) => (
-            <SingleSeller
+            <SingleShowoff
               key={i}
               heading={content.heading}
               copy={content.copy}
@@ -42,4 +42,4 @@ class Seller extends React.Component {
   }
 }
 
-export default Seller;
+export default Showoff;

@@ -1,11 +1,11 @@
-import React from "react";
-import Intro from "./components/Intro";
-import Services from "./components/Services";
-import Recent from "./components/Recent";
-import Lines from "./components/Lines";
-import Menu from "./components/Menu";
-import Portfolio from "./components/Portfolio";
-import Seller from "./components/Seller";
+import React from 'react';
+import Intro from './components/Intro';
+import Services from './components/Services';
+import Recent from './components/Recent';
+import Lines from './components/Lines';
+import Menu from './components/Menu';
+import Portfolio from './components/Portfolio';
+import Showoff from './components/Showoff';
 
 class Home extends React.Component {
   render() {
@@ -16,7 +16,7 @@ class Home extends React.Component {
           <Menu />
           <Intro />
           <Services />
-          <Seller />
+          <Showoff />
           <Portfolio />
         </div>
       </div>
