@@ -16,8 +16,11 @@
   }
 }
 
+.Service-content {
+  margin-top: -2.95rem; // to simulate -heading bottom margin and -link not having height.
+}
 .Service-heading {
-  font-size: 2.5rem;
+  font-size: $headingSize;
   font-weight: 500;
   line-height: 1.15;
   margin-bottom: 2rem;
@@ -43,14 +46,14 @@
 
 .Service-copy {
   line-height: 1.5;
-  font-size: 1rem;
+  font-size: $copySize;
   margin-bottom: 2rem;
   color: $copy;
-  padding-right: 10%;
+  padding-right: 10rem;
 
   .Service:nth-child(even) & {
     padding-right: 0;
-    padding-left: 10%;
+    padding-left: 10rem;
   }
 }
 

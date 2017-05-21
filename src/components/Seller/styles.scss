@@ -31,11 +31,11 @@
   margin-top: 2rem;
   position: relative;
   z-index: 1;
-  flex: 0;
+  flex: 1;
 }
 
-.Seller-title {
-  font-size: 2.5rem;
+.Seller-heading {
+  font-size: $headingSize;
   margin-bottom: 1.25rem;
   line-height: 1.15;
   font-weight: 500;
@@ -43,13 +43,13 @@
 }
 
 .Seller-copy {
-  font-size: 1rem;
+  font-size: $copySize;
   color: $copy;
   line-height: 1.5;
 }
 
 .Seller-image {
-  flex: 1;
+  flex: 2;
   height: 30rem;
   background-size: cover;
 }

@@ -14,14 +14,29 @@
   font-family: serif;
   position: relative;
   transform-origin: bottom right;
+
+  .Portfolio.is-visible &:hover {
+    .Portfolio-item {
+      transform: scale(0.9) !important;
+    }
+    .Portfolio-image {
+      transform: scale(1.1) !important;
+    }
+  }
 }
 
 .Portfolio-item {
   font-size: 4.6rem;
   display: flex;
+  position: relative;
+  overflow: hidden;
   justify-content: center;
   align-items: center;
   flex: 1;
+  .Portfolio.is-visible & {
+    transition: transform 0.1s cubic-bezier(.3,.27,.35,.77);
+  }
+
   &::before {
     content: '';
     display: block;
@@ -39,9 +54,5 @@
 
   .Portfolio.is-visible & {
     transition: transform 0.1s cubic-bezier(.3,.27,.35,.77);
-    &:hover {
-      transform: scale(1.15) !important;
-      transition: transform 0.2s cubic-bezier(.3,.27,.35,.77);
-    }
   }
 }

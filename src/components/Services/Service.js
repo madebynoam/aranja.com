@@ -1,7 +1,7 @@
-import React from "react";
-import "./styles.css";
-import { Motion, StaggeredMotion, spring, presets } from "react-motion";
-import VisibilitySensor from "react-visibility-sensor";
+import React from 'react';
+import './styles.css';
+import {Motion, StaggeredMotion, spring, presets} from 'react-motion';
+import VisibilitySensor from 'react-visibility-sensor';
 
 class Service extends React.Component {
   constructor() {
@@ -21,8 +21,8 @@ class Service extends React.Component {
   }
 
   render() {
-    const { title, copy, image } = this.props;
-    const { isVisible } = this.state;
+    const {heading, copy, image} = this.props;
+    const {isVisible} = this.state;
     return (
       <VisibilitySensor
         onChange={isVisible => this.onChange(isVisible)}
@@ -34,14 +34,14 @@ class Service extends React.Component {
         <div className="Service">
           <Motion
             style={{
-              y: spring(isVisible ? 0 : -80, { stiffness: 110, damping: 20 }),
+              y: spring(isVisible ? 0 : -80, {stiffness: 110, damping: 20}),
             }}
           >
             {value => (
               <div className="Service-contentWrap">
                 <div className="Service-content">
                   <h1 className="Service-heading">
-                    {title.split(" ").map((word, i) => {
+                    {heading.split(' ').map((word, i) => {
                       return (
                         <span className="u-mask" key={i}>
                           <span
@@ -81,7 +81,7 @@ class Service extends React.Component {
           </Motion>
           <Motion
             style={{
-              y: spring(isVisible ? 0 : 10, { stiffness: 100, damping: 40 }),
+              y: spring(isVisible ? 0 : 10, {stiffness: 100, damping: 40}),
             }}
           >
             {value => (

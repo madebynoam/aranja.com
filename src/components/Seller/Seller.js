@@ -1,11 +1,11 @@
-import React from "react";
-import BorderDecorator from "../BorderDecorator";
+import React from 'react';
+import BorderDecorator from '../BorderDecorator';
 
-const SingleSeller = ({ title, copy, image }) => (
+const SingleSeller = ({heading, copy, image}) => (
   <div className="Seller">
     <div className="Seller-wrap">
       <div className="Seller-content">
-        <h1 className="Seller-title">{title}</h1>
+        <h1 className="Seller-heading">{heading}</h1>
         <p className="Seller-copy">{copy}</p>
       </div>
     </div>
