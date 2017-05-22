@@ -1,7 +1,11 @@
 @import '../../vars.scss';
 
+$offset: 3rem;
+$extension: 5rem;
+
 .Showoffs {
   margin-top: 10rem;
+  padding-bottom: $offset;
 }
 
 .Showoff {
@@ -9,8 +13,6 @@
 }
 
 .Showoff-content {
-  $offset: 3rem;
-  $extension: 5rem;
   background: $white;
   height: 28rem;
   padding: 4rem 0;

@@ -1,24 +1,24 @@
-import React from 'react';
-import VisibilitySensor from 'react-visibility-sensor';
-import {Motion, StaggeredMotion, spring, presets} from 'react-motion';
-import classnames from 'classnames';
+import React from "react";
+import VisibilitySensor from "react-visibility-sensor";
+import { Motion, StaggeredMotion, spring, presets } from "react-motion";
+import classnames from "classnames";
 
-import './styles.css';
+import "./styles.css";
 
-import image1 from './image1.jpg';
-import image2 from './image2.jpg';
-import image3 from './image3.jpg';
-import image4 from './image4.jpg';
-import image5 from './image5.png';
-import image6 from './image6.jpg';
+import image1 from "./image1.jpg";
+import image2 from "./image2.jpg";
+import image3 from "./image3.jpg";
+import image4 from "./image4.jpg";
+import image5 from "./image5.png";
+import image6 from "./image6.jpg";
 
 let defaultItems = [
-  {title: undefined, image: undefined, href: '/', year: '2017'},
-  {title: 'Amazing', image: image2, href: '/', year: undefined},
-  {title: 'Transitions', image: image3, href: '/', year: undefined},
-  {title: 'So cool', image: image4, href: '/', year: undefined},
-  {title: 'Swizz swooz', image: image5, href: '/', year: undefined},
-  {title: 'Agree', image: image6, href: '/', year: undefined},
+  { title: undefined, image: undefined, href: "/", year: "2017" },
+  { title: "Amazing", image: image2, href: "/", year: undefined },
+  { title: "Transitions", image: image3, href: "/", year: undefined },
+  { title: "So cool", image: image4, href: "/", year: undefined },
+  { title: "Swizz swooz", image: image5, href: "/", year: undefined },
+  { title: "Agree", image: image6, href: "/", year: undefined },
 ];
 
 class Portfolio extends React.Component {
@@ -36,14 +36,14 @@ class Portfolio extends React.Component {
   }
 
   render() {
-    const {isVisible} = this.state;
-    const {items = defaultItems} = this.props;
+    const { isVisible } = this.state;
+    const { items = defaultItems } = this.props;
     return (
       <VisibilitySensor
         onChange={isVisible => this.onChange(isVisible)}
         active={!isVisible}
-        intervalDelay={500}
-        minTopValue={500}
+        intervalDelay={250}
+        minTopValue={400}
         partialVisibility
       >
         <StaggeredMotion
@@ -61,7 +61,7 @@ class Portfolio extends React.Component {
                       stiffness: 600,
                       damping: 50,
                     }),
-                    o: spring(isVisible ? 1 : 0, {stiffness: 100, damping: 35}),
+                    o: spring(isVisible ? 1 : 0, { stiffness: 100, damping: 35 }),
                     s1: spring(isVisible ? 1 : 0.75, {
                       stiffness: 500,
                       damping: 100,
@@ -82,19 +82,14 @@ class Portfolio extends React.Component {
           {interpolatingStyles => (
             <div
               className={classnames(
-                'Portfolio',
-                isVisible &&
-                  interpolatingStyles[items.length - 1].y === 0 &&
-                  'is-visible',
+                "Portfolio",
+                isVisible && interpolatingStyles[items.length - 1].y === 0 && "is-visible",
               )}
             >
               {items.map((item, index) => (
                 <div
                   key={index}
-                  className={classnames(
-                    'Portfolio-itemWrap',
-                    item.title && 'has-content',
-                  )}
+                  className={classnames("Portfolio-itemWrap", item.title && "has-content")}
                   style={{
                     transform: `translateY(${interpolatingStyles[index].y}px)`,
                     opacity: interpolatingStyles[index].o,
