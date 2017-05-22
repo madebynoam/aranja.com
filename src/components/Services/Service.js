@@ -26,7 +26,7 @@ class Service extends React.Component {
     return (
       <VisibilitySensor
         onChange={isVisible => this.onChange(isVisible)}
-        active={isVisible ? false : true}
+        active={!isVisible}
         intervalDelay={250}
         minTopValue={300}
         partialVisibility
