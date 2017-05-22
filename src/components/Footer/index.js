@@ -1,10 +1,11 @@
-import React from 'react';
-import './styles.css';
+import React from "react";
+import Contact from "../Contact";
+import "./styles.css";
 
 const Footer = ({}) => (
-  <footer className="Footer">
-    <h1>Footer</h1>
-  </footer>
+  <section className="Footer">
+    <Contact />
+  </section>
 );
 
 export default Footer;
