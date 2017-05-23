@@ -1,8 +1,10 @@
 import React from "react";
 import "./styles.css";
 import { Motion, StaggeredMotion, spring, presets } from "react-motion";
-import { TweenMax, Power2, TimelineLite } from "gsap";
+import { TweenMax, Back, TimelineLite } from "gsap";
 import VisibilitySensor from "react-visibility-sensor";
+
+const ease = Expo.easeOut;
 
 class Service extends React.Component {
   constructor() {
@@ -11,19 +13,38 @@ class Service extends React.Component {
       isVisible: false,
       shouldStart: false,
     };
+    this.textNodes = [];
+    this.imageNodes = [];
+    this.animationDuration = 1;
   }
 
   componentDidMount() {
-    TweenMax.set(this.imageWrapper, { y: 0 });
+    this.textNodes = this.componentRef.querySelectorAll("[data-animate='text']");
+    this.imageNodes = this.componentRef.querySelectorAll("[data-animate='image']");
+    TweenMax.set(this.textNodes, { x: -200, opacity: 0 });
+    TweenMax.set(this.imageNodes, { xPercent: -100 });
+  }
+
+  handleAnimatingText() {
+    TweenMax.staggerTo(this.textNodes, this.animationDuration, { x: 0, opacity: 1, ease }, 0.1);
+  }
+
+  handleAnimatingImages() {
+    TweenMax.to(this.imageNodes, 1, {
+      xPercent: 0,
+      opacity: 1,
+      delay: this.animationDuration / 2,
+      ease,
+    });
   }
 
   onChange(isVisible) {
     if (isVisible) {
+      this.handleAnimatingText();
+      this.handleAnimatingImages();
       this.setState({
         isVisible: true,
       });
-
-      TweenMax.to(this.imageWrapper, 2, { y: 0 });
     }
   }
 
@@ -36,18 +57,23 @@ class Service extends React.Component {
       <VisibilitySensor
         onChange={isVisible => this.onChange(isVisible)}
         active={!isVisible}
-        intervalDelay={250}
+        intervalDelay={100}
         minTopValue={300}
         partialVisibility
       >
-        <div className="Service">
+        <div
+          className="Service"
+          ref={componentRef => {
+            this.componentRef = componentRef;
+          }}
+        >
           <div className="Service-contentWrap">
             <div className="Service-content">
               <h1 className="Service-heading">
                 {heading.split(" ").map((word, i) => {
                   return (
                     <span className="u-mask" key={i}>
-                      <span className="u-maskInner">
+                      <span className="u-maskInner" data-animate="text">
                         {word}
                       </span>
                     </span>
@@ -56,34 +82,29 @@ class Service extends React.Component {
               </h1>
               <p className="Service-copy">
                 <span className="u-mask">
-                  <span className="u-maskInner">
+                  <span className="u-maskInner" data-animate="text">
                     {copy}
                   </span>
                 </span>
               </p>
               <a href="#" className="Service-link">
                 <span className="u-mask u-flex u-flexAlignCenter">
-                  <span className="u-lineDecorator" />
-                  <span className="u-maskInner u-textIndent1">
+                  <span className="u-lineDecorator" data-animate="text" />
+                  <span className="u-maskInner u-textIndent1" data-animate="text">
                     See details
                   </span>
                 </span>
               </a>
             </div>
           </div>
-          <div
-            className="Service-imageWrapper"
-            ref={imageWrapper => {
-              this.imageWrapper = imageWrapper;
-            }}
-          >
+          <div className="Service-imageWrapper">
             <div
               className="Service-image"
+              data-animate="image"
               style={{
                 backgroundImage: `url(${image})`,
               }}
             />
-            <div className="Service-imageBackground" />
           </div>
         </div>
       </VisibilitySensor>
