@@ -98,13 +98,15 @@ class Service extends React.Component {
             </div>
           </div>
           <div className="Service-imageWrapper">
-            <div
-              className="Service-image"
-              data-animate="image"
-              style={{
-                backgroundImage: `url(${image})`,
-              }}
-            />
+            <div className="Service-imageMask">
+              <div
+                className="Service-image"
+                data-animate="image"
+                style={{
+                  backgroundImage: `url(${image})`,
+                }}
+              />
+            </div>
           </div>
         </div>
       </VisibilitySensor>
