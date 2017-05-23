@@ -10,12 +10,17 @@ class Parallax {
       b = document.body,
       st = "scrollTop",
       sh = "scrollHeight",
-      doc = document.documentElement,
       scroll;
 
     document.addEventListener("scroll", function() {
       scroll = (h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight);
-      doc.style.setProperty("--parallax", scroll);
+      h.style.setProperty("--parallax", scroll);
+
+      if (scroll > 0.007) {
+        h.classList.add("is-scrolled");
+      } else {
+        h.classList.remove("is-scrolled");
+      }
     });
   }
 }

@@ -1,6 +1,7 @@
 import React from "react";
 import "./styles.css";
 import { Motion, StaggeredMotion, spring, presets } from "react-motion";
+import { TweenMax, Power2, TimelineLite } from "gsap";
 import VisibilitySensor from "react-visibility-sensor";
 
 class Service extends React.Component {
@@ -12,13 +13,21 @@ class Service extends React.Component {
     };
   }
 
+  componentDidMount() {
+    TweenMax.set(this.imageWrapper, { y: 0 });
+  }
+
   onChange(isVisible) {
     if (isVisible) {
       this.setState({
         isVisible: true,
       });
+
+      TweenMax.to(this.imageWrapper, 2, { y: 0 });
     }
   }
+
+  componentWillUnmount() {}
 
   render() {
     const { heading, copy, image } = this.props;
@@ -32,114 +41,50 @@ class Service extends React.Component {
         partialVisibility
       >
         <div className="Service">
-          <Motion
-            style={{
-              y: spring(isVisible ? 0 : -80, { stiffness: 110, damping: 20 }),
-            }}
-          >
-            {value => (
-              <div className="Service-contentWrap">
-                <div className="Service-content">
-                  <h1 className="Service-heading">
-                    {heading.split(" ").map((word, i) => {
-                      return (
-                        <span className="u-mask" key={i}>
-                          <span
-                            className="u-maskInner"
-                            style={{
-                              transform: `translateY(${value.y * (i + 1.5)}px)`,
-                            }}
-                          >
-                            {word}
-                          </span>
-                        </span>
-                      );
-                    })}
-                  </h1>
-                  <p className="Service-copy">
-                    <span className="u-mask">
-                      <span
-                        className="u-maskInner"
-                        style={{
-                          transform: `translateY(${value.y * 3}px)`,
-                        }}
-                      >
-                        {copy}
+          <div className="Service-contentWrap">
+            <div className="Service-content">
+              <h1 className="Service-heading">
+                {heading.split(" ").map((word, i) => {
+                  return (
+                    <span className="u-mask" key={i}>
+                      <span className="u-maskInner">
+                        {word}
                       </span>
                     </span>
-                  </p>
-                  <a href="#" className="Service-link">
-                    <span className="u-mask u-flex u-flexAlignCenter">
-                      <span
-                        className="u-lineDecorator"
-                        style={{
-                          transform: `translateX(${value.y * 30}px)`,
-                        }}
-                      />
-                      <span
-                        className="u-maskInner u-textIndent1"
-                        style={{
-                          transform: `translateY(${value.y * 5}px)`,
-                        }}
-                      >
-                        See details
-                      </span>
-                    </span>
-                  </a>
-                </div>
-              </div>
-            )}
-          </Motion>
-          <Motion
-            style={{
-              y: spring(isVisible ? 0 : 10, { stiffness: 100, damping: 40 }),
+                  );
+                })}
+              </h1>
+              <p className="Service-copy">
+                <span className="u-mask">
+                  <span className="u-maskInner">
+                    {copy}
+                  </span>
+                </span>
+              </p>
+              <a href="#" className="Service-link">
+                <span className="u-mask u-flex u-flexAlignCenter">
+                  <span className="u-lineDecorator" />
+                  <span className="u-maskInner u-textIndent1">
+                    See details
+                  </span>
+                </span>
+              </a>
+            </div>
+          </div>
+          <div
+            className="Service-imageWrapper"
+            ref={imageWrapper => {
+              this.imageWrapper = imageWrapper;
             }}
           >
-            {value => (
-              <div
-                className="Service-imageWrapper"
-                style={{
-                  transform: `translateY(${value.y}%)`,
-                }}
-              >
-                <Motion
-                  style={{
-                    x: spring(isVisible ? 0 : 120, {
-                      stiffness: 100,
-                      damping: 25,
-                    }),
-                  }}
-                >
-                  {value => (
-                    <div
-                      className="Service-image"
-                      style={{
-                        backgroundImage: `url(${image})`,
-                        transform: `translateY(${value.x * 10}%)`,
-                      }}
-                    />
-                  )}
-                </Motion>
-                <Motion
-                  style={{
-                    x: spring(isVisible ? 0 : -100, {
-                      stiffness: 160,
-                      damping: 25,
-                    }),
-                  }}
-                >
-                  {value => (
-                    <div
-                      className="Service-imageBackground"
-                      style={{
-                        transform: `translateX(${value.x * 10}%) `,
-                      }}
-                    />
-                  )}
-                </Motion>
-              </div>
-            )}
-          </Motion>
+            <div
+              className="Service-image"
+              style={{
+                backgroundImage: `url(${image})`,
+              }}
+            />
+            <div className="Service-imageBackground" />
+          </div>
         </div>
       </VisibilitySensor>
     );
