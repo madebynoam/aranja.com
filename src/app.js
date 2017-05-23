@@ -5,7 +5,6 @@ import history from "react-chain-history";
 import createReactChain from "react-chain";
 import Home from "./home";
 import Parallax from "./components/Parallax";
-
 import "./reset.css";
 import "./index.css";
 
