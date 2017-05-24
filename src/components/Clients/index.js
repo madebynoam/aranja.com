@@ -1,6 +1,6 @@
 import React from "react";
 import VisibilitySensor from "react-visibility-sensor";
-import { Motion, StaggeredMotion, spring, presets } from "react-motion";
+import { TweenMax, Expo } from "gsap";
 import "./styles.css";
 import androidLogo from "./android.svg";
 import facebookLogo from "./facebook.svg";
@@ -38,18 +38,44 @@ const clients = [
   },
 ];
 
+const ease = Expo.easeOut;
+
 class Clients extends React.Component {
   constructor() {
     super();
     this.state = {
       isVisible: false,
     };
+    this.animationNodes = [];
+    this.animationDuration = 1;
+  }
+
+  componentDidMount() {
+    this.animationNodes = this.componentRef.querySelectorAll("[data-animate]");
+    TweenMax.set(this.animationNodes, { y: -100, opacity: 0 });
   }
 
   onChange(isVisible) {
-    this.setState({
-      isVisible,
-    });
+    if (isVisible) {
+      this.setState({
+        isVisible,
+      });
+      this.handleAnimation();
+    }
+  }
+
+  handleAnimation() {
+    TweenMax.staggerTo(
+      this.animationNodes,
+      1,
+      {
+        y: 0,
+        opacity: 1,
+        delay: 0,
+        ease,
+      },
+      0.1,
+    );
   }
 
   render() {
@@ -58,58 +84,28 @@ class Clients extends React.Component {
       <VisibilitySensor
         onChange={isVisible => this.onChange(isVisible)}
         active={!isVisible}
-        intervalDelay={250}
-        minTopValue={300}
+        intervalDelay={100}
+        minTopValue={100}
         partialVisibility
       >
-        <StaggeredMotion
-          defaultStyles={clients.map(() => ({
-            o: 0,
-            f: 0,
-            y: -50,
-          }))}
-          styles={prevInterpolatedStyles =>
-            prevInterpolatedStyles.map((_, i) => {
-              return i === 0
-                ? {
-                    o: spring(isVisible ? 1 : 0, { stiffness: 100, damping: 35 }),
-                    f: spring(isVisible ? 1 : 0, {
-                      stiffness: 200,
-                      damping: 50,
-                    }),
-                    y: spring(isVisible ? 0 : -100),
-                  }
-                : {
-                    o: spring(prevInterpolatedStyles[i - 1].o),
-                    f: spring(prevInterpolatedStyles[i - 1].f),
-                    y: spring(prevInterpolatedStyles[i - 1].y),
-                  };
-            })}
+        <div
+          className="Clients"
+          ref={componentRef => {
+            this.componentRef = componentRef;
+          }}
         >
-          {interpolatingStyles => (
-            <div className="Clients">
-              <h1 className="Clients-heading">Selected clients</h1>
-              <h2 className="Clients-subheading">
-                We've had the pleasure of working with <br /> some of tech's leading companies
-              </h2>
-              <ul className="Clients-list">
-                {clients.map((client, index) => (
-                  <li
-                    className="Clients-item"
-                    key={index}
-                    style={{
-                      filter: `saturate(${interpolatingStyles[index].f})`,
-                      opacity: interpolatingStyles[index].o,
-                      transform: `translateY(${interpolatingStyles[index].y}px)`,
-                    }}
-                  >
-                    <img className="Clients-image" src={client.logo} alt={client.name} />
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
-        </StaggeredMotion>
+          <h1 className="Clients-heading">Selected clients</h1>
+          <h2 className="Clients-subheading">
+            We've had the pleasure of working with <br /> some of tech's leading companies
+          </h2>
+          <ul className="Clients-list">
+            {clients.map((client, index) => (
+              <li className="Clients-item" key={index} data-animate>
+                <img className="Clients-image" src={client.logo} alt={client.name} />
+              </li>
+            ))}
+          </ul>
+        </div>
       </VisibilitySensor>
     );
   }

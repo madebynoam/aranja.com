@@ -1,7 +1,7 @@
 import React from "react";
 import "./styles.css";
 import { Motion, StaggeredMotion, spring, presets } from "react-motion";
-import { TweenMax, Back, TimelineLite } from "gsap";
+import { TweenMax, Expo } from "gsap";
 import VisibilitySensor from "react-visibility-sensor";
 
 const ease = Expo.easeOut;
