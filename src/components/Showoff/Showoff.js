@@ -1,7 +1,7 @@
-import React from 'react';
-import BorderDecorator from '../BorderDecorator';
+import React from "react";
+import BorderDecorator from "../BorderDecorator";
 
-const SingleShowoff = ({heading, copy, image}) => (
+const SingleShowoff = ({ heading, copy, image }) => (
   <div className="Showoff">
     <div className="Showoff-wrap">
       <div className="Showoff-content">
@@ -9,12 +9,14 @@ const SingleShowoff = ({heading, copy, image}) => (
         <p className="Showoff-copy">{copy}</p>
       </div>
     </div>
-    <div
-      className="Showoff-image"
-      style={{
-        backgroundImage: `url(${image})`,
-      }}
-    />
+    <div className="Showoff-imageMask">
+      <div
+        className="Showoff-image"
+        style={{
+          backgroundImage: `url(${image})`,
+        }}
+      />
+    </div>
   </div>
 );
 
