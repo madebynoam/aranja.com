@@ -1,9 +1,10 @@
 import React from "react";
 import createContentfulAdapter from "tux-adapter-contentful";
+import routes from './routes';
+import router from './middleware/router';
 import tux from "./middleware/tux";
 import history from "react-chain-history";
 import createReactChain from "react-chain";
-import Home from "./home";
 import Parallax from "./components/Parallax";
 import "./reset.css";
 import "./index.css";
@@ -25,4 +26,4 @@ Parallax.init();
 export default createReactChain()
   .chain(history())
   .chain(tux({ adapter }))
-  .chain(() => () => <Home />);
+  .chain(router(routes));

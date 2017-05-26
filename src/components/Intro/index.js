@@ -1,4 +1,5 @@
 import React from "react";
+import { EditInline } from 'tux'
 import "./styles.css";
 
 const Intro = ({}) => (
@@ -6,8 +7,9 @@ const Intro = ({}) => (
     <div className="Intro">
       <div className="Intro-content">
         <h1 className="Intro-heading">
-          <span className="u-bold">Development</span> Studio <br />
-          based in <span className="u-bold">Reykjavik</span>
+          <EditInline field="fields.content.heading">
+            Development Studio based in Reykjavik
+          </EditInline>
         </h1>
       </div>
     </div>
