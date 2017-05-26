@@ -1,7 +1,10 @@
 import React from "react";
 import "./styles.css";
 import { Motion, StaggeredMotion, spring, presets } from "react-motion";
+import { TweenMax, Expo } from "gsap";
 import VisibilitySensor from "react-visibility-sensor";
+
+const ease = Expo.easeOut;
 
 class Service extends React.Component {
   constructor() {
@@ -10,15 +13,42 @@ class Service extends React.Component {
       isVisible: false,
       shouldStart: false,
     };
+    this.textNodes = [];
+    this.imageNodes = [];
+    this.animationDuration = 1;
+  }
+
+  componentDidMount() {
+    this.textNodes = this.componentRef.querySelectorAll("[data-animate='text']");
+    this.imageNodes = this.componentRef.querySelectorAll("[data-animate='image']");
+    TweenMax.set(this.textNodes, { x: -200, opacity: 0 });
+    TweenMax.set(this.imageNodes, { xPercent: -100 });
+  }
+
+  handleAnimatingText() {
+    TweenMax.staggerTo(this.textNodes, this.animationDuration, { x: 0, opacity: 1, ease }, 0.1);
+  }
+
+  handleAnimatingImages() {
+    TweenMax.to(this.imageNodes, 1, {
+      xPercent: 0,
+      opacity: 1,
+      delay: this.animationDuration / 2,
+      ease,
+    });
   }
 
   onChange(isVisible) {
     if (isVisible) {
+      this.handleAnimatingText();
+      this.handleAnimatingImages();
       this.setState({
         isVisible: true,
       });
     }
   }
+
+  componentWillUnmount() {}
 
   render() {
     const { heading, copy, image } = this.props;
@@ -27,119 +57,57 @@ class Service extends React.Component {
       <VisibilitySensor
         onChange={isVisible => this.onChange(isVisible)}
         active={!isVisible}
-        intervalDelay={250}
+        intervalDelay={100}
         minTopValue={300}
         partialVisibility
       >
-        <div className="Service">
-          <Motion
-            style={{
-              y: spring(isVisible ? 0 : -80, { stiffness: 110, damping: 20 }),
-            }}
-          >
-            {value => (
-              <div className="Service-contentWrap">
-                <div className="Service-content">
-                  <h1 className="Service-heading">
-                    {heading.split(" ").map((word, i) => {
-                      return (
-                        <span className="u-mask" key={i}>
-                          <span
-                            className="u-maskInner"
-                            style={{
-                              transform: `translateY(${value.y * (i + 1.5)}px)`,
-                            }}
-                          >
-                            {word}
-                          </span>
-                        </span>
-                      );
-                    })}
-                  </h1>
-                  <p className="Service-copy">
-                    <span className="u-mask">
-                      <span
-                        className="u-maskInner"
-                        style={{
-                          transform: `translateY(${value.y * 3}px)`,
-                        }}
-                      >
-                        {copy}
+        <div
+          className="Service"
+          ref={componentRef => {
+            this.componentRef = componentRef;
+          }}
+        >
+          <div className="Service-contentWrap">
+            <div className="Service-content">
+              <h1 className="Service-heading">
+                {heading.split(" ").map((word, i) => {
+                  return (
+                    <span className="u-mask" key={i}>
+                      <span className="u-maskInner" data-animate="text">
+                        {word}
                       </span>
                     </span>
-                  </p>
-                  <a href="#" className="Service-link">
-                    <span className="u-mask u-flex u-flexAlignCenter">
-                      <span
-                        className="u-lineDecorator"
-                        style={{
-                          transform: `translateX(${value.y * 30}px)`,
-                        }}
-                      />
-                      <span
-                        className="u-maskInner u-textIndent1"
-                        style={{
-                          transform: `translateY(${value.y * 5}px)`,
-                        }}
-                      >
-                        See details
-                      </span>
-                    </span>
-                  </a>
-                </div>
-              </div>
-            )}
-          </Motion>
-          <Motion
-            style={{
-              y: spring(isVisible ? 0 : 10, { stiffness: 100, damping: 40 }),
-            }}
-          >
-            {value => (
+                  );
+                })}
+              </h1>
+              <p className="Service-copy">
+                <span className="u-mask">
+                  <span className="u-maskInner" data-animate="text">
+                    {copy}
+                  </span>
+                </span>
+              </p>
+              <a href="#" className="Service-link">
+                <span className="u-mask u-flex u-flexAlignCenter">
+                  <span className="u-lineDecorator" data-animate="text" />
+                  <span className="u-maskInner u-textIndent1" data-animate="text">
+                    See details
+                  </span>
+                </span>
+              </a>
+            </div>
+          </div>
+          <div className="Service-imageWrapper">
+            <div className="Service-imageMask">
               <div
-                className="Service-imageWrapper"
+                className="Service-image"
+                data-animate="image"
                 style={{
-                  transform: `translateY(${value.y}%)`,
+                  backgroundImage: `url(${image})`,
                 }}
-              >
-                <Motion
-                  style={{
-                    x: spring(isVisible ? 0 : 120, {
-                      stiffness: 100,
-                      damping: 25,
-                    }),
-                  }}
-                >
-                  {value => (
-                    <div
-                      className="Service-image"
-                      style={{
-                        backgroundImage: `url(${image})`,
-                        transform: `translateY(${value.x * 10}%)`,
-                      }}
-                    />
-                  )}
-                </Motion>
-                <Motion
-                  style={{
-                    x: spring(isVisible ? 0 : -100, {
-                      stiffness: 160,
-                      damping: 25,
-                    }),
-                  }}
-                >
-                  {value => (
-                    <div
-                      className="Service-imageBackground"
-                      style={{
-                        transform: `translateX(${value.x * 10}%) `,
-                      }}
-                    />
-                  )}
-                </Motion>
-              </div>
-            )}
-          </Motion>
+              />
+            </div>
+          </div>
         </div>
       </VisibilitySensor>
     );
