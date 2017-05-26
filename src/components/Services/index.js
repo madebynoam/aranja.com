@@ -4,43 +4,23 @@ import Section from '../Section';
 import image1 from './image1.jpeg';
 import image2 from './image2.jpeg';
 import image3 from './image3.jpeg';
+import { EditModal } from 'tux'
 
 class Services extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      services: [
-        {
-          heading: 'Application Development',
-          copy: 'We engineer beautiful web apps and performant games. Our speciality is working with cutting edge technology and producing high-end deliverables.',
-          image: image1,
-        },
-        {
-          heading: 'Technical Consultancy',
-          copy: 'If you want to level up your whole organization, we’ll lead on-site training tailored to your needs',
-          image: image2,
-        },
-        // {
-        //   heading: "Performance Engineering",
-        //   copy: "If you want to level up your whole organization, we’ll lead on-site training tailored to your needs",
-        //   image: image3,
-        // },
-      ],
-    };
-  }
-
   render() {
-    const {services} = this.state;
+    const {services} = this.props;
     return (
       <Section>
         <div className="Services">
-          {services.map((service, i) => (
-            <Service
-              key={`service_${i}`}
-              heading={service.heading}
-              image={service.image}
-              copy={service.copy}
-            />
+          {services.items.map((service, i) => (
+            <EditModal model={service} key={i}>
+              <Service
+                key={`service_${i}`}
+                heading={service.fields.title}
+                image={service.fields.image.asset.file.url}
+                copy={service.fields.text}
+              />
+            </EditModal>
           ))}
         </div>
       </Section>

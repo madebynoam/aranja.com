@@ -10,6 +10,7 @@ import nestLogo from "./nest.svg";
 import kolibriLogo from "./kolibri.svg";
 import lsbLogo from "./lsb.svg";
 import upperquadLogo from "./uq.svg";
+import { EditInline } from 'tux'
 
 const clients = [
   {
@@ -94,9 +95,15 @@ class Clients extends React.Component {
             this.componentRef = componentRef;
           }}
         >
-          <h1 className="Clients-heading">Selected clients</h1>
+          <h1 className="Clients-heading">
+            <EditInline field="fields.content.clientsHeading">
+              Selected clients
+            </EditInline>
+          </h1>
           <h2 className="Clients-subheading">
-            We've had the pleasure of working with <br /> some of tech's leading companies
+            <EditInline field="fields.content.clientsText">
+              We've had the pleasure of working with <br /> some of tech's leading companies
+            </EditInline>
           </h2>
           <ul className="Clients-list">
             {clients.map((client, index) => (
