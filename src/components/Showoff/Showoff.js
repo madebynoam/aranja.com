@@ -9,14 +9,12 @@ const SingleShowoff = ({ heading, copy, image }) => (
         <p className="Showoff-copy">{copy}</p>
       </div>
     </div>
-    <div className="Showoff-imageMask">
-      <div
-        className="Showoff-image"
-        style={{
-          backgroundImage: `url(${image})`,
-        }}
-      />
-    </div>
+    <div
+      className="Showoff-image"
+      style={{
+        backgroundImage: `url(${image})`,
+      }}
+    />
   </div>
 );
 
