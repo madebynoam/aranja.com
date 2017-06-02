@@ -1,7 +1,7 @@
 import React from "react";
 import "./styles.css";
 import { Motion, StaggeredMotion, spring, presets } from "react-motion";
-import { TweenMax, Back, TimelineLite } from "gsap";
+import { TweenMax, Expo } from "gsap";
 import VisibilitySensor from "react-visibility-sensor";
 import Parallax from "../Parallax";
 
@@ -41,10 +41,11 @@ class Service extends React.Component {
 
   onChange(isVisible) {
     if (isVisible) {
-      this.handleAnimatingText();
-      this.handleAnimatingImages();
       this.setState({
         isVisible: true,
+      }, () => {
+        this.handleAnimatingText();
+        this.handleAnimatingImages();
       });
     }
   }
