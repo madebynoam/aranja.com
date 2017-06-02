@@ -21,16 +21,11 @@ class Parallax extends React.Component {
   }
 
   render() {
-    return (
-      <div
-        className="Service-imageWrapper"
-        ref={element => {
-          this.element_ = element;
-        }}
-      >
-        {this.props.children}
-      </div>
-    );
+    return React.cloneElement(this.props.children, {
+      ref: element => {
+        this.element_ = element;
+      }
+    });
   }
 }
 
