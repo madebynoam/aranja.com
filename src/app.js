@@ -5,7 +5,7 @@ import router from './middleware/router';
 import tux from "./middleware/tux";
 import history from "react-chain-history";
 import createReactChain from "react-chain";
-import Parallax from "./components/Parallax";
+
 import "./reset.css";
 import "./index.css";
 
@@ -20,8 +20,6 @@ const adapter = createContentfulAdapter({
   clientId: process.env.TUX_CONTENTFUL_CLIENT_ID,
   redirectUri: publicUrl,
 });
-
-Parallax.init();
 
 export default createReactChain()
   .chain(history())

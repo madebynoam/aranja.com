@@ -3,6 +3,7 @@ import "./styles.css";
 import { Motion, StaggeredMotion, spring, presets } from "react-motion";
 import { TweenMax, Expo } from "gsap";
 import VisibilitySensor from "react-visibility-sensor";
+import Parallax from "../Parallax";
 
 const ease = Expo.easeOut;
 
@@ -40,10 +41,11 @@ class Service extends React.Component {
 
   onChange(isVisible) {
     if (isVisible) {
-      this.handleAnimatingText();
-      this.handleAnimatingImages();
       this.setState({
         isVisible: true,
+      }, () => {
+        this.handleAnimatingText();
+        this.handleAnimatingImages();
       });
     }
   }
@@ -97,17 +99,19 @@ class Service extends React.Component {
               </a>
             </div>
           </div>
-          <div className="Service-imageWrapper">
-            <div className="Service-imageMask">
-              <div
-                className="Service-image"
-                data-animate="image"
-                style={{
-                  backgroundImage: `url(${image})`,
-                }}
-              />
+          <Parallax>
+            <div className="Service-imageWrapper">
+              <div className="Service-imageMask">
+                <div
+                  className="Service-image"
+                  data-animate="image"
+                  style={{
+                    backgroundImage: `url(${image})`,
+                  }}
+                />
+              </div>
             </div>
-          </div>
+          </Parallax>
         </div>
       </VisibilitySensor>
     );

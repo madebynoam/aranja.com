@@ -1,25 +1,29 @@
-function offsetTop(el) {
-  const { top } = el.getBoundingClientRect();
-  return top + window.pageYOffset;
-}
+import React from "react";
+import service, { offsetTop } from "./ParallaxService";
 
-class Parallax {
-  static init() {
-    if (!document) return;
-    var h = document.documentElement,
-      b = document.body,
-      st = "scrollTop",
-      sh = "scrollHeight",
-      scroll;
+class Parallax extends React.Component {
+  componentDidMount() {
+    service.addItem(this);
+    this.cache();
+  }
 
-    document.addEventListener("scroll", function() {
-      scroll = (h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight);
-      h.style.setProperty("--parallax", scroll);
+  translate() {
+    const { viewHeight, scrollPosition } = service.data;
+    const viewBottom = scrollPosition + viewHeight;
+    const ratio = (this.top - viewBottom) / (scrollPosition - viewBottom);
 
-      if (scroll > 0.007) {
-        h.classList.add("is-scrolled");
-      } else {
-        h.classList.remove("is-scrolled");
+    this.element_.style.setProperty("--parallax", ratio);
+  }
+
+  cache() {
+    this.top = offsetTop(this.element_);
+    this.translate();
+  }
+
+  render() {
+    return React.cloneElement(this.props.children, {
+      ref: element => {
+        this.element_ = element;
       }
     });
   }

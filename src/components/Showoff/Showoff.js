@@ -1,7 +1,7 @@
-import React from 'react';
-import BorderDecorator from '../BorderDecorator';
+import React from "react";
+import BorderDecorator from "../BorderDecorator";
 
-const SingleShowoff = ({heading, copy, image}) => (
+const SingleShowoff = ({ heading, copy, image }) => (
   <div className="Showoff">
     <div className="Showoff-wrap">
       <div className="Showoff-content">
