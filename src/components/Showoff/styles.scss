@@ -67,8 +67,13 @@ $extension: 5rem;
   line-height: 1.5;
 }
 
-.Showoff-image {
+.Showoff-imageWrapper {
+  overflow: hidden;
   flex: 2;
-  height: 30rem;
+}
+
+.Showoff-image {
   background-size: cover;
+  height: 510px;
+  transform: translateY(calc(var(--parallax) * 50px)) scale(1.333);
 }

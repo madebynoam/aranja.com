@@ -1,5 +1,6 @@
 import React from "react";
 import BorderDecorator from "../BorderDecorator";
+import Parallax from "../Parallax";
 
 const SingleShowoff = ({ heading, copy, image }) => (
   <div className="Showoff">
@@ -9,12 +10,16 @@ const SingleShowoff = ({ heading, copy, image }) => (
         <p className="Showoff-copy">{copy}</p>
       </div>
     </div>
-    <div
-      className="Showoff-image"
-      style={{
-        backgroundImage: `url(${image})`,
-      }}
-    />
+    <Parallax>
+      <div className="Showoff-imageWrapper">
+        <div
+          className="Showoff-image"
+          style={{
+            backgroundImage: `url(${image})`,
+          }}
+        />
+      </div>
+    </Parallax>
   </div>
 );
 
