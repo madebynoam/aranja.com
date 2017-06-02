@@ -10,41 +10,58 @@ let lastScrollPosition = -1;
 let scrollPosition;
 let viewHeight;
 
-class Parallax extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      didMount: false,
-    };
+const items = [];
 
-    Parallax.items.push(this);
+const onResize = () => {
+  setScene();
+  items.forEach(item => item.cache());
+};
+
+const setScene = () => {
+  viewHeight = window.innerHeight || document.documentElement.clientHeight;
+  scrollPosition = window.pageYOffset;
+};
+
+const onScroll = () => {
+  scrollPosition = window.pageYOffset;
+
+  if (scrollPosition === lastScrollPosition) {
+    return;
   }
 
-  componentDidMount() {
-    window.addEventListener("resize", Parallax.cache, false);
-    window.addEventListener("scroll", Parallax.onScroll, false);
+  lastScrollPosition = scrollPosition;
 
-    this.setState({
-      didMount: true,
+  if (!isUpdating) {
+    isUpdating = true;
+
+    requestAnimationFrame(() => {
+      items.forEach(item => item.translate());
+      isUpdating = false;
     });
+  }
+};
 
+window.addEventListener("resize", onResize, false);
+window.addEventListener("scroll", onScroll, false);
+
+class Parallax extends React.Component {
+  componentDidMount() {
+    items.push(this);
     this.cache();
   }
 
   translate() {
-    console.log(this.element);
-    if (!this.state.didMount) return;
     const viewBottom = scrollPosition + viewHeight;
     const ratio = (this.top - viewBottom) / (scrollPosition - viewBottom);
-    this.element.setProperty("--parallax", ratio);
+
+    this.element_.style.setProperty("--parallax", ratio);
   }
 
   cache() {
-    if (!this.state.didMount) return;
-    this.top = offsetTop(this.element);
+    this.top = offsetTop(this.element_);
 
     if (scrollPosition === undefined) {
-      Parallax.setScene();
+      setScene();
     }
 
     this.translate();
@@ -55,7 +72,7 @@ class Parallax extends React.Component {
       <div
         className="Service-imageWrapper"
         ref={element => {
-          this.element = element;
+          this.element_ = element;
         }}
       >
         {this.props.children}
@@ -63,40 +80,5 @@ class Parallax extends React.Component {
     );
   }
 }
-
-Parallax.items = [];
-
-Parallax.cache = () => {
-  Parallax.setScene();
-  Parallax.items.forEach(item => item.cache());
-};
-
-Parallax.setScene = () => {
-  viewHeight = window.innerHeight || document.documentElement.clientHeight;
-  scrollPosition = window.pageYOffset;
-};
-
-Parallax.onAnimation = () => {
-  for (let index = 0; index < Parallax.items.length; index++) {
-    Parallax.items[index].translate();
-  }
-
-  isUpdating = false;
-};
-
-Parallax.onScroll = () => {
-  scrollPosition = window.pageYOffset;
-
-  if (scrollPosition === lastScrollPosition) {
-    return;
-  }
-
-  lastScrollPosition = scrollPosition;
-
-  if (!isUpdating) {
-    requestAnimationFrame(Parallax.onAnimation);
-    isUpdating = true;
-  }
-};
 
 export default Parallax;
