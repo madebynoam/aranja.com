@@ -13,7 +13,7 @@ const Intro = ({}) => (
         </h1>
       </div>
     </div>
-    <div className="DownArrow" />
+    {/* <div className="DownArrow" /> */}
   </div>
 );
 

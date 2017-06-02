@@ -16,7 +16,7 @@ export default [
       ])
 
       const content = pages.items.find(page => page.sys.id === '4TC4xZTIYokUiC2IecUOc6')
-    
+
       return (
         <Home
           content={content}

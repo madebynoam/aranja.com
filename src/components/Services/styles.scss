@@ -10,7 +10,8 @@
   display: flex;
   align-items: center;
   flex: 1;
-  .Service:nth-child(even) & {
+
+  .EditModal:nth-child(even) .Service & {
     order: 2;
     text-align: right;
   }
@@ -51,7 +52,7 @@
   color: $copy;
   padding-right: 10rem;
 
-  .Service:nth-child(even) & {
+  .EditModal:nth-child(even) .Service & {
     padding-right: 0;
     padding-left: 10rem;
   }
@@ -65,7 +66,7 @@
   width: 68.5%;
   margin-right: -18.5%;
 
-  .Service:nth-child(even) & {
+  .EditModal:nth-child(even) .Service & {
     margin-right: 0;
     margin-left: -18.5%;
     order: 1;
