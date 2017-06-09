@@ -1,6 +1,8 @@
+import root from 'window-or-global'
+
 export function offsetTop(el) {
   const { top } = el.getBoundingClientRect();
-  return top + window.pageYOffset;
+  return top + root.pageYOffset;
 }
 
 class ParallaxService {
@@ -17,8 +19,10 @@ class ParallaxService {
     this.onScroll_ = this.onScroll_.bind(this);
 
     // Might want to destroy hese at some point...
-    window.addEventListener("resize", this.onResize_);
-    window.addEventListener("scroll", this.onScroll_);
+    if (typeof root.addEventListener === 'function') {
+      root.addEventListener("resize", this.onResize_);
+      root.addEventListener("scroll", this.onScroll_);
+    }
   }
 
   addItem(item) {
@@ -34,9 +38,11 @@ class ParallaxService {
   }
 
   setScene() {
-    this.viewHeight_ =
-      window.innerHeight || document.documentElement.clientHeight;
-    this.scrollPosition_ = window.pageYOffset;
+    if (typeof window !== 'undefined') {
+      this.viewHeight_ =
+      root.innerHeight || document.documentElement.clientHeight;
+      this.scrollPosition_ = root.pageYOffset;
+    }
   }
 
   onResize_() {
@@ -47,7 +53,7 @@ class ParallaxService {
   }
 
   onScroll_() {
-    this.scrollPosition_ = window.pageYOffset;
+    this.scrollPosition_ = root.pageYOffset;
 
     if (this.scrollPosition_ === this.lastScrollPosition_) {
       return;
