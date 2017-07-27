@@ -5,11 +5,7 @@ export default [
   {
     path: '/',
     async action({ context: { api } }) {
-      const [
-        pages,
-        services,
-        showOffs,
-      ] = await Promise.all([
+      const [pages, services, showOffs] = await Promise.all([
         api.getEntries({ content_type: 'page' }),
         api.getEntries({ content_type: 'service' }),
         api.getEntries({ content_type: 'showOff' }),
@@ -17,19 +13,13 @@ export default [
 
       const content = pages.items.find(page => page.sys.id === '4TC4xZTIYokUiC2IecUOc6')
 
-      return (
-        <Home
-          content={content}
-          services={services}
-          showOffs={showOffs}
-        />
-      )
-    }
+      return <Home content={content} services={services} showOffs={showOffs} />
+    },
   },
   {
     path: '/*',
     action() {
       return <h1>404 Not Found</h1>
-    }
+    },
   },
 ]

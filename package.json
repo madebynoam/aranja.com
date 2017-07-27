@@ -18,9 +18,22 @@
     "window-or-global": "^1.0.1"
   },
   "devDependencies": {
+    "babel-core": "6.24.1",
+    "babel-eslint": "7.2.3",
+    "babel-jest": "20.0.3",
+    "babel-loader": "7.0.0",
+    "babel-preset-react-app": "^3.0.0",
+    "babel-runtime": "6.23.0",
     "node-sass-chokidar": "0.0.1",
     "npm-run-all": "^4.0.2",
-    "tux-scripts": "0.1.4"
+    "tux-scripts": "0.1.4",
+    "eslint": "3.19.0",
+    "eslint-config-react-app": "^1.0.4",
+    "eslint-loader": "1.7.1",
+    "eslint-plugin-flowtype": "2.33.0",
+    "eslint-plugin-import": "2.2.0",
+    "eslint-plugin-jsx-a11y": "5.0.3",
+    "eslint-plugin-react": "7.0.1"
   },
   "scripts": {
     "start-js": "tux-scripts start",
@@ -30,5 +43,8 @@
     "build-css": "node-sass-chokidar src/ -o src/",
     "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
     "now-start": "tux-scripts serve"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
   }
 }

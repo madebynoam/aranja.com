@@ -1,28 +1,29 @@
-import React from 'react';
-import Service from './Service';
-import Section from '../Section';
+import React, { Component } from 'react'
+import Service from './Service'
+import Section from '../Section'
 import { EditModal } from 'tux'
 
-class Services extends React.Component {
+class Services extends Component {
   render() {
-    const {services} = this.props;
+    const { services } = this.props
+
     return (
       <Section>
         <div className="Services">
-          {services.items.map((service, i) => (
-            <EditModal model={service} key={i}>
+          {services.items.sort((a, b) => a.fields.index - b.fields.index).map(service =>
+            <EditModal model={service} key={`modal_${service.fields.index}`}>
               <Service
-                key={`service_${i}`}
+                key={`service_${service.fields.index}`}
                 heading={service.fields.title}
                 image={service.fields.image.asset.file.url}
                 copy={service.fields.text}
               />
-            </EditModal>
-          ))}
+            </EditModal>,
+          )}
         </div>
       </Section>
-    );
+    )
   }
 }
 
-export default Services;
+export default Services

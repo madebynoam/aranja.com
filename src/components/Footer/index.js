@@ -1,11 +1,10 @@
-import React from "react";
-import Contact from "../Contact";
-import "./styles.css";
+import React from 'react'
+import Contact from '../Contact'
+import './styles.css'
 
-const Footer = ({}) => (
+const Footer = ({}) =>
   <section className="Footer">
     <Contact />
   </section>
-);
 
-export default Footer;
+export default Footer

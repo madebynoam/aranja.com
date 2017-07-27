@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react'
 import { EditInline } from 'tux'
-import "./styles.css";
+import './styles.css'
 
-const Intro = ({}) => (
+const Intro = ({}) =>
   <div className="Intro-wrapper">
     <div className="Intro">
       <div className="Intro-content">
@@ -15,6 +15,5 @@ const Intro = ({}) => (
     </div>
     {/* <div className="DownArrow" /> */}
   </div>
-);
 
-export default Intro;
+export default Intro

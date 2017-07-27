@@ -1,32 +1,32 @@
-import React from "react";
-import service, { offsetTop } from "./ParallaxService";
+import React from 'react'
+import service, { offsetTop } from './ParallaxService'
 
 class Parallax extends React.Component {
   componentDidMount() {
-    service.addItem(this);
-    this.cache();
+    service.addItem(this)
+    this.cache()
   }
 
   translate() {
-    const { viewHeight, scrollPosition } = service.data;
-    const viewBottom = scrollPosition + viewHeight;
-    const ratio = (this.top - viewBottom) / (scrollPosition - viewBottom);
+    const { viewHeight, scrollPosition } = service.data
+    const viewBottom = scrollPosition + viewHeight
+    const ratio = (this.top - viewBottom) / (scrollPosition - viewBottom)
 
-    this.element_.style.setProperty("--parallax", ratio);
+    this.element_.style.setProperty('--parallax', ratio)
   }
 
   cache() {
-    this.top = offsetTop(this.element_);
-    this.translate();
+    this.top = offsetTop(this.element_)
+    this.translate()
   }
 
   render() {
     return React.cloneElement(this.props.children, {
       ref: element => {
-        this.element_ = element;
-      }
-    });
+        this.element_ = element
+      },
+    })
   }
 }
 
-export default Parallax;
+export default Parallax

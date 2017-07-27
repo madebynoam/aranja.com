@@ -1,32 +1,32 @@
-import React from "react";
+import React from 'react'
 
 class Delay extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       value: this.props.initial,
-    };
+    }
   }
   refresh(props) {
-    let { value, period } = props;
+    let { value, period } = props
     setTimeout(
       () =>
         this.setState({
           value,
         }),
       period,
-    );
+    )
   }
   componentDidMount() {
-    this.refresh(this.props);
+    this.refresh(this.props)
   }
   componentWillReceiveProps(next) {
-    this.refresh(next);
+    this.refresh(next)
   }
   render() {
     // function-as-children
-    return this.props.children(this.state.value);
+    return this.props.children(this.state.value)
   }
 }
 
-export default Delay;
+export default Delay

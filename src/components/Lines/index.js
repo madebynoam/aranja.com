@@ -1,7 +1,7 @@
-import React from 'react';
-import './styles.css';
+import React from 'react'
+import './styles.css'
 
-const Lines = ({}) => (
+const Lines = ({}) =>
   <div className="Lines">
     <span />
     <span />
@@ -9,6 +9,5 @@ const Lines = ({}) => (
     <span />
     <span />
   </div>
-);
 
-export default Lines;
+export default Lines

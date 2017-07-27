@@ -1,67 +1,67 @@
-import React from "react";
-import VisibilitySensor from "react-visibility-sensor";
-import { TweenMax, Expo } from "gsap";
-import "./styles.css";
-import androidLogo from "./android.svg";
-import facebookLogo from "./facebook.svg";
-import githubLogo from "./github.svg";
-import googleLogo from "./google.svg";
-import nestLogo from "./nest.svg";
-import kolibriLogo from "./kolibri.svg";
-import lsbLogo from "./lsb.svg";
-import upperquadLogo from "./uq.svg";
+import React from 'react'
+import VisibilitySensor from 'react-visibility-sensor'
+import { TweenMax, Expo } from 'gsap'
+import './styles.css'
+import androidLogo from './android.svg'
+import facebookLogo from './facebook.svg'
+import githubLogo from './github.svg'
+import googleLogo from './google.svg'
+import nestLogo from './nest.svg'
+import kolibriLogo from './kolibri.svg'
+import lsbLogo from './lsb.svg'
+import upperquadLogo from './uq.svg'
 import { EditInline } from 'tux'
 
 const clients = [
   {
-    name: "Facebook",
+    name: 'Facebook',
     logo: facebookLogo,
   },
   {
-    name: "Github",
+    name: 'Github',
     logo: githubLogo,
   },
   {
-    name: "Google",
+    name: 'Google',
     logo: googleLogo,
   },
   {
-    name: "Upperquad",
+    name: 'Upperquad',
     logo: upperquadLogo,
   },
   {
-    name: "Android",
+    name: 'Android',
     logo: androidLogo,
   },
   {
-    name: "Kolibri",
+    name: 'Kolibri',
     logo: kolibriLogo,
   },
-];
+]
 
-const ease = Expo.easeOut;
+const ease = Expo.easeOut
 
 class Clients extends React.Component {
   constructor() {
-    super();
+    super()
     this.state = {
       isVisible: false,
-    };
-    this.animationNodes = [];
-    this.animationDuration = 1;
+    }
+    this.animationNodes = []
+    this.animationDuration = 1
   }
 
   componentDidMount() {
-    this.animationNodes = this.componentRef.querySelectorAll("[data-animate]");
-    TweenMax.set(this.animationNodes, { y: -100, opacity: 0 });
+    this.animationNodes = this.componentRef.querySelectorAll('[data-animate]')
+    TweenMax.set(this.animationNodes, { y: -100, opacity: 0 })
   }
 
   onChange(isVisible) {
     if (isVisible) {
       this.setState({
         isVisible,
-      });
-      this.handleAnimation();
+      })
+      this.handleAnimation()
     }
   }
 
@@ -76,11 +76,11 @@ class Clients extends React.Component {
         ease,
       },
       0.1,
-    );
+    )
   }
 
   render() {
-    const { isVisible } = this.state;
+    const { isVisible } = this.state
     return (
       <VisibilitySensor
         onChange={isVisible => this.onChange(isVisible)}
@@ -92,13 +92,11 @@ class Clients extends React.Component {
         <div
           className="Clients"
           ref={componentRef => {
-            this.componentRef = componentRef;
+            this.componentRef = componentRef
           }}
         >
           <h1 className="Clients-heading">
-            <EditInline field="fields.content.clientsHeading">
-              Selected clients
-            </EditInline>
+            <EditInline field="fields.content.clientsHeading">Selected clients</EditInline>
           </h1>
           <h2 className="Clients-subheading">
             <EditInline field="fields.content.clientsText">
@@ -106,16 +104,16 @@ class Clients extends React.Component {
             </EditInline>
           </h2>
           <ul className="Clients-list">
-            {clients.map((client, index) => (
+            {clients.map((client, index) =>
               <li className="Clients-item" key={index} data-animate>
                 <img className="Clients-image" src={client.logo} alt={client.name} />
-              </li>
-            ))}
+              </li>,
+            )}
           </ul>
         </div>
       </VisibilitySensor>
-    );
+    )
   }
 }
 
-export default Clients;
+export default Clients

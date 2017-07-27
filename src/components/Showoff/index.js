@@ -1,21 +1,18 @@
-import React from 'react';
-import image1 from './image1.jpeg';
-import image2 from './image2.jpeg';
-import SingleShowoff from './Showoff';
-import Section from '../Section';
-import ShadowText from '../ShadowText';
+import React from 'react'
+import SingleShowoff from './Showoff'
+import Section from '../Section'
+import ShadowText from '../ShadowText'
 import { EditModal } from 'tux'
-import './styles.css';
+import './styles.css'
 
 class Showoff extends React.Component {
   render() {
-    const {showOffs} = this.props;
-    console.log(showOffs)
+    const { showOffs } = this.props
     return (
       <Section>
         <ShadowText text="Performance" />
         <div className="Showoffs">
-          {showOffs.items.map((showOff, i) => (
+          {showOffs.items.map((showOff, i) =>
             <EditModal model={showOff} key={i}>
               <SingleShowoff
                 key={i}
@@ -23,12 +20,12 @@ class Showoff extends React.Component {
                 copy={showOff.fields.text}
                 image={showOff.fields.image.asset.file.url}
               />
-            </EditModal>
-          ))}
+            </EditModal>,
+          )}
         </div>
       </Section>
-    );
+    )
   }
 }
 
-export default Showoff;
+export default Showoff

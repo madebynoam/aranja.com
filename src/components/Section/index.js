@@ -1,6 +1,9 @@
-import React from "react";
-import "./styles.css";
+import React from 'react'
+import './styles.css'
 
-const Section = ({ children }) => <section className="Section">{children}</section>;
+const Section = ({ children }) =>
+  <section className="Section">
+    {children}
+  </section>
 
-export default Section;
+export default Section
