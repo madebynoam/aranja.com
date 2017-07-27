@@ -1,5 +1,9 @@
 @import '../../utils/vars.scss';
 
+.CaseStudy-heading {
+  font-size: $ms5;
+}
+
 .CaseStudy-excerpt {
   display: grid;
   grid-template-columns: 1fr 1fr;

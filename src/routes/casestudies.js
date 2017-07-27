@@ -22,7 +22,7 @@ const CaseStudies = ({ content, casestudies }) => {
           <Lines />
           <Menu />
           <Section>
-            <H1 top="medium" bottom="small">
+            <H1 className="CaseStudy-heading" top="medium" bottom="small">
               {study.company}
             </H1>
 
