@@ -1,0 +1,16 @@
+.ContactModal {
+  background: rgba(#006ad4, 0.7);
+  left: 0;
+  min-height: 100vh;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.ContactModal-closeButton {
+  background: none;
+  border: 0;
+  color: #fff;
+  width: 50px;
+  height: 59px;
+}
