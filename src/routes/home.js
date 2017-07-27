@@ -15,7 +15,7 @@ class Home extends React.Component {
     const { content, services, showOffs } = this.props
     return (
       <Editable model={content}>
-        <div className="Page Home">
+        <div className="Home">
           <Frame />
           <div className="Container">
             <Lines />

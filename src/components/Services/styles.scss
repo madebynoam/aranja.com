@@ -97,8 +97,8 @@
 }
 
 .Service-image {
-  background-size: 150%;
-  background-position: center;
+  background-size: 133%;
+  background-position: left 20%;
   z-index: 1;
   position: absolute;
   top: 0;
@@ -106,6 +106,10 @@
   left: 0;
   bottom: 0;
   margin: auto;
+
+  .Services > div:first-child .Service & {
+    background-position: right 20%;
+  }
 }
 
 .Service-imageMask {

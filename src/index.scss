@@ -21,33 +21,11 @@ html, body {
 }
 
 body {
-  padding: 10px;
-  background: $blue;
   color: $dark;
 }
 
-.Page {
-  position: relative;
-  &::after {
-    background: $white;
-    content: '';
-    height: 100%;
-    left: -25px;
-    position: absolute;
-    top: 0;
-    transform: translateX(12.5px) scale(0.9);
-    transition: transform 0.25s ease;
-    width: calc(100% + 25px);
-    z-index: -1;
-
-    .is-scrolled & {
-      transition: transform 0.25s ease;
-      transform: translateX(12.5px) scale(0.9);
-    }
-  }
-}
-
 .Container {
+  max-width: 2200px;
   min-height: 200vh;
   // padding-bottom: 6rem;
   // max-width: 1440px;
