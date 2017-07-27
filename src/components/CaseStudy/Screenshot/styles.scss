@@ -1,12 +1,14 @@
 @import '../../../utils/vars';
 
 .CSScreenshot {
+  padding: $ms4 0;
 }
 
 .CSScreenshot-image {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top center;
+
   &::before {
     content: '';
     display: block;
