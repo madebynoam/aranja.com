@@ -1,0 +1,76 @@
+@import '../../node_modules/modularscale-sass/stylesheets/modularscale'; // Todo fix path
+@import '../utils/functions';
+@import '../utils/vars';
+
+$ms-base: 1rem;
+$ms-range: ($major-third (1rem * 375px / 16px), $fifth (1rem * 1440px / 18px));
+
+html {
+  font-family: 'Averta';
+  font-size: between(18px, 16px, 1440px, 375px);
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+@media (min-width: 1440px) {
+  html {
+    font-size: 18px;
+  }
+}
+
+::selection {
+  background-color: $blue;
+}
+
+.t-h1 {
+  @include ms-respond(font-size, 4);
+
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.t-h2 {
+  @include ms-respond(font-size, 3);
+
+  font-weight: 500;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.t-h3 {
+  @include ms-respond(font-size, 2);
+
+  font-weight: 500;
+  line-height: 1.2;
+  margin: 0;
+
+  &.t-light {
+    line-height: 1.45;
+  }
+}
+
+.t-body1 {
+  @include ms-respond(font-size, 1);
+
+  font-weight: 300;
+  margin: 0;
+}
+
+.t-body2 {
+  font-size: 1rem;
+  font-weight: 300;
+  margin: 0;
+}
+
+.t-light {
+  font-weight: 300;
+}
+
+.t-medium {
+  font-weight: 500;
+}
+
+.t-lineheight {
+  line-height: 1.45;
+}

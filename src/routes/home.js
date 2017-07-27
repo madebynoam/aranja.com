@@ -7,30 +7,22 @@ import Portfolio from '../components/Portfolio'
 import Showoff from '../components/Showoff'
 import Footer from '../components/Footer'
 import Clients from '../components/Clients'
-import Frame from '../components/Frame'
 import { Editable } from 'tux'
 
-class Home extends React.Component {
-  render() {
-    const { content, services, showOffs } = this.props
-    return (
-      <Editable model={content}>
-        <div className="Home">
-          <Frame />
-          <div className="Container">
-            <Lines />
-            <Menu />
-            <Intro />
-            <Services services={services} />
-            <Showoff showOffs={showOffs} />
-            <Clients />
-            <Portfolio />
-          </div>
-          <Footer />
-        </div>
-      </Editable>
-    )
-  }
-}
+const Home = ({ content, services, showOffs }) =>
+  <Editable model={content}>
+    <div className="Home">
+      <div className="Container">
+        <Lines />
+        <Menu />
+        <Intro />
+        <Services services={services} />
+        <Showoff showOffs={showOffs} />
+        <Clients />
+        <Portfolio />
+      </div>
+      <Footer />
+    </div>
+  </Editable>
 
 export default Home
