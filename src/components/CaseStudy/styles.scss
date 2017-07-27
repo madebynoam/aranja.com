@@ -1,0 +1,12 @@
+@import '../../utils/vars.scss';
+
+.CaseStudy-excerpt {
+  max-width: 50%;
+}
+
+.CaseStudy-challenges {
+  column-count: 2;
+  text-align: justify;
+  column-gap: $ms3;
+  margin-bottom: $ms4;
+}

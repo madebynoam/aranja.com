@@ -1,9 +1,9 @@
 import React from 'react'
 import './styles.css'
-import { Motion, StaggeredMotion, spring, presets } from 'react-motion'
 import { TweenMax, Expo } from 'gsap'
 import VisibilitySensor from 'react-visibility-sensor'
 import Parallax from '../Parallax'
+import { Body1, Body2, H2 } from '../../typography'
 
 const ease = Expo.easeOut
 
@@ -74,7 +74,7 @@ class Service extends React.Component {
         >
           <div className="Service-contentWrap">
             <div className="Service-content">
-              <h1 className="Service-heading">
+              <H2 className="Service-heading" bottom="small">
                 {heading.split(' ').map((word, i) => {
                   return (
                     <span className="u-mask" key={i}>
@@ -84,14 +84,14 @@ class Service extends React.Component {
                     </span>
                   )
                 })}
-              </h1>
-              <p className="Service-copy">
+              </H2>
+              <Body1 bottom="small" className="Service-copy">
                 <span className="u-mask">
                   <span className="u-maskInner" data-animate="text">
                     {copy}
                   </span>
                 </span>
-              </p>
+              </Body1>
               <a href="#temp" className="Service-link">
                 <span className="u-mask u-flex u-flexAlignCenter">
                   <span className="u-lineDecorator" data-animate="text" />

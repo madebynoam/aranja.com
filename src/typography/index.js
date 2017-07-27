@@ -1,10 +1,10 @@
 import React from 'react'
 import classNames from 'classnames'
 import PropTypes from 'prop-types'
-import padding from 'utilities/padding'
-import './styles.scss'
+import padding from '../utils/padding'
+import './styles.css'
 
-const createStyle = (name, defaultComponent, style, substyles: {}) => {
+const createStyle = (name, defaultComponent, style, substyles = {}) => {
   const substyleKeys = Object.keys(substyles)
 
   const component = props => {
@@ -12,6 +12,7 @@ const createStyle = (name, defaultComponent, style, substyles: {}) => {
       style,
       padding(props.top, props.bottom),
       substyleKeys.map(key => props[key] && substyles[key]),
+      props.className,
     )
     return React.createElement(props.component || defaultComponent, { className }, props.children)
   }
@@ -27,8 +28,8 @@ const createStyle = (name, defaultComponent, style, substyles: {}) => {
   return component
 }
 
-export const H1 = createStyle('H1', 'h1', 't-h1')
-export const H2 = createStyle('H2', 'h2', 't-h2')
+export const H1 = createStyle('H1', 'h1', 't-h1', { light: 't-light' })
+export const H2 = createStyle('H2', 'h2', 't-h2', { light: 't-light' })
 export const H3 = createStyle('H3', 'h3', 't-h3', { light: 't-light' })
 export const Body1 = createStyle('Body1', 'p', 't-body1', {
   strong: 't-medium',
