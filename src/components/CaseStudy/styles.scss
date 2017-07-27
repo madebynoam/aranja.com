@@ -1,7 +1,8 @@
 @import '../../utils/vars.scss';
 
 .CaseStudy-excerpt {
-  max-width: 50%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
 .CaseStudy-challenges {

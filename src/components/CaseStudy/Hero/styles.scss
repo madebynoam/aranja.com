@@ -9,9 +9,10 @@
   background-position: center;
   z-index: 1;
   position: relative;
+  margin: $ms4 0;
   &::before {
     content: '';
-    padding-bottom: 40%;
+    padding-bottom: 50%;
   }
 }
 
