@@ -5,13 +5,14 @@
 }
 
 .CaseStudy-excerpt {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  max-width: 75%;
 }
 
 .CaseStudy-copy {
   column-count: 2;
-  text-align: justify;
   column-gap: $ms3;
   margin-bottom: $ms4;
+  hyphens: auto;
+  text-justify: distribute;
+  text-align: justify;
 }

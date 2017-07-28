@@ -6,6 +6,8 @@ html {
   font-size: between(20px, 18px, 1440px, 375px);
   font-weight: 300;
   line-height: 1.5;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
 
 @media (min-width: 1440px) {

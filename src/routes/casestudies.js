@@ -1,7 +1,7 @@
 import React from 'react'
 import { Editable } from 'tux'
 import ReactMarkdown from 'react-markdown'
-import { Body1, H1, H2, H3 } from '../typography'
+import { Body1, Body2, H1, H2, H3 } from '../typography'
 import Lines from '../components/Lines'
 import Footer from '../components/Footer'
 import Menu from '../components/Menu'
@@ -40,6 +40,7 @@ const CaseStudies = ({ content, casestudies }) => {
     copyChapter2,
     copyChapter3,
     heroImage,
+    period,
     projectScreenshot,
     contentImage,
   } = study
@@ -50,13 +51,18 @@ const CaseStudies = ({ content, casestudies }) => {
           <Lines />
           <Menu />
           <Section>
-            <H1 className="CaseStudy-heading" top="medium" bottom="small">
+            <H1 className="CaseStudy-heading" top="small">
               {company}
             </H1>
+            <H3 bottom="small">
+              {period}
+            </H3>
             <Body1 bottom="small" className="CaseStudy-excerpt">
               {excerpt}
             </Body1>
-            <CSHero img={heroImage.asset.file.url} caption={company} />
+          </Section>
+          <CSHero img={heroImage.asset.file.url} caption={company} />
+          <Section>
             {copyChapter1 && <Markdown source={copyChapter1} />}
             {projectScreenshot &&
               <CSScreenshot
@@ -69,8 +75,8 @@ const CaseStudies = ({ content, casestudies }) => {
                 img={contentImage.asset.file.url}
                 caption="This recurring expanding chapter selector was one of many unique challenges we faced."
               />}
+            {copyChapter3 && <Markdown source={copyChapter3} />}
           </Section>
-          {copyChapter3 && <Markdown source={copyChapter3} />}
           <CSCTA />
         </div>
         <Footer />
