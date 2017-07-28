@@ -1,8 +1,9 @@
 import React from 'react'
 import { Editable } from 'tux'
+import ReactMarkdown from 'react-markdown'
+import { Body1, H1, H2, H3 } from '../typography'
 import Lines from '../components/Lines'
 import Footer from '../components/Footer'
-import { Body1, H1, H2 } from '../typography'
 import Menu from '../components/Menu'
 import Section from '../components/Section'
 import CSHero from '../components/CaseStudy/Hero'
@@ -11,46 +12,65 @@ import CSCTA from '../components/CaseStudy/CTA'
 import Meta from '../components/CaseStudy/Meta'
 import '../components/CaseStudy/styles.css'
 
+const WrappedBody = ({ children, ...props }) =>
+  <div className="CaseStudy-copy">
+    <Body1 {...props}>
+      {children}
+    </Body1>
+  </div>
+
+const Markdown = ({ source }) =>
+  <ReactMarkdown
+    source={source}
+    renderers={{
+      Heading: ({ level, ...props }) =>
+        level === 1
+          ? <H1 {...props} />
+          : level === 2 ? <H2 top="small" bottom="small" {...props} /> : <H3 {...props} />,
+      paragraph: props => <WrappedBody {...props} />,
+    }}
+  />
+
 const CaseStudies = ({ content, casestudies }) => {
   const study = casestudies.items[0].fields
-
+  const {
+    company,
+    excerpt,
+    copyChapter1,
+    copyChapter2,
+    copyChapter3,
+    heroImage,
+    projectScreenshot,
+    contentImage,
+  } = study
   return (
     <Editable model={content}>
-      {console.log(study)}
       <div className="CaseStudies">
         <div className="Container">
           <Lines />
           <Menu />
           <Section>
             <H1 className="CaseStudy-heading" top="medium" bottom="small">
-              {study.company}
+              {company}
             </H1>
-
             <Body1 bottom="small" className="CaseStudy-excerpt">
-              {study.excerpt}
+              {excerpt}
             </Body1>
-            <CSHero img={study.heroImage.asset.file.url} caption={study.company} />
-            <H2 top="small" bottom="small">
-              Challenges
-            </H2>
-            <Body1 className="CaseStudy-challenges">
-              {study.copy}
-            </Body1>
-            <CSScreenshot
-              img={study.projectScreenshot.asset.file.url}
-              caption="Screenshot showing Kolibri's predominate card design in action."
-            />
-            <H2 top="small" bottom="small">
-              Key takeaway
-            </H2>
-            <Body1 className="CaseStudy-challenges">
-              {study.copy}
-            </Body1>
-            <CSScreenshot
-              img={study.contentImage.asset.file.url}
-              caption="This recurring expanding chapter selector was one of many unique challenges we faced."
-            />
+            <CSHero img={heroImage.asset.file.url} caption={company} />
+            {copyChapter1 && <Markdown source={copyChapter1} />}
+            {projectScreenshot &&
+              <CSScreenshot
+                img={projectScreenshot.asset.file.url}
+                caption="Screenshot showing Kolibri's predominate card design in action."
+              />}
+            {copyChapter2 && <Markdown source={copyChapter2} />}
+            {contentImage &&
+              <CSScreenshot
+                img={contentImage.asset.file.url}
+                caption="This recurring expanding chapter selector was one of many unique challenges we faced."
+              />}
           </Section>
+          {copyChapter3 && <Markdown source={copyChapter3} />}
           <CSCTA />
         </div>
         <Footer />
