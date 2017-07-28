@@ -2,9 +2,24 @@
   margin-top: 10rem;
   position: relative;
   z-index: 1;
+}
+
+.wrap {
   display: grid;
   grid-template-columns: 31.75% 36.5% 31.75%;
   grid-template-rows: auto;
+}
+
+.Portfolio-heading {
+  text-align: center;
+  padding-bottom: 1.333rem;
+  font-size: 2rem;
+}
+
+.Portfolio-subheading {
+  text-align: center;
+  padding-bottom: 4rem;
+  line-height: 1.5;
 }
 
 .Portfolio-itemWrap {
@@ -22,7 +37,7 @@
 
   .Portfolio.is-visible &.has-content:hover {
     &::after {
-      background: rgba(0,0,0,0.1);
+      background: rgba(0, 0, 0, 0.1);
     }
     .Portfolio-item {
       transform: scale(0.9) !important;
@@ -58,7 +73,7 @@
   flex: 1;
 
   .Portfolio.is-visible & {
-    transition: transform 0.1s cubic-bezier(.3,.27,.35,.77);
+    transition: transform 0.1s cubic-bezier(.3, .27, .35, .77);
   }
 
   &::before {
@@ -88,6 +103,6 @@
   width: 100%;
 
   .Portfolio.is-visible & {
-    transition: transform 0.1s cubic-bezier(.3,.27,.35,.77);
+    transition: transform 0.1s cubic-bezier(.3, .27, .35, .77);
   }
 }

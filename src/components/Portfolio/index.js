@@ -2,10 +2,11 @@ import React from 'react'
 import VisibilitySensor from 'react-visibility-sensor'
 import { Motion, StaggeredMotion, spring, presets } from 'react-motion'
 import classnames from 'classnames'
+import { EditInline } from 'tux'
 
 import './styles.css'
 
-import image1 from './image1.jpg'
+import image1 from './kolibri-placeholder.jpg'
 import image2 from './image2.jpg'
 import image3 from './image3.jpg'
 import image4 from './image4.jpg'
@@ -14,7 +15,7 @@ import image6 from './image6.jpg'
 
 let defaultItems = [
   { title: undefined, image: undefined, href: '/', year: '2017' },
-  { title: 'Amazing', image: image2, href: '/', year: undefined },
+  { title: 'Kolibri', image: image1, href: '/', year: undefined },
   { title: 'Transitions', image: image3, href: '/', year: undefined },
   { title: 'So cool', image: image4, href: '/', year: undefined },
   { title: 'Swizz swooz', image: image5, href: '/', year: undefined },
@@ -86,40 +87,50 @@ class Portfolio extends React.Component {
                 isVisible && interpolatingStyles[items.length - 1].y === 0 && 'is-visible',
               )}
             >
-              {items.map((item, index) =>
-                <div
-                  key={index}
-                  className={classnames('Portfolio-itemWrap', item.title && 'has-content')}
-                  style={{
-                    transform: `translateY(${interpolatingStyles[index].y}px)`,
-                    opacity: interpolatingStyles[index].o,
-                  }}
-                >
-                  {item.title &&
-                    <p className="Portfolio-caption">
-                      {item.title}
-                    </p>}
+              <h1 className="Portfolio-heading">
+                <EditInline field="fields.content.portfolioHeading">Latest case studies</EditInline>
+              </h1>
+              <h2 className="Portfolio-subheading">
+                <EditInline field="fields.content.portfolioText">
+                  Take a look at our past projects
+                </EditInline>
+              </h2>
+              <div className="wrap">
+                {items.map((item, index) =>
                   <div
-                    className="Portfolio-item"
+                    key={index}
+                    className={classnames('Portfolio-itemWrap', item.title && 'has-content')}
                     style={{
-                      transform: `scale(${interpolatingStyles[index].s1})`,
+                      transform: `translateY(${interpolatingStyles[index].y}px)`,
+                      opacity: interpolatingStyles[index].o,
                     }}
                   >
-                    {item.year &&
-                      <p className="Portfolio-itemText">
-                        {item.year}
+                    {item.title &&
+                      <p className="Portfolio-caption">
+                        {item.title}
                       </p>}
                     <div
-                      className="Portfolio-image"
+                      className="Portfolio-item"
                       style={{
-                        backgroundImage: `url(${item.image})`,
-                        transform: `scale(${interpolatingStyles[index].s2})`,
-                        opacity: interpolatingStyles[index].o,
+                        transform: `scale(${interpolatingStyles[index].s1})`,
                       }}
-                    />
-                  </div>
-                </div>,
-              )}
+                    >
+                      {item.year &&
+                        <p className="Portfolio-itemText">
+                          {item.year}
+                        </p>}
+                      <div
+                        className="Portfolio-image"
+                        style={{
+                          backgroundImage: `url(${item.image})`,
+                          transform: `scale(${interpolatingStyles[index].s2})`,
+                          opacity: interpolatingStyles[index].o,
+                        }}
+                      />
+                    </div>
+                  </div>,
+                )}
+              </div>
             </div>}
         </StaggeredMotion>
       </VisibilitySensor>
