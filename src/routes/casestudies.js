@@ -54,10 +54,10 @@ const CaseStudies = ({ content, casestudies }) => {
             <H1 className="CaseStudy-heading" top="small">
               {company}
             </H1>
-            <H3 bottom="small">
+            <H3 bottom="medium">
               {period}
             </H3>
-            <Body1 bottom="small" className="CaseStudy-excerpt">
+            <Body1 bottom="medium" className="CaseStudy-excerpt">
               {excerpt}
             </Body1>
           </Section>
