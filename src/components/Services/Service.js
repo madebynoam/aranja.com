@@ -3,7 +3,7 @@ import './styles.css'
 import { TweenMax, Expo } from 'gsap'
 import VisibilitySensor from 'react-visibility-sensor'
 import Parallax from '../Parallax'
-import { Body1, Body2, H2 } from '../../typography'
+import { Body1, H2 } from '../../typography'
 
 const ease = Expo.easeOut
 
@@ -12,7 +12,6 @@ class Service extends React.Component {
     super()
     this.state = {
       isVisible: false,
-      shouldStart: false,
     }
     this.textNodes = []
     this.imageNodes = []
@@ -22,18 +21,18 @@ class Service extends React.Component {
   componentDidMount() {
     this.textNodes = this.componentRef.querySelectorAll('[data-animate=\'text\']')
     this.imageNodes = this.componentRef.querySelectorAll('[data-animate=\'image\']')
-    TweenMax.set(this.textNodes, { x: -200, opacity: 0 })
+    TweenMax.set(this.textNodes, { x: -200, autoAlpha: 0 })
     TweenMax.set(this.imageNodes, { xPercent: -100 })
   }
 
   handleAnimatingText() {
-    TweenMax.staggerTo(this.textNodes, this.animationDuration, { x: 0, opacity: 1, ease }, 0.1)
+    TweenMax.staggerTo(this.textNodes, this.animationDuration, { x: 0, autoAlpha: 1, ease }, 0.1)
   }
 
   handleAnimatingImages() {
     TweenMax.to(this.imageNodes, 1, {
       xPercent: 0,
-      opacity: 1,
+      autoAlpha: 1,
       delay: this.animationDuration / 2,
       ease,
     })

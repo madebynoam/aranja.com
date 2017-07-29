@@ -13,7 +13,6 @@ class TeamGrid extends Component {
     super()
     this.state = {
       isVisible: false,
-      shouldStart: false,
     }
     this.imageNodes = []
     this.animationDuration = 1.5
