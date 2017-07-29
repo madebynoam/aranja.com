@@ -2,20 +2,21 @@
 
 .SectionHero {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  z-index: 1;
   position: relative;
-  margin: $ms4 0;
-  &::before {
-    content: '';
-    padding-bottom: 50%;
-  }
+  z-index: 1;
+  margin: $ms5 0;
 }
 
-.SectionHero-caption {
-  color: $white;
+// Todo, make Parallax component handle these styles.
+
+.SectionHero-imageWrapper {
+  overflow: hidden;
+  flex: 1;
+}
+
+.SectionHero-image {
+  background-size: cover;
+  background-position: center;
+  height: 750px;
+  transform: translateY(calc(var(--parallax) * 50px)) scale(1.2);
 }

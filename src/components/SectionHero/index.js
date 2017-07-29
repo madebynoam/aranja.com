@@ -1,11 +1,16 @@
 import React from 'react'
+import Parallax from '../Parallax'
 import './styles.css'
 
-// The idea here is to display a customized hero for each CS.
-// Aranja loves ${company} that animates in, f.x.
-// Todo ^
+const SectionHero = ({ img, caption }) =>
+  <Parallax>
+    <div className="SectionHero">
+      <div className="SectionHero-imageWrapper">
+        <div className="SectionHero-imageMask">
+          <div className="SectionHero-image" style={{ backgroundImage: `url(${img})` }} />
+        </div>
+      </div>
+    </div>
+  </Parallax>
 
-const CSHero = ({ img, caption }) =>
-  <div className="CSHero" style={{ backgroundImage: `url(${img})` }} />
-
-export default CSHero
+export default SectionHero
