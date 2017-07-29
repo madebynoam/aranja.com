@@ -12,7 +12,7 @@ const Menu = ({}) =>
         <a href="/">Home</a>
       </li>
       <li className="Menu-item">
-        <a href="/team">We are</a>
+        <a href="/team">Who we are</a>
       </li>
       <li className="Menu-item">
         <a href="/casestudies">Case studies</a>
