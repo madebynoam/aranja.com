@@ -1,6 +1,6 @@
-@import '../../../utils/vars';
+@import '../../utils/vars';
 
-.CSHero {
+.SectionHero {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -16,6 +16,6 @@
   }
 }
 
-.CSHero-caption {
+.SectionHero-caption {
   color: $white;
 }

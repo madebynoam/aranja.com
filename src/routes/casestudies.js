@@ -6,7 +6,7 @@ import Lines from '../components/Lines'
 import Footer from '../components/Footer'
 import Menu from '../components/Menu'
 import Section from '../components/Section'
-import CSHero from '../components/CaseStudy/Hero'
+import SectionHero from '../components/SectionHero'
 import CSScreenshot from '../components/CaseStudy/Screenshot'
 import CSCTA from '../components/CaseStudy/CTA'
 import Meta from '../components/CaseStudy/Meta'
@@ -61,7 +61,7 @@ const CaseStudies = ({ content, casestudies }) => {
               {excerpt}
             </Body1>
           </Section>
-          <CSHero img={heroImage.asset.file.url} caption={company} />
+          <SectionHero img={heroImage.asset.file.url} caption={company} />
           <Section>
             {copyChapter1 && <Markdown source={copyChapter1} />}
             {projectScreenshot &&

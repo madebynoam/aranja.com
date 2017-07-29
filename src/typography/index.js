@@ -28,12 +28,14 @@ const createStyle = (name, defaultComponent, style, substyles = {}) => {
   return component
 }
 
-export const H1 = createStyle('H1', 'h1', 't-h1', { light: 't-light' })
-export const H2 = createStyle('H2', 'h2', 't-h2', { light: 't-light' })
-export const H3 = createStyle('H3', 'h3', 't-h3', { light: 't-light' })
+export const H1 = createStyle('H1', 'h1', 't-h1', { light: 't-light', center: 't-center' })
+export const H2 = createStyle('H2', 'h2', 't-h2', { light: 't-light', center: 't-center' })
+export const H3 = createStyle('H3', 'h3', 't-h3', { light: 't-light', center: 't-center' })
 export const Body1 = createStyle('Body1', 'p', 't-body1', {
   strong: 't-medium',
+  center: 't-center',
 })
 export const Body2 = createStyle('Body2', 'p', 't-body2', {
   strong: 't-medium',
+  center: 't-center',
 })

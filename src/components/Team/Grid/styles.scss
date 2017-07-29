@@ -1,0 +1,41 @@
+.Team-grid {
+  z-index: 1;
+  position: relative;
+  display: flex;
+}
+
+.Team-gridPart {
+  flex: 1;
+  &:nth-child(1) {
+    .Team-gridImage {
+      padding-left: 0;
+      &::before {
+        padding-top: 135.32%;
+      }
+    }
+  }
+  &:nth-child(2) {
+    .Team-gridImage {
+      padding-right: 0;
+      &::before {
+        padding-top: 66.84%;
+      }
+    }
+  }
+}
+
+.Team-gridImageMask {
+  overflow: hidden;
+}
+
+.Team-gridImage {
+  padding: 5px;
+  background-origin: content-box;
+  background-repeat: no-repeat;
+  background-size: cover;
+  &::before {
+    content: '';
+    display: block;
+    width: 100%;
+  }
+}

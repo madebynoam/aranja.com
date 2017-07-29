@@ -92,7 +92,7 @@ class Portfolio extends React.Component {
               </h1>
               <h2 className="Portfolio-subheading">
                 <EditInline field="fields.content.portfolioText">
-                  Take a look at our past projects
+                  Have a look at our recently published work
                 </EditInline>
               </h2>
               <div className="wrap">
