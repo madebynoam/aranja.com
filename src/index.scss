@@ -19,6 +19,7 @@ body {
   font-family: 'Averta'; //Todo move to typography
   box-sizing: border-box;
   height: 100%;
+  line-height: 1.5;
 }
 
 body {
@@ -32,6 +33,12 @@ body {
   background: $white;
   position: relative;
 }
+//
+// @font-face {
+//   font-family: 's';
+//   src: url('assets/') format('woff2');
+//   font-weight: 400;
+// }
 
 .is-inverted {
   color: #fff;

@@ -25,24 +25,10 @@
 .Service-content {
   margin-top: -2.95rem; // to simulate -heading bottom margin and -link not having height.
 }
-.Service-heading {
-  font-size: $headingSize;
-  font-weight: 500;
-  line-height: 1.15;
-  margin-bottom: 2rem;
-}
-
-.Service-number {
-  font-size: 1.85rem;
-  font-style: italic;
-  font-family: serif;
-  letter-spacing: 0.15rem;
-  margin-bottom: 2rem;
-}
 
 .Service-link {
   text-decoration: none;
-  font-size: 0.95rem;
+  font-size: $ms0;
   color: $blue;
   display: inline-block;
   position: relative;
@@ -50,9 +36,6 @@
 }
 
 .Service-copy {
-  line-height: 1.5;
-  font-size: $copySize;
-  margin-bottom: 2rem;
   color: $copy;
   padding-right: 10rem;
 

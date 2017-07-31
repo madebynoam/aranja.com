@@ -1,0 +1,22 @@
+@import '../../../utils/vars';
+
+.CSScreenshot {
+  padding: $ms4 0;
+}
+
+.CSScreenshot-image {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
+
+  &::before {
+    content: '';
+    display: block;
+    padding-top: 50%;
+  }
+}
+
+.CSScreenshot-caption {
+  text-align: center;
+  color: rgba($copy, 0.85);
+}

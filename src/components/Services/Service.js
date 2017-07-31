@@ -1,9 +1,9 @@
 import React from 'react'
 import './styles.css'
-import { Motion, StaggeredMotion, spring, presets } from 'react-motion'
 import { TweenMax, Expo } from 'gsap'
 import VisibilitySensor from 'react-visibility-sensor'
 import Parallax from '../Parallax'
+import { Body1, H2 } from '../../typography'
 
 const ease = Expo.easeOut
 
@@ -12,7 +12,6 @@ class Service extends React.Component {
     super()
     this.state = {
       isVisible: false,
-      shouldStart: false,
     }
     this.textNodes = []
     this.imageNodes = []
@@ -22,18 +21,18 @@ class Service extends React.Component {
   componentDidMount() {
     this.textNodes = this.componentRef.querySelectorAll('[data-animate=\'text\']')
     this.imageNodes = this.componentRef.querySelectorAll('[data-animate=\'image\']')
-    TweenMax.set(this.textNodes, { x: -200, opacity: 0 })
+    TweenMax.set(this.textNodes, { x: -200, autoAlpha: 0 })
     TweenMax.set(this.imageNodes, { xPercent: -100 })
   }
 
   handleAnimatingText() {
-    TweenMax.staggerTo(this.textNodes, this.animationDuration, { x: 0, opacity: 1, ease }, 0.1)
+    TweenMax.staggerTo(this.textNodes, this.animationDuration, { x: 0, autoAlpha: 1, ease }, 0.1)
   }
 
   handleAnimatingImages() {
     TweenMax.to(this.imageNodes, 1, {
       xPercent: 0,
-      opacity: 1,
+      autoAlpha: 1,
       delay: this.animationDuration / 2,
       ease,
     })
@@ -74,7 +73,7 @@ class Service extends React.Component {
         >
           <div className="Service-contentWrap">
             <div className="Service-content">
-              <h1 className="Service-heading">
+              <H2 className="Service-heading" bottom="small">
                 {heading.split(' ').map((word, i) => {
                   return (
                     <span className="u-mask" key={i}>
@@ -84,14 +83,14 @@ class Service extends React.Component {
                     </span>
                   )
                 })}
-              </h1>
-              <p className="Service-copy">
+              </H2>
+              <Body1 bottom="small" className="Service-copy">
                 <span className="u-mask">
                   <span className="u-maskInner" data-animate="text">
                     {copy}
                   </span>
                 </span>
-              </p>
+              </Body1>
               <a href="#temp" className="Service-link">
                 <span className="u-mask u-flex u-flexAlignCenter">
                   <span className="u-lineDecorator" data-animate="text" />

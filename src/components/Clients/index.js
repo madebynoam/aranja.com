@@ -53,7 +53,7 @@ class Clients extends React.Component {
 
   componentDidMount() {
     this.animationNodes = this.componentRef.querySelectorAll('[data-animate]')
-    TweenMax.set(this.animationNodes, { y: -100, opacity: 0 })
+    TweenMax.set(this.animationNodes, { y: -100, autoAlpha: 0 })
   }
 
   onChange(isVisible) {
@@ -68,11 +68,10 @@ class Clients extends React.Component {
   handleAnimation() {
     TweenMax.staggerTo(
       this.animationNodes,
-      1,
+      this.animationDuration,
       {
         y: 0,
-        opacity: 1,
-        delay: 0,
+        autoAlpha: 1,
         ease,
       },
       0.1,

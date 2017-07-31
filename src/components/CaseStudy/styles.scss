@@ -1,0 +1,18 @@
+@import '../../utils/vars.scss';
+
+.CaseStudy-heading {
+  font-size: $ms5;
+}
+
+.CaseStudy-excerpt {
+  max-width: 50%;
+}
+
+.CaseStudy-copy {
+  column-count: 2;
+  column-gap: $ms3;
+  margin-bottom: $ms4;
+  hyphens: auto;
+  text-justify: distribute;
+  text-align: justify;
+}

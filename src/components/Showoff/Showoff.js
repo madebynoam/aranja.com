@@ -1,16 +1,17 @@
 import React from 'react'
 import Parallax from '../Parallax'
+import { Body1, H3 } from '../../typography'
 
 const SingleShowoff = ({ heading, copy, image }) =>
   <div className="Showoff">
     <div className="Showoff-wrap">
       <div className="Showoff-content">
-        <h1 className="Showoff-heading">
+        <H3 className="Showoff-heading">
           {heading}
-        </h1>
-        <p className="Showoff-copy">
+        </H3>
+        <Body1 className="Showoff-copy">
           {copy}
-        </p>
+        </Body1>
       </div>
     </div>
     <Parallax>

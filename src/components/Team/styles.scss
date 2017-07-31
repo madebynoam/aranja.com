@@ -1,0 +1,19 @@
+@import '../../utils/vars.scss';
+
+.Team {
+}
+
+.Team-heading {
+  font-size: $ms4;
+  margin-bottom: 1rem;
+}
+.Team-subheading {
+  font-size: $ms2;
+  letter-spacing: 0.02rem;
+  font-weight: 400;
+}
+
+.Team-introCopy {
+  text-align: justify;
+  hyphens: auto;
+}
