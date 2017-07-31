@@ -1,7 +1,8 @@
-@import '../../shared.scss';
+@import '../../utils/vars.scss';
+@import '../../utils/functions.scss';
 
 .ContactModal {
-  background: rgba(#006ad4, 0.7);
+  background: rgba($blue, 0.7);
   left: 0;
   min-height: 100vh;
   position: absolute;
@@ -12,9 +13,242 @@
 .ContactModal-closeButton {
   background: none;
   border: 0;
-  color: #fff;
-  font-size: 30px;
+  cursor: pointer;
+  color: $white;
+  padding: 10px;
+  position: absolute;
+  right: 0;
+  top: 0;
 }
 
-@media (min-width: $Size-large) {
+.ContactModal-closeIcon {
+  display: block;
+  font-size: 20px;
+  transition: transform 0.2s ease-out;
+}
+
+.ContactModal-title {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  padding-top: 50px;
+}
+
+.ContactModal-formBox {
+  background: $white;
+  border-radius: 2px;
+  box-sizing: border-box;
+  margin-bottom: 100px;
+  padding-bottom: 30px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 50px;
+}
+
+.ContactModal-form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.ContactModal-formGroup {
+  box-sizing: border-box;
+  margin-bottom: 40px;
+  padding: 0;
+  position: relative;
+}
+
+.ContactModal-formGroup--small,
+.ContactModal-formGroup--large {
+  width: 100%;
+}
+
+.ContactModal-label {
+  color: #bbb;
+  font-size: 16px;
+  left: 0;
+  position: absolute;
+  top: 3px;
+  transition: transform 0.15s ease-out, top 0.15s ease-out;
+  transform-origin: 0;
+}
+
+.ContactModal-label--textarea {
+  display: block;
+  padding-bottom: 9px;
+  position: relative;
+}
+
+.ContactModal-input {
+  background: none;
+  border: 0;
+  border-bottom: 2px solid #888;
+  color: $darkBlue;
+  display: block;
+  font-size: 16px;
+  padding-bottom: 4px;
+  position: relative;
+  width: 100%;
+  z-index: 1;
+}
+
+.ContactModal-textarea {
+  background: none;
+  border: 2px solid #888;
+  color: $darkBlue;
+  display: block;
+  font-size: 16px;
+  min-height: 200px;
+  padding: 5px;
+  resize: none;
+  transition: border-color 0.2s;
+  width: 100%;
+  z-index: 1;
+}
+
+.ContactModal-textarea:focus,
+.ContactModal-textarea:valid {
+  border: 2px solid $blue;
+}
+
+.ContactModal-input:focus,
+.ContactModal-textarea:focus {
+  outline: none;
+}
+
+.ContactModal-input:focus ~ .ContactModal-label,
+.ContactModal-input:valid ~ .ContactModal-label {
+  top: -15px;
+  transform: scale(0.6);
+}
+
+.ContactModal-inputBorder {
+  background: $blue;
+  bottom: 0;
+  content: '';
+  display: block;
+  height: 2px;
+  position: absolute;
+  width: 0;
+  transition: width 0.3s ease-out;
+  z-index: 1;
+}
+
+.ContactModal-input:focus ~ .ContactModal-inputBorder,
+.ContactModal-input:valid ~ .ContactModal-inputBorder {
+  width: 100%;
+}
+
+.ContactModal-submit {
+  background: $white;
+  border: 2px solid $blue;
+  border-radius: 25px;
+  box-sizing: border-box;
+  color: $blue;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 16px;
+  height: 50px;
+  margin: auto;
+  min-width: 120px;
+  position: relative;
+  transition: background 0.2s, color 0.2s;
+  width: 40%;
+}
+
+.ContactModal-submit:hover {
+  background: $blue;
+  color: $white;
+}
+
+@media (min-width: $sm) {
+  .ContactModal-closeButton {
+    padding: between(20px, 10px, $xlg, $sm);
+  }
+
+  .ContactModal-closeIcon {
+    font-size: between(30px, 20px, $xlg, $sm);
+  }
+
+  .ContactModal-title {
+    margin-bottom: between(50px, 20px, $xlg, $sm);
+    padding-top: between(150px, 50px, $xlg, $sm);
+  }
+
+  .ContactModal-formBox {
+    padding-bottom: between(70px, 30px, $xlg, $sm);
+    padding-left: between(70px, 20px, $xlg, $sm);
+    padding-right: between(70px, 20px, $xlg, $sm);
+    padding-top: between(70px, 50px, $xlg, $sm);
+  }
+
+  .ContactModal-input,
+  .ContactModal-textarea,
+  .ContactModal-label {
+    font-size: between(24px, 16px, $xlg, $sm);
+  }
+
+  .ContactModal-submit {
+    font-size: between(20px, 16px, $xlg, $sm);
+  }
+
+  .ContactModal-input:focus ~ .ContactModal-label,
+  .ContactModal-input:valid ~ .ContactModal-label {
+    top: between(-22px, -15px, $xlg, $sm);
+  }
+
+  .ContactModal-formGroup {
+    margin-bottom: between(70px, 40px, $xlg, $sm);
+  }
+}
+
+@media (min-width: $md) {
+  .ContactModal-closeButton:hover .ContactModal-closeIcon {
+    transform: rotate(90deg);
+  }
+
+  .ContactModal-title {
+    font-size: 4rem;
+  }
+
+  .ContactModal-formGroup--small {
+    width: 47%;
+  }
+}
+
+@media (min-width: $xlg) {
+  .ContactModal-closeButton {
+    padding: 20px;
+  }
+
+  .ContactModal-closeIcon {
+    font-size: 30px;
+  }
+
+  .ContactModal-title {
+    margin-bottom: 50px;
+    padding-top: 150px;
+  }
+
+  .ContactModal-formBox {
+    padding: 70px;
+  }
+
+  .ContactModal-input,
+  .ContactModal-textarea,
+  .ContactModal-label {
+    font-size: 24px;
+  }
+
+  .ContactModal-submit {
+    font-size: 20px;
+  }
+
+  .ContactModal-formGroup {
+    margin-bottom: 70px;
+  }
+
+  .ContactModal-input:focus ~ .ContactModal-label,
+  .ContactModal-input:valid ~ .ContactModal-label {
+    top: -22px;
+  }
 }
