@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import padding from '../utils/padding'
 import './styles.css'
 
-const createStyle = (name, defaultComponent, style, substyles = {}) => {
+const createStyle = (defaultComponent, style, substyles = {}) => {
   const substyleKeys = Object.keys(substyles)
 
   const component = props => {
@@ -23,19 +23,31 @@ const createStyle = (name, defaultComponent, style, substyles = {}) => {
     component: PropTypes.node,
   }
   substyleKeys.forEach(key => component.propTypes[key])
-  component.displayName = name
 
   return component
 }
 
-export const H1 = createStyle('H1', 'h1', 't-h1', { light: 't-light', center: 't-center' })
-export const H2 = createStyle('H2', 'h2', 't-h2', { light: 't-light', center: 't-center' })
-export const H3 = createStyle('H3', 'h3', 't-h3', { light: 't-light', center: 't-center' })
-export const Body1 = createStyle('Body1', 'p', 't-body1', {
+export const H1 = createStyle('h1', 't-h1', {
+  black: 't-black',
+  light: 't-light',
+  center: 't-center',
+})
+export const H2 = createStyle('h2', 't-h2', {
+  black: 't-black',
+  light: 't-light',
+  center: 't-center',
+})
+export const H3 = createStyle('h3', 't-h3', {
+  black: 't-black',
+  light: 't-light',
+  center: 't-center',
+})
+export const Body1 = createStyle('p', 't-body1', {
   strong: 't-medium',
   center: 't-center',
 })
-export const Body2 = createStyle('Body2', 'p', 't-body2', {
+export const Body2 = createStyle('p', 't-body2', {
   strong: 't-medium',
   center: 't-center',
 })
+export const Chapter = createStyle('p', 't-chapter')

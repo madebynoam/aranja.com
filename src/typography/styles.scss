@@ -18,6 +18,7 @@ html {
 
 ::selection {
   background-color: $blue;
+  color: white;
 }
 
 .t-h1 {
@@ -35,8 +36,9 @@ html {
 }
 
 .t-h3 {
-  font-size: $ms2;
-  font-weight: 500;
+  // font-size: $ms2;
+  font-size: 2.3rem;
+  font-weight: 400;
   line-height: 1.2;
   margin: 0;
 }
@@ -57,6 +59,10 @@ html {
   font-weight: 300;
 }
 
+.t-black {
+  color: $black;
+}
+
 .t-medium {
   font-weight: 500;
 }
@@ -67,4 +73,32 @@ html {
 
 .t-center {
   text-align: center;
+}
+.t-transparent {
+  opacity: 0.8;
+}
+.t-chapter {
+  font-family: 'FFDIN';
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.05rem;
+  margin-bottom: $ms1;
+  font-size: $ms0;
+  padding-left: 1.666em;
+  bottom: 0;
+  position: relative;
+  line-height: 1;
+  padding-top: 3rem;
+
+  &::before {
+    position: absolute;
+    left: 0em;
+    content: '';
+    width: 1em;
+    bottom: -3rem;
+    height: 2px;
+    background: $dark;
+    top: -2px;
+    margin: auto;
+  }
 }
