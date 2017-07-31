@@ -1,0 +1,27 @@
+@import '../../utils/vars.scss';
+@import '../../utils/functions.scss';
+
+$maxPadding: ($xlg - $lg) / 2;
+
+.Container--shared {
+  box-sizing: border-box;
+  margin: auto;
+  max-width: $xlg;
+  padding-left: $bodyPadding;
+  padding-right: $bodyPadding;
+  width: 100%;
+}
+
+@media (min-width: $sm) {
+  .Container--shared {
+    padding-left: between($maxPadding, $bodyPadding, $xlg, $sm);
+    padding-right: between($maxPadding, $bodyPadding, $xlg, $sm);
+  }
+}
+
+@media (min-width: $xlg) {
+  .Container--shared {
+    padding-left: $maxPadding;
+    padding-right: $maxPadding;
+  }
+}
