@@ -62,7 +62,6 @@ const CaseStudies = ({ content, casestudies }) => {
               {excerpt}
             </Body1>
           </Section>
-          <SectionHero img={heroImage.asset.file.url} caption={company} />
           <Section>
             {copyChapter1 && <Markdown source={copyChapter1} />}
             {projectScreenshot &&

@@ -17,7 +17,6 @@ const Home = ({ content, services, showOffs }) =>
         <Menu />
         <Intro />
         <Services services={services} />
-        <Showoff showOffs={showOffs} />
         <Clients />
         <Portfolio />
       </div>

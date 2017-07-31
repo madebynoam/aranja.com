@@ -1,5 +1,5 @@
 import React from 'react'
-import { Body1, Body2, H2, H3 } from '../../typography'
+import { Chapter, Body1, Body2, H2, H3 } from '../../typography'
 import './styles.css'
 
 const tempPosition = [
@@ -22,7 +22,7 @@ const Career = ({ title, description }) =>
 
 const Careers = ({ openPositions = tempPosition }) =>
   <div className="Careers">
-    <H2 bottom="xsmall">Join our team</H2>
+    <Chapter>Join our team</Chapter>
     <Body1 bottom="medium">
       Are you passionate about web development? Are you a genuinely good person? Want to be part of
       a fun, driven team? Great, we could really get along! Check out our open positions below and
