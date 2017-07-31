@@ -1,6 +1,6 @@
 import React from 'react'
 import { Editable } from 'tux'
-import { Body1, Body2, H1, H2, H3 } from '../typography'
+import { Body1, Body2, H1, H3 } from '../typography'
 import Lines from '../components/Lines'
 import Footer from '../components/Footer'
 import Menu from '../components/Menu'
@@ -8,6 +8,7 @@ import LogoRoll from '../components/LogoRoll'
 import TeamGrid from '../components/Team/Grid'
 import Section from '../components/Section'
 import SectionHero from '../components/SectionHero'
+import Careers from '../components/Careers'
 import teamHeroPhoto from '../components/Team/Aranja00107.jpg'
 import teamHeroPhoto2 from '../components/Team/Aranja00557.jpg'
 import '../components/Team/styles.css'
@@ -20,19 +21,17 @@ const Team = ({ content, team }) => {
           <Lines />
           <Menu />
           <Section>
-            <H1 className="Team-heading" top="small">
-              We are Aranja
-            </H1>
-            <H2 className="Team-subheading">Dedicated team of ambitious developers</H2>
+            <p className="t-chapter">Who we are</p>
+            <H3 className="Team-heading t-transparent">A dedicated team of ambitious developers</H3>
             <SectionHero img={teamHeroPhoto} caption="bla" />
-            <H2 bottom="medium" center>
+            <H3 bottom="medium" center>
               We team up with some great companies
-            </H2>
+            </H3>
             <LogoRoll />
-            <H2 top="medium" bottom="medium" center>
+            <H3 top="medium" bottom="small" center>
               To make engaging products
-            </H2>
-            <Body1 className="Team-introCopy" bottom="large">
+            </H3>
+            <Body1 className="Team-copy" bottom="large">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt laborum, cum laudantium
               dolorem natus ullam! Autem aperiam, eum deserunt quibusdam error molestias obcaecati,
               ea asperiores delectus reiciendis voluptate minima dolore temporibus, veritatis rerum
@@ -41,10 +40,10 @@ const Team = ({ content, team }) => {
               mollitia quo corrupti dolorum officia voluptates, quod.
             </Body1>
             <TeamGrid />
-            <H2 top="large" bottom="small" center>
+            <H3 top="large" bottom="small" center>
               Play hard, work harder.
-            </H2>
-            <Body1 className="Team-braggadocious" bottom="medium" center>
+            </H3>
+            <Body1 className="Team-copy" bottom="medium">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt laborum, cum laudantium
               dolorem natus ullam! Autem aperiam, eum deserunt quibusdam error molestias obcaecati,
               ea asperiores delectus reiciendis voluptate minima dolore temporibus, veritatis rerum
@@ -52,6 +51,7 @@ const Team = ({ content, team }) => {
               rerum quo at. Boo yah.
             </Body1>
             <SectionHero img={teamHeroPhoto2} caption="bla" />
+            <Careers />
           </Section>
         </div>
         <Footer />

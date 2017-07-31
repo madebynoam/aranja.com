@@ -4,16 +4,14 @@
 }
 
 .Team-heading {
-  font-size: $ms4;
-  margin-bottom: 1rem;
-}
-.Team-subheading {
-  font-size: $ms2;
+  font-size: 2.3rem;
   letter-spacing: 0.02rem;
   font-weight: 400;
 }
 
-.Team-introCopy {
-  text-align: justify;
+.Team-copy {
   hyphens: auto;
+  margin: auto;
+  max-width: 75%;
+  text-align: justify;
 }

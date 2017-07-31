@@ -1,7 +1,7 @@
 import React from 'react'
 import { Editable } from 'tux'
 import ReactMarkdown from 'react-markdown'
-import { Body1, Body2, H1, H2, H3 } from '../typography'
+import { Chapter, Body1, Body2, H1, H2, H3 } from '../typography'
 import Lines from '../components/Lines'
 import Footer from '../components/Footer'
 import Menu from '../components/Menu'
@@ -51,7 +51,8 @@ const CaseStudies = ({ content, casestudies }) => {
           <Lines />
           <Menu />
           <Section>
-            <H1 className="CaseStudy-heading" top="small">
+            <Chapter>Case study #1</Chapter>
+            <H1 className="CaseStudy-heading">
               {company}
             </H1>
             <H3 bottom="medium">
