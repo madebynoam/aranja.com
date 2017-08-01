@@ -3,8 +3,7 @@ import Intro from '../components/Intro'
 import Services from '../components/Services'
 import Lines from '../components/Lines'
 import Menu from '../components/Menu'
-import Portfolio from '../components/Portfolio'
-import Showoff from '../components/Showoff'
+import CaseStudyGrid from '../components/CaseStudyGrid'
 import Footer from '../components/Footer'
 import Clients from '../components/Clients'
 import NextUp from '../components/NextUp'
@@ -19,7 +18,7 @@ const Home = ({ content, services, showOffs }) =>
         <Intro />
         <Services services={services} />
         <Clients />
-        <Portfolio />
+        <CaseStudyGrid />
         <NextUp />
       </div>
       <Footer />
