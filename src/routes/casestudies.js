@@ -49,7 +49,6 @@ const CaseStudies = ({ content, casestudies }) => {
   } = study
   return (
     <Editable model={content}>
-      {console.log(study)}
       <div className="CaseStudies">
         <div className="Container">
           <Lines />

@@ -6,7 +6,6 @@ import Menu from '../components/Menu'
 import CaseStudyGrid from '../components/CaseStudyGrid'
 import Footer from '../components/Footer'
 import Clients from '../components/Clients'
-import NextUp from '../components/NextUp'
 import { Editable } from 'tux'
 
 const Home = ({ content, services, showOffs }) =>
@@ -19,7 +18,6 @@ const Home = ({ content, services, showOffs }) =>
         <Services services={services} />
         <Clients />
         <CaseStudyGrid />
-        <NextUp />
       </div>
       <Footer />
     </div>

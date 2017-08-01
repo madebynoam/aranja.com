@@ -2,37 +2,49 @@
 
 .CaseStudyHero {
   display: flex;
+  margin-bottom: $ms5;
   position: relative;
   z-index: 1;
-  margin-bottom: $ms5;
 }
 
 .CaseStudyHero-imageWrapper {
-  overflow: hidden;
-  flex: 1;
-}
+  margin-top: -2rem; // TODO: Why do I need to make up for parallax space?
 
-.CaseStudyHero-imageMask {
+  height: 80vh;
+  min-height: 750px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
 }
 
 .CaseStudyHero-contentBackground {
-  background: rgba($blue, 0.7);
-  width: 100%;
-  height: 100%;
-  display: flex;
   align-items: center;
+  background: rgba($blue, 0.95);
+  display: flex;
+  height: 100%;
+  left: 0;
+  opacity: calc(var(--parallax) - 0.5);
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: -1;
 }
 
 .CaseStudyHero-content {
-  padding: 0 10%;
   color: $white;
   margin-top: -4rem;
+  padding: 0 10%;
 }
 
 .CaseStudyHero-image {
-  background-size: cover;
+  align-items: center;
   background-position: center;
-  height: 600px;
-  width: 100%;
+  background-size: cover;
+  display: flex;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
   transform: translateY(calc(var(--parallax) * 50px));
+  width: 100%;
 }
