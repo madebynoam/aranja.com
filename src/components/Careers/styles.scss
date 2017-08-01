@@ -1,2 +1,20 @@
+@import '../../utils/vars.scss';
+@import '../../utils/functions.scss';
+
 .Careers {
+}
+
+.Career-list {
+  display: flex;
+}
+
+.Career-column {
+  flex: 0 1 50%;
+}
+
+.Career-link {
+  display: block;
+  padding-top: $ms1;
+  text-decoration: none;
+  color: $blue;
 }

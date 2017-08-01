@@ -28,9 +28,13 @@ const Careers = ({ openPositions = tempPosition }) =>
       a fun, driven team? Great, we could really get along! Check out our open positions below and
       don't hesitate to apply.
     </Body1>
-    {openPositions.map(position =>
-      <Career title={position.title} description={position.description} />,
-    )}
+    <div className="Career-list">
+      {openPositions.map(position =>
+        <div className="Career-column">
+          <Career title={position.title} description={position.description} />
+        </div>,
+      )}
+    </div>
   </div>
 
 export default Careers
