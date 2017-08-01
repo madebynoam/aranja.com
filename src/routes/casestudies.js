@@ -7,6 +7,7 @@ import Footer from '../components/Footer'
 import Menu from '../components/Menu'
 import Section from '../components/Section'
 import SectionHero from '../components/SectionHero'
+import CaseStudyHero from '../components/CaseStudyHero'
 import NextUp from '../components/NextUp'
 import Button from '../components/Button'
 import CSScreenshot from '../components/CaseStudy/Screenshot'
@@ -53,20 +54,7 @@ const CaseStudies = ({ content, casestudies }) => {
         <div className="Container">
           <Lines />
           <Menu />
-          <Section>
-            <Chapter>Case study #1</Chapter>
-            <H1 className="CaseStudy-heading">
-              {company}
-            </H1>
-            <Body1 className="CaseStudy-excerpt">
-              {excerpt}
-            </Body1>
-            <div className="CaseStudy-buttons">
-              <Button>Visit site</Button>
-              <Button>Read study</Button>
-            </div>
-          </Section>
-          <SectionHero img={heroImage.asset.file.url} />
+          <CaseStudyHero company={company} img={heroImage.asset.file.url} />
           <Section>
             {copyChapter1 && <Markdown source={copyChapter1} />}
             {projectScreenshot &&

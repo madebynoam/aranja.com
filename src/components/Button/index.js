@@ -1,8 +1,9 @@
 import React from 'react'
+import classNames from 'classnames'
 import './styles.css'
 
-const Button = ({ children }) =>
-  <button className="Button">
+const Button = ({ children, inverse }) =>
+  <button className={classNames('Button', inverse && 'is-inversed')}>
     {children}
   </button>
 

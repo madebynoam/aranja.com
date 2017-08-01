@@ -101,4 +101,11 @@ html {
     top: -2px;
     margin: auto;
   }
+
+  &.is-inversed {
+    color: $white;
+    &::before {
+      background: $white;
+    }
+  }
 }

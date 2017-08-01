@@ -50,4 +50,6 @@ export const Body2 = createStyle('p', 't-body2', {
   strong: 't-medium',
   center: 't-center',
 })
-export const Chapter = createStyle('p', 't-chapter')
+export const Chapter = createStyle('p', 't-chapter', {
+  inversed: 'is-inversed',
+})

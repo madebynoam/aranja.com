@@ -24,4 +24,9 @@
     outline: none;
     background: $light;
   }
+
+  &.is-inversed {
+    color: $white;
+    border-color: $white;
+  }
 }
