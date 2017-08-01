@@ -2,40 +2,45 @@
 @import '../../utils/functions.scss';
 
 .Footer {
-  align-items: center;
+  align-items: baseline;
   background: $blue;
   bottom: 0;
-  color: white;
+  color: $white;
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   justify-content: center;
-  min-height: 30rem;
+  min-height: 20rem;
   position: fixed;
   width: 100%;
   z-index: -1;
 }
 
-.Footer-contactBox {
+.Footer-legend {
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  opacity: 0.5;
+  letter-spacing: 0.1rem;
+  padding-bottom: $ms0;
+}
+
+.Footer-title {
+  flex: 0 1 100%;
+}
+
+.Footer-column {
+  flex: 0 1 33.333%;
+}
+
+.Footer-social {
   display: flex;
+  align-items: center;
 }
 
-.Footer-contactBlock {
-  background-color: $white;
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
-  background-size: 45px auto;
-  border-radius: 50%;
-  display: block;
-  filter: saturate(15%);
-  height: 100px;
-  transition: filter 0.2s, background-size 0.2s;
-  width: 100px;
-}
-
-.Footer-contactBlock:not(:last-child) {
-  margin-right: 15px;
-}
-
-.Footer-contactBlock:hover {
-  filter: saturate(100%);
+.Footer-socialIcon {
+  img {
+    width: $ms0;
+  }
+  & + & {
+    margin-left: $ms0;
+  }
 }
