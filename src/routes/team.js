@@ -24,7 +24,9 @@ const Team = ({ content, team }) => {
           <Section>
             <Chapter>Who we are</Chapter>
             <H3 className="Team-heading">A dedicated team of ambitious developers</H3>
-            <SectionHero img={teamHeroPhoto} caption="bla" />
+          </Section>
+          <SectionHero img={teamHeroPhoto} />
+          <Section>
             <H3 bottom="medium" center>
               We team up with some great companies
             </H3>
