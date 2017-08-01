@@ -1,0 +1,108 @@
+.CaseStudyGrid {
+  margin-top: 10rem;
+  position: relative;
+  z-index: 1;
+}
+
+.wrap {
+  display: grid;
+  grid-template-columns: 31.75% 36.5% 31.75%;
+  grid-template-rows: auto;
+}
+
+.CaseStudyGrid-heading {
+  text-align: center;
+  padding-bottom: 1.333rem;
+  font-size: 2rem;
+}
+
+.CaseStudyGrid-subheading {
+  text-align: center;
+  padding-bottom: 4rem;
+  line-height: 1.5;
+}
+
+.CaseStudyGrid-itemWrap {
+  display: flex;
+  overflow: hidden;
+  justify-content: center;
+  font-style: italic;
+  font-family: serif;
+  position: relative;
+  transform-origin: bottom right;
+
+  &.has-content {
+    cursor: pointer;
+  }
+
+  .CaseStudyGrid.is-visible &.has-content:hover {
+    &::after {
+      background: rgba(0, 0, 0, 0.1);
+    }
+    .CaseStudyGrid-item {
+      transform: scale(0.9) !important;
+    }
+    .CaseStudyGrid-image {
+      transform: scale(1.1) !important;
+    }
+    .CaseStudyGrid-caption {
+      opacity: 1;
+      transform: translateY(-50%);
+    }
+  }
+
+  &.has-content::after {
+    content: '';
+    display: block;
+    height: 90%;
+    pointer-events: none;
+    position: absolute;
+    width: 90%;
+    top: 5%;
+    left: 5%;
+  }
+}
+
+.CaseStudyGrid-item {
+  font-size: 4.6rem;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+
+  .CaseStudyGrid.is-visible & {
+    transition: transform 0.1s cubic-bezier(.3, .27, .35, .77);
+  }
+
+  &::before {
+    content: '';
+    display: block;
+    padding-top: 70%;
+  }
+}
+
+.CaseStudyGrid-caption {
+  z-index: 1;
+  font-size: 3rem;
+  color: white;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-100%);
+  opacity: 0;
+  transition: all 0.1s ease-in-out;
+}
+
+.CaseStudyGrid-image {
+  position: absolute;
+  background-size: cover;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+
+  .CaseStudyGrid.is-visible & {
+    transition: transform 0.1s cubic-bezier(.3, .27, .35, .77);
+  }
+}
