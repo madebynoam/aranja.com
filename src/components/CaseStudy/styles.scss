@@ -5,7 +5,7 @@
 }
 
 .CaseStudy-excerpt {
-  max-width: 66.666%;
+  max-width: 70%;
 }
 
 .CaseStudy-copy {
@@ -15,4 +15,8 @@
   hyphens: auto;
   text-justify: distribute;
   text-align: justify;
+}
+
+.CaseStudy-buttons {
+  margin-top: $ms2;
 }

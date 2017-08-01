@@ -8,6 +8,7 @@ import Menu from '../components/Menu'
 import Section from '../components/Section'
 import SectionHero from '../components/SectionHero'
 import NextUp from '../components/NextUp'
+import Button from '../components/Button'
 import CSScreenshot from '../components/CaseStudy/Screenshot'
 import CSCTA from '../components/CaseStudy/CTA'
 import Meta from '../components/CaseStudy/Meta'
@@ -57,9 +58,13 @@ const CaseStudies = ({ content, casestudies }) => {
             <H1 className="CaseStudy-heading">
               {company}
             </H1>
-            <Body1 top="xsmall" className="CaseStudy-excerpt">
+            <Body1 className="CaseStudy-excerpt">
               {excerpt}
             </Body1>
+            <div className="CaseStudy-buttons">
+              <Button>Visit site</Button>
+              <Button>Read study</Button>
+            </div>
           </Section>
           <SectionHero img={heroImage.asset.file.url} />
           <Section>
