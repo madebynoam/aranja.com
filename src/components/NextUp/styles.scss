@@ -1,0 +1,32 @@
+@import '../../utils/vars.scss';
+@import '../../utils/functions.scss';
+
+.NextUp {
+  display: flex;
+  justify-content: flex-end;
+  padding: $ms3 0;
+  position: relative;
+  width: 100%;
+}
+
+.NextUp-content {
+  background: #e3f1ff;
+  padding: $ms0;
+  width: calc(33% - #{$ms0});
+}
+
+.NextUp-contentHeading {
+  flex: 0 1 100%;
+  font-family: 'FFDIN';
+  font-size: $ms1;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+}
+.NextUp-page {
+  align-items: center;
+  display: flex;
+  font-size: $ms2;
+  line-height: 1;
+  position: relative;
+}

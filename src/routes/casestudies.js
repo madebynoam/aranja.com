@@ -7,6 +7,7 @@ import Footer from '../components/Footer'
 import Menu from '../components/Menu'
 import Section from '../components/Section'
 import SectionHero from '../components/SectionHero'
+import NextUp from '../components/NextUp'
 import CSScreenshot from '../components/CaseStudy/Screenshot'
 import CSCTA from '../components/CaseStudy/CTA'
 import Meta from '../components/CaseStudy/Meta'
@@ -46,6 +47,7 @@ const CaseStudies = ({ content, casestudies }) => {
   } = study
   return (
     <Editable model={content}>
+      {console.log(study)}
       <div className="CaseStudies">
         <div className="Container">
           <Lines />
@@ -55,13 +57,11 @@ const CaseStudies = ({ content, casestudies }) => {
             <H1 className="CaseStudy-heading">
               {company}
             </H1>
-            <H3 bottom="medium">
-              {period}
-            </H3>
-            <Body1 bottom="medium" className="CaseStudy-excerpt">
+            <Body1 top="xsmall" className="CaseStudy-excerpt">
               {excerpt}
             </Body1>
           </Section>
+          <SectionHero img={heroImage.asset.file.url} />
           <Section>
             {copyChapter1 && <Markdown source={copyChapter1} />}
             {projectScreenshot &&
@@ -77,7 +77,7 @@ const CaseStudies = ({ content, casestudies }) => {
               />}
             {copyChapter3 && <Markdown source={copyChapter3} />}
           </Section>
-          <CSCTA />
+          <NextUp />
         </div>
         <Footer />
       </div>

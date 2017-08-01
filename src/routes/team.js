@@ -9,6 +9,7 @@ import TeamGrid from '../components/Team/Grid'
 import Section from '../components/Section'
 import SectionHero from '../components/SectionHero'
 import Careers from '../components/Careers'
+import NextUp from '../components/NextUp'
 import teamHeroPhoto from '../components/Team/Aranja00107.jpg'
 import teamHeroPhoto2 from '../components/Team/Aranja00557.jpg'
 import '../components/Team/styles.css'
@@ -53,6 +54,7 @@ const Team = ({ content, team }) => {
             <SectionHero img={teamHeroPhoto2} caption="bla" />
             <Careers />
           </Section>
+          <NextUp />
         </div>
         <Footer />
       </div>

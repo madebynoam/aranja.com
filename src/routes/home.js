@@ -7,6 +7,7 @@ import Portfolio from '../components/Portfolio'
 import Showoff from '../components/Showoff'
 import Footer from '../components/Footer'
 import Clients from '../components/Clients'
+import NextUp from '../components/NextUp'
 import { Editable } from 'tux'
 
 const Home = ({ content, services, showOffs }) =>
@@ -19,6 +20,7 @@ const Home = ({ content, services, showOffs }) =>
         <Services services={services} />
         <Clients />
         <Portfolio />
+        <NextUp />
       </div>
       <Footer />
     </div>
