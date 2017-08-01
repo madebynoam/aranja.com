@@ -20,3 +20,10 @@
 .CaseStudy-buttons {
   margin-top: $ms2;
 }
+
+.CaseStudy-button {
+  &.is-main {
+    background: white;
+    color: #3c435f;
+  }
+}

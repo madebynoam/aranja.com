@@ -19,8 +19,8 @@ const CaseStudyHero = ({ img, chapter = 'Case study #1', company }) =>
               {company}
             </H1>
             <div className="CaseStudy-buttons">
-              <Button inverse>Visit site</Button>
-              <Button inverse>Read study</Button>
+              <Button className="CaseStudy-button">Visit site</Button>
+              <Button className="CaseStudy-button is-main">Read study</Button>
             </div>
           </div>
           <div className="CaseStudyHero-contentBackground" />

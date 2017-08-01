@@ -3,10 +3,10 @@
 
 .Button {
   background: transparent;
-  border: 1px solid $dark;
+  border: 1px solid $white;
   cursor: pointer;
   font-size: 0.9rem;
-  color: $dark;
+  color: $white;
   font-weight: 500;
   letter-spacing: 0.025rem;
   line-height: 1;
@@ -15,18 +15,14 @@
   & + & {
     margin-left: $ms1;
   }
-  &:hover,
-  &:focus {
-    background: $light;
-  }
   &:focus,
   &:active {
     outline: none;
     background: $light;
   }
 
-  &.is-inversed {
-    color: $white;
-    border-color: $white;
+  &--dark {
+    color: $dark;
+    border-color: $dark;
   }
 }
