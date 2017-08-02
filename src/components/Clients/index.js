@@ -1,6 +1,7 @@
 import React from 'react'
 import VisibilitySensor from 'react-visibility-sensor'
 import { TweenMax, Expo } from 'gsap'
+import { H3, Body1 } from '../../typography'
 import './styles.css'
 import androidLogo from './android.svg'
 import facebookLogo from './facebook.svg'
@@ -94,14 +95,14 @@ class Clients extends React.Component {
             this.componentRef = componentRef
           }}
         >
-          <h1 className="Clients-heading">
+          <H3 className="Clients-heading" bottom="xsmall">
             <EditInline field="fields.content.clientsHeading">Selected clients</EditInline>
-          </h1>
-          <h2 className="Clients-subheading">
+          </H3>
+          <Body1 className="Clients-subheading" bottom="medium">
             <EditInline field="fields.content.clientsText">
               We've had the pleasure of working with <br /> some of tech's leading companies
             </EditInline>
-          </h2>
+          </Body1>
           <ul className="Clients-list">
             {clients.map((client, index) =>
               <li className="Clients-item" key={index} data-animate>

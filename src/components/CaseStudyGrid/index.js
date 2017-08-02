@@ -5,7 +5,7 @@ import React from 'react'
 import VisibilitySensor from 'react-visibility-sensor'
 import classnames from 'classnames'
 import { EditInline } from 'tux'
-
+import { H3, Body1 } from '../../typography'
 import './styles.css'
 
 import image1 from './kolibri-placeholder.jpg'
@@ -50,14 +50,14 @@ class CaseStudyGrid extends React.Component {
         partialVisibility
       >
         <div className={classnames('CaseStudyGrid', 'is-visible')}>
-          <h1 className="CaseStudyGrid-heading">
+          <H3 className="CaseStudyGrid-heading" bottom="xsmall">
             <EditInline field="fields.content.portfolioHeading">Latest case studies</EditInline>
-          </h1>
-          <h2 className="CaseStudyGrid-subheading">
+          </H3>
+          <Body1 className="CaseStudyGrid-subheading" bottom="medium">
             <EditInline field="fields.content.portfolioText">
               Have a look at our recently published work
             </EditInline>
-          </h2>
+          </Body1>
           <div className="wrap">
             {items.map((item, index) =>
               <div
