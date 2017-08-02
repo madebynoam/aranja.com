@@ -3,7 +3,6 @@
 
 import React from 'react'
 import VisibilitySensor from 'react-visibility-sensor'
-import { Motion, StaggeredMotion, spring, presets } from 'react-motion'
 import classnames from 'classnames'
 import { EditInline } from 'tux'
 
@@ -50,92 +49,41 @@ class CaseStudyGrid extends React.Component {
         minTopValue={400}
         partialVisibility
       >
-        <StaggeredMotion
-          defaultStyles={items.map(() => ({
-            y: 100,
-            o: 0,
-            s1: 0.75,
-            s2: 1.25,
-          }))}
-          styles={prevInterpolatedStyles =>
-            prevInterpolatedStyles.map((_, i) => {
-              return i === 0
-                ? {
-                    y: spring(isVisible ? 0 : 100, {
-                      stiffness: 600,
-                      damping: 50,
-                    }),
-                    o: spring(isVisible ? 1 : 0, { stiffness: 100, damping: 35 }),
-                    s1: spring(isVisible ? 1 : 0.75, {
-                      stiffness: 500,
-                      damping: 100,
-                    }),
-                    s2: spring(isVisible ? 1 : 1.25, {
-                      stiffness: 500,
-                      damping: 100,
-                    }),
-                  }
-                : {
-                    y: spring(prevInterpolatedStyles[i - 1].y),
-                    o: spring(prevInterpolatedStyles[i - 1].o),
-                    s1: spring(prevInterpolatedStyles[i - 1].s1),
-                    s2: spring(prevInterpolatedStyles[i - 1].s2),
-                  }
-            })}
-        >
-          {interpolatingStyles =>
-            <div
-              className={classnames(
-                'CaseStudyGrid',
-                isVisible && interpolatingStyles[items.length - 1].y === 0 && 'is-visible',
-              )}
-            >
-              <h1 className="CaseStudyGrid-heading">
-                <EditInline field="fields.content.portfolioHeading">Latest case studies</EditInline>
-              </h1>
-              <h2 className="CaseStudyGrid-subheading">
-                <EditInline field="fields.content.portfolioText">
-                  Have a look at our recently published work
-                </EditInline>
-              </h2>
-              <div className="wrap">
-                {items.map((item, index) =>
+        <div className={classnames('CaseStudyGrid', 'is-visible')}>
+          <h1 className="CaseStudyGrid-heading">
+            <EditInline field="fields.content.portfolioHeading">Latest case studies</EditInline>
+          </h1>
+          <h2 className="CaseStudyGrid-subheading">
+            <EditInline field="fields.content.portfolioText">
+              Have a look at our recently published work
+            </EditInline>
+          </h2>
+          <div className="wrap">
+            {items.map((item, index) =>
+              <div
+                key={index}
+                className={classnames('CaseStudyGrid-itemWrap', item.title && 'has-content')}
+              >
+                {item.title &&
+                  <p className="CaseStudyGrid-caption">
+                    {item.title}
+                  </p>}
+                <div className="CaseStudyGrid-item">
+                  {item.year &&
+                    <p className="CaseStudyGrid-itemText">
+                      {item.year}
+                    </p>}
                   <div
-                    key={index}
-                    className={classnames('CaseStudyGrid-itemWrap', item.title && 'has-content')}
+                    className="CaseStudyGrid-image"
                     style={{
-                      transform: `translateY(${interpolatingStyles[index].y}px)`,
-                      opacity: interpolatingStyles[index].o,
+                      backgroundImage: `url(${item.image})`,
                     }}
-                  >
-                    {item.title &&
-                      <p className="CaseStudyGrid-caption">
-                        {item.title}
-                      </p>}
-                    <div
-                      className="CaseStudyGrid-item"
-                      style={{
-                        transform: `scale(${interpolatingStyles[index].s1})`,
-                      }}
-                    >
-                      {item.year &&
-                        <p className="CaseStudyGrid-itemText">
-                          {item.year}
-                        </p>}
-                      <div
-                        className="CaseStudyGrid-image"
-                        style={{
-                          backgroundImage: `url(${item.image})`,
-                          transform: `scale(${interpolatingStyles[index].s2})`,
-                          opacity: interpolatingStyles[index].o,
-                        }}
-                      />
-                    </div>
-                  </div>,
-                )}
-              </div>
-            </div>}
-        </StaggeredMotion>
+                  />
+                </div>
+              </div>,
+            )}
+          </div>
+        </div>
       </VisibilitySensor>
     )
   }

@@ -5,9 +5,8 @@
 }
 
 .wrap {
-  display: grid;
-  grid-template-columns: 31.75% 36.5% 31.75%;
-  grid-template-rows: auto;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .CaseStudyGrid-heading {
@@ -26,11 +25,15 @@
   display: flex;
   overflow: hidden;
   justify-content: center;
+  flex: 0 1 31.75%;
   font-style: italic;
   font-family: serif;
   position: relative;
   transform-origin: bottom right;
 
+  &:nth-child(3n - 1) {
+    flex-basis: 36.5%;
+  }
   &.has-content {
     cursor: pointer;
   }
