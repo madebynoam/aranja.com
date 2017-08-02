@@ -9,10 +9,14 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  max-width: 2200px;
   min-height: 20rem;
   position: fixed;
   width: 100%;
   z-index: -1;
+  margin: auto;
+  left: 0;
+  right: 0;
 }
 
 .Footer-legend {

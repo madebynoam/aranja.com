@@ -12,6 +12,7 @@ import Careers from '../components/Careers'
 import NextUp from '../components/NextUp'
 import teamHeroPhoto from '../components/Team/Aranja00107.jpg'
 import teamHeroPhoto2 from '../components/Team/Aranja00557.jpg'
+import teamHeroPhoto3 from '../components/Team/Aranja00711-Edit.jpg'
 import '../components/Team/styles.css'
 
 const Team = ({ content, team }) => {
@@ -54,6 +55,17 @@ const Team = ({ content, team }) => {
               rerum quo at. Boo yah.
             </Body1>
             <SectionHero img={teamHeroPhoto2} caption="bla" />
+            <H3 top="large" bottom="small" center>
+              Culture.
+            </H3>
+            <Body1 className="Team-copy" bottom="medium">
+              Hack nights. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt laborum,
+              cum laudantium dolorem natus ullam! Autem aperiam, eum deserunt quibusdam error
+              molestias obcaecati, ea asperiores delectus reiciendis voluptate minima dolore
+              temporibus, veritatis rerum quo at? Nesciunt aliquid sit consectetur, odio voluptate
+              iusto, yes I said veritatis rerum quo at. Boo yah.
+            </Body1>
+            <SectionHero img={teamHeroPhoto3} caption="bla" />
             <Careers />
           </Section>
           <NextUp />
