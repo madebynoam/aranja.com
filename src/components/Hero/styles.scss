@@ -37,7 +37,7 @@
   }
 }
 
-.Hero-content {
+.Hero-item {
   width: 100%;
   background-size: cover;
   display: flex;
@@ -45,6 +45,7 @@
   position: relative;
   align-items: center;
   flex-direction: column;
+  display: none;
   &::before {
     content: '';
     background: rgba(0, 0, 0, 0.15);
@@ -67,6 +68,9 @@
     transition: all 0.5s ease;
     opacity: 0.2;
     content: '';
+  }
+  &.is-active {
+    display: flex;
   }
 }
 
