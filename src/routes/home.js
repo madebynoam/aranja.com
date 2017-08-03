@@ -13,7 +13,7 @@ const Home = ({ content, services, showOffs }) =>
     <div className="Home">
       <div className="Container">
         <Lines />
-        <Menu />
+        {/* <Menu /> */}
         <Intro />
         <Services services={services} />
         <Clients />
