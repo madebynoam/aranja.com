@@ -33,6 +33,7 @@ class Hero extends React.Component {
 
     return (
       <div className="Hero">
+        <Menu />
         {items.map((item, index) =>
           <div
             className={classNames('Hero-item', index === activeSlide && 'is-active')}
