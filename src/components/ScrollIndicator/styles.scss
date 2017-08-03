@@ -1,0 +1,38 @@
+.ScrollIndicator {
+  width: 3rem;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  bottom: 1.999rem;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  overflow: hidden;
+  height: 3rem;
+  span {
+    $duration: 1.9s;
+    animation: indicator $duration infinite cubic-bezier(.16, .22, .86, .59) both;
+    display: block;
+    padding-top: 100%;
+    bottom: 0;
+    background-image: url('./arrow.svg');
+    position: absolute;
+    background-repeat: no-repeat;
+    width: 2rem;
+    background-position: center;
+    &:nth-child(2) {
+      animation-delay: $duration / 2;
+    }
+  }
+}
+
+@keyframes indicator {
+  0% {
+    transform: translateY(-200%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}

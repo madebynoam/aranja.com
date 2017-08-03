@@ -1,26 +1,28 @@
 import React from 'react'
-import logo from './logo.svg'
+import Toggle from './Toggle'
 import './styles.css'
 
-const Menu = ({}) =>
-  <nav className="Menu">
-    <a href="/" className="Menu-logo">
-      <img src={logo} alt="Aranja logo" />
-    </a>
-    <ul>
-      <li className="Menu-item is-active">
-        <a href="/">Home</a>
-      </li>
-      <li className="Menu-item">
-        <a href="/team">Who we are</a>
-      </li>
-      <li className="Menu-item">
-        <a href="/casestudies">Case studies</a>
-      </li>
-      <li className="Menu-item">
-        <a href="/">Get in touch</a>
-      </li>
-    </ul>
-  </nav>
+class Menu extends React.Component {
+  constructor() {
+    super()
+    this.state = {
+      open: false,
+    }
+  }
+  handleClick() {
+    this.setState(prevState => {
+      return { open: !prevState.open }
+    })
+  }
+  render() {
+    const { open } = this.state
+    return (
+      <nav className="Menu">
+        <Toggle open={open} onClick={this.handleClick.bind(this)} />
+        <div className="Menu-overlay">Yo</div>
+      </nav>
+    )
+  }
+}
 
 export default Menu
