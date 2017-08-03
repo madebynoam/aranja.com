@@ -1,7 +1,7 @@
 @import '../../utils/vars.scss';
 @import '../../utils/functions.scss';
 
-.Intro {
+.Hero {
   color: $white;
   display: flex;
   height: 100vh;
@@ -37,7 +37,7 @@
   }
 }
 
-.Intro-content {
+.Hero-content {
   width: 100%;
   background-size: cover;
   display: flex;
@@ -70,12 +70,12 @@
   }
 }
 
-.Intro-text {
+.Hero-text {
   z-index: 2;
   margin-left: -20%;
 }
 
-.Intro-logo {
+.Hero-logo {
   position: absolute;
   width: 8rem;
   top: 2rem;

@@ -1,5 +1,5 @@
 import React from 'react'
-import Intro from '../components/Intro'
+import Hero from '../components/Hero'
 import Services from '../components/Services'
 import Lines from '../components/Lines'
 import Menu from '../components/Menu'
@@ -14,7 +14,7 @@ const Home = ({ content, services, showOffs }) =>
       <div className="Container">
         <Lines />
         {/* <Menu /> */}
-        <Intro />
+        <Hero />
         <Services services={services} />
         <Clients />
         <CaseStudyGrid />

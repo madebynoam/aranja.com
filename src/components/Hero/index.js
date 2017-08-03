@@ -6,11 +6,11 @@ import logo from './logo.svg'
 import Menu from '../Menu'
 import ScrollIndicator from '../ScrollIndicator'
 
-const Intro = ({}) =>
-  <div className="Intro">
-    <div className="Intro-content" style={{ backgroundImage: `url(${img01})` }}>
-      <img className="Intro-logo" src={logo} alt="" />
-      <div className="Intro-text">
+const Hero = ({}) =>
+  <div className="Hero">
+    <div className="Hero-content" style={{ backgroundImage: `url(${img01})` }}>
+      <img className="Hero-logo" src={logo} alt="" />
+      <div className="Hero-text">
         <H1>Team work is the name of the game</H1>
         <Chapter>Read case study</Chapter>
       </div>
@@ -18,4 +18,4 @@ const Intro = ({}) =>
     <ScrollIndicator />
   </div>
 
-export default Intro
+export default Hero
