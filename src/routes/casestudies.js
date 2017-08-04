@@ -1,7 +1,7 @@
 import React from 'react'
 import { Editable } from 'tux'
 import ReactMarkdown from 'react-markdown'
-import { Chapter, Body1, Body2, H1, H2, H3 } from '../typography'
+import { Body1, Body2, H1, H2, H3 } from '../typography'
 import Lines from '../components/Lines'
 import Footer from '../components/Footer'
 import Menu from '../components/Menu'

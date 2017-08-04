@@ -1,40 +1,20 @@
 @import '../../utils/vars.scss';
 @import '../../utils/functions.scss';
 
-.Hero {
-  color: $white;
-  display: flex;
-  height: 100vh;
-  position: relative;
-  z-index: 1;
+.Hero-wrap {
   width: 100%;
   padding: $ms2;
   margin-bottom: $ms4;
+  position: relative;
+  height: 100vh;
+}
 
-  .t-h1 {
-    max-width: 766px;
-    line-height: 1.1;
-  }
-
-  .t-chapter {
-    cursor: pointer;
-    margin-top: -1em;
-    font-size: 1.1em;
-    letter-spacing: 1.5px;
-
-    &::before {
-      position: absolute;
-      left: 0em;
-      display: block;
-      content: '';
-      width: 1em;
-      bottom: -3rem;
-      height: 2px;
-      background: #54a8ca;
-      top: -2px;
-      margin: auto;
-    }
-  }
+.Hero {
+  color: $white;
+  display: flex;
+  z-index: 1;
+  height: 100%;
+  position: relative;
 }
 
 .Hero-item {
@@ -79,7 +59,30 @@
   margin-left: -25%;
   padding-top: $ms4;
 }
+.Hero-textHeading {
+  max-width: 766px;
+  line-height: 1.1;
+}
 
+.Hero-textLegend {
+  cursor: pointer;
+  margin-top: -1em;
+  font-size: 1.1em;
+  letter-spacing: 1.5px;
+
+  &::before {
+    position: absolute;
+    left: 0em;
+    display: block;
+    content: '';
+    width: 1em;
+    bottom: -3rem;
+    height: 2px;
+    background: #54a8ca;
+    top: -2px;
+    margin: auto;
+  }
+}
 .Hero-logo {
   position: absolute;
   width: 8rem;

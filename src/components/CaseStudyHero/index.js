@@ -1,6 +1,6 @@
 import React from 'react'
 import Parallax from '../Parallax'
-import { Chapter, H1 } from '../../typography'
+import { Legend, H1 } from '../../typography'
 import Button from '../Button'
 import './styles.css'
 
@@ -12,9 +12,9 @@ const CaseStudyHero = ({ img, chapter = 'Case study #1', company }) =>
       <div className="CaseStudyHero-imageWrapper">
         <div className="CaseStudyHero-image" style={{ backgroundImage: `url(${img})` }}>
           <div className="CaseStudyHero-content">
-            <Chapter inversed>
+            <Legend inversed>
               {chapter}
-            </Chapter>
+            </Legend>
             <H1 className="CaseStudy-heading">
               {company}
             </H1>
