@@ -8,7 +8,7 @@ import './styles.css'
 
 const CaseStudyHero = ({ img, chapter = 'Case study #1', company }) =>
   <Parallax>
-    <div className="CaseStudyHero">
+    <section className="Section CaseStudyHero">
       <div className="CaseStudyHero-imageWrapper">
         <div className="CaseStudyHero-image" style={{ backgroundImage: `url(${img})` }}>
           <div className="CaseStudyHero-content">
@@ -26,7 +26,7 @@ const CaseStudyHero = ({ img, chapter = 'Case study #1', company }) =>
           <div className="CaseStudyHero-contentBackground" />
         </div>
       </div>
-    </div>
+    </section>
   </Parallax>
 
 export default CaseStudyHero
