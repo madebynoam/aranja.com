@@ -2,7 +2,8 @@
 @import '../../../utils/functions.scss';
 
 $introDuration: 0.6s;
-$outroDuration: 0.6s;
+$outroDelay: $introDuration * 2;
+$outroDuration: 0.4s;
 
 .HeroOverlay {
   position: absolute;
@@ -10,19 +11,26 @@ $outroDuration: 0.6s;
   height: 100%;
   background: white;
   z-index: 2;
-  transform: scaleX(1);
+  transform: translateX(0);
   display: flex;
   justify-content: center;
   align-items: center;
   transform-origin: right;
+  animation: HeroOverlay-leave 0.5s 1.8s cubic-bezier(0.55, .055, .675, .19) both;
+}
+
+@keyframes HeroOverlay-leave {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100%);
+  }
 }
 
 .HeroOverlay-text {
   font-size: $ms6;
-  text-transform: uppercase;
-  font-family: 'FFDIN';
   font-weight: 600;
-  letter-spacing: 0.05em;
   position: relative;
   &::before,
   &::after {
@@ -43,10 +51,10 @@ $outroDuration: 0.6s;
   & {
     &::before,
     &::after {
-      animation: HeroOverlayTextLeave $outroDuration $introDuration * 2 both;
+      animation: HeroOverlayText-leave $outroDuration $outroDelay both;
     }
     &::after {
-      animation-delay: $outroDuration * 2 + $outroDuration / 2;
+      animation-delay: $outroDelay + $outroDuration / 2;
     }
   }
 }
@@ -62,7 +70,7 @@ $outroDuration: 0.6s;
     left: 0;
     transform-origin: right;
     top: 0;
-    animation: HeroOverlayTextAppear $introDuration both;
+    animation: HeroOverlayText-appear $introDuration both;
     width: 100%;
     height: 100%;
   }
@@ -75,7 +83,7 @@ $outroDuration: 0.6s;
   }
 }
 
-@keyframes HeroOverlayTextAppear {
+@keyframes HeroOverlayText-appear {
   from {
     transform: scaleX(1);
   }
@@ -84,7 +92,7 @@ $outroDuration: 0.6s;
   }
 }
 
-@keyframes HeroOverlayTextLeave {
+@keyframes HeroOverlayText-leave {
   from {
     transform: translateX(0);
   }
