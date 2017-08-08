@@ -6,8 +6,10 @@ class HeroOverlay extends Component {
   render() {
     return (
       <div className="HeroOverlay">
-        <span className="HeroOverlay-textRevealer">
-          <H1 className="HeroOverlay-text">Welcome</H1>
+        <span className="t-revealWrap">
+          <H1 className="HeroOverlay-text t-reveal" data-reveal-content>
+            Welcome
+          </H1>
         </span>
       </div>
     )

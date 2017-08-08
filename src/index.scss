@@ -1,13 +1,11 @@
 @import './utils/functions';
 @import './utils/vars';
 @import './utils/utility-classes';
+@import './utils/reveal';
 
-.TuxFab {
-  // z-index: 123;
-  display: none;
-}
-
-* {
+*,
+*::before,
+*::after {
   box-sizing: inherit;
 }
 
