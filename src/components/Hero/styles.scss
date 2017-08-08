@@ -2,17 +2,10 @@
 @import '../../utils/functions.scss';
 
 .Hero-wrap {
-  // padding: $ms2;
-  margin-bottom: $ms4;
+  padding-bottom: $ms4;
   position: relative;
   height: 100vh;
-  overflow: hidden;
-  margin-bottom: 3.998rem;
-  height: calc(100vh - #{$ms2 * 2});
-  overflow: hidden;
-  margin-left: $ms2;
-  margin-top: $ms2;
-  width: calc(100% - #{$ms2 * 2};
+  box-sizing: content-box;
 }
 
 .Hero {
@@ -58,7 +51,7 @@
     height: 100%;
     top: 0;
     right: 0;
-    background: #006ad4;
+    background: $blue;
     z-index: 1;
     mix-blend-mode: hard-light;
     transition: all 0.5s ease;
@@ -98,11 +91,4 @@
     top: -2px;
     margin: auto;
   }
-}
-.Hero-logo {
-  position: absolute;
-  width: $ms4 * 2;
-  top: $ms4;
-  z-index: 2;
-  left: $ms4;
 }

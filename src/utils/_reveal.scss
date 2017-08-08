@@ -1,3 +1,5 @@
+@import './vars';
+
 $introDuration: 0.6s;
 $outroDelay: $introDuration * 2;
 $outroDuration: 0.4s;
@@ -15,10 +17,10 @@ $outroDuration: 0.4s;
     height: 100%;
   }
   &::before {
-    background: blue;
+    background: $blue;
   }
   &::after {
-    background: white;
+    background: $white;
   }
   & {
     &::before,
@@ -47,11 +49,11 @@ $outroDuration: 0.4s;
     height: 100%;
   }
   &::before {
-    background: blue;
+    background: $blue;
     animation-delay: $introDuration / 2;
   }
   &::after {
-    background: white;
+    background: $white;
   }
 }
 

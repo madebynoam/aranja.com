@@ -7,8 +7,10 @@ $outroDuration: 0.4s;
 
 .HeroOverlay {
   position: absolute;
-  width: calc(100% - #{$ms2});
-  height: 100%;
+  width: 100vw;
+  left: 0;
+  top: 0;
+  height: 100vh;
   background: white;
   z-index: 2;
   transform: translateX(0);

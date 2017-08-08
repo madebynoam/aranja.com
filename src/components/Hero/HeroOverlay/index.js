@@ -7,9 +7,7 @@ class HeroOverlay extends Component {
     return (
       <div className="HeroOverlay">
         <span className="t-revealWrap">
-          <H1 className="HeroOverlay-text t-reveal" data-reveal-content>
-            Welcome
-          </H1>
+          <H1 className="HeroOverlay-text t-reveal">Welcome</H1>
         </span>
       </div>
     )

@@ -4,7 +4,6 @@ import { H1, Legend } from '../../typography'
 import img01 from './Aranja00067.jpg'
 import img02 from './Aranja00663.jpg'
 import './styles.css'
-import logo from './logo.svg'
 import ScrollIndicator from '../ScrollIndicator'
 import HeroOverlay from './HeroOverlay'
 
@@ -35,7 +34,6 @@ class Hero extends React.Component {
       <div className="Hero-wrap">
         <HeroOverlay />
         <div className="Hero">
-          <img className="Hero-logo" src={logo} alt="" />
           {items.map((item, index) =>
             <div
               key={item.title}
