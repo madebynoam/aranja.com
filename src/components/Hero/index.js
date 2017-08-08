@@ -1,12 +1,11 @@
 import React from 'react'
 import classNames from 'classnames'
-import { H1, Chapter } from '../../typography'
+import { H1, Legend } from '../../typography'
 import img01 from './Aranja00067.jpg'
 import img02 from './Aranja00663.jpg'
 import './styles.css'
-import logo from './logo.svg'
-import Menu from '../Menu'
 import ScrollIndicator from '../ScrollIndicator'
+import HeroOverlay from './HeroOverlay'
 
 const items = [
   {
@@ -32,23 +31,25 @@ class Hero extends React.Component {
     const { activeSlide } = this.state
 
     return (
-      <div className="Hero">
-        <Menu />
-        {items.map((item, index) =>
-          <div
-            className={classNames('Hero-item', index === activeSlide && 'is-active')}
-            style={{ backgroundImage: `url(${item.background})` }}
-          >
-            <img className="Hero-logo" src={logo} alt="" />
-            <div className="Hero-text">
-              <H1>
-                {item.title}
-              </H1>
-              <Chapter>Read case study</Chapter>
-            </div>
-          </div>,
-        )}
-        <ScrollIndicator />
+      <div className="Hero-wrap">
+        <HeroOverlay />
+        <div className="Hero">
+          {items.map((item, index) =>
+            <div
+              key={item.title}
+              className={classNames('Hero-item', index === activeSlide && 'is-active')}
+              style={{ backgroundImage: `url(${item.background})` }}
+            >
+              <div className="Hero-text">
+                <H1 className="Hero-textHeading">
+                  {item.title}
+                </H1>
+                <Legend className="Hero-textLegend">Read case study</Legend>
+              </div>
+            </div>,
+          )}
+          <ScrollIndicator />
+        </div>
       </div>
     )
   }

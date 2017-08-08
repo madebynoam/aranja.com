@@ -95,10 +95,10 @@ class Clients extends React.Component {
             this.componentRef = componentRef
           }}
         >
-          <H3 className="Clients-heading" bottom="xsmall">
+          <H3 component="div" className="Clients-heading" bottom="xsmall">
             <EditInline field="fields.content.clientsHeading">Selected clients</EditInline>
           </H3>
-          <Body1 className="Clients-subheading" bottom="medium">
+          <Body1 component="div" className="Clients-subheading" bottom="medium">
             <EditInline field="fields.content.clientsText">
               We've had the pleasure of working with <br /> some of tech's leading companies
             </EditInline>

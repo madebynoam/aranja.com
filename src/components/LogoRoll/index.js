@@ -18,10 +18,10 @@ const logoGroups = [
 const LogoRoll = () => {
   return (
     <div className="LogoRoll">
-      {logoGroups.map(group =>
-        <div className="LogoRoll-row">
+      {logoGroups.map((group, index) =>
+        <div className="LogoRoll-row" key={`group${index}`}>
           {group.map((logo, index) =>
-            <div className="LogoRoll-image">
+            <div className="LogoRoll-image" key={`image${index}`}>
               <img src={logo} alt="" />
             </div>,
           )}

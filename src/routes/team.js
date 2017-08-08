@@ -1,6 +1,6 @@
 import React from 'react'
 import { Editable } from 'tux'
-import { Chapter, Body1, Body2, H1, H3 } from '../typography'
+import { Legend, Body1, Body2, H1, H3 } from '../typography'
 import Lines from '../components/Lines'
 import Footer from '../components/Footer'
 import Menu from '../components/Menu'
@@ -23,7 +23,7 @@ const Team = ({ content, team }) => {
           <Lines />
           <Menu />
           <Section>
-            <Chapter>Who we are</Chapter>
+            <Legend>Who we are</Legend>
             <H3 className="Team-heading">A dedicated team of ambitious developers</H3>
           </Section>
           <SectionHero img={teamHeroPhoto} />

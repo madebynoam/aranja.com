@@ -1,0 +1,16 @@
+@import '../../utils/vars';
+
+.Header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+}
+
+.Header-logo {
+  position: absolute;
+  left: $ms4;
+  top: $ms4;
+  width: $ms4 * 2;
+}

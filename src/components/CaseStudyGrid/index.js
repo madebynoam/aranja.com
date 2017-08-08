@@ -50,10 +50,10 @@ class CaseStudyGrid extends React.Component {
         partialVisibility
       >
         <div className={classnames('CaseStudyGrid', 'is-visible')}>
-          <H3 className="CaseStudyGrid-heading" bottom="xsmall">
+          <H3 component="div" className="CaseStudyGrid-heading" bottom="xsmall">
             <EditInline field="fields.content.portfolioHeading">Latest case studies</EditInline>
           </H3>
-          <Body1 className="CaseStudyGrid-subheading" bottom="medium">
+          <Body1 component="div" className="CaseStudyGrid-subheading" bottom="medium">
             <EditInline field="fields.content.portfolioText">
               Have a look at our recently published work
             </EditInline>

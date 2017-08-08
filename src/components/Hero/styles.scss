@@ -1,39 +1,28 @@
 @import '../../utils/vars.scss';
 @import '../../utils/functions.scss';
 
+.Hero-wrap {
+  padding-bottom: $ms4;
+  position: relative;
+  height: 100vh;
+  box-sizing: content-box;
+}
+
 .Hero {
   color: $white;
   display: flex;
-  height: 100vh;
-  position: relative;
   z-index: 1;
-  width: 100%;
-  padding: $ms2;
-  margin-bottom: $ms4;
+  height: 100%;
+  position: relative;
+  animation: Hero-slideIn 0.6s 1.9s ease-out both;
+}
 
-  .t-h1 {
-    max-width: 766px;
-    line-height: 1.1;
+@keyframes Hero-slideIn {
+  from {
+    transform: translateX(-50%);
   }
-
-  .t-chapter {
-    cursor: pointer;
-    margin-top: -1em;
-    font-size: 1.1em;
-    letter-spacing: 1.5px;
-
-    &::before {
-      position: absolute;
-      left: 0em;
-      display: block;
-      content: '';
-      width: 1em;
-      bottom: -3rem;
-      height: 2px;
-      background: #54a8ca;
-      top: -2px;
-      margin: auto;
-    }
+  to {
+    transform: translateX(0%);
   }
 }
 
@@ -62,7 +51,7 @@
     height: 100%;
     top: 0;
     right: 0;
-    background: #006ad4;
+    background: $blue;
     z-index: 1;
     mix-blend-mode: hard-light;
     transition: all 0.5s ease;
@@ -79,11 +68,27 @@
   margin-left: -25%;
   padding-top: $ms4;
 }
+.Hero-textHeading {
+  max-width: 766px;
+  line-height: 1.1;
+}
 
-.Hero-logo {
-  position: absolute;
-  width: 8rem;
-  top: 2rem;
-  z-index: 2;
-  left: 2rem;
+.Hero-textLegend {
+  cursor: pointer;
+  margin-top: -1em;
+  font-size: 1.1em;
+  letter-spacing: 1.5px;
+
+  &::before {
+    position: absolute;
+    left: 0em;
+    display: block;
+    content: '';
+    width: 1em;
+    bottom: -3rem;
+    height: 2px;
+    background: #54a8ca;
+    top: -2px;
+    margin: auto;
+  }
 }

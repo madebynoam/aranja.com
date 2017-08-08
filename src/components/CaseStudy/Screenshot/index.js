@@ -4,7 +4,7 @@ import VisibilitySensor from 'react-visibility-sensor'
 import classNames from 'classnames'
 import './styles.css'
 
-class CSScreenshot extends React.Component {
+class Screenshot extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -31,13 +31,10 @@ class CSScreenshot extends React.Component {
         partialVisibility
       >
         <div>
-          <div className={classNames('Curtain', isVisible && 'is-visible')}>
-            <div className="Curtain-initial" />
-            <div className="CSScreenshot">
-              <div className="CSScreenshot-image" style={{ backgroundImage: `url(${img})` }} />
-            </div>
+          <div className={classNames('Screenshot', isVisible && 'is-visible')}>
+            <div className="Screenshot-image" style={{ backgroundImage: `url(${img})` }} />
           </div>
-          <Body2 top="small" bottom="small" className="CSScreenshot-caption">
+          <Body2 top="small" bottom="small" className="Screenshot-caption">
             {caption}
           </Body2>
         </div>
@@ -46,4 +43,4 @@ class CSScreenshot extends React.Component {
   }
 }
 
-export default CSScreenshot
+export default Screenshot

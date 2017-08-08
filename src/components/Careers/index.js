@@ -1,5 +1,5 @@
 import React from 'react'
-import { Chapter, Body1, Body2, H2, H3 } from '../../typography'
+import { Legend, Body1, Body2, H2, H3 } from '../../typography'
 import './styles.css'
 
 const tempPosition = [
@@ -22,7 +22,7 @@ const Career = ({ title, description }) =>
 
 const Careers = ({ openPositions = tempPosition }) =>
   <div className="Careers">
-    <Chapter>Join our team</Chapter>
+    <Legend>Join our team</Legend>
     <Body1 bottom="medium">
       Are you passionate about web development? Are you a genuinely good person? Want to be part of
       a fun, driven team? Great, we could really get along! Check out our open positions below and
@@ -30,7 +30,7 @@ const Careers = ({ openPositions = tempPosition }) =>
     </Body1>
     <div className="Career-list">
       {openPositions.map(position =>
-        <div className="Career-column">
+        <div className="Career-column" key={position.title}>
           <Career title={position.title} description={position.description} />
         </div>,
       )}
