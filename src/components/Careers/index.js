@@ -30,7 +30,7 @@ const Careers = ({ openPositions = tempPosition }) =>
     </Body1>
     <div className="Career-list">
       {openPositions.map(position =>
-        <div className="Career-column">
+        <div className="Career-column" key={position.title}>
           <Career title={position.title} description={position.description} />
         </div>,
       )}

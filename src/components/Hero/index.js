@@ -5,7 +5,6 @@ import img01 from './Aranja00067.jpg'
 import img02 from './Aranja00663.jpg'
 import './styles.css'
 import logo from './logo.svg'
-import Menu from '../Menu'
 import ScrollIndicator from '../ScrollIndicator'
 import HeroOverlay from './HeroOverlay'
 
@@ -36,12 +35,13 @@ class Hero extends React.Component {
       <div className="Hero-wrap">
         <HeroOverlay />
         <div className="Hero">
+          <img className="Hero-logo" src={logo} alt="" />
           {items.map((item, index) =>
             <div
+              key={item.title}
               className={classNames('Hero-item', index === activeSlide && 'is-active')}
               style={{ backgroundImage: `url(${item.background})` }}
             >
-              <img className="Hero-logo" src={logo} alt="" />
               <div className="Hero-text">
                 <H1 className="Hero-textHeading">
                   {item.title}

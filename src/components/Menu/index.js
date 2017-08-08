@@ -19,7 +19,7 @@ class Menu extends React.Component {
     return (
       <nav className="Menu">
         <Toggle open={open} onClick={this.handleClick.bind(this)} />
-        <div className="Menu-overlay">Yo</div>
+        <div className="Menu-overlay" />
       </nav>
     )
   }

@@ -52,7 +52,6 @@ const CaseStudies = ({ content, casestudies }) => {
       <div className="CaseStudies">
         <div className="Container">
           <Lines />
-          <Menu />
           <CaseStudyHero company={company} img={heroImage.asset.file.url} />
           <Section>
             {copyChapter1 && <Markdown source={copyChapter1} />}

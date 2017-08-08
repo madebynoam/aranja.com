@@ -7,7 +7,7 @@ class HeroOverlay extends Component {
     return (
       <div className="HeroOverlay">
         <span className="HeroOverlay-textRevealer">
-          <H1 className="HeroOverlay-text">We are Aranja</H1>
+          <H1 className="HeroOverlay-text">Welcome</H1>
         </span>
       </div>
     )
