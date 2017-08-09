@@ -5,9 +5,9 @@ import Footer from '../Footer'
 
 const Page = ({ name, home, children }) =>
   <div className="Page">
-    <Lines />
     <Header inversed={home} fixed={home} />
     <div className="container">
+      <Lines />
       {children}
     </div>
     <Footer />
