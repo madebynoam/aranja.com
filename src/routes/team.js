@@ -18,9 +18,9 @@ const Team = ({ content, team }) => {
     <Editable model={content}>
       <Page name="Team">
         <Section top="medium">
-          <H1>
+          <H2>
             We are web application <br /> development specialists
-          </H1>
+          </H2>
         </Section>
         <SectionHero img={teamHeroPhoto} />
         <Section>
@@ -31,7 +31,7 @@ const Team = ({ content, team }) => {
           <H3 top="medium" bottom="small" center>
             To make engaging products
           </H3>
-          <Body1 className="Team-copy" bottom="large">
+          <Body1 bottom="large">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt laborum, cum laudantium
             dolorem natus ullam! Autem aperiam, eum deserunt quibusdam error molestias obcaecati, ea
             asperiores delectus reiciendis voluptate minima dolore temporibus, veritatis rerum quo
@@ -43,7 +43,7 @@ const Team = ({ content, team }) => {
           <H3 top="large" bottom="small" center>
             Play hard, work harder.
           </H3>
-          <Body1 className="Team-copy" bottom="medium">
+          <Body1 bottom="medium">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt laborum, cum laudantium
             dolorem natus ullam! Autem aperiam, eum deserunt quibusdam error molestias obcaecati, ea
             asperiores delectus reiciendis voluptate minima dolore temporibus, veritatis rerum quo
@@ -54,7 +54,7 @@ const Team = ({ content, team }) => {
           <H3 top="large" bottom="small" center>
             Culture.
           </H3>
-          <Body1 className="Team-copy" bottom="medium">
+          <Body1 bottom="medium">
             Hack nights. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt laborum, cum
             laudantium dolorem natus ullam! Autem aperiam, eum deserunt quibusdam error molestias
             obcaecati, ea asperiores delectus reiciendis voluptate minima dolore temporibus,
@@ -62,6 +62,9 @@ const Team = ({ content, team }) => {
             said veritatis rerum quo at. Boo yah.
           </Body1>
           <SectionHero img={teamHeroPhoto3} caption="bla" />
+          <H3 top="large" bottom="small" center>
+            Want to join our team?
+          </H3>
           <Careers />
         </Section>
         <NextUp />

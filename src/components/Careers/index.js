@@ -22,11 +22,9 @@ const Career = ({ title, description }) =>
 
 const Careers = ({ openPositions = tempPosition }) =>
   <div className="Careers">
-    <Legend>Join our team</Legend>
     <Body1 bottom="medium">
-      Are you passionate about web development? Are you a genuinely good person? Want to be part of
-      a fun, driven team? Great, we could really get along! Check out our open positions below and
-      don't hesitate to apply.
+      If you are passionate about web development and want to be part of a fun, driven team, then
+      check out our open positions below and don't hesitate to apply.
     </Body1>
     <div className="Career-list">
       {openPositions.map(position =>
