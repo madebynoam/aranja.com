@@ -1,7 +1,6 @@
 import React from 'react'
 import { Editable } from 'tux'
 import { Legend, Body1, Body2, H1, H3 } from '../typography'
-import Lines from '../components/Lines'
 import Page from '../components/Page'
 import LogoRoll from '../components/LogoRoll'
 import TeamGrid from '../components/Team/Grid'
