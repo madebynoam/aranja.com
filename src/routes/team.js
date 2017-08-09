@@ -21,8 +21,8 @@ const Team = ({ content, team }) => {
           <H2>
             We are web application <br /> development specialists
           </H2>
+          <SectionHero img={teamHeroPhoto} />
         </Section>
-        <SectionHero img={teamHeroPhoto} />
         <Section>
           <H3 bottom="small" center>
             We team up with some great companies
@@ -31,36 +31,42 @@ const Team = ({ content, team }) => {
           <H3 top="medium" bottom="small" center>
             To make engaging products
           </H3>
-          <Body1 bottom="large">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt laborum, cum laudantium
-            dolorem natus ullam! Autem aperiam, eum deserunt quibusdam error molestias obcaecati, ea
-            asperiores delectus reiciendis voluptate minima dolore temporibus, veritatis rerum quo
-            at? Nesciunt aliquid sit consectetur, odio voluptate iusto! Lorem ipsum dolor sit amet,
-            consectetur adipisicing elit. Sed reprehenderit atque, necessitatibus iste mollitia quo
-            corrupti dolorum officia voluptates, quod.
-          </Body1>
+          <div className="Team-copy">
+            <Body1 bottom="large">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt laborum, cum laudantium
+              dolorem natus ullam! Autem aperiam, eum deserunt quibusdam error molestias obcaecati,
+              ea asperiores delectus reiciendis voluptate minima dolore temporibus, veritatis rerum
+              quo at? Nesciunt aliquid sit consectetur, odio voluptate iusto! Lorem ipsum dolor sit
+              amet, consectetur adipisicing elit. Sed reprehenderit atque, necessitatibus iste
+              mollitia quo corrupti dolorum officia voluptates, quod.
+            </Body1>
+          </div>
           <TeamGrid />
           <H3 top="large" bottom="small" center>
             Play hard, work harder.
           </H3>
-          <Body1 bottom="medium">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt laborum, cum laudantium
-            dolorem natus ullam! Autem aperiam, eum deserunt quibusdam error molestias obcaecati, ea
-            asperiores delectus reiciendis voluptate minima dolore temporibus, veritatis rerum quo
-            at? Nesciunt aliquid sit consectetur, odio voluptate iusto, yes I said veritatis rerum
-            quo at. Boo yah.
-          </Body1>
+          <div className="Team-copy">
+            <Body1 bottom="medium">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt laborum, cum laudantium
+              dolorem natus ullam! Autem aperiam, eum deserunt quibusdam error molestias obcaecati,
+              ea asperiores delectus reiciendis voluptate minima dolore temporibus, veritatis rerum
+              quo at? Nesciunt aliquid sit consectetur, odio voluptate iusto, yes I said veritatis
+              rerum quo at. Boo yah.
+            </Body1>
+          </div>
           <SectionHero img={teamHeroPhoto2} caption="bla" />
           <H3 top="large" bottom="small" center>
             Culture.
           </H3>
-          <Body1 bottom="medium">
-            Hack nights. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt laborum, cum
-            laudantium dolorem natus ullam! Autem aperiam, eum deserunt quibusdam error molestias
-            obcaecati, ea asperiores delectus reiciendis voluptate minima dolore temporibus,
-            veritatis rerum quo at? Nesciunt aliquid sit consectetur, odio voluptate iusto, yes I
-            said veritatis rerum quo at. Boo yah.
-          </Body1>
+          <div className="Team-copy">
+            <Body1 bottom="medium">
+              Hack nights. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt laborum,
+              cum laudantium dolorem natus ullam! Autem aperiam, eum deserunt quibusdam error
+              molestias obcaecati, ea asperiores delectus reiciendis voluptate minima dolore
+              temporibus, veritatis rerum quo at? Nesciunt aliquid sit consectetur, odio voluptate
+              iusto, yes I said veritatis rerum quo at. Boo yah.
+            </Body1>
+          </div>
           <SectionHero img={teamHeroPhoto3} caption="bla" />
           <H3 top="large" bottom="small" center>
             Want to join our team?
