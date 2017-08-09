@@ -9,23 +9,23 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  left: 0;
+  margin: auto;
   max-width: 2200px;
   min-height: 20rem;
   padding: 0 13.5%;
   position: fixed;
+  right: 0;
   width: 100%;
   z-index: -1;
-  margin: auto;
-  left: 0;
-  right: 0;
 }
 
 .Footer-legend {
-  text-transform: uppercase;
   font-size: 0.75rem;
-  opacity: 0.5;
   letter-spacing: 0.1rem;
+  opacity: 0.5;
   padding-bottom: $ms0;
+  text-transform: uppercase;
 }
 
 .Footer-title {
@@ -37,8 +37,8 @@
 }
 
 .Footer-social {
-  display: flex;
   align-items: center;
+  display: flex;
 }
 
 .Footer-socialIcon {

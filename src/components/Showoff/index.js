@@ -1,11 +1,11 @@
-import React from 'react'
+import React, { Component } from 'react'
 import SingleShowoff from './Showoff'
 import Section from '../Section'
 import ShadowText from '../ShadowText'
 import { EditModal } from 'tux'
 import './styles.css'
 
-class Showoff extends React.Component {
+class Showoff extends Component {
   render() {
     const { showOffs } = this.props
     return (

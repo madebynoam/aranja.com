@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { Component } from 'react'
 import './styles.css'
-class ShadowText extends React.Component {
+class ShadowText extends Component {
   render() {
     return (
       <p className="ShadowText">

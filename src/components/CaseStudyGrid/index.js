@@ -1,7 +1,6 @@
-// TODO: CaseStudyGrid should not use react-motion, but GSAP.
 // TODO: CaseStudyGrid should have a scroll functionality, via button, to see older studies.
 
-import React from 'react'
+import React, { Component } from 'react'
 import VisibilitySensor from 'react-visibility-sensor'
 import classnames from 'classnames'
 import { EditInline } from 'tux'
@@ -24,7 +23,7 @@ let defaultItems = [
   { title: 'Agree', image: image6, href: '/', year: undefined },
 ]
 
-class CaseStudyGrid extends React.Component {
+class CaseStudyGrid extends Component {
   constructor(props) {
     super(props)
     this.state = {

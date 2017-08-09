@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { Body2 } from '../../../typography'
 import VisibilitySensor from 'react-visibility-sensor'
 import classNames from 'classnames'
 import './styles.css'
 
-class Screenshot extends React.Component {
+class Screenshot extends Component {
   constructor(props) {
     super(props)
     this.state = {

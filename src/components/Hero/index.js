@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component } from 'react'
 import classNames from 'classnames'
 import { H1, Legend } from '../../typography'
 import img01 from './Aranja00067.jpg'
@@ -20,7 +20,7 @@ const items = [
   },
 ]
 
-class Hero extends React.Component {
+class Hero extends Component {
   constructor() {
     super()
     this.state = {

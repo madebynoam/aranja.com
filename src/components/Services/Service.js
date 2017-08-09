@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component } from 'react'
 import './styles.css'
 import { TweenMax, Expo } from 'gsap'
 import VisibilitySensor from 'react-visibility-sensor'
@@ -7,7 +7,7 @@ import { Body1, H2 } from '../../typography'
 
 const ease = Expo.easeOut
 
-class Service extends React.Component {
+class Service extends Component {
   constructor() {
     super()
     this.state = {

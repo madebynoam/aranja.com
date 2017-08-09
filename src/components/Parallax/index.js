@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { Component } from 'react'
 import service, { offsetTop } from './ParallaxService'
 
-class Parallax extends React.Component {
+class Parallax extends Component {
   componentDidMount() {
     service.addItem(this)
     this.cache()

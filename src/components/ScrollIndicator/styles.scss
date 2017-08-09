@@ -1,27 +1,27 @@
 .ScrollIndicator {
-  width: 3rem;
-  position: absolute;
-  left: 0;
-  right: 0;
-  margin: auto;
-  bottom: 0;
-  z-index: 1;
-  display: flex;
-  justify-content: center;
   align-items: flex-start;
-  overflow: hidden;
+  bottom: 0;
+  display: flex;
   height: 3rem;
+  justify-content: center;
+  left: 0;
+  margin: auto;
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+  width: 3rem;
+  z-index: 1;
   span {
     $duration: 1.9s;
     animation: indicator $duration infinite cubic-bezier(.16, .22, .86, .59) both;
+    background-image: url('./arrow.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    bottom: 0;
     display: block;
     padding-top: 100%;
-    bottom: 0;
-    background-image: url('./arrow.svg');
     position: absolute;
-    background-repeat: no-repeat;
     width: 2rem;
-    background-position: center;
     &:nth-child(2) {
       animation-delay: $duration / 2;
     }

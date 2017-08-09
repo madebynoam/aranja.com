@@ -47,7 +47,7 @@ $step: 100 / 12;
   animation-duration: #{$duration}s;
   animation-iteration-count: infinite;
   animation-fill-mode: forwards;
-  animation-timing-function: ease-in-out; //cubic-bezier(.52, .24, .75, 1.16); //ease-in-out;
+  animation-timing-function: ease-in-out;
 
   > img {
     width: 5rem;

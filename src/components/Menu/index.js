@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { Component } from 'react'
 import classNames from 'classnames'
 import Toggle from './Toggle'
 import './styles.css'
 
-class Menu extends React.Component {
+class Menu extends Component {
   constructor() {
     super()
     this.state = {

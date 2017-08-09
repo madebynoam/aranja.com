@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component } from 'react'
 import VisibilitySensor from 'react-visibility-sensor'
 import { TweenMax, Expo } from 'gsap'
 import { H3, Body1 } from '../../typography'
@@ -42,7 +42,7 @@ const clients = [
 
 const ease = Expo.easeOut
 
-class Clients extends React.Component {
+class Clients extends Component {
   constructor() {
     super()
     this.state = {
