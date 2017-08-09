@@ -1,6 +1,6 @@
 import React from 'react'
 import { Editable } from 'tux'
-import { Legend, Body1, Body2, H1, H3 } from '../typography'
+import { Legend, Body1, Body2, H1, H2, H3 } from '../typography'
 import Page from '../components/Page'
 import LogoRoll from '../components/LogoRoll'
 import TeamGrid from '../components/Team/Grid'
@@ -17,9 +17,14 @@ const Team = ({ content, team }) => {
   return (
     <Editable model={content}>
       <Page name="Team">
+        <Section top="medium">
+          <H1>
+            We are web application <br /> development specialists
+          </H1>
+        </Section>
         <SectionHero img={teamHeroPhoto} />
         <Section>
-          <H3 bottom="medium" center>
+          <H3 bottom="small" center>
             We team up with some great companies
           </H3>
           <LogoRoll />

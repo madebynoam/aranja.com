@@ -9,20 +9,21 @@
   box-sizing: inherit;
 }
 
-:root {
-  font-size: between(18px, 12px, $lg, $sm);
-
-  @media (min-width: $lg) {
-    font-size: 18px;
-  }
-}
-
-html,
-body {
-  font-family: 'Averta'; //Todo move to typography
+html {
+  font-family: 'Averta';
+  font-size: between(18px, 14px, 1440px, 375px);
+  font-weight: 300;
+  line-height: 1.5;
+  text-rendering: optimizeLegibility;
   box-sizing: border-box;
   min-height: 100%;
-  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media (min-width: 1440px) {
+  html {
+    font-size: 18px;
+  }
 }
 
 body {

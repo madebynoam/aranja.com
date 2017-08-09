@@ -10,13 +10,13 @@
 // Todo, make Parallax component handle these styles.
 
 .SectionHero-imageWrapper {
-  flex: 1;
   overflow: hidden;
 }
 
 .SectionHero-image {
+  flex: 1;
   background-position: center;
   background-size: cover;
   height: 750px;
-  transform: translateY(calc(var(--parallax) * 50px)) scale(1.2);
+  // transform: translateY(calc(var(--parallax) * 50px)) scale(1.2);
 }
