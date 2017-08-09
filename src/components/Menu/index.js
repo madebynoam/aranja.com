@@ -17,14 +17,12 @@ class Menu extends React.Component {
   }
   render() {
     const { open } = this.state
+    const { inversed } = this.props
     return (
-      <nav className={classNames('Menu', open && 'is-open')}>
+      <nav className={classNames('Menu', open && 'is-open', inversed && 'is-inversed')}>
         <Toggle open={open} onClick={this.handleClick.bind(this)} />
         <div className="Menu-overlay">
           <div className="Menu-content">
-            <marquee style={{ color: 'rebeccapurple', marginBottom: '2rem' }}>
-              Super temp menu
-            </marquee>
             <a className="Menu-item" href="/">
               Home
             </a>

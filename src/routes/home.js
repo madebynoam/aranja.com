@@ -1,4 +1,5 @@
 import React from 'react'
+import Page from '../components/Page'
 import Hero from '../components/Hero'
 import Services from '../components/Services'
 import Lines from '../components/Lines'
@@ -10,17 +11,12 @@ import { Editable } from 'tux'
 
 const Home = ({ content, services, showOffs }) =>
   <Editable model={content}>
-    <div className="Home">
-      <div className="Container">
-        <Lines />
-        <Header />
-        <Hero />
-        <Services services={services} />
-        <Clients />
-        <CaseStudyGrid />
-      </div>
-      <Footer />
-    </div>
+    <Page name="Home" home>
+      <Hero />
+      <Services services={services} />
+      <Clients />
+      <CaseStudyGrid />
+    </Page>
   </Editable>
 
 export default Home

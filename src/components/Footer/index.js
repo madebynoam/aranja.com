@@ -6,7 +6,7 @@ import twitter from './twitter.svg'
 import './styles.css'
 
 const Footer = ({}) =>
-  <section className="Section Footer">
+  <section className="Footer">
     <H2 className="Footer-title" top="medium">
       Get in touch
     </H2>

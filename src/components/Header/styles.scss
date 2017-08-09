@@ -1,16 +1,27 @@
 @import '../../utils/vars';
 
 .Header {
-  position: absolute;
-  top: 0;
-  left: 0;
   z-index: 2;
   width: 100%;
+  padding: $ms4 $ms3;
+
+  .Hero-wrap > & {
+    padding: 0;
+    position: absolute;
+  }
+
+  &.is-fixed {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
 }
 
 .Header-logo {
-  position: absolute;
-  left: $ms4;
-  top: $ms4;
   width: $ms4 * 2;
+  .Hero-wrap > .Header > & {
+    position: absolute;
+    left: $ms3;
+    top: $ms3;
+  }
 }
