@@ -17,7 +17,7 @@ class Hero extends Component {
                 {title}
               </H1>
             </div>
-          </div>,
+          </div>
           <ScrollIndicator />
         </div>
       </div>

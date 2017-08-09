@@ -12,7 +12,7 @@
 html {
   font-family: 'Averta';
   font-size: between(18px, 14px, 1440px, 375px);
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.5;
   text-rendering: optimizeLegibility;
   box-sizing: border-box;
@@ -51,27 +51,6 @@ body {
   src: url('assets/FFDINCondBoldtrial.woff2') format('woff2');
   font-weight: 600;
 }
-
-/* Brown font */
-@font-face {
-  font-family: 'Brown Pro';
-  src: url('assets/lineto-brown-bold.woff2') format('woff2');
-  font-weight: 700;
-}
-
-@font-face {
-  font-family: 'Brown Pro';
-  src: url('assets/lineto-brown-light.woff') format('woff');
-  font-weight: 300;
-}
-
-@font-face {
-  font-family: 'Brown Pro';
-  src: url('assets/lineto-brown-regular.woff2') format('woff2');
-  font-weight: 400;
-}
-
-/* Averta font */
 
 @font-face {
   font-family: 'Averta';
