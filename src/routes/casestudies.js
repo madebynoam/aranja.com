@@ -48,6 +48,12 @@ const CaseStudies = ({ content, casestudies }) => {
     <Editable model={content}>
       <Page name="Case Studies">
         <Section>
+          <H2 top="medium">
+            Read how we worked with <br /> Kolibri on their new website
+          </H2>
+        </Section>
+        <SectionHero img={heroImage.asset.file.url} />
+        <Section>
           {copyChapter1 && <Markdown source={copyChapter1} />}
           {projectScreenshot &&
             <Screenshot
