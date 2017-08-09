@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import VisibilitySensor from 'react-visibility-sensor'
 import { TweenMax, Expo } from 'gsap'
 import { H3, Body1 } from '../../typography'
@@ -13,7 +14,7 @@ import lsbLogo from './lsb.svg'
 import upperquadLogo from './uq.svg'
 import { EditInline } from 'tux'
 
-const clients = [
+const defaultClients = [
   {
     name: 'Facebook',
     logo: facebookLogo,
@@ -81,6 +82,7 @@ class Clients extends Component {
 
   render() {
     const { isVisible } = this.state
+    const { clients = defaultClients } = this.props
     return (
       <VisibilitySensor
         onChange={isVisible => this.onChange(isVisible)}
@@ -114,6 +116,15 @@ class Clients extends Component {
       </VisibilitySensor>
     )
   }
+}
+
+Clients.propTypes = {
+  clients: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string,
+      logo: PropTypes.string,
+    }),
+  ),
 }
 
 export default Clients

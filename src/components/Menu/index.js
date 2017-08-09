@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import classNames from 'classnames'
 import Toggle from './Toggle'
 import './styles.css'
@@ -42,4 +43,7 @@ class Menu extends Component {
   }
 }
 
+Menu.propTypes = {
+  inversed: PropTypes.bool,
+}
 export default Menu

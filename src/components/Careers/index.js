@@ -1,5 +1,6 @@
 import React from 'react'
-import { Legend, Body1, Body2, H2, H3 } from '../../typography'
+import PropTypes from 'prop-types'
+import { Body1, Body2, H3 } from '../../typography'
 import './styles.css'
 
 const tempPosition = [
@@ -34,5 +35,14 @@ const Careers = ({ openPositions = tempPosition }) =>
       )}
     </div>
   </div>
+
+Careers.propTypes = {
+  openPositions: PropTypes.arrayOf(
+    PropTypes.shape({
+      title: PropTypes.string,
+      description: PropTypes.string,
+    }),
+  ),
+}
 
 export default Careers

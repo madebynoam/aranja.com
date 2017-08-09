@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
-import './styles.css'
+import PropTypes from 'prop-types'
 import { TweenMax, Expo } from 'gsap'
 import VisibilitySensor from 'react-visibility-sensor'
 import Parallax from '../Parallax'
 import { Body1, H2 } from '../../typography'
+import './styles.css'
 
 const ease = Expo.easeOut
 
@@ -118,6 +119,12 @@ class Service extends Component {
       </VisibilitySensor>
     )
   }
+}
+
+Service.propTypes = {
+  heading: PropTypes.text,
+  copy: PropTypes.text,
+  image: PropTypes.text,
 }
 
 export default Service

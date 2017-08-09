@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import './styles.css'
 
 const NextUp = ({ nextPage = 'Case studies', url }) =>
@@ -10,5 +11,10 @@ const NextUp = ({ nextPage = 'Case studies', url }) =>
       </a>
     </div>
   </div>
+
+NextUp.propTypes = {
+  nextPage: PropTypes.string,
+  url: PropTypes.string.isRequired,
+}
 
 export default NextUp

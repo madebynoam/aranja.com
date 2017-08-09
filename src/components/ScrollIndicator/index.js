@@ -1,8 +1,7 @@
 import React from 'react'
-import arrow from './arrow.svg'
 import './styles.css'
 
-const ScrollIndicator = ({}) =>
+const ScrollIndicator = () =>
   <div className="ScrollIndicator">
     <span />
     <span />

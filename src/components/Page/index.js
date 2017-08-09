@@ -1,16 +1,22 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import Lines from '../Lines'
 import Header from '../Header'
 import Footer from '../Footer'
 
-const Page = ({ name, home, children }) =>
+const Page = ({ name, children }) =>
   <div className="Page">
-    <Header inversed={home} fixed={home} />
+    <Header />
     <div className="container">
       <Lines />
       {children}
     </div>
     <Footer />
   </div>
+
+Page.propTypes = {
+  name: PropTypes.string,
+  children: PropTypes.element,
+}
 
 export default Page

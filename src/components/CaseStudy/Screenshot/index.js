@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import { Body2 } from '../../../typography'
 import VisibilitySensor from 'react-visibility-sensor'
 import classNames from 'classnames'
@@ -41,6 +42,11 @@ class Screenshot extends Component {
       </VisibilitySensor>
     )
   }
+}
+
+Screenshot.propTypes = {
+  img: PropTypes.string,
+  caption: PropTypes.string,
 }
 
 export default Screenshot

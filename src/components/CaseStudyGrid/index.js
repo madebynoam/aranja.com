@@ -1,6 +1,7 @@
 // TODO: CaseStudyGrid should have a scroll functionality, via button, to see older studies.
 
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import VisibilitySensor from 'react-visibility-sensor'
 import classnames from 'classnames'
 import { EditInline } from 'tux'
@@ -86,6 +87,17 @@ class CaseStudyGrid extends Component {
       </VisibilitySensor>
     )
   }
+}
+
+CaseStudyGrid.propTypes = {
+  items: PropTypes.arrayOf(
+    PropTypes.shape({
+      title: PropTypes.string,
+      image: PropTypes.string,
+      href: PropTypes.string,
+      year: PropTypes.string || PropTypes.number,
+    }),
+  ),
 }
 
 export default CaseStudyGrid
