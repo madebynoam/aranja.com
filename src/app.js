@@ -1,4 +1,3 @@
-import React from 'react'
 import createContentfulAdapter from 'tux-adapter-contentful'
 import routes from './routes'
 import router from './middleware/router'

@@ -1,16 +1,13 @@
 import React from 'react'
 import { Editable } from 'tux'
 import ReactMarkdown from 'react-markdown'
-import { Legend, Body1, Body2, H1, H2, H3 } from '../typography'
+import { Body1, H1, H2, H3 } from '../typography'
 import Section from '../components/Section'
 import Hero from '../components/Hero'
 import Page from '../components/Page'
-import SectionHero from '../components/SectionHero'
 import NextUp from '../components/NextUp'
 import Button from '../components/Button'
 import Screenshot from '../components/CaseStudy/Screenshot'
-import CSCTA from '../components/CaseStudy/CTA'
-import Meta from '../components/CaseStudy/Meta'
 import '../components/CaseStudy/styles.css'
 
 const WrappedBody = ({ children, ...props }) =>
@@ -49,7 +46,7 @@ const CaseStudies = ({ content, casestudies }) => {
     <Editable model={content}>
       <Page name="Case Studies">
         <Hero
-          intro="Case study #001"
+          intro={`Case study: ${company}`}
           img={heroImage.asset.file.url}
           title="Team work is the name of the game"
         />
@@ -68,7 +65,7 @@ const CaseStudies = ({ content, casestudies }) => {
             />}
           {copyChapter3 && <Markdown source={copyChapter3} />}
         </Section>
-        <NextUp />
+        <NextUp nextPage="Something" url="/" />
       </Page>
     </Editable>
   )

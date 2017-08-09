@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { H1, Legend } from '../../typography'
+import { H1 } from '../../typography'
 import './styles.css'
 import ScrollIndicator from '../ScrollIndicator'
 import HeroOverlay from './HeroOverlay'
