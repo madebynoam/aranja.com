@@ -16,7 +16,7 @@ const Page = ({ name, children }) =>
 
 Page.propTypes = {
   name: PropTypes.string,
-  children: PropTypes.element,
+  children: PropTypes.array,
 }
 
 export default Page

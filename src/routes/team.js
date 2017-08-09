@@ -69,7 +69,7 @@ const Team = ({ content, team }) => {
           </H3>
           <Careers />
         </Section>
-        <NextUp />
+        <NextUp nextPage="Case Studies" url="/" />
       </Page>
     </Editable>
   )

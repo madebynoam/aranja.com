@@ -122,9 +122,9 @@ class Service extends Component {
 }
 
 Service.propTypes = {
-  heading: PropTypes.text,
-  copy: PropTypes.text,
-  image: PropTypes.text,
+  heading: PropTypes.string,
+  copy: PropTypes.string,
+  image: PropTypes.string,
 }
 
 export default Service
