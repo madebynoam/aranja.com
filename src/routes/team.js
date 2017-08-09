@@ -15,63 +15,41 @@ import '../components/Team/styles.css'
 import img01 from '../assets/Aranja00107-Edit.jpg'
 
 const Team = ({ content, team }) => {
-  return (
-    <Editable model={content}>
+  return <Editable model={content}>
       <Page name="Team">
         <Hero intro="About us" img={img01} title="We are a web development studio" />
-        <Section>
+        <Section bottom="large">
           <H3 bottom="small" center>
-            We team up with some great companies
+            We team up with great companies…
           </H3>
           <LogoRoll />
-          <H3 top="medium" bottom="small" center>
-            To make engaging products
+          <H3 top="small" bottom="medium" center>
+            to make engaging products
           </H3>
           <div className="Team-copy">
-            <Body1 bottom="large">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt laborum, cum laudantium
-              dolorem natus ullam! Autem aperiam, eum deserunt quibusdam error molestias obcaecati,
-              ea asperiores delectus reiciendis voluptate minima dolore temporibus, veritatis rerum
-              quo at? Nesciunt aliquid sit consectetur, odio voluptate iusto! Lorem ipsum dolor sit
-              amet, consectetur adipisicing elit. Sed reprehenderit atque, necessitatibus iste
-              mollitia quo corrupti dolorum officia voluptates, quod.
+            <Body1 top="small" bottom="large" center>
+              Aranja is a small web studio based and raised in Iceland. Our goal, to improve the web, is only achieved with a passionate team that is motivated and happy. We believe that the community is what makes the web what it is and we intend to support that.
             </Body1>
           </div>
           <TeamGrid />
           <H3 top="large" bottom="small" center>
-            Play hard, work harder.
+            Focus on quality
           </H3>
           <div className="Team-copy">
-            <Body1 bottom="medium">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt laborum, cum laudantium
-              dolorem natus ullam! Autem aperiam, eum deserunt quibusdam error molestias obcaecati,
-              ea asperiores delectus reiciendis voluptate minima dolore temporibus, veritatis rerum
-              quo at? Nesciunt aliquid sit consectetur, odio voluptate iusto, yes I said veritatis
-              rerum quo at. Boo yah.
+            <Body1 bottom="medium" center>
+              We focus on doing quality work, keeping the client happy and the community amazed.
             </Body1>
           </div>
-          <SectionHero img={teamHeroPhoto2} caption="bla" />
-          <H3 top="large" bottom="small" center>
-            Culture.
-          </H3>
+          <SectionHero img={teamHeroPhoto2} caption="Hard at work" />
           <div className="Team-copy">
-            <Body1 bottom="medium">
-              Hack nights. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt laborum,
-              cum laudantium dolorem natus ullam! Autem aperiam, eum deserunt quibusdam error
-              molestias obcaecati, ea asperiores delectus reiciendis voluptate minima dolore
-              temporibus, veritatis rerum quo at? Nesciunt aliquid sit consectetur, odio voluptate
-              iusto, yes I said veritatis rerum quo at. Boo yah.
+            <Body1 top="medium" bottom="medium" center>
+              Instead of being a group of coworkers that only work together, we are friends that just happen to also work together. Frequently, we meetup after work to see the latest Marvel movie, hack on a side-project or just to enjoy a dinner with our families.
             </Body1>
           </div>
-          <SectionHero img={teamHeroPhoto3} caption="bla" />
-          <H3 top="large" bottom="small" center>
-            Want to join our team?
-          </H3>
-          <Careers />
+          <SectionHero img={teamHeroPhoto3} caption="Hacking on a side-project" />
         </Section>
-        <NextUp nextPage="Case Studies" url="/" />
+        <NextUp nextPage="Case Studies" url="/casestudies" />
       </Page>
     </Editable>
-  )
 }
 export default Team

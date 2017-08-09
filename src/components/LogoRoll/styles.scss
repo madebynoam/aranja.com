@@ -1,13 +1,15 @@
 .LogoRoll {
   display: flex;
   justify-content: space-between;
-  width: 50%;
+  width: 60%;
   margin: 5rem auto;
 }
 
 .LogoRoll-row {
   height: 5rem;
   position: relative;
+  width: 5rem;
+
   &:nth-child(1) {
     .LogoRoll-image {
       animation-delay: 0s;
@@ -38,7 +40,7 @@
   }
 }
 
-$duration: 4;
+$duration: 6;
 $step: 100 / 12;
 
 .LogoRoll-image {
