@@ -2,10 +2,8 @@ import React from 'react'
 import { Editable } from 'tux'
 import ReactMarkdown from 'react-markdown'
 import { Legend, Body1, Body2, H1, H2, H3 } from '../typography'
-import Lines from '../components/Lines'
-import Footer from '../components/Footer'
-import Menu from '../components/Menu'
 import Section from '../components/Section'
+import Page from '../components/Page'
 import SectionHero from '../components/SectionHero'
 import NextUp from '../components/NextUp'
 import Button from '../components/Button'
@@ -48,28 +46,24 @@ const CaseStudies = ({ content, casestudies }) => {
   } = study
   return (
     <Editable model={content}>
-      <div className="CaseStudies">
-        <div className="Container">
-          <Lines />
-          <Section>
-            {copyChapter1 && <Markdown source={copyChapter1} />}
-            {projectScreenshot &&
-              <Screenshot
-                img={projectScreenshot.asset.file.url}
-                caption="Screenshot showing Kolibri's predominate card design in action."
-              />}
-            {copyChapter2 && <Markdown source={copyChapter2} />}
-            {contentImage &&
-              <Screenshot
-                img={contentImage.asset.file.url}
-                caption="This recurring expanding chapter selector was one of many unique challenges we faced."
-              />}
-            {copyChapter3 && <Markdown source={copyChapter3} />}
-          </Section>
-          <NextUp />
-        </div>
-        <Footer />
-      </div>
+      <Page name="Case Studies">
+        <Section>
+          {copyChapter1 && <Markdown source={copyChapter1} />}
+          {projectScreenshot &&
+            <Screenshot
+              img={projectScreenshot.asset.file.url}
+              caption="Screenshot showing Kolibri's predominate card design in action."
+            />}
+          {copyChapter2 && <Markdown source={copyChapter2} />}
+          {contentImage &&
+            <Screenshot
+              img={contentImage.asset.file.url}
+              caption="This recurring expanding chapter selector was one of many unique challenges we faced."
+            />}
+          {copyChapter3 && <Markdown source={copyChapter3} />}
+        </Section>
+        <NextUp />
+      </Page>
     </Editable>
   )
 }
