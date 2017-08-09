@@ -5,11 +5,11 @@ import Services from '../components/Services'
 import CaseStudyGrid from '../components/CaseStudyGrid'
 import Clients from '../components/Clients'
 import { Editable } from 'tux'
-
+import img01 from '../assets/Aranja00067.jpg'
 const Home = ({ content, services, showOffs }) =>
   <Editable model={content}>
     <Page name="Home" home>
-      <Hero />
+      <Hero intro="Welcome" img={img01} title="Team work is the name of the game" />
       <Services services={services} />
       <Clients />
       <CaseStudyGrid />

@@ -1,17 +1,14 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { H1 } from '../../../typography'
 import './styles.css'
 
-class HeroOverlay extends Component {
-  render() {
-    return (
-      <div className="HeroOverlay">
-        <span className="t-revealWrap">
-          <H1 className="HeroOverlay-text t-reveal">Welcome</H1>
-        </span>
-      </div>
-    )
-  }
-}
+const HeroOverlay = ({ intro }) =>
+  <div className="HeroOverlay">
+    <span className="t-revealWrap">
+      <H1 className="HeroOverlay-text t-reveal">
+        {intro}
+      </H1>
+    </span>
+  </div>
 
 export default HeroOverlay

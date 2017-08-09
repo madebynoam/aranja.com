@@ -30,7 +30,6 @@
   align-items: center;
   background-size: cover;
   display: flex;
-  display: none;
   flex-direction: column;
   justify-content: center;
   position: relative;
@@ -57,9 +56,6 @@
     transition: all 0.5s ease;
     width: 100%;
     z-index: 1;
-  }
-  &.is-active {
-    display: flex;
   }
 }
 

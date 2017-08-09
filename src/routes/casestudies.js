@@ -3,6 +3,7 @@ import { Editable } from 'tux'
 import ReactMarkdown from 'react-markdown'
 import { Legend, Body1, Body2, H1, H2, H3 } from '../typography'
 import Section from '../components/Section'
+import Hero from '../components/Hero'
 import Page from '../components/Page'
 import SectionHero from '../components/SectionHero'
 import NextUp from '../components/NextUp'
@@ -47,12 +48,11 @@ const CaseStudies = ({ content, casestudies }) => {
   return (
     <Editable model={content}>
       <Page name="Case Studies">
-        <Section>
-          <H2 top="medium">
-            Read how we worked with <br /> Kolibri on their new website
-          </H2>
-        </Section>
-        <SectionHero img={heroImage.asset.file.url} />
+        <Hero
+          intro="Case study #001"
+          img={heroImage.asset.file.url}
+          title="Team work is the name of the game"
+        />
         <Section>
           {copyChapter1 && <Markdown source={copyChapter1} />}
           {projectScreenshot &&

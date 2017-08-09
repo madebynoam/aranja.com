@@ -4,24 +4,16 @@
   padding: $ms4 $ms3;
   width: 100%;
   z-index: 2;
-
-  .Hero-wrap > & {
-    padding: 0;
-    position: absolute;
-  }
-
-  &.is-fixed {
-    left: 0;
-    position: absolute;
-    top: 0;
-  }
+  left: 0;
+  position: absolute;
+  top: 0;
+  padding: 0;
+  position: absolute;
 }
 
 .Header-logo {
   width: $ms4 * 2;
-  .Hero-wrap > .Header > & {
-    left: $ms3;
-    position: absolute;
-    top: $ms3;
-  }
+  left: $ms3;
+  position: absolute;
+  top: $ms3;
 }

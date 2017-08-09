@@ -8,21 +8,18 @@ import Section from '../components/Section'
 import SectionHero from '../components/SectionHero'
 import Careers from '../components/Careers'
 import NextUp from '../components/NextUp'
+import Hero from '../components/Hero'
 import teamHeroPhoto from '../components/Team/Aranja00107.jpg'
 import teamHeroPhoto2 from '../components/Team/Aranja00557.jpg'
 import teamHeroPhoto3 from '../components/Team/Aranja00711-Edit.jpg'
 import '../components/Team/styles.css'
+import img01 from '../assets/Aranja00107-Edit.jpg'
 
 const Team = ({ content, team }) => {
   return (
     <Editable model={content}>
       <Page name="Team">
-        <Section top="medium">
-          <H2>
-            We are web application <br /> development specialists
-          </H2>
-          <SectionHero img={teamHeroPhoto} />
-        </Section>
+        <Hero intro="About us" img={img01} title="We are a web development studio" />
         <Section>
           <H3 bottom="small" center>
             We team up with some great companies
