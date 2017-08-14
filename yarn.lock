@@ -84,10 +84,6 @@ ansi-styles@^2.2.1:
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/ansi-styles/-/ansi-styles-2.2.1.tgz#b432dd3358b634cf75e1e4664368240533c1ddbe"
 
-any-promise@^1.0.0, any-promise@^1.3.0:
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/any-promise/-/any-promise-1.3.0.tgz#abc6afeedcea52e809cdc0376aed3ce39635d17f"
-
 anymatch@^1.3.0:
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/anymatch/-/anymatch-1.3.0.tgz#a3e52fa39168c825ff57b0248126ce5a8ff95507"
@@ -2623,21 +2619,13 @@ fs-extra@^0.30.0:
     path-is-absolute "^1.0.0"
     rimraf "^2.2.8"
 
-fs-extra@^2.0.0:
-  version "2.1.2"
-  resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-2.1.2.tgz#046c70163cef9aad46b0e4a7fa467fb22d71de35"
+fs-extra@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-3.0.1.tgz#3794f378c58b342ea7dbbb23095109c4b3b62291"
   dependencies:
     graceful-fs "^4.1.2"
-    jsonfile "^2.1.0"
-
-fs-promise@^2.0.2:
-  version "2.0.3"
-  resolved "https://registry.yarnpkg.com/fs-promise/-/fs-promise-2.0.3.tgz#f64e4f854bcf689aa8bddcba268916db3db46854"
-  dependencies:
-    any-promise "^1.3.0"
-    fs-extra "^2.0.0"
-    mz "^2.6.0"
-    thenify-all "^1.6.0"
+    jsonfile "^3.0.0"
+    universalify "^0.1.0"
 
 fs.realpath@^1.0.0:
   version "1.0.0"
@@ -3382,6 +3370,12 @@ jsonfile@^2.1.0:
   optionalDependencies:
     graceful-fs "^4.1.6"
 
+jsonfile@^3.0.0:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/jsonfile/-/jsonfile-3.0.1.tgz#a5ecc6f65f53f662c4415c7675a0331d0992ec66"
+  optionalDependencies:
+    graceful-fs "^4.1.6"
+
 jsonify@~0.0.0:
   version "0.0.0"
   resolved "https://registry.yarnpkg.com/jsonify/-/jsonify-0.0.0.tgz#2c74b6ee41d93ca51b7b5aaee8f503631d252a73"
@@ -3403,9 +3397,9 @@ jsx-ast-utils@^1.3.4, jsx-ast-utils@^1.4.0:
   version "1.4.1"
   resolved "https://registry.yarnpkg.com/jsx-ast-utils/-/jsx-ast-utils-1.4.1.tgz#3867213e8dd79bf1e8f2300c0cfc1efb182c0df1"
 
-jsx-html-webpack-plugin@^0.1.1:
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/jsx-html-webpack-plugin/-/jsx-html-webpack-plugin-0.1.1.tgz#cec910ac3e783ec88813484e9b6727ef42df120b"
+jsx-html-webpack-plugin@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/jsx-html-webpack-plugin/-/jsx-html-webpack-plugin-0.2.0.tgz#101ffa3b636b23d9ef5bb7d3f4aea875741d2fb8"
   dependencies:
     html-webpack-plugin "^2.28.0"
     loader-utils "^1.1.0"
@@ -3746,14 +3740,6 @@ mute-stream@0.0.5:
   version "0.0.5"
   resolved "https://registry.yarnpkg.com/mute-stream/-/mute-stream-0.0.5.tgz#8fbfabb0a98a253d3184331f9e8deb7372fac6c0"
 
-mz@^2.6.0:
-  version "2.6.0"
-  resolved "https://registry.yarnpkg.com/mz/-/mz-2.6.0.tgz#c8b8521d958df0a4f2768025db69c719ee4ef1ce"
-  dependencies:
-    any-promise "^1.0.0"
-    object-assign "^4.0.1"
-    thenify-all "^1.0.0"
-
 nan@^2.3.0, nan@^2.3.2:
   version "2.6.2"
   resolved "https://registry.yarnpkg.com/nan/-/nan-2.6.2.tgz#e4ff34e6c95fdfb5aecc08de6596f43605a7db45"
@@ -3866,9 +3852,9 @@ neutrino-middleware-style-loader@5.0.1:
     css-loader "^0.27.3"
     style-loader "^0.16.0"
 
-neutrino-preset-tux@^0.1.2:
-  version "0.1.2"
-  resolved "https://registry.yarnpkg.com/neutrino-preset-tux/-/neutrino-preset-tux-0.1.2.tgz#414b6f4c3dcce6a6865c6b9009fbd4c4eac86b96"
+neutrino-preset-tux@^0.2.2:
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/neutrino-preset-tux/-/neutrino-preset-tux-0.2.2.tgz#f9d0cd417e54416a830d8127bca68138b57983e8"
   dependencies:
     babel-plugin-dynamic-import-node "1.0.1"
     babel-plugin-syntax-dynamic-import "^6.18.0"
@@ -3877,7 +3863,7 @@ neutrino-preset-tux@^0.1.2:
     babel-preset-env "^1.3.3"
     babel-preset-react "^6.24.1"
     extract-text-webpack-plugin "2.1.0"
-    jsx-html-webpack-plugin "^0.1.1"
+    jsx-html-webpack-plugin "^0.2.0"
     neutrino-middleware-banner "5.0.1"
     neutrino-middleware-chunk "5.0.1"
     neutrino-middleware-clean "5.0.1"
@@ -4179,7 +4165,7 @@ opn@4.0.2:
     pinkie-promise "^2.0.0"
 
 optional@^0.1.3:
-  version v0.1.3
+  version "0.1.3"
   resolved "https://registry.yarnpkg.com/optional/-/optional-0.1.3.tgz#f87537517b59a5e732cfd8f18e4f7eea7ab4761e"
 
 optionator@^0.8.2:
@@ -4355,10 +4341,6 @@ pbkdf2@^3.0.3:
 performance-now@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/performance-now/-/performance-now-0.2.0.tgz#33ef30c5c77d4ea21c5a53869d91b56d8f2555e5"
-
-performance-now@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/performance-now/-/performance-now-2.1.0.tgz#6309f4e0e5fa913ec1c69307ae364b4b377c9e7b"
 
 pify@^2.0.0:
   version "2.3.0"
@@ -4764,12 +4746,6 @@ querystringify@~1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/querystringify/-/querystringify-1.0.0.tgz#6286242112c5b712fa654e526652bf6a13ff05cb"
 
-raf@^3.1.0:
-  version "3.3.2"
-  resolved "https://registry.yarnpkg.com/raf/-/raf-3.3.2.tgz#0c13be0b5b49b46f76d6669248d527cf2b02fe27"
-  dependencies:
-    performance-now "^2.1.0"
-
 ramda-fantasy@^0.7.0:
   version "0.7.0"
   resolved "https://registry.yarnpkg.com/ramda-fantasy/-/ramda-fantasy-0.7.0.tgz#ac77a7a5d55dfc1ddc224ac418e9be8900c65d17"
@@ -4878,14 +4854,6 @@ react-markdown@^2.5.0:
     commonmark-react-renderer "^4.2.4"
     in-publish "^2.0.0"
     prop-types "^15.5.1"
-
-react-motion@^0.5.0:
-  version "0.5.0"
-  resolved "https://registry.yarnpkg.com/react-motion/-/react-motion-0.5.0.tgz#1708fc2aee552900d21c1e6bed28346863e017b6"
-  dependencies:
-    performance-now "^0.2.0"
-    prop-types "^15.5.8"
-    raf "^3.1.0"
 
 react-portal@^3.0.0:
   version "3.1.0"
@@ -5689,18 +5657,6 @@ text-table@~0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/text-table/-/text-table-0.2.0.tgz#7f5ee823ae805207c00af2df4a84ec3fcfa570b4"
 
-thenify-all@^1.0.0, thenify-all@^1.6.0:
-  version "1.6.0"
-  resolved "https://registry.yarnpkg.com/thenify-all/-/thenify-all-1.6.0.tgz#1a1918d402d8fc3f98fbf234db0bcc8cc10e9726"
-  dependencies:
-    thenify ">= 3.1.0 < 4"
-
-"thenify@>= 3.1.0 < 4":
-  version "3.2.1"
-  resolved "https://registry.yarnpkg.com/thenify/-/thenify-3.2.1.tgz#251fd1c80aff6e5cf57cb179ab1fcb724269bd11"
-  dependencies:
-    any-promise "^1.0.0"
-
 through@2, through@^2.3.6, through@~2.3, through@~2.3.1:
   version "2.3.8"
   resolved "https://registry.yarnpkg.com/through/-/through-2.3.8.tgz#0dd4c9ffaabc357960b1b724115d7e0e86a2e1f5"
@@ -5751,33 +5707,33 @@ tunnel-agent@^0.6.0:
   dependencies:
     safe-buffer "^5.0.1"
 
-tux-adapter-contentful@0.1.4:
-  version "0.1.4"
-  resolved "https://registry.yarnpkg.com/tux-adapter-contentful/-/tux-adapter-contentful-0.1.4.tgz#3433ea9f6e8887f269f27ef276ed352cfe138675"
+tux-adapter-contentful@0.2.3:
+  version "0.2.3"
+  resolved "https://registry.yarnpkg.com/tux-adapter-contentful/-/tux-adapter-contentful-0.2.3.tgz#8ff96402fc3e438b144051ef97bbb9e8fc84dca0"
   dependencies:
     axios "^0.15.3"
     lodash "^4.17.4"
-    tux "^0.1.4"
+    tux "^0.2.1"
 
-tux-scripts@0.1.4:
-  version "0.1.4"
-  resolved "https://registry.yarnpkg.com/tux-scripts/-/tux-scripts-0.1.4.tgz#0b3354a7c48a69a396a63c84799f40194ef6db4e"
+tux-scripts@^0.2.3:
+  version "0.2.3"
+  resolved "https://registry.yarnpkg.com/tux-scripts/-/tux-scripts-0.2.3.tgz#89a360aad27df9ff8761982c967729a0116a1321"
   dependencies:
     cross-spawn "^5.1.0"
-    fs-promise "^2.0.2"
+    fs-extra "^3.0.1"
     neutrino "5.0.1"
-    neutrino-preset-tux "^0.1.2"
+    neutrino-preset-tux "^0.2.2"
     optional "^0.1.3"
     ora "^1.2.0"
     ramda "^0.23.0"
     react-chain "^0.3.0"
     react-document "^0.5.0"
-    tux "^0.1.4"
+    tux "^0.2.1"
     yargs "^6.6.0"
 
-tux@0.1.4, tux@^0.1.4:
-  version "0.1.4"
-  resolved "https://registry.yarnpkg.com/tux/-/tux-0.1.4.tgz#dd185e178ef37fb219bad53e7d475e603866ee86"
+tux@^0.2.1:
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/tux/-/tux-0.2.1.tgz#71721fef5216ae3cd44c4e4494b6cb199dbcb45e"
   dependencies:
     babel-runtime "^6.23.0"
     classnames "^2.2.5"
@@ -5863,6 +5819,10 @@ universal-router@^2.0.0:
   dependencies:
     babel-runtime "^6.11.6"
     path-to-regexp "^1.6.0"
+
+universalify@^0.1.0:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/universalify/-/universalify-0.1.1.tgz#fa71badd4437af4c148841e3b3b165f9e9e590b7"
 
 unpipe@~1.0.0:
   version "1.0.0"
