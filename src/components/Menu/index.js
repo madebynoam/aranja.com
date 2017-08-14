@@ -13,9 +13,6 @@ const Menu = () =>
     <a className="Menu-item" href="/casestudies">
       Case Studies
     </a>
-    <a className="Menu-item" href="/contact">
-      Contact
-    </a>
   </nav>
 
 Menu.propTypes = {
