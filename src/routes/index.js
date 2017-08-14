@@ -1,5 +1,4 @@
 import React from 'react'
-import ContactModal from '../components/ContactModal'
 import Home from './home'
 import CaseStudies from './casestudies'
 import Team from './team'
@@ -22,25 +21,42 @@ export default [
     },
   },
   {
-    path: '/contact',
-    action() {
-      return <ContactModal />
-    },
-  },
-  {
     path: '/casestudies',
-    async action({ context: { api } }) {
-      const [pages, caseStudy] = await Promise.all([
-        api.getEntries({ content_type: 'page' }),
-        api.getEntries({ content_type: 'caseStudy' }),
-      ])
+    children: [
+      {
+        path: '/',
+        async action({ context: { api } }) {
+          const [pages, caseStudy] = await Promise.all([
+            api.getEntries({ content_type: 'page' }),
+            api.getEntries({ content_type: 'caseStudy' }),
+          ])
 
-      const content = pages.items.find(
-        page => page.sys.id === '4TC4xZTIYokUiC2IecUOc6'
-      )
+          const content = pages.items.find(
+            page => page.sys.id === '4TC4xZTIYokUiC2IecUOc6'
+          )
 
-      return <CaseStudies content={content} casestudies={caseStudy} />
-    },
+          return <CaseStudies content={content} casestudies={caseStudy} />
+        }
+      },
+      {
+        path: '/:slug',
+        async action({ params, context: { api }}) {
+          const [pages, caseStudy] = await Promise.all([
+            api.getEntries({ content_type: 'page' }),
+            api.getEntries({
+              content_type: 'caseStudy',
+              'fields.slug': params.slug
+            }),
+          ])
+
+          const content = pages.items.find(
+            page => page.sys.id === '4TC4xZTIYokUiC2IecUOc6'
+          )
+
+          return <CaseStudies content={content} casestudies={caseStudy} />
+        }
+      }
+    ]
   },
   {
     path: '/team',
