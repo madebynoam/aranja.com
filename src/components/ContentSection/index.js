@@ -13,7 +13,7 @@ const ContentSection = ({ section }) => {
       return <Image img={section.image.asset.file.url} caption={section.heading} />
 
     case 'sectionVideoInDevice':
-      return <VideoInDevice device={section.device} copy={section.copy} video={section.video} />
+      return <VideoInDevice device={section.device} heading={section.heading} copy={section.copy} video={section.video} />
 
     default:
       console.log(`Unknown section ${section.sys.contentType.sys.id}`)
