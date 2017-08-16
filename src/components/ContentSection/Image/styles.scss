@@ -1,7 +1,6 @@
 @import '../../../utils/vars';
 
-.Screenshot {
-  padding: $ms4 0;
+.Image {
   opacity: 0;
   transform: translateY(2rem);
   transition: all 0.5s ease-out;
@@ -12,7 +11,7 @@
   }
 }
 
-.Screenshot-image {
+.Image-image {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top center;
@@ -24,7 +23,7 @@
   }
 }
 
-.Screenshot-caption {
+.Image-caption {
   text-align: center;
   color: rgba($copy, 0.85);
 }

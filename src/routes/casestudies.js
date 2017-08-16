@@ -5,7 +5,6 @@ import Page from '../components/Page'
 import NextUp from '../components/NextUp'
 import ContentSection from '../components/ContentSection'
 import Section from '../components/Section'
-import '../components/CaseStudy/styles.css'
 
 const CaseStudies = ({ content, casestudies }) => {
   const study = casestudies.items[0].fields
@@ -14,7 +13,8 @@ const CaseStudies = ({ content, casestudies }) => {
     heroImage,
     sections = [],
   } = study
-  return <Editable model={content}>
+  return (
+    <Editable model={content}>
       <Page name="Case Studies">
         <Hero intro={`Case study: ${company}`} img={heroImage.asset.file.url} title="Teamwork is the name of the game" />
         <Section>
@@ -23,5 +23,6 @@ const CaseStudies = ({ content, casestudies }) => {
         <NextUp nextPage="Something" url="/" />
       </Page>
     </Editable>
+  )
 }
 export default CaseStudies

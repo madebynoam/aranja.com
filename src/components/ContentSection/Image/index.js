@@ -5,7 +5,7 @@ import VisibilitySensor from 'react-visibility-sensor'
 import classNames from 'classnames'
 import './styles.css'
 
-class Screenshot extends Component {
+class Image extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -32,10 +32,10 @@ class Screenshot extends Component {
         partialVisibility
       >
         <div>
-          <div className={classNames('Screenshot', isVisible && 'is-visible')}>
-            <div className="Screenshot-image" style={{ backgroundImage: `url(${img})` }} />
+          <div className={classNames('Image', isVisible && 'is-visible')}>
+            <div className="Image-image" style={{ backgroundImage: `url(${img})` }} />
           </div>
-          <Body2 top="small" bottom="small" className="Screenshot-caption">
+          <Body2 top="small" bottom="small" className="Image-caption">
             {caption}
           </Body2>
         </div>
@@ -44,9 +44,9 @@ class Screenshot extends Component {
   }
 }
 
-Screenshot.propTypes = {
+Image.propTypes = {
   img: PropTypes.string,
   caption: PropTypes.string,
 }
 
-export default Screenshot
+export default Image

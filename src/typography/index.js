@@ -31,16 +31,19 @@ export const H1 = createStyle('h1', 't-h1', {
   black: 't-black',
   light: 't-light',
   center: 't-center',
+  lineHeight: 't-lineheight'
 })
 export const H2 = createStyle('h2', 't-h2', {
   black: 't-black',
   light: 't-light',
   center: 't-center',
+  lineHeight: 't-lineheight'
 })
 export const H3 = createStyle('h3', 't-h3', {
   black: 't-black',
   light: 't-light',
   center: 't-center',
+  lineHeight: 't-lineheight'
 })
 export const Body1 = createStyle('p', 't-body1', {
   strong: 't-medium',
