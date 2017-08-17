@@ -16,11 +16,11 @@ import image5 from './image5.png'
 import image6 from './image6.jpg'
 
 let defaultItems = [
-  { title: undefined, image: undefined, href: '/', year: '2017' },
-  { title: 'Kolibri', image: image1, href: '/', year: undefined },
+  { title: undefined, image: undefined, href: undefined, year: '2017' },
+  { title: 'Kolibri', image: image1, href: '/work/kolibri', year: undefined },
   { title: 'Transitions', image: image3, href: '/', year: undefined },
   { title: 'So cool', image: image4, href: '/', year: undefined },
-  { title: undefined, image: undefined, href: '/', year: '2016' },
+  { title: undefined, image: undefined, href: undefined, year: '2016' },
   { title: 'Agree', image: image6, href: '/', year: undefined },
 ]
 
@@ -60,7 +60,8 @@ class CaseStudyGrid extends Component {
           </Body1>
           <div className="wrap">
             {items.map((item, index) =>
-              <div
+              <a
+                href={item.href}
                 key={index}
                 className={classnames('CaseStudyGrid-itemWrap', item.title && 'has-content')}
               >
@@ -80,7 +81,7 @@ class CaseStudyGrid extends Component {
                     }}
                   />
                 </div>
-              </div>,
+              </a>,
             )}
           </div>
         </div>
