@@ -3,8 +3,8 @@ import classNames from 'classnames'
 import { Body1, Body2, H2, H3 } from '../../../typography'
 import './styles.css'
 
-const ContentCopy = ({ heading, copy, lede }) =>
-  <div className={classNames(lede && 'ContentCopy-lede')}>
+const ContentSectionCopy = ({ heading, copy, lede }) =>
+  <div className={classNames(lede && 'ContentSectionCopy-lede')}>
     {heading &&
       <H2 top="small" bottom="small">
         {heading}
@@ -15,4 +15,4 @@ const ContentCopy = ({ heading, copy, lede }) =>
       </Body1>}
   </div>
 
-export default ContentCopy
+export default ContentSectionCopy

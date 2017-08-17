@@ -2,16 +2,22 @@
 
 .CaseStudy-section {
   padding: 0; // Resets the wrapping <Section /> styles; should ideally not be declared in this file.
+  .t-body1 {
+    font-size: 1.333rem; // Hacking this for now. I want smaller font-size for these longer texts.
+  }
 }
 
 .ContentSection {
-  padding: 5rem 18%;
+  padding: 10rem 18%;
   &:nth-child(even) {
     background: $barelyWhite;
   }
+
+  &--narrow {
+    padding: 5rem 18%;
+  }
 }
-.ContentSection--gray {
-}
+
 .ContentSection-copy {
   margin-bottom: $ms4;
 }

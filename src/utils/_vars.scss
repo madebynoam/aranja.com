@@ -15,7 +15,8 @@ $copy: #6f7489;
 $bodyPadding: 20px;
 
 // modularscale = base: 1rem, ratio: 1.414
-$ms0: 1rem;
+// except for $ms0 because reasons
+$ms0: 1.1rem;
 $ms1: 1.414rem;
 $ms2: 1.999rem;
 $ms3: 2.827rem;

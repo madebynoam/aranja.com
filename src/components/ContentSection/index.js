@@ -1,23 +1,41 @@
 import React from 'react'
+import classNames from 'classnames'
 import Image from './Image'
 import ContentCopy from './Copy'
+import ContentThreeColumnCopy from './ThreeColumnCopy'
 import VideoInDevice from '../VideoInDevice'
 import './styles.css'
 
-const Wrapper = ({ children }) =>
-  <div className="ContentSection">
+const Wrapper = ({ children, narrow }) =>
+  <div className={classNames('ContentSection', narrow && 'ContentSection--narrow')}>
     {children}
   </div>
 
 const ContentSection = ({ section }) => {
+  const { lede, heading, text } = section
   switch (section.sys.contentType.sys.id) {
     case 'section':
       return (
-        <Wrapper>
+        <Wrapper narrow={lede}>
           <ContentCopy
+            heading={heading}
+            copy={text}
+            lede={lede}
+          />
+        </Wrapper>
+      )
+
+    case 'sectionThreeColumnCopy':
+      return (
+        <Wrapper>
+          <ContentThreeColumnCopy
             heading={section.heading}
-            copy={section.text}
-            lede={section.lede}
+            column1Subheading={section.column1Subheading}
+            column1Copy={section.column1Copy}
+            column2Subheading={section.column2Subheading}
+            column2Copy={section.column2Copy}
+            column3Subheading={section.column3Subheading}
+            column3Copy={section.column3Copy}
           />
         </Wrapper>
       )

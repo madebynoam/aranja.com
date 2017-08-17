@@ -1,4 +1,8 @@
-.ContentCopy {}
-.ContentCopy-lede {
+.ContentSectionCopy {
+}
+.ContentSectionCopy-lede {
   max-width: 50%;
+  .t-body1 {
+    color: rgba(0, 0, 0, 0.5);
+  }
 }
