@@ -7,11 +7,11 @@ const Menu = () =>
     <a className="Menu-item is-active" href="/">
       Home
     </a>
-    <a className="Menu-item" href="/team">
-      Team
+    <a className="Menu-item" href="/work">
+      Work
     </a>
-    <a className="Menu-item" href="/casestudies">
-      Case Studies
+    <a className="Menu-item" href="/about">
+      About
     </a>
   </nav>
 
