@@ -10,15 +10,9 @@ const ContentCopy = ({ heading, copy, lede }) =>
         {heading}
       </H2>}
     {copy &&
-      <span>
-        {lede
-          ? <H3 lineHeight bottom="medium">
-              {copy}
-            </H3>
-          : <Body1 bottom="medium">
-              {copy}
-            </Body1>}
-      </span>}
+      <Body1 bottom={lede ? 'large' : 'medium'}>
+        {copy}
+      </Body1>}
   </div>
 
 export default ContentCopy

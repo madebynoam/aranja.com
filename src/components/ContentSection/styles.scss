@@ -1,6 +1,16 @@
 @import '../../utils/vars.scss';
 
+.CaseStudy-section {
+  padding: 0; // Resets the wrapping <Section /> styles; should ideally not be declared in this file.
+}
+
 .ContentSection {
+  padding: 5rem 18%;
+  &:nth-child(even) {
+    background: $barelyWhite;
+  }
+}
+.ContentSection--gray {
 }
 .ContentSection-copy {
   margin-bottom: $ms4;

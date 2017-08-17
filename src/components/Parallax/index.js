@@ -8,11 +8,13 @@ class Parallax extends Component {
   }
 
   translate() {
+    const { clamp } = this.props
     const { viewHeight, scrollPosition } = service.data
     const viewBottom = scrollPosition + viewHeight
-    const ratio = Math.max(0, (this.top - viewBottom) / (scrollPosition - viewBottom))
+    const ratio = (this.top - viewBottom) / (scrollPosition - viewBottom)
+    const appliedRatio = clamp ? Math.min(1, Math.max(0, ratio)) : ratio
 
-    this.element_.style.setProperty('--parallax', ratio)
+    this.element_.style.setProperty('--parallax', appliedRatio)
   }
 
   cache() {

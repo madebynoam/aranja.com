@@ -102,7 +102,7 @@ class Service extends Component {
               </a>
             </div>
           </div>
-          <Parallax>
+          <Parallax clamp>
             <div className="Service-imageWrapper">
               <div className="Service-imageMask">
                 <div

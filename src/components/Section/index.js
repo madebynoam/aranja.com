@@ -3,9 +3,8 @@ import classNames from 'classnames'
 import padding from '../../utils/padding'
 import './styles.css'
 
-const className = classNames()
-const Section = ({ top, bottom, children }) =>
-  <section className={classNames('Section', padding(top, bottom))}>
+const Section = ({ top, bottom, className, children }) =>
+  <section className={classNames('Section', padding(top, bottom), className)}>
     {children}
   </section>
 
