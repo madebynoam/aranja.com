@@ -10,7 +10,7 @@ class Parallax extends Component {
   translate() {
     const { viewHeight, scrollPosition } = service.data
     const viewBottom = scrollPosition + viewHeight
-    const ratio = (this.top - viewBottom) / (scrollPosition - viewBottom)
+    const ratio = Math.max(0, (this.top - viewBottom) / (scrollPosition - viewBottom))
 
     this.element_.style.setProperty('--parallax', ratio)
   }
