@@ -8,7 +8,6 @@ const Page = ({ name, children }) =>
   <div className="Page">
     <Header />
     <div className="container">
-      <Lines />
       {children}
     </div>
     <Footer />
