@@ -9,7 +9,7 @@ class CaseStudyPreview extends Component {
   render() {
     const { title, description, year, img, alignment, url } = this.props
     return (
-      <Section top="small" bottom="small">
+      <Section top="medium" bottom="medium">
         <Parallax clamp>
           <a href={url} className={classNames('CaseStudyPreview', alignment === 'right' && 'is-aligned-right')}>
             <div className="CaseStudyPreview-content">
@@ -20,9 +20,6 @@ class CaseStudyPreview extends Component {
               </div>
               <div className="CaseStudyPreview-description">
                 <Body2>{description}</Body2>
-              </div>
-              <div className="CaseStudyPreview-link">
-                <a href="/kolibri">View case study</a>
               </div>
             </div>
             <div className="CaseStudyPreview-background" style={{ backgroundImage: `url(${img})` }}></div>

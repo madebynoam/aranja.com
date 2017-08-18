@@ -12,9 +12,6 @@
     .CaseStudyPreview-title {
       color: lighten($blue, 10%);
     }
-    .CaseStudyPreview-link {
-      color: lighten($blue, 10%);
-    }
     .CaseStudyPreview-background::after {
       opacity: 0.6;
     }
@@ -51,10 +48,6 @@
   .CaseStudyPreview.is-aligned-right & {
     margin-left: auto;
     }
-}
-
-.CaseStudyPreview-link {
-  transition: color 0.2s;
 }
 
 .CaseStudyPreview-background {
@@ -97,7 +90,7 @@
   position: absolute;
   opacity: 0.033;
   font-size: 15rem;
-  bottom: 2rem;
+  bottom: -6rem;
   z-index: -1;
   font-weight: 600;
   left: -10rem;
