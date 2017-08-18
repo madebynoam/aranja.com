@@ -49,7 +49,7 @@ const ContentSection = ({ section }) => {
 
     case 'sectionVideoInDevice':
       return (
-        <Wrapper>
+        <Wrapper narrow>
           <DeviceSection
             device={section.device}
             heading={section.heading}

@@ -2,6 +2,7 @@
 
 .DeviceSection {
   display: flex;
+  align-items: center;
 }
 
 .DeviceSection-copy {
@@ -9,13 +10,13 @@
   padding-right: 10%;
 }
 
-$parallaxStart: 50rem;
+$parallaxStart: 44rem;
 
 .DeviceSection-device {
   position: relative;
   flex: 0 1 35%;
   max-width: 20rem;
-  transform: translateY(-#{$parallaxStart}) translateY(calc(var(--parallax) * #{$parallaxStart + 2}));
+  transform: translateY(-#{$parallaxStart}) translateY(calc(var(--parallax) * #{$parallaxStart}));
 }
 
 .Device {
@@ -27,5 +28,5 @@ $parallaxStart: 50rem;
   position: absolute;
   width: 100%;
   top: 0;
-  transform: translateY(calc(var(--parallax) * #{-$parallaxStart * 0.85}));  
+  transform: translateY(calc(var(--parallax) * #{-$parallaxStart * 0.7}));  
 }
