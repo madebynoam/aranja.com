@@ -3,7 +3,9 @@
 .CaseStudy-section {
   padding: 0; // Resets the wrapping <Section /> styles; should ideally not be declared in this file.
   .t-body1 {
-    font-size: 1.333rem; // Hacking this for now. I want smaller font-size for these longer texts.
+    font-size: 1.333rem; // Hacking this for now. I want smaller font-size and less opacity for these longer texts.
+    opacity: 0.8;
+    line-height: 1.666;
   }
 }
 

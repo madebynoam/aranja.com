@@ -4,6 +4,7 @@ import Image from './Image'
 import ContentCopy from './Copy'
 import ContentThreeColumnCopy from './ThreeColumnCopy'
 import DeviceSection from '../DeviceSection'
+import ContentQuote from '../ContentQuote'
 import './styles.css'
 
 const Wrapper = ({ children, narrow }) =>
@@ -40,10 +41,18 @@ const ContentSection = ({ section }) => {
         </Wrapper>
       )
 
-    case 'sectionImage':
+    // todo: something fun
+    // case 'sectionImage':
+    //   return (
+    //     <Wrapper>
+    //       <Image img={section.image.asset.file.url} caption={section.heading} />
+    //     </Wrapper>
+    //   )
+
+    case 'sectionQuote':
       return (
-        <Wrapper>
-          <Image img={section.image.asset.file.url} caption={section.heading} />
+        <Wrapper narrow>
+          <ContentQuote attestant={section.attestant} quote={section.quote} />
         </Wrapper>
       )
 
