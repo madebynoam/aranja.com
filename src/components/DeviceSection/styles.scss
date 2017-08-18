@@ -1,0 +1,31 @@
+@import '../../utils/vars.scss';
+
+.DeviceSection {
+  display: flex;
+}
+
+.DeviceSection-copy {
+  flex: 0 1 65%;
+  padding-right: 10%;
+}
+
+$parallaxStart: 50rem;
+
+.DeviceSection-device {
+  position: relative;
+  flex: 0 1 35%;
+  max-width: 20rem;
+  transform: translateY(-#{$parallaxStart}) translateY(calc(var(--parallax) * #{$parallaxStart + 2}));
+}
+
+.Device {
+  position: relative;
+  overflow: hidden;
+}
+
+.Device-img {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  transform: translateY(calc(var(--parallax) * #{-$parallaxStart * 0.85}));  
+}

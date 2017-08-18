@@ -3,7 +3,7 @@ import classNames from 'classnames'
 import Image from './Image'
 import ContentCopy from './Copy'
 import ContentThreeColumnCopy from './ThreeColumnCopy'
-import VideoInDevice from '../VideoInDevice'
+import DeviceSection from '../DeviceSection'
 import './styles.css'
 
 const Wrapper = ({ children, narrow }) =>
@@ -50,11 +50,11 @@ const ContentSection = ({ section }) => {
     case 'sectionVideoInDevice':
       return (
         <Wrapper>
-          <VideoInDevice
+          <DeviceSection
             device={section.device}
             heading={section.heading}
             copy={section.copy}
-            video={section.video}
+            image={section.image}
           />
         </Wrapper>
       )

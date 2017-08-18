@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="298px" height="602px" viewBox="0 0 298 602" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46 (44423) - http://www.bohemiancoding.com/sketch -->
+    <title>Portrait Light</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="76" width="6" height="25" rx="3"></rect>
+        <rect id="path-2" x="0" y="129" width="6" height="44" rx="3"></rect>
+        <rect id="path-3" x="0" y="184" width="6" height="44" rx="3"></rect>
+        <rect id="path-4" x="292" y="129" width="6" height="44" rx="3"></rect>
+        <rect id="path-5" x="3" y="0" width="292" height="602" rx="40"></rect>
+        <rect id="path-6" x="127" y="540" width="45" height="45" rx="22.5"></rect>
+        <circle id="path-7" cx="150" cy="19" r="4"></circle>
+        <circle id="path-8" cx="103" cy="38" r="5"></circle>
+        <rect id="path-9" x="126" y="35" width="47" height="6" rx="3"></rect>
+        <rect id="path-10" x="19" y="57" width="260" height="462" rx="3"></rect>
+    </defs>
+    <g id="Devices" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Minimal-Devices" transform="translate(-1082.000000, -150.000000)">
+            <g id="Portrait-Light" transform="translate(1082.000000, 150.000000)">
+                <g id="Phone">
+                    <g id="btn-1">
+                        <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+                        <rect stroke="#E0E0E0" stroke-width="1" x="0.5" y="76.5" width="5" height="24" rx="2.5"></rect>
+                    </g>
+                    <g id="btn-2">
+                        <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-2"></use>
+                        <rect stroke="#E0E0E0" stroke-width="1" x="0.5" y="129.5" width="5" height="43" rx="2.5"></rect>
+                    </g>
+                    <g id="btn-3">
+                        <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-3"></use>
+                        <rect stroke="#E0E0E0" stroke-width="1" x="0.5" y="184.5" width="5" height="43" rx="2.5"></rect>
+                    </g>
+                    <g id="btn-4">
+                        <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-4"></use>
+                        <rect stroke="#E0E0E0" stroke-width="1" x="292.5" y="129.5" width="5" height="43" rx="2.5"></rect>
+                    </g>
+                    <g id="base">
+                        <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-5"></use>
+                        <rect stroke="#E0E0E0" stroke-width="1" x="3.5" y="0.5" width="291" height="601" rx="40"></rect>
+                    </g>
+                    <g id="btn-5">
+                        <use fill="#F9F9F9" fill-rule="evenodd" xlink:href="#path-6"></use>
+                        <rect stroke="#E0E0E0" stroke-width="1" x="127.5" y="540.5" width="44" height="44" rx="22"></rect>
+                    </g>
+                    <g id="sen">
+                        <use fill="#E0E0E0" fill-rule="evenodd" xlink:href="#path-7"></use>
+                        <circle stroke="#F9F9F9" stroke-width="1" cx="150" cy="19" r="3.5"></circle>
+                    </g>
+                    <g id="cam">
+                        <use fill="#E0E0E0" fill-rule="evenodd" xlink:href="#path-8"></use>
+                        <circle stroke="#F9F9F9" stroke-width="1" cx="103" cy="38" r="4.5"></circle>
+                    </g>
+                    <g id="mic">
+                        <use fill="#E0E0E0" fill-rule="evenodd" xlink:href="#path-9"></use>
+                        <rect stroke="#F9F9F9" stroke-width="1" x="126.5" y="35.5" width="46" height="5" rx="2.5"></rect>
+                    </g>
+                </g>
+                <mask id="mask-11" fill="white">
+                    <use xlink:href="#path-10"></use>
+                </mask>
+                <g id="Your-screen">
+                    <use fill="#43445B" fill-rule="evenodd" xlink:href="#path-10"></use>
+                    <rect stroke="#E0E0E0" stroke-width="2" x="18" y="56" width="262" height="464" rx="3"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
