@@ -51,7 +51,7 @@ const ContentSection = ({ section }) => {
 
     case 'sectionQuote':
       return (
-        <Wrapper narrow>
+        <Wrapper>
           <ContentQuote attestant={section.attestant} quote={section.quote} />
         </Wrapper>
       )
