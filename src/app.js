@@ -3,6 +3,7 @@ import routes from './routes'
 import router from './middleware/router'
 import tux from './middleware/tux'
 import history from 'react-chain-history'
+import helmet from 'react-chain-helmet'
 import createReactChain from 'react-chain'
 
 import './reset.css'
@@ -20,4 +21,8 @@ const adapter = createContentfulAdapter({
   redirectUri: publicUrl,
 })
 
-export default createReactChain().chain(history()).chain(tux({ adapter })).chain(router(routes))
+export default createReactChain()
+  .chain(history())
+  .chain(tux({ adapter }))
+  .chain(helmet())
+  .chain(router(routes))
