@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Lines from '../Lines'
 import Header from '../Header'
 import Footer from '../Footer'
 
