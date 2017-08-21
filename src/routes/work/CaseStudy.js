@@ -16,7 +16,7 @@ const CaseStudy = ({ content, caseStudy }) => {
   return (
     <Editable model={content}>
       <Page name="Case study">
-        <Hero intro={`Case study: ${company}`} img={heroImage.asset.file.url} title="Teamwork is the name of the game" />
+        <Hero intro={`Case study: ${company}`} img={heroImage.asset.file.url} title="Teamwork is the name of the game" meta/>
         <Section className="CaseStudy-section">
           {sections.map((section, index) => <ContentSection section={section.entry} key={index} />)}
         </Section>

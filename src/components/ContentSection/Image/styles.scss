@@ -2,12 +2,19 @@
 
 .Image {
   opacity: 0;
-  transform: translateY(2rem);
+  transform: translateY($ms2);
   transition: all 0.5s ease-out;
+  padding: $ms2;
+  margin: 0 -#{$ms2 * 2};
+  background: $barelyWhite;
 
   &.is-visible {
     opacity: 1;
     transform: translateY(0);
+  }
+
+  .ContentSection--gray & {
+    background: $white;
   }
 }
 

@@ -5,15 +5,16 @@ import ContentCopy from './Copy'
 import ContentThreeColumnCopy from './ThreeColumnCopy'
 import DeviceSection from '../DeviceSection'
 import ContentQuote from '../ContentQuote'
+
 import './styles.css'
 
-const Wrapper = ({ children, narrow }) =>
-  <div className={classNames('ContentSection', narrow && 'ContentSection--narrow')}>
+const Wrapper = ({ children, narrow, gray }) =>
+  <div className={classNames('ContentSection', narrow && 'ContentSection--narrow', gray && 'ContentSection--gray')}>
     {children}
   </div>
 
 const ContentSection = ({ section }) => {
-  const { lede, heading, text } = section
+  const { lede, heading, text, closing } = section
   switch (section.sys.contentType.sys.id) {
     case 'section':
       return (
@@ -22,6 +23,7 @@ const ContentSection = ({ section }) => {
             heading={heading}
             copy={text}
             lede={lede}
+            closing={closing}
           />
         </Wrapper>
       )
@@ -41,24 +43,23 @@ const ContentSection = ({ section }) => {
         </Wrapper>
       )
 
-    // todo: something fun
-    // case 'sectionImage':
-    //   return (
-    //     <Wrapper>
-    //       <Image img={section.image.asset.file.url} caption={section.heading} />
-    //     </Wrapper>
-    //   )
+    case 'sectionImage':
+      return (
+        <Wrapper narrow>
+          <Image img={section.image.asset.file.url} caption={section.heading} />
+        </Wrapper>
+      )
 
     case 'sectionQuote':
       return (
-        <Wrapper>
+        <Wrapper narrow>
           <ContentQuote attestant={section.attestant} quote={section.quote} />
         </Wrapper>
       )
 
     case 'sectionVideoInDevice':
       return (
-        <Wrapper narrow>
+        <Wrapper narrow gray>
           <DeviceSection
             device={section.device}
             heading={section.heading}

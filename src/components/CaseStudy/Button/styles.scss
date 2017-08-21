@@ -1,0 +1,17 @@
+@import '../../../utils/vars.scss';
+@import '../../../utils/functions.scss';
+
+.CaseStudyButton {
+  display: flex;
+
+  &::after {
+    background-image: url('./arrow-right.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    content: '';
+    display: block;
+    margin-left: 0.8rem;
+    width: 2rem;
+  }
+}

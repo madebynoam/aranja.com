@@ -10,7 +10,7 @@ import img01 from '../../assets/Aranja00067.jpg'
 const Home = ({ content, services, showOffs }) =>
   <Editable model={content}>
     <Page name="Home" home>
-      <Hero intro="Welcome" img={img01} title="Teamwork is the name of the game" />
+      <Hero intro="Welcome" img={img01} title="Teamwork is the name of the game" cover />
       <Services services={services} />
       <Clients />
       <CaseStudyGrid />

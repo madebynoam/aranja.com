@@ -31,7 +31,6 @@ class ParallaxService {
 
   get data() {
     return {
-      lastScrollPosition: this.lastScrollPosition_,
       scrollPosition: this.scrollPosition_,
       viewHeight: this.viewHeight_,
     }
@@ -52,18 +51,12 @@ class ParallaxService {
   }
 
   onScroll_() {
-    this.scrollPosition_ = root.pageYOffset
-
-    if (this.scrollPosition_ === this.lastScrollPosition_) {
-      return
-    }
-
-    this.lastScrollPosition_ = this.scrollPosition_
-
     if (!this.isUpdating_) {
       this.isUpdating_ = true
 
       requestAnimationFrame(() => {
+        this.scrollPosition_ = root.pageYOffset
+
         for (const item of this.items_) {
           item.translate()
         }

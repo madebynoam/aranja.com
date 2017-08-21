@@ -3,9 +3,13 @@
 
 .Hero-wrap {
   box-sizing: content-box;
-  height: 100vh;
+  height: 80vh;
   padding-bottom: $ms5;
   position: relative;
+
+  &.cover {
+    height: 100vh;
+  }
 }
 
 .Hero {
@@ -15,24 +19,10 @@
   height: 100%;
   position: relative;
   z-index: 1;
-}
-
-@keyframes Hero-slideIn {
-  from {
-    transform: translateX(-50%);
-  }
-  to {
-    transform: translateX(0%);
-  }
-}
-
-.Hero-item {
   align-items: center;
   background-size: cover;
-  display: flex;
   flex-direction: column;
   justify-content: center;
-  position: relative;
   width: 100%;
   &::before {
     content: '';
@@ -59,15 +49,27 @@
   }
 }
 
+@keyframes Hero-slideIn {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+
 .Hero-text {
   margin-left: -25%;
-  padding-top: $ms4;
   z-index: 2;
+  
+  .Hero-wrap.cover & {
+    padding-top: $ms4;
+  }
 }
 .Hero-textHeading {
   line-height: 1.1;
   max-width: 766px;
-  font-size: 4.6rem;
+  font-size: 5.1rem;
 }
 
 .Hero-textLegend {
@@ -87,5 +89,53 @@
     position: absolute;
     top: -2px;
     width: 1em;
+  }
+}
+
+.Hero-meta {
+  align-items: flex-start;
+  background: $blue;
+  bottom: 0;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 1.75rem;
+  justify-content: center;
+  padding: 1rem;
+  position: absolute;
+  right: 0;
+  transform: translateY(50%);
+  width: 24rem;
+  z-index: 3;
+  transition: background-color 0.5s;
+
+  &:hover {
+    background-color: lighten($blue, 20%);
+  }
+}
+
+.Hero-metaDecorator {
+  display: inline-block;
+  width: 5.5rem;
+  height: 2px;
+  background: white;
+  position: relative;
+  margin: auto;
+}
+
+.Hero-metaLink {
+  margin-top: 1rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-family: 'FFDIN';
+  font-size: 20px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+
+  .arrow {
+    background: url('./arrow.svg') no-repeat center;
+    width: 3.5rem;
+    transform: translateX(0);
+    transition: transform 0.25s ease-out;
   }
 }
