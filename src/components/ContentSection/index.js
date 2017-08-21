@@ -5,6 +5,8 @@ import ContentCopy from './Copy'
 import ContentThreeColumnCopy from './ThreeColumnCopy'
 import DeviceSection from '../DeviceSection'
 import ContentQuote from '../ContentQuote'
+import CaseStudyButton from '../CaseStudy/Button'
+import ShoutOut from '../CaseStudy/ShoutOut'
 
 import './styles.css'
 
@@ -14,7 +16,7 @@ const Wrapper = ({ children, narrow, gray }) =>
   </div>
 
 const ContentSection = ({ section }) => {
-  const { lede, heading, text, closing } = section
+  const { lede, heading, text, closing, half } = section
   switch (section.sys.contentType.sys.id) {
     case 'section':
       return (
@@ -25,6 +27,15 @@ const ContentSection = ({ section }) => {
             lede={lede}
             closing={closing}
           />
+        </Wrapper>
+      )
+
+    case 'sectionClosing':
+      return (
+        <Wrapper>
+          <ContentCopy heading={heading} copy={text} half={half}/>
+          <CaseStudyButton key="case study">Visit project</CaseStudyButton>
+          <ShoutOut key="shout out" />
         </Wrapper>
       )
 
