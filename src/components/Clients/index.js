@@ -98,10 +98,10 @@ class Clients extends Component {
           }}
         >
           <H3 component="div" className="Clients-heading" bottom="xsmall">
-            <EditInline field="fields.content.clientsHeading">Selected clients</EditInline>
+            <EditInline format="plain" field="fields.content.clientsHeading">Selected clients</EditInline>
           </H3>
           <Body1 component="div" className="Clients-subheading" bottom="medium">
-            <EditInline field="fields.content.clientsText">
+            <EditInline format="plain" field="fields.content.clientsText">
               We've had the pleasure of working with <br /> some of tech's leading companies
             </EditInline>
           </Body1>

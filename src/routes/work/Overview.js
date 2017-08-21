@@ -2,17 +2,19 @@ import React from 'react'
 import { Editable } from 'tux'
 import Hero from '../../components/Hero'
 import Page from '../../components/Page'
-import NextUp from '../../components/NextUp'
 import CaseStudyPreview from '../../components/CaseStudyPreview'
 import tempSprotarImg from './sprotarnir.png'
 
 const Overview = ({ content, casestudies }) => {
+  const heroUrl = casestudies.items[0] &&
+    casestudies.items[0].fields.heroImage &&
+    casestudies.items[0].fields.heroImage.fields.file.url
 
   const temp = [{
     title: 'Kolibri.is',
     description: 'We worked with Kolibri\'s in-house designers and developed their new website',
     year: '2016',
-    image: casestudies.items[0].fields.heroImage.asset.file.url,
+    image: heroUrl,
     url: '/work/kolibri'
   },
   {
@@ -22,16 +24,10 @@ const Overview = ({ content, casestudies }) => {
     image: tempSprotarImg,
     url: '/work/sprotarnir',
   }]
-  
-  const study = casestudies.items[0].fields
-  const {
-    company,
-    heroImage,
-    sections = [],
-  } = study
+
   return <Editable model={content}>
       <Page name="Our Work">
-        <Hero intro="Our work" img={heroImage.asset.file.url} title="Our latest work" />
+        <Hero intro="Our work" img={heroUrl} title="Our latest work" />
         {temp.map((study, index) =>
           <CaseStudyPreview key={study.title} title={study.title} description={study.description} year={study.year} img={study.image} url={study.url} alignment={index % 2 === 0 ? 'left' : 'right'}/>
         )}

@@ -16,9 +16,15 @@ const Wrapper = ({ children, narrow, gray }) =>
   </div>
 
 const ContentSection = ({ section }) => {
-  const { lede, heading, text, closing, half } = section
-  switch (section.sys.contentType.sys.id) {
-    case 'section':
+  const sectionId = section.sys.contentType.sys.id
+  switch (sectionId) {
+    case 'section': {
+      const {
+        lede,
+        heading,
+        text,
+        closing,
+      } = section.fields
       return (
         <Wrapper narrow={lede}>
           <ContentCopy
@@ -29,8 +35,14 @@ const ContentSection = ({ section }) => {
           />
         </Wrapper>
       )
+    }
 
-    case 'sectionClosing':
+    case 'sectionClosing': {
+      const {
+        heading,
+        text,
+        half,
+      } = section.fields
       return (
         <Wrapper>
           <ContentCopy heading={heading} copy={text} half={half}/>
@@ -38,50 +50,77 @@ const ContentSection = ({ section }) => {
           <ShoutOut key="shout out" />
         </Wrapper>
       )
+    }
 
-    case 'sectionThreeColumnCopy':
+    case 'sectionThreeColumnCopy': {
+      const {
+        heading,
+        column1Subheading,
+        column1Copy,
+        column2Subheading,
+        column2Copy,
+        column3Subheading,
+        column3Copy,
+      } = section.fields
       return (
         <Wrapper>
           <ContentThreeColumnCopy
-            heading={section.heading}
-            column1Subheading={section.column1Subheading}
-            column1Copy={section.column1Copy}
-            column2Subheading={section.column2Subheading}
-            column2Copy={section.column2Copy}
-            column3Subheading={section.column3Subheading}
-            column3Copy={section.column3Copy}
+            heading={heading}
+            column1Subheading={column1Subheading}
+            column1Copy={column1Copy}
+            column2Subheading={column2Subheading}
+            column2Copy={column2Copy}
+            column3Subheading={column3Subheading}
+            column3Copy={column3Copy}
           />
         </Wrapper>
       )
+    }
 
-    case 'sectionImage':
+    case 'sectionImage': {
+      const {
+        image,
+        heading,
+      } = section.fields
       return (
         <Wrapper narrow>
-          <Image img={section.image.asset.file.url} caption={section.heading} />
+          <Image img={image && image.fields.file.url} caption={heading} />
         </Wrapper>
       )
+    }
 
-    case 'sectionQuote':
+    case 'sectionQuote': {
+      const {
+        attestant,
+        quote,
+      } = section.fields
       return (
         <Wrapper narrow>
-          <ContentQuote attestant={section.attestant} quote={section.quote} />
+          <ContentQuote attestant={attestant} quote={quote} />
         </Wrapper>
       )
+    }
 
     case 'sectionVideoInDevice':
+      const {
+        device,
+        heading,
+        copy,
+        image,
+      } = section.fields
       return (
         <Wrapper gray>
           <DeviceSection
-            device={section.device}
-            heading={section.heading}
-            copy={section.copy}
-            image={section.image}
+            device={device}
+            heading={heading}
+            copy={copy}
+            image={image}
           />
         </Wrapper>
       )
 
     default:
-      console.log(`Unknown section ${section.sys.contentType.sys.id}`)
+      console.log(`Unknown section ${sectionId}`)
       return null
   }
 }

@@ -26,6 +26,13 @@ class Service extends Component {
     TweenMax.set(this.imageNodes, { xPercent: -100 })
   }
 
+  componentDidUpdate(prevProps, prevState) {
+    if (!prevState.isVisible && this.state.isVisible) {
+      this.handleAnimatingText()
+      this.handleAnimatingImages()
+    }
+  }
+
   handleAnimatingText() {
     TweenMax.staggerTo(this.textNodes, this.animationDuration, { x: 0, autoAlpha: 1, ease }, 0.1)
   }
@@ -41,15 +48,7 @@ class Service extends Component {
 
   onChange(isVisible) {
     if (isVisible) {
-      this.setState(
-        {
-          isVisible: true,
-        },
-        () => {
-          this.handleAnimatingText()
-          this.handleAnimatingImages()
-        },
-      )
+      this.setState({ isVisible: true })
     }
   }
 

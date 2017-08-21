@@ -18,7 +18,7 @@ class Showoff extends Component {
                 key={i}
                 heading={showOff.fields.title}
                 copy={showOff.fields.text}
-                image={showOff.fields.image.asset.file.url}
+                image={showOff.fields.image && showOff.fields.image.fields.file.url}
               />
             </EditModal>,
           )}
