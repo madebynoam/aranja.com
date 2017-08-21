@@ -15,7 +15,7 @@ class Services extends Component {
               <Service
                 key={`service_${service.fields.index}`}
                 heading={service.fields.title}
-                image={service.fields.image.asset.file.url}
+                image={service.fields.image && service.fields.image.fields.file.url}
                 copy={service.fields.text}
               />
             </EditModal>,
