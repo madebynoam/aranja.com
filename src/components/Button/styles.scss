@@ -20,9 +20,14 @@
     outline: none;
     background: $light;
   }
+  
+  &:hover {
+    background: $light;
+  }
 
   &--dark {
     color: $dark;
     border-color: $dark;
   }
+
 }

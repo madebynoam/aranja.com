@@ -5,6 +5,8 @@ import ContentCopy from './Copy'
 import ContentThreeColumnCopy from './ThreeColumnCopy'
 import DeviceSection from '../DeviceSection'
 import ContentQuote from '../ContentQuote'
+import CaseStudyButton from '../CaseStudy/Button'
+import ShoutOut from '../CaseStudy/ShoutOut'
 
 import './styles.css'
 
@@ -34,6 +36,22 @@ const ContentSection = ({ section }) => {
         </Wrapper>
       )
     }
+
+    case 'sectionClosing': {
+      const {
+        heading,
+        text,
+        half,
+      } = section.fields
+      return (
+        <Wrapper>
+          <ContentCopy heading={heading} copy={text} half={half}/>
+          <CaseStudyButton key="case study">Visit project</CaseStudyButton>
+          <ShoutOut key="shout out" />
+        </Wrapper>
+      )
+    }
+
     case 'sectionThreeColumnCopy': {
       const {
         heading,
@@ -58,6 +76,7 @@ const ContentSection = ({ section }) => {
         </Wrapper>
       )
     }
+
     case 'sectionImage': {
       const {
         image,
@@ -69,6 +88,7 @@ const ContentSection = ({ section }) => {
         </Wrapper>
       )
     }
+
     case 'sectionQuote': {
       const {
         attestant,
@@ -89,7 +109,7 @@ const ContentSection = ({ section }) => {
         image,
       } = section.fields
       return (
-        <Wrapper narrow gray>
+        <Wrapper gray>
           <DeviceSection
             device={device}
             heading={heading}

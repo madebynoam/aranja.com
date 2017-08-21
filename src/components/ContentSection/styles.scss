@@ -18,6 +18,9 @@
 
   &--narrow {
     padding: 5rem 18%;
+    & + .ContentSection {
+      padding-top: 5rem;
+    }
   }
 }
 

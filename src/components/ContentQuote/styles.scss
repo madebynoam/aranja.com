@@ -1,3 +1,5 @@
+@import '../../utils/vars.scss';
+
 .ContentQuote {
   max-width: 60%;
   margin-left: auto;
@@ -12,12 +14,12 @@
 
   &::before {
     content: '“';
+    color: $light;
     font-family: serif;
     font-size: 12rem;
     position: absolute;
     margin-top: -0.6em;
     margin-left: -0.55em;
-    opacity: 0.1;
   }
 }
 

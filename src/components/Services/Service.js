@@ -91,14 +91,7 @@ class Service extends Component {
                   </span>
                 </span>
               </Body1>
-              <a href="#temp" className="Service-link">
-                <span className="u-mask u-flex u-flexAlignCenter">
-                  <span className="u-lineDecorator" data-animate="text" />
-                  <span className="u-maskInner u-textIndent1" data-animate="text">
-                    See details
-                  </span>
-                </span>
-              </a>
+
             </div>
           </div>
           <Parallax clamp>

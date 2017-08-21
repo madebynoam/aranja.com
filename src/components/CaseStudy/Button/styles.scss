@@ -13,5 +13,12 @@
     display: block;
     margin-left: 0.8rem;
     width: 2rem;
+    transition: transform 0.25s;
+  }
+
+  .Button:hover & {
+    &::after {
+      transform: translateX(0.85rem);
+    }
   }
 }
