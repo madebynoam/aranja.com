@@ -21,20 +21,19 @@ class ContentThreeColumnCopy extends Component {
     TweenMax.set(this.nodes, { y: -50, opacity: 0 })
   }
 
+  componentDidUpdate(prevProps, prevState) {
+    if (!prevState.isVisible && this.state.isVisible) {
+      this.handleAnimation()
+    }
+  }
+
   handleAnimation() {
     TweenMax.staggerTo(this.nodes, this.animationDuration, { y: 0, opacity: 1, ease }, 0.2)
   }
 
   onChange(isVisible) {
     if (isVisible) {
-      this.setState(
-        {
-          isVisible: true
-        },
-        () => {
-          this.handleAnimation()
-        }
-      )
+      this.setState({ isVisible: true })
     }
   }
 

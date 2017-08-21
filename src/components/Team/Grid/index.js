@@ -24,16 +24,15 @@ class TeamGrid extends Component {
     TweenMax.set(this.imageNodes, { autoAlpha: 0, y: 80 })
   }
 
+  componentDidUpdate(prevProps, prevState) {
+    if (!prevState.isVisible && this.state.isVisible) {
+      this.handleAnimatingImages()
+    }
+  }
+
   onChange(isVisible) {
     if (isVisible) {
-      this.setState(
-        {
-          isVisible: true,
-        },
-        () => {
-          this.handleAnimatingImages()
-        },
-      )
+      this.setState({ isVisible: true })
     }
   }
 
