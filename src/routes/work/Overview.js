@@ -3,7 +3,8 @@ import { Editable } from 'tux'
 import Hero from '../../components/Hero'
 import Page from '../../components/Page'
 import CaseStudyPreview from '../../components/CaseStudyPreview'
-import tempSprotarImg from './sprotarnir.png'
+import tempSprotarImg from './sprotarnir-placeholder.png'
+import tempDschoolImg from './dschool-placeholder.jpg'
 
 const Overview = ({ content, casestudies }) => {
   const heroUrl = casestudies.items[0] &&
@@ -28,7 +29,7 @@ const Overview = ({ content, casestudies }) => {
     title: 'Stanford d.school',
     description: 'In collaboration with Upperquad we developed the new website for Stanford\'s d.school project.',
     year: '2016 - 2017',
-    image: tempSprotarImg,
+    image: tempDschoolImg,
     url: '/work/dschool',
   }]
 
