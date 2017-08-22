@@ -37,7 +37,7 @@
 
   .CaseStudyGrid.is-visible &.has-content:hover {
     &::after {
-      background: rgba(0, 0, 0, 0.1);
+      opacity: 1;
     }
     .CaseStudyGrid-item {
       transform: scale(0.9) !important;
@@ -54,7 +54,10 @@
   &.has-content::after {
     content: '';
     display: block;
+    opacity: 0;
+    background: rgba(0, 0, 0, 0.1);
     height: 90%;
+    transition: opacity 0.2s cubic-bezier(.3, .27, .35, .77);
     pointer-events: none;
     position: absolute;
     width: 90%;
@@ -73,7 +76,7 @@
   flex: 1;
 
   .CaseStudyGrid.is-visible & {
-    transition: transform 0.1s cubic-bezier(.3, .27, .35, .77);
+    transition: transform 0.2s cubic-bezier(.3, .27, .35, .77);
   }
 
   &::before {
@@ -97,12 +100,13 @@
 .CaseStudyGrid-image {
   position: absolute;
   background-size: cover;
+  background-position: center;
   top: 0;
   left: 0;
   height: 100%;
   width: 100%;
 
   .CaseStudyGrid.is-visible & {
-    transition: transform 0.1s cubic-bezier(.3, .27, .35, .77);
+    transition: transform 0.2s cubic-bezier(.3, .27, .35, .77);
   }
 }

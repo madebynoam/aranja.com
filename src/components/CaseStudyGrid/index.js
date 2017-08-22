@@ -8,20 +8,16 @@ import { EditInline } from 'tux'
 import { H3, Body1 } from '../../typography'
 import './styles.css'
 
+// Todo: fill this dynamically.
+
 import image1 from './kolibri-placeholder.jpg'
-import image2 from './image2.jpg'
-import image3 from './image3.jpg'
-import image4 from './image4.jpg'
-import image5 from './image5.png'
-import image6 from './image6.jpg'
+import image2 from './dschool-placeholder.jpg'
+import image3 from './sprotarnir-placeholder.png'
 
 let defaultItems = [
-  { title: undefined, image: undefined, href: undefined, year: '2017' },
+  { title: 'Stanford d.school', image: image2, href: '/work/dschool', year: undefined },
   { title: 'Kolibri', image: image1, href: '/work/kolibri', year: undefined },
-  { title: 'Transitions', image: image3, href: '/', year: undefined },
-  { title: 'So cool', image: image4, href: '/', year: undefined },
-  { title: undefined, image: undefined, href: undefined, year: '2016' },
-  { title: 'Agree', image: image6, href: '/', year: undefined },
+  { title: 'Sprotarnir', image: image3, href: '/work/sprotarnir', year: undefined },
 ]
 
 class CaseStudyGrid extends Component {
