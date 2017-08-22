@@ -9,7 +9,8 @@ class Video extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      isVisible: false
+      isVisible: false,
+      hasBeenSeen: false,
     }
   }
 
@@ -19,24 +20,38 @@ class Video extends Component {
     })
   }
 
+  componentDidUpdate(prevProps, prevState) {
+    if (!prevState.isVisible && this.state.isVisible && !this.state.hasBeenSeen) {
+      this.setState({
+        hasBeenSeen: true
+      })
+    }
+
+    if (this.state.isVisible) {
+      this.video.play()
+    } else {
+      this.video.pause()
+    }
+  }
+  
   render() {
     const { video, description } = this.props
-    const { isVisible } = this.state
+    const { isVisible, hasBeenSeen } = this.state
 
     return (
       <VisibilitySensor
         onChange={isVisible => this.onChange(isVisible)}
-        active={!isVisible}
-        intervalDelay={250}
+        active
+        intervalDelay={100}
         minTopValue={400}
         partialVisibility
       >
         <div className="Video-wrapper">
           <video
-            className={classNames('Video', isVisible && 'is-visible')}
-            autoPlay
+            className={classNames('Video', isVisible && 'is-visible', hasBeenSeen && 'has-beenSeen')}
             loop
             src={video}
+            ref={ref => { this.video = ref }}
           />
           <Body2 top="small" bottom="small" className="Video-description">
             {description}

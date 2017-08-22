@@ -5,12 +5,18 @@
   transform: translateY($ms2);
   transition: all 0.5s ease-out;
   width: 100%;
+  padding: $ms2;
+  background: $barelyWhite;
+
+  &.has-beenSeen {
+    opacity: 0.5;
+    transform: translateY(0);
+  }
 
   &.is-visible {
     opacity: 1;
     transform: translateY(0);
   }
-  
 }
 
 .Video-wrapper {
