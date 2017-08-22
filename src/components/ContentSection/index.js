@@ -46,7 +46,7 @@ const ContentSection = ({ section }) => {
       console.log(section.fields)
       const { partners, period, awards } = section.fields
       return (
-        <Wrapper gray className="IntroSectionWrapper">
+        <Wrapper gray className="IntroSection-wrapper">
           <IntroSection partners={partners} period={period} awards={awards} />
           <CaseStudyButton>Visit project</CaseStudyButton>
         </Wrapper>
