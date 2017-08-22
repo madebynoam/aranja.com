@@ -1,7 +1,7 @@
 @import '../../../utils/vars.scss';
 
 .IntroSection {
-
+  width: 65%;
 }
 
 .IntroSection-wrapper {
@@ -21,6 +21,11 @@
   font-weight: 600;
   font-size: $ms0 !important;
   letter-spacing: 1px;
-  margin-right: 0.5rem;
+  margin-right: $ms0;
   text-transform: uppercase;
+  width: 40%;
+}
+
+.IntroSection-value {
+  font-size: 1.2rem;
 }

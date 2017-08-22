@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import { Body1, H2 } from '../../typography'
 import Parallax from '../Parallax'
 import Device from './Device'
@@ -28,6 +29,15 @@ class DeviceSection extends Component {
       </div>
     )
   }
+}
+
+DeviceSection.propTypes = {
+  device: PropTypes.string.isRequired,
+  copy: PropTypes.string.isRequired,
+  heading: PropTypes.string.isRequired,
+  image: PropTypes.shape({
+
+  }),
 }
 
 export default DeviceSection

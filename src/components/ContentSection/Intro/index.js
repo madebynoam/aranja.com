@@ -32,14 +32,19 @@ const IntroSection = ({ partners, period, awards }) =>
         </IntroValue>
       </div>}
     {awards &&
-      awards.map(award =>
-        <div className="IntroSection-item">
-          <IntroKey>Recognitions:</IntroKey>
-          <IntroValue>
-            {award.fields.awardName} – <Link href={award.fields.awardLink}>{award.fields.awardSite}</Link>
-          </IntroValue>
+      <div className="IntroSection-item">
+        <IntroKey>Recognitions:</IntroKey>
+        <div>
+          {awards.map(award =>
+            <IntroValue key={award.fields.awardName}>
+              {award.fields.awardName} –{' '}
+              <Link href={award.fields.awardLink}>
+                {award.fields.awardSite}
+              </Link>
+            </IntroValue>
+          )}
         </div>
-      )}
+      </div>}
   </div>
 
 export default IntroSection

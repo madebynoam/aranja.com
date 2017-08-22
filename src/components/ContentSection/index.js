@@ -1,6 +1,7 @@
 import React from 'react'
 import classNames from 'classnames'
 import Image from './Image'
+import Video from './Video'
 import ContentCopy from './Copy'
 import ContentThreeColumnCopy from './ThreeColumnCopy'
 import IntroSection from './Intro'
@@ -43,7 +44,6 @@ const ContentSection = ({ section }) => {
     }
 
     case 'sectionIntro':
-      console.log(section.fields)
       const { partners, period, awards } = section.fields
       return (
         <Wrapper gray className="IntroSection-wrapper">
@@ -82,6 +82,15 @@ const ContentSection = ({ section }) => {
       return (
         <Wrapper tall>
           <Image img={image && image.fields.file.url} caption={heading} />
+        </Wrapper>
+      )
+    }
+
+    case 'sectionVideo': {
+      const { video, description } = section.fields
+      return (
+        <Wrapper tall>
+          <Video video={video && video.fields.file.url} description={description} />
         </Wrapper>
       )
     }

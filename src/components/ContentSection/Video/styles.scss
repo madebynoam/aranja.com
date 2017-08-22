@@ -1,0 +1,23 @@
+@import '../../../utils/vars';
+
+.Video {
+  opacity: 0;
+  transform: translateY($ms2);
+  transition: all 0.5s ease-out;
+  width: 100%;
+
+  &.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+}
+
+.Video-wrapper {
+  width: 100%;
+}
+
+.Video-description {
+  text-align: center;
+  color: rgba($copy, 0.85);
+}

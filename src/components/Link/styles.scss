@@ -2,6 +2,7 @@
 
 .Link {
   position: relative;
+  z-index: 1;
   &::after {
     background: $light;
     bottom: 0;
