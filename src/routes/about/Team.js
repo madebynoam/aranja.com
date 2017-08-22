@@ -18,7 +18,7 @@ const Team = ({ content, team }) => {
         <Hero intro="About us" img={img01} title="We are a web development studio" />
         <Section bottom="large">
           <div className="Team-copy">
-            <Body1 top="small" bottom="large" center>
+            <Body1 top="large" bottom="large" center>
               Aranja is a small web studio based and raised in Iceland. Our goal, to improve the web, is only achieved with a passionate team that is motivated and happy. We believe that the community is what makes the web what it is and we intend to support that.
             </Body1>
           </div>

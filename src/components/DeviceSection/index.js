@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { Body1, H2 } from '../../typography'
 import Parallax from '../Parallax'
 import Device from './Device'
-import kolibri from './kolibri.jpg'
 import './styles.css'
 
 class DeviceSection extends Component {
@@ -23,7 +22,7 @@ class DeviceSection extends Component {
         </div>
         <Parallax clamp>
           <div className="DeviceSection-device">
-            <Device image={kolibri} />
+            <Device device={device} image={image.fields.file.url} />
           </div>
         </Parallax>
       </div>

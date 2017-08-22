@@ -1,0 +1,27 @@
+@import '../../../utils/vars.scss';
+
+.IntroSection {
+
+}
+
+.IntroSection-wrapper {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: $ms5;
+}
+
+.IntroSection-item {
+  display: flex;
+  align-items: baseline;
+  margin-bottom: $ms1;
+}
+
+.IntroSection-key {
+  font-family: 'FFDIN';
+  font-weight: 600;
+  font-size: $ms0 !important;
+  letter-spacing: 1px;
+  margin-right: 0.5rem;
+  text-transform: uppercase;
+}

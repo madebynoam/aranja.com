@@ -23,6 +23,13 @@ const Overview = ({ content, casestudies }) => {
     year: '2016 - 2017',
     image: tempSprotarImg,
     url: '/work/sprotarnir',
+  },
+  {
+    title: 'Stanford d.school',
+    description: 'In collaboration with Upperquad we developed the new website for Stanford\'s d.school project.',
+    year: '2016 - 2017',
+    image: tempSprotarImg,
+    url: '/work/dschool',
   }]
 
   return <Editable model={content}>

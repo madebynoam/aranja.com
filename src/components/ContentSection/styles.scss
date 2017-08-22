@@ -10,17 +10,14 @@
 }
 
 .ContentSection {
-  padding: 10rem 18%;
+  padding: 5rem 18%;
 
   &--gray {
     background: $barelyWhite;
   }
 
-  &--narrow {
-    padding: 5rem 18%;
-    & + .ContentSection {
-      padding-top: 5rem;
-    }
+  &--tall {
+    padding: 8rem 18%;
   }
 }
 

@@ -4,11 +4,12 @@
 .Hero-wrap {
   box-sizing: content-box;
   height: 80vh;
-  padding-bottom: $ms5;
+  // padding-bottom: $ms5;
   position: relative;
 
   &.cover {
     height: 100vh;
+    padding-bottom: $ms5;
   }
 }
 

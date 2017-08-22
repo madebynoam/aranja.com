@@ -1,0 +1,15 @@
+@import '../../utils/vars.scss';
+
+.Link {
+  position: relative;
+  &::after {
+    background: $light;
+    bottom: 0;
+    content: '';
+    height: 0.5ch;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+  }
+}
