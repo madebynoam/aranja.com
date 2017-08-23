@@ -6,7 +6,7 @@
   transition: all 0.5s ease-out;
   width: 100%;
   padding: $ms2;
-  background: $barelyWhite;
+  background: rgba($barelyWhite, 0.333);
 
   &.has-beenSeen {
     opacity: 0.5;

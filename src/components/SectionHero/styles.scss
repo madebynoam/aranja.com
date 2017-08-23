@@ -7,14 +7,33 @@
   margin: $ms3 0;
   position: relative;
   z-index: 1;
+  opacity: 0;
+  transform: translateY($ms2);
+  transition: all 0.5s ease-out;
+
+  &.is-visible {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.SectionHero-imageWrap {
+  overflow: hidden;
+  height: 750px;
+  position: relative;
+  width: 100%;
 }
 
 .SectionHero-image {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
   flex: 1;
   background-position: center;
   background-size: cover;
-  height: 750px;
-  width: 100%;
+  transform: scale(1.2) translateY(calc(var(--parallax) * 2rem));
 }
 
 .SectionHero-caption {

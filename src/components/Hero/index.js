@@ -10,15 +10,15 @@ class Hero extends Component {
     const { img, title, intro, cover } = this.props
     return (
       <div className={classNames('Hero-wrap', cover && 'cover')}>
-          <div className="Hero" style={{ backgroundImage: `url(${img})` }}>
-            <div className="Hero-text">
-              <H1 className="Hero-textHeading">
-                {title}
-              </H1>
-            </div>
-
-            <ScrollIndicator />
+        <div className="Hero" style={{ backgroundImage: `url(${img})` }}>
+          <div className="Hero-text">
+            <H1 className="Hero-textHeading">
+              {title}
+            </H1>
           </div>
+
+          <ScrollIndicator />
+        </div>
       </div>
     )
   }
