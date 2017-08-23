@@ -104,7 +104,7 @@ const ContentSection = ({ section }) => {
     case 'sectionQuote': {
       const { attestant, quote } = section.fields
       return (
-        <Wrapper tall>
+        <Wrapper>
           <ContentQuote attestant={attestant} quote={quote} />
         </Wrapper>
       )

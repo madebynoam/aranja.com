@@ -10,8 +10,6 @@
   padding-right: 10%;
 }
 
-$parallaxStart: 43.5rem;
-
 .DeviceSection-device {
   position: relative;
   flex: 0 1 35%;
@@ -28,5 +26,5 @@ $parallaxStart: 43.5rem;
   position: absolute;
   width: 100%;
   top: 0;
-  transform: translateY(calc(var(--parallax) * #{calc(100% - 8rem) * 0.7}));
+  transform: translateY(calc(var(--parallax) * #{calc(-100% - 8rem) * #{0.4}}));
 }
