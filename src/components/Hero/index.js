@@ -10,7 +10,6 @@ class Hero extends Component {
     const { img, title, intro, cover } = this.props
     return (
       <div className={classNames('Hero-wrap', cover && 'cover')}>
-        <HeroOverlay intro={intro} />
           <div className="Hero" style={{ backgroundImage: `url(${img})` }}>
             <div className="Hero-text">
               <H1 className="Hero-textHeading">

@@ -26,7 +26,7 @@ const Overview = ({ content, casestudies }) => {
     url: '/work/sprotarnir',
   },
   {
-    title: 'Stanford d.school',
+    title: 'd.school',
     description: 'In collaboration with Upperquad we developed the new website for Stanford\'s d.school project.',
     year: '2016 - 2017',
     image: tempDschoolImg,

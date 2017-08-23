@@ -94,7 +94,7 @@
   z-index: -1;
   font-weight: 600;
   left: -10rem;
-  transform: translateX(calc(var(--parallax) * 2rem));
+  transform: translateX(calc(var(--parallax) * 3rem));
   .CaseStudyPreview.is-aligned-right & {
     left: auto;
     right: -10rem; 

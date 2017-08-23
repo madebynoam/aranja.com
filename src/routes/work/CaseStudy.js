@@ -12,7 +12,7 @@ const CaseStudy = ({ content, caseStudy }) => {
     heroImage,
     sections = [],
   } = caseStudy.fields
-  console.log(sections)
+
   return (
     <Editable model={content}>
       <Page name="Case study">

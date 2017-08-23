@@ -98,6 +98,7 @@ const ContentSection = ({ section }) => {
     case 'sectionSlideshow': {
       // todo
       // return <Slideshow />
+      break
     }
 
     case 'sectionQuote': {
