@@ -8,6 +8,7 @@ import IntroSection from './Intro'
 import DeviceSection from '../DeviceSection'
 import ContentQuote from '../ContentQuote'
 import CaseStudyButton from '../CaseStudy/Button'
+import Floater from './Floater'
 import ShoutOut from '../CaseStudy/ShoutOut'
 
 import './styles.css'
@@ -118,10 +119,20 @@ const ContentSection = ({ section }) => {
             device={device}
             heading={heading}
             copy={copy}
-            image={image}
+            image={image.fields.file.url}
           />
         </Wrapper>
       )
+
+
+    case 'sectionFloatingScreenshots': {
+      const { topDevice, centerDevice, bottomDevice } = section.fields
+      return (
+        <Wrapper>
+          <Floater topDevice={topDevice.fields.file.url} centerDevice={centerDevice.fields.file.url} bottomDevice={bottomDevice.fields.file.url} /> 
+        </Wrapper>
+      )
+    }
 
     case 'sectionClosing': {
       const { heading, text, half } = section.fields

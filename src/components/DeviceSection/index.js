@@ -23,7 +23,7 @@ class DeviceSection extends Component {
         </div>
         <Parallax clamp>
           <div className="DeviceSection-device">
-            <Device device={device} image={image.fields.file.url} />
+            <Device device={device} image={image} />
           </div>
         </Parallax>
       </div>

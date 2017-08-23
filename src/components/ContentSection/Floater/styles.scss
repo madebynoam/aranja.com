@@ -1,0 +1,34 @@
+.Floater {
+  width: 80%;
+  margin: 0 auto;
+  min-height: 600px;
+  position: relative;
+}
+
+.Floater-single {
+  width: 100%;
+  position: absolute;
+
+  // bottom layer
+  &:nth-child(1) {
+    transform:
+    translateX(calc(var(--parallax) * -10rem))
+    translateY(10rem)
+    translateY(calc(var(--parallax) * -6rem));
+  }
+
+  // center layer
+  &:nth-child(2) {
+    transform:
+    translateY(5rem)
+    translateY(calc(var(--parallax) * -4rem));
+  }
+
+  // top layer
+  &:nth-child(3) {
+    transform:
+    translateX(calc(var(--parallax) * 10rem))
+    translateY(0rem)
+    translateY(calc(var(--parallax) * -2rem));
+  }
+}
