@@ -1348,6 +1348,10 @@ center-align@^0.1.1:
     align-text "^0.1.3"
     lazy-cache "^1.0.3"
 
+chain-function@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/chain-function/-/chain-function-1.0.0.tgz#0d4ab37e7e18ead0bdc47b920764118ce58733dc"
+
 chalk@^1.0.0, chalk@^1.1.0, chalk@^1.1.1, chalk@^1.1.3:
   version "1.1.3"
   resolved "https://registry.yarnpkg.com/chalk/-/chalk-1.1.3.tgz#a8115c55e4a702fe4d150abd3872822a7e09fc98"
@@ -1967,6 +1971,10 @@ dom-converter@~0.1:
   dependencies:
     utila "~0.3"
 
+dom-helpers@^3.2.0:
+  version "3.2.1"
+  resolved "https://registry.yarnpkg.com/dom-helpers/-/dom-helpers-3.2.1.tgz#3203e07fed217bd1f424b019735582fc37b2825a"
+
 dom-serializer@0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/dom-serializer/-/dom-serializer-0.1.0.tgz#073c697546ce0780ce23be4a28e293e40bc30c82"
@@ -2460,7 +2468,7 @@ faye-websocket@~0.11.0:
   dependencies:
     websocket-driver ">=0.5.1"
 
-fbjs@^0.8.4, fbjs@^0.8.9:
+fbjs@^0.8.9:
   version "0.8.12"
   resolved "https://registry.yarnpkg.com/fbjs/-/fbjs-0.8.12.tgz#10b5d92f76d45575fd63a217d4ea02bea2f8ed04"
   dependencies:
@@ -3421,9 +3429,9 @@ jsx-ast-utils@^1.3.4, jsx-ast-utils@^1.4.0:
   version "1.4.1"
   resolved "https://registry.yarnpkg.com/jsx-ast-utils/-/jsx-ast-utils-1.4.1.tgz#3867213e8dd79bf1e8f2300c0cfc1efb182c0df1"
 
-jsx-html-webpack-plugin@^0.3.0-beta.0:
-  version "0.3.0-beta.0"
-  resolved "https://registry.yarnpkg.com/jsx-html-webpack-plugin/-/jsx-html-webpack-plugin-0.3.0-beta.0.tgz#7673c0e0ec4f637114a5e8d28210de05b029e2b6"
+jsx-html-webpack-plugin@^0.3.0-beta.2:
+  version "0.3.0-beta.2"
+  resolved "https://registry.yarnpkg.com/jsx-html-webpack-plugin/-/jsx-html-webpack-plugin-0.3.0-beta.2.tgz#d2053fc5f80f5a67737a8fc5701abc8b7296f637"
   dependencies:
     html-webpack-plugin "^2.28.0"
     loader-utils "^1.1.0"
@@ -3870,9 +3878,9 @@ neutrino-middleware-style-loader@5.0.1:
     css-loader "^0.27.3"
     style-loader "^0.16.0"
 
-neutrino-preset-tux@^0.3.0-beta.0:
-  version "0.3.0-beta.0"
-  resolved "https://registry.yarnpkg.com/neutrino-preset-tux/-/neutrino-preset-tux-0.3.0-beta.0.tgz#4d76017ababee808213b26562767bcb8fd8f3e99"
+neutrino-preset-tux@^0.3.0-beta.2:
+  version "0.3.0-beta.2"
+  resolved "https://registry.yarnpkg.com/neutrino-preset-tux/-/neutrino-preset-tux-0.3.0-beta.2.tgz#2136cce2cda351fd390e6da57379f2bae0275028"
   dependencies:
     babel-plugin-dynamic-import-node "1.0.1"
     babel-plugin-syntax-dynamic-import "^6.18.0"
@@ -3881,7 +3889,7 @@ neutrino-preset-tux@^0.3.0-beta.0:
     babel-preset-env "^1.3.3"
     babel-preset-react "^6.24.1"
     extract-text-webpack-plugin "2.1.0"
-    jsx-html-webpack-plugin "^0.3.0-beta.0"
+    jsx-html-webpack-plugin "^0.3.0-beta.2"
     neutrino-middleware-banner "5.0.1"
     neutrino-middleware-chunk "5.0.1"
     neutrino-middleware-clean "5.0.1"
@@ -4814,13 +4822,6 @@ rc@^1.1.7:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
-react-addons-css-transition-group@^15.4.2:
-  version "15.5.2"
-  resolved "https://registry.yarnpkg.com/react-addons-css-transition-group/-/react-addons-css-transition-group-15.5.2.tgz#ea7e0a9f0e1c27ca426da4efd3559915bd42ead2"
-  dependencies:
-    fbjs "^0.8.4"
-    object-assign "^4.1.0"
-
 react-chain-helmet@^0.4.0:
   version "0.4.0"
   resolved "https://registry.yarnpkg.com/react-chain-helmet/-/react-chain-helmet-0.4.0.tgz#e1391240e07355460540852487676b7d9f66ac78"
@@ -4855,7 +4856,7 @@ react-document@^0.6.0:
     prop-types "^15.5.10"
     serialize-javascript "1.3.0"
 
-react-dom@^16.0.0-beta.3:
+react-dom@^16.0.0-beta.5:
   version "16.0.0-beta.5"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.0.0-beta.5.tgz#c9c2e5c059576f77b55e8c3959535d63cb1227e5"
   dependencies:
@@ -4932,6 +4933,17 @@ react-side-effect@^1.1.0:
     exenv "^1.2.1"
     shallowequal "^1.0.1"
 
+react-transition-group@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/react-transition-group/-/react-transition-group-2.2.0.tgz#793bf8cb15bfe91b3101b24bce1c1d2891659575"
+  dependencies:
+    chain-function "^1.0.0"
+    classnames "^2.2.5"
+    dom-helpers "^3.2.0"
+    loose-envify "^1.3.1"
+    prop-types "^15.5.8"
+    warning "^3.0.0"
+
 react-visibility-sensor@^3.9.0:
   version "3.9.0"
   resolved "https://registry.yarnpkg.com/react-visibility-sensor/-/react-visibility-sensor-3.9.0.tgz#c7a88a208f36237454f55a2090738f5797ea1284"
@@ -4939,7 +4951,7 @@ react-visibility-sensor@^3.9.0:
     create-react-class "^15.5.1"
     prop-types "^15.5.4"
 
-react@^16.0.0-beta.3:
+react@^16.0.0-beta.5:
   version "16.0.0-beta.5"
   resolved "https://registry.yarnpkg.com/react/-/react-16.0.0-beta.5.tgz#b4abba9bce7db72c30633db54a148614b6574e79"
   dependencies:
@@ -5799,42 +5811,42 @@ tunnel-agent@^0.6.0:
   dependencies:
     safe-buffer "^5.0.1"
 
-tux-adapter-contentful@^0.3.0-beta.0:
-  version "0.3.0-beta.0"
-  resolved "https://registry.yarnpkg.com/tux-adapter-contentful/-/tux-adapter-contentful-0.3.0-beta.0.tgz#a186d28042b764eb8cea5da82f43a2fcb1d7e523"
+tux-adapter-contentful@^0.3.0-beta.2:
+  version "0.3.0-beta.2"
+  resolved "https://registry.yarnpkg.com/tux-adapter-contentful/-/tux-adapter-contentful-0.3.0-beta.2.tgz#ec11abb1a54f0ee3f9eb7c328b2f2c7f90028b7d"
   dependencies:
     axios "^0.15.3"
     lodash "^4.17.4"
-    tux "^0.3.0-beta.0"
+    tux "^0.3.0-beta.2"
 
-tux-scripts@^0.3.0-beta.0:
-  version "0.3.0-beta.0"
-  resolved "https://registry.yarnpkg.com/tux-scripts/-/tux-scripts-0.3.0-beta.0.tgz#4da54ec6538f2f461183786179c154d4edf15e2b"
+tux-scripts@^0.3.0-beta.2:
+  version "0.3.0-beta.2"
+  resolved "https://registry.yarnpkg.com/tux-scripts/-/tux-scripts-0.3.0-beta.2.tgz#b1aa191c3f2aa0667b9452a4cf9109e6e44b5ccf"
   dependencies:
     cross-spawn "^5.1.0"
     fs-extra "^3.0.1"
     neutrino "5.0.1"
-    neutrino-preset-tux "^0.3.0-beta.0"
+    neutrino-preset-tux "^0.3.0-beta.2"
     optional "^0.1.3"
     ora "^1.2.0"
     ramda "^0.23.0"
     react-chain "^0.4.0"
     react-document "^0.6.0"
-    tux "^0.3.0-beta.0"
+    tux "^0.3.0-beta.2"
     yargs "^6.6.0"
 
-tux@^0.3.0-beta.0:
-  version "0.3.0-beta.0"
-  resolved "https://registry.yarnpkg.com/tux/-/tux-0.3.0-beta.0.tgz#1a39d5003c1c915cdfccc1e1384d49ba6398901a"
+tux@^0.3.0-beta.2:
+  version "0.3.0-beta.2"
+  resolved "https://registry.yarnpkg.com/tux/-/tux-0.3.0-beta.2.tgz#4191e8b969135f7187be8cbbd948cdcbd5b02b2d"
   dependencies:
     babel-runtime "^6.23.0"
     classnames "^2.2.5"
     deep-eql "^2.0.1"
     moment "^2.17.1"
     parse5 "3.0.2"
-    react-addons-css-transition-group "^15.4.2"
     react-day-picker "^5.1.1"
     react-icons "^2.2.3"
+    react-transition-group "^2.2.0"
     slate "^0.21.2"
     string-humanize "^1.0.0"
     styled-jsx "^0.5.4"
