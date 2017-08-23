@@ -27,7 +27,6 @@ export const withReveal = (
     }
 
     onChange(isVisible) {
-      console.log(isVisible)
       this.setState({
         isVisible
       })
