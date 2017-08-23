@@ -1,0 +1,19 @@
+machine:
+  node:
+    version: 8.4
+
+dependencies:
+  pre:
+    - npm install --global now
+    - echo $NOW_CONFIG | base64 --decode > ${HOME}/.now.json
+
+test:
+  override:
+    - npm run build --silent
+
+deployment:
+  example:
+    branch: master
+    commands:
+      - now
+      - now alias
