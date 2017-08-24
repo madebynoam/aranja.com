@@ -22,31 +22,19 @@
   }
 }
 
-.Service-content {
-  margin-top: -2.95rem; // to simulate -heading bottom margin and -link not having height.
-}
-
-.Service-link {
-  text-decoration: none;
-  font-size: $ms0;
-  color: $blue;
-  display: inline-block;
-  position: relative;
-  text-transform: lowercase;
-}
-
 .Service-copy {
+  $offset: 8rem;
   color: $copy;
-  padding-right: 10rem;
+  padding-right: $offset;
 
   .EditModal:nth-child(even) .Service & {
     padding-right: 0;
-    padding-left: 10rem;
+    padding-left: $offset;
   }
 
   .Services > div:nth-child(even) .Service & {
     padding-right: 0;
-    padding-left: 10rem;
+    padding-left: $offset;
   }
 }
 
