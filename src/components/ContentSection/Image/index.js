@@ -5,9 +5,9 @@ import { Body2 } from '../../../typography'
 import { withReveal } from '../../../hoc/withReveal'
 import './styles.css'
 
-const Image = ({ img, caption, isVisible }) =>
+const Image = ({ img, caption, hasBeenSeen }) =>
   <div className="Image-wrap">
-    <div className={classNames('Image', isVisible && 'is-visible')}>
+    <div className={classNames('Image', hasBeenSeen && 'is-visible')}>
       <div className="Image-image" style={{ backgroundImage: `url(${img})` }} />
     </div>
     <Body2 top="small" bottom="small" className="Image-caption">
