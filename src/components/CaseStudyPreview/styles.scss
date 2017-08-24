@@ -23,29 +23,22 @@
   z-index: 2;
   width: 40%;
 
-  .CaseStudyPreview.is-aligned-right & {
+  .CaseStudyPreview.is-alignedRight & {
     margin-left: auto;
     text-align: right;
   }
 }
 .CaseStudyPreview-title {
-  padding-bottom: 2rem;
+  padding-bottom: $ms1;
   color: $blue;
   transition: color 0.2s;
-
-  > h1 {
-    font-size: 5rem;
-    font-weight: 600;
-    letter-spacing: 3px;
-    line-height: 0.85;
-  }
 }
 
 .CaseStudyPreview-description {
-  max-width: 17rem;
-  padding-bottom: 2rem;  
+  max-width: 80%;
+  padding-bottom: $ms1;  
   opacity: 0.6;
-  .CaseStudyPreview.is-aligned-right & {
+  .CaseStudyPreview.is-alignedRight & {
     margin-left: auto;
     }
 }
@@ -60,7 +53,7 @@
   width: 60%;
   height: 100%;
 
-  .CaseStudyPreview.is-aligned-right & {
+  .CaseStudyPreview.is-alignedRight & {
     right: auto;
     left: 0; 
   }
@@ -95,7 +88,7 @@
   font-weight: 600;
   left: -10rem;
   transform: translateX(calc(var(--parallax) * 3rem));
-  .CaseStudyPreview.is-aligned-right & {
+  .CaseStudyPreview.is-alignedRight & {
     left: auto;
     right: -10rem; 
   }

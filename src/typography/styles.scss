@@ -7,6 +7,7 @@
 }
 
 .t-h1 {
+  font-family: $headingFontFamily, serif;
   font-size: $ms4;
   font-weight: 500;
   line-height: 1.2;
@@ -14,6 +15,7 @@
 }
 
 .t-h2 {
+  font-family: $headingFontFamily, serif;  
   font-size: $ms3;
   font-weight: 500;
   line-height: 1.2;
@@ -21,6 +23,7 @@
 }
 
 .t-h3 {
+  font-family: $headingFontFamily, serif;  
   font-size: $ms2;
   font-weight: 400;
   line-height: 1.2;
@@ -57,41 +60,4 @@
 
 .t-center {
   text-align: center;
-}
-
-.t-transparent {
-  opacity: 0.8;
-}
-
-.t-legend {
-  font-family: 'FFDIN';
-  text-transform: uppercase;
-  font-weight: 600;
-  letter-spacing: 0.05rem;
-  margin-bottom: $ms1;
-  font-size: $ms0;
-  padding-left: 1.666em;
-  bottom: 0;
-  position: relative;
-  line-height: 1;
-  padding-top: 3rem;
-
-  &::before {
-    position: absolute;
-    left: 0em;
-    content: '';
-    width: 1em;
-    bottom: -3rem;
-    height: 2px;
-    background: $dark;
-    top: -2px;
-    margin: auto;
-  }
-
-  &.is-inversed {
-    color: $white;
-    &::before {
-      background: $white;
-    }
-  }
 }

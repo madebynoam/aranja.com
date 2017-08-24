@@ -1,6 +1,6 @@
 import React from 'react'
 import { Editable } from 'tux'
-import { Legend, Body1, Body2, H1, H2, H3 } from '../../typography'
+import { Body1, H3 } from '../../typography'
 import Page from '../../components/Page'
 import TeamGrid from '../../components/Team/Grid'
 import Section from '../../components/Section'

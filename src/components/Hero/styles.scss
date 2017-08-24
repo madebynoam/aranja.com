@@ -69,27 +69,7 @@
 .Hero-textHeading {
   line-height: 1.1;
   max-width: 766px;
-  font-size: 5.1rem;
-}
-
-.Hero-textLegend {
-  cursor: pointer;
-  font-size: 1.1em;
-  letter-spacing: 1.5px;
-  margin-top: -1em;
-
-  &::before {
-    background: #54a8ca;
-    bottom: -3rem;
-    content: '';
-    display: block;
-    height: 2px;
-    left: 0em;
-    margin: auto;
-    position: absolute;
-    top: -2px;
-    width: 1em;
-  }
+  font-size: $ms5;
 }
 
 .Hero-meta {

@@ -53,6 +53,3 @@ export const Body2 = createStyle('p', 't-body2', {
   strong: 't-medium',
   center: 't-center',
 })
-export const Legend = createStyle('p', 't-legend', {
-  inversed: 'is-inversed',
-})
