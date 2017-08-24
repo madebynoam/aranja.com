@@ -1,5 +1,6 @@
 import React from 'react'
 import Document, { Html, Head, Body, App, Footer } from 'react-document'
+import TypeKit from 'react-typekit'
 
 /**
  * This component is a template for the HTML file. You can add webfonts, meta tags,
@@ -30,6 +31,7 @@ export default class extends Document {
             helmet.meta.toComponent(),
             helmet.link.toComponent(),
           ]}
+          <TypeKit kitId="kee6nkk" />
         </Head>
         <Body>
           <App />
