@@ -1,14 +1,14 @@
 @import '../../utils/vars.scss';
 
 .Service {
+  display: flex;
   position: relative;
   z-index: 3;
-  display: flex;
 }
 
 .Service-contentWrap {
-  display: flex;
   align-items: center;
+  display: flex;
   flex: 1;
 
   .EditModal:nth-child(even) .Service & {
@@ -28,77 +28,62 @@
   padding-right: $offset;
 
   .EditModal:nth-child(even) .Service & {
-    padding-right: 0;
     padding-left: $offset;
+    padding-right: 0;
   }
 
   .Services > div:nth-child(even) .Service & {
-    padding-right: 0;
     padding-left: $offset;
+    padding-right: 0;
   }
 }
 
 .Service-imageWrapper {
   flex: 0 1 auto;
+  max-height: 620px;
+  margin-right: -18.5%;
   overflow: hidden;
   position: relative;
-  max-height: 620px;
   width: 68.5%;
-  margin-right: -18.5%;
 
   .EditModal:nth-child(even) .Service & {
-    margin-right: 0;
     margin-left: -18.5%;
+    margin-right: 0;
     order: 1;
   }
 
   .Services > div:nth-child(even) .Service & {
-    margin-right: 0;
     margin-left: -18.5%;
+    margin-right: 0;
     order: 1;
   }
 
   &::before {
     content: '';
     display: block;
+    padding-bottom: 75%;
     width: 100%;
-    padding-bottom: 100%;
   }
 }
 
 .Service-image {
-  background-size: 133%;
-  background-position: left 20%;
-  background-repeat: no-repeat;
-  z-index: 1;
   position: absolute;
   top: 0;
+  bottom: 0;
   right: 0;
   left: 0;
-  bottom: 0;
-  margin: auto;
+  flex: 1;
+  overflow: hidden;
 
   .Services > div:first-child .Service & {
-    background-position: right 20%;
+    background-position: center;
   }
 }
 
-.Service-imageMask {
-  position: absolute;
-  transform-origin: 50% 50%;
-  width: 100%;
+
+.Service-imageInner {
+  background-position: center;
+  background-size: cover;
+  transform: scale(1.2) translateY(calc(var(--parallax) * 2rem));
   height: 100%;
-  top: 0;
-  left: 0;
-  transform: translateY(calc(var(--parallax) * 60px)) scale(1.15);
-}
-
-.Service:nth-child(even) .u-lineDecorator {
-  left: auto;
-  right: 0;
-}
-
-.Services > div:nth-child(even) .u-lineDecorator {
-  left: auto;
-  right: 0;
 }

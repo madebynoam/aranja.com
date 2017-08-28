@@ -12,7 +12,7 @@ class Service extends Component {
   constructor() {
     super()
     this.state = {
-      isVisible: false,
+      isVisible: false
     }
     this.textNodes = []
     this.imageNodes = []
@@ -20,8 +20,10 @@ class Service extends Component {
   }
 
   componentDidMount() {
-    this.textNodes = this.componentRef.querySelectorAll('[data-animate=\'text\']')
-    this.imageNodes = this.componentRef.querySelectorAll('[data-animate=\'image\']')
+    this.textNodes = this.componentRef.querySelectorAll("[data-animate='text']")
+    this.imageNodes = this.componentRef.querySelectorAll(
+      "[data-animate='image']"
+    )
     TweenMax.set(this.textNodes, { x: -200, autoAlpha: 0 })
     TweenMax.set(this.imageNodes, { xPercent: -100 })
   }
@@ -34,7 +36,12 @@ class Service extends Component {
   }
 
   handleAnimatingText() {
-    TweenMax.staggerTo(this.textNodes, this.animationDuration, { x: 0, autoAlpha: 1, ease }, 0.1)
+    TweenMax.staggerTo(
+      this.textNodes,
+      this.animationDuration,
+      { x: 0, autoAlpha: 1, ease },
+      0.1
+    )
   }
 
   handleAnimatingImages() {
@@ -42,7 +49,7 @@ class Service extends Component {
       xPercent: 0,
       autoAlpha: 1,
       delay: this.animationDuration / 2,
-      ease,
+      ease
     })
   }
 
@@ -91,17 +98,15 @@ class Service extends Component {
                   </span>
                 </span>
               </Body1>
-
             </div>
           </div>
           <Parallax clamp>
             <div className="Service-imageWrapper">
-              <div className="Service-imageMask">
+              <div className="Service-image" data-animate="image">
                 <div
-                  className="Service-image"
-                  data-animate="image"
+                  className="Service-imageInner"
                   style={{
-                    backgroundImage: `url(${image})`,
+                    backgroundImage: `url(${image})`
                   }}
                 />
               </div>
@@ -116,7 +121,7 @@ class Service extends Component {
 Service.propTypes = {
   heading: PropTypes.string,
   copy: PropTypes.string,
-  image: PropTypes.string,
+  image: PropTypes.string
 }
 
 export default Service
