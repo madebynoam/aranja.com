@@ -3,14 +3,16 @@
 .Menu {
   display: flex;
   justify-content: space-between;
-  width: 250px;
-  position: absolute;
-  top: $ms3;
-  right: $ms3;
+  width: 12rem;
+  margin-left: auto;
+  // position: absolute;
+  // top: $ms3;
+  // right: $ms3;
+  
 }
 
 .Menu-item {
-  color: $white;
+  // color: $white;
   font-size: $ms0;
   font-family: 'FFDIN';
   font-weight: 600;

@@ -1,24 +1,20 @@
 import React, { Component } from 'react'
 import classNames from 'classnames'
-import { H1 } from '../../typography'
+import { H1, H3 } from '../../typography'
 import ScrollIndicator from '../ScrollIndicator'
-import HeroOverlay from './HeroOverlay'
+import HeroPicture from '../Picture/HeroPicture'
 import './styles.css'
 
 class Hero extends Component {
   render() {
-    const { img, title, intro, cover } = this.props
+    const { hero, title, darken } = this.props
     return (
-      <div className={classNames('Hero-wrap', cover && 'cover')}>
-        <div className="Hero" style={{ backgroundImage: `url(${img})` }}>
-          <div className="Hero-text">
-            <H1 className="Hero-textHeading">
-              {title}
-            </H1>
-          </div>
-
-          <ScrollIndicator />
+      <div className={classNames('Hero', darken && 'darken')}>
+        <div className="Hero-content">
+          <H1 className="Hero-heading">{title}</H1>
         </div>
+        <HeroPicture src={hero.hero.src} />
+        <ScrollIndicator />
       </div>
     )
   }

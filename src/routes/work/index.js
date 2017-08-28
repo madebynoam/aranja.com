@@ -1,7 +1,9 @@
 import React from 'react'
 import Overview from './Overview'
 import CaseStudy from './CaseStudy'
+import { formatHero } from '../../utils/formatters'
 
+// Todo: Get content from case studies ID
 const ID = '4TC4xZTIYokUiC2IecUOc6'
 
 export default {
@@ -19,10 +21,8 @@ export default {
         const content = pages.items.find(
           page => page.sys.id === ID
         )
-
-        console.log(content)
-
-        return <Overview content={content} casestudies={caseStudy} />
+        console.log(formatHero(content.fields.hero))
+        return <Overview content={content} hero={formatHero(content.fields.hero)} casestudies={caseStudy} />
       }
     },
     {
@@ -41,7 +41,8 @@ export default {
           page => page.sys.id === ID
         )
 
-        return <CaseStudy content={content} caseStudy={caseStudies.items[0]} />
+
+        return <CaseStudy content={content} hero={formatHero(content.fields.hero)} caseStudy={caseStudies.items[0]} />
       }
     }
   ]

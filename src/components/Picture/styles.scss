@@ -1,0 +1,36 @@
+.Picture {
+  display: block;
+  height: auto;
+  width: 100%;
+}
+
+.HeroPicture {
+  background: #000;
+  display: block;
+  height: auto;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.HeroPicture-image,
+.HeroPicture-thumbnail {
+  bottom: 0;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+}
+
+.HeroPicture-thumbnail {
+  filter: blur(10px);
+  z-index: -1;
+}
+
+.is-loaded > .HeroPicture-thumbnail {
+  opacity: 0;
+  transition: opacity 0.3s, visibility 0s 0.3s;
+  visibility: hidden;
+}

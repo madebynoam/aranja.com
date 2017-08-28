@@ -1,14 +1,9 @@
 @import '../../utils/vars';
 
 .Header {
-  padding: $ms4 $ms3;
+  padding: $ms3 $ms2;
   width: 100%;
   z-index: 2;
-  left: 0;
-  position: absolute;
-  top: 0;
-  padding: 0;
-  position: absolute;
 }
 
 .Header-logo {

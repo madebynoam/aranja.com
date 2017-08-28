@@ -8,7 +8,7 @@ import Menu from '../Menu'
 const Header = ({ inversed, fixed }) =>
   <header className={classNames('Header', inversed && 'is-inversed', fixed && 'is-fixed')}>
     <a href="/">
-      <img src={logoInversed} alt="" className="Header-logo" />
+      <img src={logo} alt="" className="Header-logo" />
     </a>
     <Menu inversed />
   </header>

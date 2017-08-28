@@ -4822,15 +4822,15 @@ rc@^1.1.7:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
-react-chain-helmet@^0.4.0:
-  version "0.4.0"
-  resolved "https://registry.yarnpkg.com/react-chain-helmet/-/react-chain-helmet-0.4.0.tgz#e1391240e07355460540852487676b7d9f66ac78"
+react-chain-helmet@^0.4.3:
+  version "0.4.3"
+  resolved "https://registry.yarnpkg.com/react-chain-helmet/-/react-chain-helmet-0.4.3.tgz#c94702489ead085f6520dadbc1845e0cd4f5cc61"
   dependencies:
     react-helmet "^5.0.1"
 
-react-chain-history@^0.4.1:
-  version "0.4.1"
-  resolved "https://registry.yarnpkg.com/react-chain-history/-/react-chain-history-0.4.1.tgz#dadcd21cb2e461392c70f7c4fd3c5eb45a6c526e"
+react-chain-history@^0.4.3:
+  version "0.4.3"
+  resolved "https://registry.yarnpkg.com/react-chain-history/-/react-chain-history-0.4.3.tgz#dbb537982bbc7564f9a70e6d6cb31c5489731312"
   dependencies:
     history "^4.6.1"
     prop-types "^15.5.10"
@@ -4838,6 +4838,10 @@ react-chain-history@^0.4.1:
 react-chain@^0.4.0:
   version "0.4.0"
   resolved "https://registry.yarnpkg.com/react-chain/-/react-chain-0.4.0.tgz#eefbc5990b3aaf7127a8335e8d7921a1bccbc47a"
+
+react-chain@^0.4.3:
+  version "0.4.3"
+  resolved "https://registry.yarnpkg.com/react-chain/-/react-chain-0.4.3.tgz#e3f97a29a6d7c5232b613b9da9bbfdfa4c0a803f"
 
 react-day-picker@^5.1.1:
   version "5.5.1"

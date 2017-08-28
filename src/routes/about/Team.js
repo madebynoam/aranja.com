@@ -12,10 +12,10 @@ import teamHeroPhoto3 from '../../components/Team/Aranja00711-Edit.jpg'
 import img01 from '../../assets/Aranja00107-Edit.jpg'
 import '../../components/Team/styles.css'
 
-const Team = ({ content, team }) => {
+const Team = ({ content, team, hero }) => {
   return <Editable model={content}>
       <Page name="Team">
-        <Hero intro="About us" img={img01} title="We are a web development studio" />
+        <Hero intro="About us" hero={hero} title="We are a web development studio" />
         <Section bottom="large">
           <div className="Team-copy">
             <Body1 top="large" bottom="large" center>
