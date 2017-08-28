@@ -1,10 +1,9 @@
 import React from 'react'
 import classNames from 'classnames'
-import { Body1, H1, H2 } from '../../../typography'
+import { Body1, H1 } from '../../../typography'
 import './styles.css'
 
 const ContentSectionCopy = ({ heading, copy, lede, half }) => {
-  const HLevel = lede ? H1 : H2
 
   return (
     <div
@@ -14,9 +13,9 @@ const ContentSectionCopy = ({ heading, copy, lede, half }) => {
       )}
     >
       {heading &&
-        <HLevel top="small" bottom="small">
+        <H1 top="small" bottom="small">
           {heading}
-        </HLevel>}
+        </H1>}
       {copy &&
         <Body1 bottom={lede ? 'large' : 'medium'}>
           {copy}

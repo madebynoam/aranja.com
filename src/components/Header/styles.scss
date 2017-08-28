@@ -1,20 +1,18 @@
 @import '../../utils/vars';
 
 .Header {
-  padding: $ms3 $ms2;
+  padding: $ms3;
   width: 100%;
   z-index: 2;
-
+  display: flex;
+  justify-content: space-between;
   &.is-fixed {
     position: absolute;
   }
 }
 
 .Header-logo {
-  width: $ms4 * 2;
-  left: $ms3;
-  position: absolute;
-  top: $ms3;
+  width: 8rem;
 }
 
 .Menu {

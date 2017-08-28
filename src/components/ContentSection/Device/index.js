@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { Body1, H2 } from '../../typography'
-import Parallax from '../Parallax'
+import { Body1, H1 } from '../../../typography'
+import Parallax from '../../Parallax'
 import Device from './Device'
 import './styles.css'
 
@@ -14,9 +14,9 @@ class DeviceSection extends Component {
           className="DeviceSection-copy"
         >
           {heading &&
-            <H2 bottom="small">
+            <H1 bottom="small">
               {heading}
-            </H2>}
+            </H1>}
           <Body1>
             {copy}
           </Body1>

@@ -1,7 +1,7 @@
 @import '../../utils/vars.scss';
 
 .Page {
-  max-width: 1500px;
+  max-width: $pageMaxWidth;
   overflow: hidden;
   width: 100%;
   margin: auto;
