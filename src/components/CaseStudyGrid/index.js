@@ -42,7 +42,7 @@ class CaseStudyGrid extends Component {
             </EditInline>
           </Body1>
           <div className="CaseStudyGrid-items">
-            {casestudies && casestudies.items.map((item, index) =>
+            {casestudies && casestudies.items.slice(0, 3).map((item, index) =>
               <a
                 href={`/work/${item.fields.slug}`}
                 key={index}
