@@ -31,16 +31,6 @@ body {
   margin-bottom: 20rem;
 }
 
-.container {
-  max-width: 2200px;
-  min-height: 200vh;
-  overflow: hidden;
-  width: 100%;
-  margin: auto;
-  background: $white;
-  position: relative;
-}
-
 @font-face {
   font-family: 'FFDIN';
   src: url('assets/FFDINtrial.woff2') format('woff2');

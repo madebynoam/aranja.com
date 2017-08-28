@@ -35,7 +35,7 @@ const Overview = ({ content, hero, casestudies }) => {
 
   return <Editable model={content}>
       <Page name="Our Work">
-        <Hero intro="Our work" hero={hero} title="Our latest work" />
+        <Hero hero={hero} title="Our latest work" />
         {temp.map((study, index) =>
           <CaseStudyPreview key={study.title} title={study.title} description={study.description} year={study.year} img={study.image} url={study.url} alignment={index % 2 === 0 ? 'left' : 'right'}/>
         )}

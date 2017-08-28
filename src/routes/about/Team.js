@@ -15,7 +15,7 @@ import '../../components/Team/styles.css'
 const Team = ({ content, team, hero }) => {
   return <Editable model={content}>
       <Page name="Team">
-        <Hero intro="About us" hero={hero} title="We are a web development studio" />
+        <Hero hero={hero} title="We are a web development studio" />
         <Section bottom="large">
           <div className="Team-copy">
             <Body1 top="large" bottom="large" center>

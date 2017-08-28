@@ -2,13 +2,12 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Header from '../Header'
 import Footer from '../Footer'
+import './styles.css'
 
 const Page = ({ name, children }) =>
   <div className="Page">
     <Header />
-    <div className="container">
-      {children}
-    </div>
+    {children}
     <Footer />
   </div>
 

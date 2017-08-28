@@ -4,7 +4,6 @@ import Image from './Image'
 import Video from './Video'
 import ContentCopy from './Copy'
 import ContentThreeColumnCopy from './ThreeColumnCopy'
-import IntroSection from './Intro'
 import DeviceSection from '../DeviceSection'
 import ContentQuote from '../ContentQuote'
 import CaseStudyButton from '../CaseStudy/Button'
@@ -43,15 +42,6 @@ const ContentSection = ({ section }) => {
         </Wrapper>
       )
     }
-
-    case 'sectionIntro':
-      const { partners, period, awards } = section.fields
-      return (
-        <Wrapper gray className="IntroSection-wrapper">
-          <IntroSection partners={partners} period={period} awards={awards} />
-          <CaseStudyButton>Visit project</CaseStudyButton>
-        </Wrapper>
-      )
 
     case 'sectionThreeColumnCopy': {
       const {

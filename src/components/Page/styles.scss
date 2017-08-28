@@ -1,0 +1,10 @@
+@import '../../utils/vars.scss';
+
+.Page {
+  max-width: 1500px;
+  overflow: hidden;
+  width: 100%;
+  margin: auto;
+  background: $white;
+  position: relative;
+}

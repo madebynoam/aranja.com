@@ -1,0 +1,17 @@
+@import '../../../utils/vars.scss';
+
+.Intro {
+  display: flex;
+}
+
+.Intro-split {
+  display: flex;
+  align-items: flex-end;
+  min-height: 28rem;
+  padding: $ms5;
+  width: 50%;
+}
+
+.Intro-description {
+  font-size: 1.714rem;
+}
