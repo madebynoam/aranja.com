@@ -11,6 +11,10 @@
   overflow: hidden;
   position: relative;
   width: 100%;
+
+  &.cover {
+    height: 100vh;
+  }
 }
 
 .HeroPicture-image,
@@ -22,6 +26,10 @@
   right: 0;
   top: 0;
   width: 100%;
+
+  .HeroPicture.cover & {
+    object-fit: cover;
+  }
 }
 
 .HeroPicture-thumbnail {

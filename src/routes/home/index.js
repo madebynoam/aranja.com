@@ -3,7 +3,7 @@ import Home from './Home'
 import { formatHero } from '../../utils/formatters'
 
 export default {
-  path: '/',
+  path: ['/', '/home'],
 
   async action({ context: { api } }) {
     const [pages, services, showOffs, caseStudy] = await Promise.all([
@@ -12,7 +12,7 @@ export default {
       api.getEntries({ content_type: 'showOff' }),
       api.getEntries({ content_type: 'caseStudy', include: 2 }),
     ])
-    console.log(caseStudy)
+
     const content = pages.items.find(
       page => page.sys.id === '4TC4xZTIYokUiC2IecUOc6'
     )

@@ -7,13 +7,13 @@ import './styles.css'
 
 class Hero extends Component {
   render() {
-    const { hero, title, darken } = this.props
+    const { hero, title, darken, cover } = this.props
     return (
       <div className={classNames('Hero', darken && 'darken')}>
         <div className="Hero-content">
           <H1 className="Hero-heading">{title}</H1>
         </div>
-        <HeroPicture src={hero.hero.src} />
+        <HeroPicture src={hero.hero.src} cover={cover} />
         <ScrollIndicator />
       </div>
     )

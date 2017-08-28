@@ -4,6 +4,10 @@
   padding: $ms3 $ms2;
   width: 100%;
   z-index: 2;
+
+  &.is-fixed {
+    position: absolute;
+  }
 }
 
 .Header-logo {
@@ -11,4 +15,26 @@
   left: $ms3;
   position: absolute;
   top: $ms3;
+}
+
+.Menu {
+  display: flex;
+  justify-content: space-between;
+  width: 12rem;
+  margin-left: auto;  
+}
+
+.Menu-item {
+  font-size: $ms0;
+  font-family: 'FFDIN';
+  font-weight: 600;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 0.045em;
+  &.is-active {
+    box-shadow: 0 2px 0 currentColor;
+  }
+  .Header.is-inversed & {
+    color: $white;
+  }
 }

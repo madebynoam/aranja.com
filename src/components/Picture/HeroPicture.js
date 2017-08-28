@@ -23,7 +23,7 @@ class HeroPicture extends Component {
   }
 
   render() {
-    const { src, ...props } = this.props
+    const { src, cover, ...props } = this.props
     const { isMounted, isLoaded } = this.state
 
     if (!Array.isArray(src)) {
@@ -34,10 +34,12 @@ class HeroPicture extends Component {
     const smallest = minBy(src, 'width')
     const main = src[0]
     const aspectRatio = main.width / main.height
+    const style = !cover ? { paddingTop: `${100 / aspectRatio}%` } : null
+
     return (
       <picture
-        className={classNames('HeroPicture', isLoaded && 'is-loaded')}
-        style={{ paddingTop: `${100 / aspectRatio}%` }}
+        className={classNames('HeroPicture', isLoaded && 'is-loaded', cover && 'cover')}
+        style={style}
       >
         {isMounted &&
           <Img

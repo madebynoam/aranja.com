@@ -18,7 +18,7 @@ const CaseStudy = ({ content, caseStudy }) => {
 
   return (
     <Editable model={content}>
-      <Page name="Case study">
+      <Page name="Work">
         <Intro project={projectName} description={projectDescription} />
         <Hero hero={formatHero(heroImage)} />
         <Section className="CaseStudy-section">

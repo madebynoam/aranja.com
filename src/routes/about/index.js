@@ -1,5 +1,5 @@
 import React from 'react'
-import Team from './Team'
+import About from './About'
 import { formatHero } from '../../utils/formatters'
 
 export default {
@@ -13,6 +13,6 @@ export default {
     const content = pages.items.find(
       page => page.sys.id === '3X6iiQT9ZKYyIkgaIWgo6A'
     )
-    return <Team hero={formatHero(content.fields.hero)} />
+    return <About hero={formatHero(content.fields.hero)} />
   },
 }
