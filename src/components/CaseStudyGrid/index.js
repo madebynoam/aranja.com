@@ -8,18 +8,6 @@ import { EditInline } from 'tux'
 import { H3, Body1 } from '../../typography'
 import './styles.css'
 
-// Todo: fill this dynamically.
-
-import image1 from './kolibri-placeholder.jpg'
-import image2 from './dschool-placeholder.jpg'
-import image3 from './sprotarnir-placeholder.png'
-
-let defaultItems = [
-  { title: 'Stanford d.school', image: image2, href: '/work/dschool', year: undefined },
-  { title: 'Kolibri', image: image1, href: '/work/kolibri', year: undefined },
-  { title: 'Sprotarnir', image: image3, href: '/work/sprotarnir', year: undefined },
-]
-
 class CaseStudyGrid extends Component {
   constructor(props) {
     super(props)
@@ -36,7 +24,7 @@ class CaseStudyGrid extends Component {
 
   render() {
     const { isVisible } = this.state
-    const { items = defaultItems } = this.props
+    const { casestudies } = this.props
     return (
       <VisibilitySensor
         onChange={isVisible => this.onChange(isVisible)}
@@ -55,25 +43,21 @@ class CaseStudyGrid extends Component {
             </EditInline>
           </Body1>
           <div className="wrap">
-            {items.map((item, index) =>
+            {casestudies.items.map((item, index) =>
               <a
-                href={item.href}
+                href={`/work/${item.fields.slug}`}
                 key={index}
-                className={classnames('CaseStudyGrid-itemWrap', item.title && 'has-content')}
+                className='CaseStudyGrid-itemWrap'
               >
-                {item.title &&
+                {item.fields.projectName &&
                   <p className="CaseStudyGrid-caption">
-                    {item.title}
+                    {item.fields.projectName}
                   </p>}
                 <div className="CaseStudyGrid-item">
-                  {item.year &&
-                    <p className="CaseStudyGrid-itemText">
-                      {item.year}
-                    </p>}
                   <div
                     className="CaseStudyGrid-image"
                     style={{
-                      backgroundImage: `url(${item.image})`,
+                      backgroundImage: `url(${item.fields.heroImage.fields.file.url})`,
                     }}
                   />
                 </div>

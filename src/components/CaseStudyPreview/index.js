@@ -7,7 +7,7 @@ import './styles.css'
 
 class CaseStudyPreview extends Component {
   render() {
-    const { title, description, year, img, alignment, url } = this.props
+    const { title, description, slug, img, alignment, url } = this.props
     return (
       <Section top="medium" bottom="medium">
         <Parallax>
@@ -24,7 +24,7 @@ class CaseStudyPreview extends Component {
             </div>
             <div className="CaseStudyPreview-background" style={{ backgroundImage: `url(${img})` }}></div>
             <div className="CaseStudyPreview-parallaxTitle">
-              {title}
+              {slug}
             </div>
           </a>
         </Parallax>

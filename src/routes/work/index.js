@@ -21,7 +21,7 @@ export default {
         const content = pages.items.find(
           page => page.sys.id === ID
         )
-        console.log(formatHero(content.fields.hero))
+
         return <Overview content={content} hero={formatHero(content.fields.hero)} casestudies={caseStudy} />
       }
     },

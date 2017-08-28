@@ -6,15 +6,16 @@ export default {
   path: '/',
 
   async action({ context: { api } }) {
-    const [pages, services, showOffs] = await Promise.all([
+    const [pages, services, showOffs, caseStudy] = await Promise.all([
       api.getEntries({ content_type: 'page' }),
       api.getEntries({ content_type: 'service' }),
       api.getEntries({ content_type: 'showOff' }),
+      api.getEntries({ content_type: 'caseStudy', include: 2 }),
     ])
-
+    console.log(caseStudy)
     const content = pages.items.find(
       page => page.sys.id === '4TC4xZTIYokUiC2IecUOc6'
     )
-    return <Home content={content} hero={formatHero(content.fields.hero)} services={services} showOffs={showOffs} />
+    return <Home content={content} hero={formatHero(content.fields.hero)} services={services} showOffs={showOffs} casestudies={caseStudy} />
   },
 }

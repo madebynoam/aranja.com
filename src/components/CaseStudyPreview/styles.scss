@@ -19,9 +19,10 @@
 }
 
 .CaseStudyPreview-content {
+  padding-right: 3rem;
   position: relative;
-  z-index: 2;
   width: 40%;
+  z-index: 2;
 
   .CaseStudyPreview.is-alignedRight & {
     margin-left: auto;
@@ -32,51 +33,55 @@
   padding-bottom: $ms1;
   color: $blue;
   transition: color 0.2s;
+
+  > h1 {
+    font-size: 3rem;
+  }
 }
 
 .CaseStudyPreview-description {
   max-width: 80%;
-  padding-bottom: $ms1;  
   opacity: 0.6;
+  padding-bottom: $ms1;  
   .CaseStudyPreview.is-alignedRight & {
     margin-left: auto;
-    }
+  }
 }
 
 .CaseStudyPreview-background {
+  background-position: left;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 60%;
   height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 60%;
 
   .CaseStudyPreview.is-alignedRight & {
-    right: auto;
     left: 0; 
+    right: auto;
   }
   &::after {
-    background: #FFF;
+    background: $white;
     content: '';
     height: 100%;
     mix-blend-mode: soft-light;
     opacity: 0.2;
-    transition: opacity 0.2s;
     position: absolute;
     right: 0;
     top: 0;
+    transition: opacity 0.2s;
     width: 100%;
     z-index: 1;
   }
 }
 .CaseStudyPreview-logo {
-  width: 13rem;
-  position: absolute;
   display: none;
-  top: 20%;
+  position: absolute;
   right: 20%;
+  top: 20%;
+  width: 13rem;
 }
 
 .CaseStudyPreview-parallaxTitle {
@@ -85,7 +90,7 @@
   font-size: 15rem;
   bottom: -6rem;
   z-index: -1;
-  font-weight: 600;
+  font-weight: 700;
   left: -10rem;
   transform: translateX(calc(var(--parallax) * 3rem));
   .CaseStudyPreview.is-alignedRight & {
