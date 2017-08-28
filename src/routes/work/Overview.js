@@ -5,6 +5,7 @@ import Page from '../../components/Page'
 import CaseStudyPreview from '../../components/CaseStudyPreview'
 import tempSprotarImg from './sprotarnir-placeholder.png'
 import tempDschoolImg from './dschool-placeholder.jpg'
+import heroImg from '../../assets/Aranja00165.jpg'
 
 const Overview = ({ content, casestudies }) => {
   const heroUrl = casestudies.items[0] &&
@@ -35,7 +36,7 @@ const Overview = ({ content, casestudies }) => {
 
   return <Editable model={content}>
       <Page name="Our Work">
-        <Hero intro="Our work" img={heroUrl} title="Our latest work" />
+        <Hero intro="Our work" img={heroImg} title="Our latest work" />
         {temp.map((study, index) =>
           <CaseStudyPreview key={study.title} title={study.title} description={study.description} year={study.year} img={study.image} url={study.url} alignment={index % 2 === 0 ? 'left' : 'right'}/>
         )}
