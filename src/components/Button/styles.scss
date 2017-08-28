@@ -3,10 +3,11 @@
 
 .Button {
   background: transparent;
-  border: 1px solid $white;
+  border: 1px solid $dark;
   cursor: pointer;
+  display: inline-block;
   font-size: 0.9rem;
-  color: $white;
+  color: $dark;
   font-weight: 500;
   letter-spacing: 0.025rem;
   line-height: 1;
@@ -25,9 +26,9 @@
     background: $light;
   }
 
-  &--dark {
-    color: $dark;
-    border-color: $dark;
+  &--light {
+    color: $white;
+    border-color: $white;
   }
 
 }

@@ -2,9 +2,9 @@ import React from 'react'
 import classNames from 'classnames'
 import './styles.css'
 
-const Button = ({ children, dark, className }) =>
-  <button className={classNames('Button', dark && 'Button--dark', className)}>
+const Button = ({ children, light, to, className }) =>
+  <a role="button" href={to} className={classNames('Button', light && 'Button--light', className)}>
     {children}
-  </button>
+  </a>
 
 export default Button

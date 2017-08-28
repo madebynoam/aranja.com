@@ -3,7 +3,7 @@ import Button from '../../Button'
 import './styles.css'
 
 const CaseStudyButton = ({ url, children }) => (
-  <Button dark>
+  <Button>
     <a className="CaseStudyButton" href={url}>{children}</a>
   </Button>
 )

@@ -1,11 +1,10 @@
-// TODO: CaseStudyGrid should have a scroll functionality, via button, to see older studies.
-
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import VisibilitySensor from 'react-visibility-sensor'
 import classnames from 'classnames'
 import { EditInline } from 'tux'
 import { H3, Body1 } from '../../typography'
+import Button from '../Button'
 import './styles.css'
 
 class CaseStudyGrid extends Component {
@@ -42,8 +41,8 @@ class CaseStudyGrid extends Component {
               Have a look at our recently published work
             </EditInline>
           </Body1>
-          <div className="wrap">
-            {casestudies.items.map((item, index) =>
+          <div className="CaseStudyGrid-items">
+            {casestudies && casestudies.items.map((item, index) =>
               <a
                 href={`/work/${item.fields.slug}`}
                 key={index}
@@ -64,6 +63,9 @@ class CaseStudyGrid extends Component {
               </a>,
             )}
           </div>
+          <div className="CaseStudyGrid-button">
+            <Button to="/work">View all studies</Button>
+          </div>
         </div>
       </VisibilitySensor>
     )
@@ -76,7 +78,6 @@ CaseStudyGrid.propTypes = {
       title: PropTypes.string,
       image: PropTypes.string,
       href: PropTypes.string,
-      year: PropTypes.string || PropTypes.number,
     }),
   ),
 }
