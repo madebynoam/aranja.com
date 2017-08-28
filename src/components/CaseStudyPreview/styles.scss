@@ -31,14 +31,11 @@
     padding-left: 3rem;
   }
 }
+
 .CaseStudyPreview-title {
   padding-bottom: $ms1;
   color: $blue;
   transition: color 0.2s;
-
-  > h1 {
-    font-size: 3rem;
-  }
 }
 
 .CaseStudyPreview-description {

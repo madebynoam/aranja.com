@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import classNames from 'classnames'
-import { H1, Body1 } from '../../typography'
+import { H1, Body2 } from '../../typography'
 import Section from '../Section'
 import Parallax from '../Parallax'
 import './styles.css'
@@ -19,7 +19,7 @@ class CaseStudyPreview extends Component {
               </H1>
               </div>
               <div className="CaseStudyPreview-description">
-                <Body1>{description}</Body1>
+                <Body2>{description}</Body2>
               </div>
             </div>
             <div className="CaseStudyPreview-background" style={{ backgroundImage: `url(${img})` }}></div>
