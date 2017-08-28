@@ -13,7 +13,7 @@
       color: lighten($blue, 10%);
     }
     .CaseStudyPreview-background::after {
-      opacity: 0.6;
+      opacity: 0.5;
     }
   }
 }
@@ -62,7 +62,7 @@
     content: '';
     height: 100%;
     mix-blend-mode: soft-light;
-    opacity: 0.5;
+    opacity: 0.2;
     transition: opacity 0.2s;
     position: absolute;
     right: 0;
