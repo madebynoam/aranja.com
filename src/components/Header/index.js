@@ -19,7 +19,6 @@ const Header = ({ inversed, active, fixed }) =>
       fixed && 'is-fixed'
     )}
   >
-  {console.log(active)}
     <a href="/">
       <img
         src={inversed ? logoInversed : logo}
@@ -30,7 +29,10 @@ const Header = ({ inversed, active, fixed }) =>
     <nav className="Menu">
       {nav.map(nav =>
         <a
-          className={classNames('Menu-item', active === nav.title && 'is-active')}
+          className={classNames(
+            'Menu-item',
+            active === nav.title && 'is-active'
+          )}
           href={`/${nav.slug}`}
           key={nav.title}
         >
