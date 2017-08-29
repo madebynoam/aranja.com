@@ -18,11 +18,9 @@ export default {
           api.getEntries({ content_type: 'caseStudy', include: 2 }),
         ])
 
-        
         const content = pages.items.find(
           page => page.sys.id === ID
         )
-        console.log(content)
         
         return <Overview content={content} hero={formatHero(content.fields.hero)} casestudies={caseStudy} />
       }
