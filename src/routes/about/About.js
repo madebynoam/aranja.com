@@ -40,7 +40,6 @@ const About = ({ content, team, hero }) => {
           </div>
           <SectionHero img={teamHeroPhoto3} caption="Hacking on a side-project" />
         </Section>
-        <NextUp nextPage="Case Studies" url="/casestudies" />
       </Page>
     </Editable>
 }
