@@ -4,7 +4,7 @@ import CaseStudy from './CaseStudy'
 import { formatHero } from '../../utils/formatters'
 
 // Todo: Get content from case studies ID
-const ID = '4TC4xZTIYokUiC2IecUOc6'
+const ID = "8yAcPh4Z3y6UCi0acsUu4"
 
 export default {
   path: '/work',
@@ -18,10 +18,12 @@ export default {
           api.getEntries({ content_type: 'caseStudy', include: 2 }),
         ])
 
+        
         const content = pages.items.find(
           page => page.sys.id === ID
         )
-
+        console.log(content)
+        
         return <Overview content={content} hero={formatHero(content.fields.hero)} casestudies={caseStudy} />
       }
     },
