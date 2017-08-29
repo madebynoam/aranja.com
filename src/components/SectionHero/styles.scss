@@ -1,4 +1,6 @@
 @import '../../utils/vars';
+@import '../../utils/functions';
+@import '../../utils/responsive';
 
 .SectionHero {
   align-items: center;
@@ -19,9 +21,18 @@
 
 .SectionHero-imageWrap {
   overflow: hidden;
-  height: 750px;
   position: relative;
   width: 100%;
+
+  &::before {
+    content: '';
+    display: block;
+    padding-top: 85%;
+    
+    @include respond-to(md) {
+      padding-top: 64%;
+    }
+  }
 }
 
 .SectionHero-image {

@@ -1,6 +1,14 @@
+@import '../../utils/functions';
+@import '../../utils/vars';
+@import '../../utils/responsive';
+
 .Section {
   margin: 0;
-  padding: 0 13.5%;
   position: relative;
   z-index: 1;
+  padding: 1rem;
+  
+  @include respond-to(md) {
+    padding: 0 13.5%;
+  }
 }

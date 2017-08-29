@@ -1,10 +1,22 @@
-@import '../../utils/vars.scss';
-@import '../../utils/functions.scss';
+@import '../../utils/functions';
+@import '../../utils/vars';
+@import '../../utils/responsive';
 
 .CaseStudyGrid {
-  margin-top: 10rem;
+
+  // CSGrid is one of the few components not inside a <Section />
+  // and therefor mantains its own padding.
+  padding: 1rem;
+
   position: relative;
   z-index: 1;
+  
+  @include respond-to(md) {
+    margin-top: 10rem;
+    padding: 0;
+  }
+
+
 }
 
 .CaseStudyGrid-items {
@@ -29,12 +41,12 @@
   font-style: italic;
   justify-content: center;
   overflow: hidden;
-  padding: $ms1;
   position: relative;
   transform-origin: bottom right;
+  cursor: pointer;
 
-  & {
-    cursor: pointer;
+  @include respond-to(md) {
+    padding: $ms1;
   }
 
   .CaseStudyGrid.is-visible &:hover {
@@ -101,5 +113,12 @@
 
 .CaseStudyGrid-button {
   text-align: center;
-  padding-bottom: $ms3;
+  width: 90%;
+  margin: 0 auto;
+
+  @include respond-to(md) {
+    margin: 0;
+    padding-bottom: $ms3;
+    width: auto;
+  }
 }

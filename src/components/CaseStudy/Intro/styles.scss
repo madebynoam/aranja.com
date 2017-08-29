@@ -1,15 +1,26 @@
-@import '../../../utils/vars.scss';
+@import '../../../utils/functions';
+@import '../../../utils/vars';
+@import '../../../utils/responsive';
 
 .Intro {
   display: flex;
+  flex-wrap: wrap;
+
+  @include respond-to(md) {
+    flex-wrap: nowrap;
+  }
 }
 
 .Intro-split {
   display: flex;
-  align-items: flex-end;
-  min-height: 28rem;
-  padding: $ms5;
-  width: 50%;
+  padding: $ms1;
+  
+  @include respond-to(md) {
+    padding: $ms5;
+    min-height: 28rem;
+    align-items: flex-end;
+    width: 50%; 
+  }
 }
 
 .Intro-description {

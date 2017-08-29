@@ -13,6 +13,7 @@ import kolibriLogo from './kolibri.svg'
 import lsbLogo from './lsb.svg'
 import upperquadLogo from './uq.svg'
 import { EditInline } from 'tux'
+import Section from '../Section'
 
 const defaultClients = [
   {
@@ -91,35 +92,41 @@ class Clients extends Component {
         minTopValue={100}
         partialVisibility
       >
-        <div
-          className="Clients"
-          ref={componentRef => {
-            this.componentRef = componentRef
-          }}
-        >
-          <H3 component="div" className="Clients-heading" bottom="xsmall">
-            <EditInline format="plain" field="fields.content.clientsHeading">
-              Selected clients
-            </EditInline>
-          </H3>
-          <Body1 component="div" className="Clients-subheading" bottom="medium">
-            <EditInline format="plain" field="fields.content.clientsText">
-              We've had the pleasure of working with <br /> some of tech's
-              leading companies
-            </EditInline>
-          </Body1>
-          <ul className="Clients-list">
-            {clients.map((client, index) =>
-              <li className="Clients-item" key={index} data-animate>
-                <img
-                  className="Clients-image"
-                  src={client.logo}
-                  alt={client.name}
-                />
-              </li>
-            )}
-          </ul>
-        </div>
+        <Section>
+          <div
+            className="Clients"
+            ref={componentRef => {
+              this.componentRef = componentRef
+            }}
+          >
+            <H3 component="div" className="Clients-heading" bottom="xsmall">
+              <EditInline format="plain" field="fields.content.clientsHeading">
+                Selected clients
+              </EditInline>
+            </H3>
+            <Body1
+              component="div"
+              className="Clients-subheading"
+              bottom="medium"
+            >
+              <EditInline format="plain" field="fields.content.clientsText">
+                We've had the pleasure of working with <br /> some of tech's
+                leading companies
+              </EditInline>
+            </Body1>
+            <ul className="Clients-list">
+              {clients.map((client, index) =>
+                <li className="Clients-item" key={index} data-animate>
+                  <img
+                    className="Clients-image"
+                    src={client.logo}
+                    alt={client.name}
+                  />
+                </li>
+              )}
+            </ul>
+          </div>
+        </Section>
       </VisibilitySensor>
     )
   }

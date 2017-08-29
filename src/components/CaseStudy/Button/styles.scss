@@ -1,8 +1,13 @@
 @import '../../../utils/vars.scss';
 @import '../../../utils/functions.scss';
+@import '../../../utils/responsive.scss';
 
 .CaseStudyButton {
-  display: flex;
+  display: none;
+
+  @include respond-to(md) {
+    display: flex;
+  }
 
   &::after {
     background-image: url('./arrow-right.svg');

@@ -1,7 +1,14 @@
+@import '../../../utils/functions';
+@import '../../../utils/vars';
+@import '../../../utils/responsive';
+
 .ContentSectionCopy {
 }
 .ContentSectionCopy-lede {
-  max-width: 50%;
+  @include respond-to(md) {
+    max-width: 50%;
+  }
+
   .t-body1 {
     opacity: 0.8;
   }

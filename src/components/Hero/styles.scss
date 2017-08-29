@@ -1,5 +1,6 @@
-@import '../../utils/vars.scss';
-@import '../../utils/functions.scss';
+@import '../../utils/functions';
+@import '../../utils/vars';
+@import '../../utils/responsive';
 
 .Hero-wrap {
   box-sizing: content-box;
@@ -67,7 +68,11 @@
 
 .Hero-heading {
   line-height: 1;
-  max-width: 900px;
-  font-size: $ms5;
-  margin-left: -20%;
+  font-size: $ms2;
+  padding: 1rem;
+  @include respond-to(md) {
+    max-width: 900px;
+    font-size: $ms5;
+    margin-left: -20%;
+  }
 }

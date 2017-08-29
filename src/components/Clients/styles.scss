@@ -1,14 +1,28 @@
+@import '../../utils/functions';
+@import '../../utils/vars';
+@import '../../utils/responsive';
+
 .Clients {
   position: relative;
   z-index: 1;
-  padding: 0 13.5%;
-  margin-top: 10rem;
+  
+  @include respond-to(md) {
+    padding: 0 5rem;
+    margin-top: 10rem;
+  }
 }
 
 .Clients-list {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: $ms2;
+
+  @include respond-to(md) {
+    flex-wrap: nowrap;
+    margin-bottom: 0;
+  }
 }
 
 .Clients-heading {
@@ -21,9 +35,20 @@
 }
 
 .Clients-item {
-  max-width: 5rem;
+  flex: 0 1 33.333%;
+
+  @include respond-to(md) {
+    flex: 0 1 auto;
+  }
 }
 
 .Clients-image {
+  display: block;
+  margin: 1rem auto;
+  max-width: 5rem;
   width: 100%;
+
+  @include respond-to(md) {
+    margin: 0 auto;
+  }
 }

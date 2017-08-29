@@ -1,7 +1,9 @@
-@import '../../../utils/vars';
+@import '../../../utils/vars.scss';
+@import '../../../utils/functions.scss';
+@import '../../../utils/responsive.scss';
 
 .ShoutOut {
-  font-style: italic;  
+  font-style: italic;
 }
 
 .ShoutOut-link {

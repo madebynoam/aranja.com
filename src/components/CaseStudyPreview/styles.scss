@@ -1,12 +1,17 @@
-@import '../../utils/vars.scss';
-@import '../../utils/functions.scss';
+@import '../../utils/functions';
+@import '../../utils/vars';
+@import '../../utils/responsive';
 
 .CaseStudyPreview {
+  display: block;
   margin: 0 auto;
-  min-height: 30rem;
   position: relative;
-  display: flex;
-  align-items: center;
+  
+  @include respond-to(md) {
+    display: flex;
+    align-items: center;
+    min-height: 30rem;
+  }
 
   &:hover {
     .CaseStudyPreview-title {
@@ -19,16 +24,22 @@
 }
 
 .CaseStudyPreview-content {
-  padding-right: 3rem;
   position: relative;
-  width: 40%;
   z-index: 2;
+  
+  @include respond-to(md) {
+    padding-right: 3rem;
+    width: 40%;
+  }
 
   .CaseStudyPreview.is-alignedRight & {
-    margin-left: auto;
-    text-align: right;
-    padding-right: 0;
-    padding-left: 3rem;
+    
+    @include respond-to(md) {
+      margin-left: auto;
+      text-align: right;
+      padding-right: 0;
+      padding-left: 3rem;
+    }  
   }
 }
 
@@ -41,9 +52,12 @@
 .CaseStudyPreview-description {
   max-width: 80%;
   opacity: 0.6;
-  padding-bottom: $ms1;  
+  padding-bottom: $ms1;
+
   .CaseStudyPreview.is-alignedRight & {
-    margin-left: auto;
+    @include respond-to(md) {
+      margin-left: auto;
+    }
   }
 }
 
@@ -52,15 +66,25 @@
   background-repeat: no-repeat;
   background-size: cover;
   height: 100%;
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: 60%;
-
+  
   .CaseStudyPreview.is-alignedRight & {
-    left: 0; 
-    right: auto;
+    @include respond-to(md) {
+      left: 0; 
+      right: auto;
+    }
   }
+
+  @include respond-to(md) {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 60%;
+
+    &::before {
+      content: initial;
+    }
+  }
+
   &::after {
     background: $white;
     content: '';
@@ -74,7 +98,14 @@
     width: 100%;
     z-index: 1;
   }
+  
+  &::before {
+    content: '';
+    display: block;
+    padding-top: 50%;
+  }
 }
+
 .CaseStudyPreview-logo {
   display: none;
   position: absolute;

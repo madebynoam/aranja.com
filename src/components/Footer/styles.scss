@@ -1,7 +1,12 @@
-@import '../../utils/vars.scss';
-@import '../../utils/functions.scss';
+@import '../../utils/functions';
+@import '../../utils/vars';
+@import '../../utils/responsive';
 
 .Footer {
+  // Footer is one of the few components not inside a <Section />
+  // and therefor mantains its own padding.
+  padding: 1rem;
+
   align-items: baseline;
   background: $blue;
   bottom: 0;
@@ -13,11 +18,16 @@
   margin: auto;
   max-width: $pageMaxWidth;
   min-height: 20rem;
-  padding: 0 13.5%;
   position: fixed;
   right: 0;
+  text-align: center;
   width: 100%;
   z-index: -1;
+  
+  @include respond-to(md) {
+    text-align: left;
+    padding: 0 13.5%;
+  }
 }
 
 .Footer-legend {
@@ -33,12 +43,21 @@
 }
 
 .Footer-column {
-  flex: 0 1 33.333%;
+  flex: 1;
+
+  @include respond-to(md) {
+    flex: 0 1 33.333%;
+  }
 }
 
 .Footer-social {
   align-items: center;
   display: flex;
+  justify-content: center;
+
+  @include respond-to(md) {
+    justify-content: flex-start;
+  }
 }
 
 .Footer-socialIcon {

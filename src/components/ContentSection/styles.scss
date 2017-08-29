@@ -1,4 +1,6 @@
-@import '../../utils/vars.scss';
+@import '../../utils/functions';
+@import '../../utils/vars';
+@import '../../utils/responsive';
 
 .CaseStudy-section {
   padding: 0; // Resets the wrapping <Section /> styles; should ideally not be declared in this file.
@@ -11,20 +13,29 @@
 
 .CaseStudy-bottom {
   align-items: center;
+  justify-content: center;
   display: flex;
-  justify-content: space-between;
+
+  @include respond-to(md) {
+    justify-content: space-between;
+  }
 }
 
 .ContentSection {
-  padding: 5rem 18%;
+  padding: 1rem;
 
+  @include respond-to(md) {
+    padding: 5rem 18%;
+  }
   &--gray {
     background: $barelyWhite;
   }
 
   &--tall {
-    padding: 8rem 18%;
-    min-height: 45rem;
+    @include respond-to(md) {
+      padding: 8rem 18%;
+      min-height: 45rem;
+    }
   }
 }
 

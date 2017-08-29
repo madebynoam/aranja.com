@@ -1,68 +1,85 @@
-@import '../../utils/vars.scss';
+@import '../../utils/functions';
+@import '../../utils/vars';
+@import '../../utils/responsive';
 
 .Service {
   display: flex;
   position: relative;
   z-index: 3;
+  flex-wrap: wrap;
+  padding: $ms2 0;
+
+  @include respond-to(md) {
+    flex-wrap: nowrap;
+    padding: 0;
+  }
 }
 
 .Service-contentWrap {
-  align-items: center;
-  display: flex;
-  flex: 1;
-
-  .EditModal:nth-child(even) .Service & {
-    order: 2;
-    text-align: right;
-  }
-
-  .Services > div:nth-child(even) .Service & {
-    order: 2;
-    text-align: right;
+  @include respond-to(md) {
+    align-items: center;
+    display: flex;
+    flex: 1;
+  
+    .EditModal:nth-child(even) .Service & {
+      order: 2;
+      text-align: right;
+    }
+  
+    .Services > div:nth-child(even) .Service & {
+      order: 2;
+      text-align: right;
+    }
   }
 }
 
 .Service-copy {
-  $offset: 8rem;
   color: $copy;
-  padding-right: $offset;
-
-  .EditModal:nth-child(even) .Service & {
-    padding-left: $offset;
-    padding-right: 0;
-  }
-
-  .Services > div:nth-child(even) .Service & {
-    padding-left: $offset;
-    padding-right: 0;
+  
+  @include respond-to(md) {
+    $offset: 8rem;
+    padding-right: $offset;
+  
+    .EditModal:nth-child(even) .Service & {
+      padding-left: $offset;
+      padding-right: 0;
+    }
+  
+    .Services > div:nth-child(even) .Service & {
+      padding-left: $offset;
+      padding-right: 0;
+    }
   }
 }
 
 .Service-imageWrapper {
-  flex: 0 1 auto;
-  max-height: 620px;
-  margin-right: -18.5%;
   overflow: hidden;
   position: relative;
-  width: 68.5%;
-
-  .EditModal:nth-child(even) .Service & {
-    margin-left: -18.5%;
-    margin-right: 0;
-    order: 1;
-  }
-
-  .Services > div:nth-child(even) .Service & {
-    margin-left: -18.5%;
-    margin-right: 0;
-    order: 1;
-  }
+  width: 100%;
 
   &::before {
     content: '';
     display: block;
     padding-bottom: 75%;
     width: 100%;
+  }
+  
+  @include respond-to(md) {
+    flex: 0 1 auto;
+    max-height: 620px;
+    margin-right: -18.5%;
+    width: 68.5%;
+    .EditModal:nth-child(even) .Service & {
+      margin-left: -18.5%;
+      margin-right: 0;
+      order: 1;
+    }
+
+    .Services > div:nth-child(even) .Service & {
+      margin-left: -18.5%;
+      margin-right: 0;
+      order: 1;
+    }
   }
 }
 
