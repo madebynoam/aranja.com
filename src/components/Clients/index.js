@@ -17,28 +17,28 @@ import { EditInline } from 'tux'
 const defaultClients = [
   {
     name: 'Facebook',
-    logo: facebookLogo,
+    logo: facebookLogo
   },
   {
     name: 'Github',
-    logo: githubLogo,
+    logo: githubLogo
   },
   {
     name: 'Google',
-    logo: googleLogo,
+    logo: googleLogo
   },
   {
     name: 'Upperquad',
-    logo: upperquadLogo,
+    logo: upperquadLogo
   },
   {
     name: 'Android',
-    logo: androidLogo,
+    logo: androidLogo
   },
   {
     name: 'Kolibri',
-    logo: kolibriLogo,
-  },
+    logo: kolibriLogo
+  }
 ]
 
 const ease = Expo.easeOut
@@ -47,7 +47,7 @@ class Clients extends Component {
   constructor() {
     super()
     this.state = {
-      isVisible: false,
+      isVisible: false
     }
     this.animationNodes = []
     this.animationDuration = 1
@@ -61,7 +61,7 @@ class Clients extends Component {
   onChange(isVisible) {
     if (isVisible) {
       this.setState({
-        isVisible,
+        isVisible
       })
       this.handleAnimation()
     }
@@ -74,9 +74,9 @@ class Clients extends Component {
       {
         y: 0,
         autoAlpha: 1,
-        ease,
+        ease
       },
-      0.1,
+      0.1
     )
   }
 
@@ -98,18 +98,25 @@ class Clients extends Component {
           }}
         >
           <H3 component="div" className="Clients-heading" bottom="xsmall">
-            <EditInline format="plain" field="fields.content.clientsHeading">Selected clients</EditInline>
+            <EditInline format="plain" field="fields.content.clientsHeading">
+              Selected clients
+            </EditInline>
           </H3>
           <Body1 component="div" className="Clients-subheading" bottom="medium">
             <EditInline format="plain" field="fields.content.clientsText">
-              We've had the pleasure of working with <br /> some of tech's leading companies
+              We've had the pleasure of working with <br /> some of tech's
+              leading companies
             </EditInline>
           </Body1>
           <ul className="Clients-list">
             {clients.map((client, index) =>
               <li className="Clients-item" key={index} data-animate>
-                <img className="Clients-image" src={client.logo} alt={client.name} />
-              </li>,
+                <img
+                  className="Clients-image"
+                  src={client.logo}
+                  alt={client.name}
+                />
+              </li>
             )}
           </ul>
         </div>
@@ -122,9 +129,9 @@ Clients.propTypes = {
   clients: PropTypes.arrayOf(
     PropTypes.shape({
       name: PropTypes.string,
-      logo: PropTypes.string,
-    }),
-  ),
+      logo: PropTypes.string
+    })
+  )
 }
 
 export default Clients

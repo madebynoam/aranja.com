@@ -23,7 +23,7 @@ class CaseStudyGrid extends Component {
 
   render() {
     const { isVisible } = this.state
-    const { casestudies } = this.props
+    const { caseStudies } = this.props
     return (
       <VisibilitySensor
         onChange={isVisible => this.onChange(isVisible)}
@@ -42,7 +42,7 @@ class CaseStudyGrid extends Component {
             </EditInline>
           </Body1>
           <div className="CaseStudyGrid-items">
-            {casestudies && casestudies.items.slice(0, 3).map((item, index) =>
+            {caseStudies && caseStudies.items.slice(0, 3).map((item, index) =>
               <a
                 href={`/work/${item.fields.slug}`}
                 key={index}

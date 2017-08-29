@@ -28,13 +28,14 @@ export default {
     {
       path: '/:slug',
       async action({ params, context: { api }}) {
-        const [pages, caseStudies] = await Promise.all([
+        const [pages, caseStudy, caseStudies] = await Promise.all([
           api.getEntries({ content_type: 'page' }),
           api.getEntries({
             content_type: 'caseStudy',
             'fields.slug': params.slug,
             include: 2,
           }),
+          api.getEntries({ content_type: 'caseStudy', include: 2 }),
         ])
 
         const content = pages.items.find(
@@ -42,7 +43,7 @@ export default {
         )
 
 
-        return <CaseStudy content={content} hero={formatHero(content.fields.hero)} caseStudy={caseStudies.items[0]} />
+        return <CaseStudy content={content} hero={formatHero(content.fields.hero)} caseStudy={caseStudy.items[0]} caseStudies={caseStudies} />
       }
     }
   ]

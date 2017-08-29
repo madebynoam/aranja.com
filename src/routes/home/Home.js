@@ -6,13 +6,13 @@ import CaseStudyGrid from '../../components/CaseStudyGrid'
 import Clients from '../../components/Clients'
 import { Editable } from 'tux'
 
-const Home = ({ content, hero, services, showOffs, casestudies }) =>
+const Home = ({ content, hero, services, showOffs, caseStudies }) =>
   <Editable model={content}>
     <Page name="Home" home>
       <Hero hero={hero} title="Teamwork is the name of the game" cover />
       <Services services={services} />
       <Clients />
-      <CaseStudyGrid casestudies={casestudies} />
+      <CaseStudyGrid caseStudies={caseStudies} />
     </Page>
   </Editable>
 

@@ -6,9 +6,10 @@ import NextUp from '../../components/NextUp'
 import ContentSection from '../../components/ContentSection'
 import Intro from '../../components/CaseStudy/Intro'
 import Section from '../../components/Section'
+import CaseStudyGrid from '../../components/CaseStudyGrid'
 import { formatHero } from '../../utils/formatters'
 
-const CaseStudy = ({ content, caseStudy }) => {
+const CaseStudy = ({ content, caseStudy, caseStudies }) => {
   const {
     heroImage,
     projectName,
@@ -24,7 +25,7 @@ const CaseStudy = ({ content, caseStudy }) => {
         <Section className="CaseStudy-section">
           {sections.map((section, index) => <ContentSection section={section} key={index} />)}
         </Section>
-        <NextUp nextPage="Something" url="/" />
+        <CaseStudyGrid caseStudies={caseStudies} />
       </Page>
     </Editable>
   )

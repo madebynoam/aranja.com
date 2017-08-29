@@ -129,8 +129,10 @@ const ContentSection = ({ section }) => {
       return (
         <Wrapper>
           <ContentCopy heading={heading} copy={text} half={half} />
-          <CaseStudyButton key="case study">Visit project</CaseStudyButton>
-          <ShoutOut key="shout out" />
+          <div className="CaseStudy-bottom">
+            <CaseStudyButton key="case study">Visit project</CaseStudyButton>
+            <ShoutOut key="shout out" />
+          </div>
         </Wrapper>
       )
     }
