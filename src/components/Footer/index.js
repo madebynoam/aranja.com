@@ -29,8 +29,8 @@ class Footer extends Component {
           Get in touch
         </H2>
 
-        {data.map((data, index) =>
-          <div className="Footer-column">
+        {data.map(data =>
+          <div className="Footer-column" key={data.title}>
             <h1 className="Footer-legend">
               {data.title}
             </h1>
