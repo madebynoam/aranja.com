@@ -7,6 +7,10 @@ class Parallax extends Component {
     this.cache()
   }
 
+  componentWillUnmount() {
+    service.removeItem(this)
+  }
+
   translate() {
     const { clamp, variableName = 'parallax' } = this.props
     const { viewHeight, scrollPosition } = service.data

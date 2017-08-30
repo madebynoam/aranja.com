@@ -29,6 +29,10 @@ class ParallaxService {
     this.items_.push(item)
   }
 
+  removeItem(item) {
+    this.items_ = this.items_.filter(x => x !== item)
+  }
+
   get data() {
     return {
       scrollPosition: this.scrollPosition_,
