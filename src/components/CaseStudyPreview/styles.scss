@@ -70,25 +70,11 @@
   padding-bottom: var(--ms2);
 }
 
-.CaseStudyPreview-background {
+.CaseStudyPreview-image {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   height: 100%;
-  
-  .CaseStudyPreview.is-alignedRight & {
-    @include respond-to(md) {
-      order: -1;
-    }
-  }
-
-  @include respond-to(md) {
-    width: 60%;
-
-    &::before {
-      content: initial;
-    }
-  }
 
   &::after {
     background: $white;
@@ -108,5 +94,64 @@
     content: '';
     display: block;
     padding-top: 60%;
+  }
+}
+
+.CaseStudyPreview-imageWrap {
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+ 
+  .CaseStudyPreview.is-alignedRight & {
+    @include respond-to(md) {
+      order: -1;
+    }
+  }
+
+  @include respond-to(md) {
+    width: 60%;
+
+    &::before {
+      content: initial;
+    }
+  }
+
+  &::before {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 100%;
+    background-color: aliceblue;
+    z-index: 2;
+    transition: transform 0s;
+    content: '';
+
+    .CaseStudyPreview.is-visible & {
+      transition: transform 1s $ease-reveal;
+      transform: translateX(100%);
+    }
+  }
+
+  &::after {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateX(0);
+    width: 100%;
+    height: 100%;
+    background-color: $white;
+    z-index: 2;
+    transition: transform 0s;
+    content: '';
+
+    .CaseStudyPreview.is-visible & {
+      transition: transform 1s $ease-reveal;
+      transform: translateX(100%);
+    }
   }
 }

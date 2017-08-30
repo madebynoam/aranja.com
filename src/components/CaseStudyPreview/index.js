@@ -3,6 +3,7 @@ import classNames from 'classnames'
 import { H1, Body1 } from '../../typography'
 import Section from '../Section'
 import Link from '../Link'
+import { withReveal } from '../../hoc/withReveal'
 import './styles.css'
 
 class CaseStudyPreview extends Component {
@@ -11,10 +12,10 @@ class CaseStudyPreview extends Component {
       title,
       duration,
       description,
-      slug,
       img,
       alignment,
-      url
+      url,
+      isVisible,
     } = this.props
     return (
       <Section top="medium" bottom="medium">
@@ -23,7 +24,8 @@ class CaseStudyPreview extends Component {
           href={url}
           className={classNames(
             'CaseStudyPreview',
-            alignment === 'right' && 'is-alignedRight'
+            alignment === 'right' && 'is-alignedRight',
+            isVisible && 'is-visible'
           )}
         >
           <div className="CaseStudyPreview-content">
@@ -41,14 +43,16 @@ class CaseStudyPreview extends Component {
               </Body1>
             </div>
           </div>
-          <div
-            className="CaseStudyPreview-background"
-            style={{ backgroundImage: `url(${img})` }}
-          />
+          <div className="CaseStudyPreview-imageWrap">
+            <div
+              className="CaseStudyPreview-image"
+              style={{ backgroundImage: `url(${img})` }}
+            />
+          </div>
         </Link>
       </Section>
     )
   }
 }
 
-export default CaseStudyPreview
+export default withReveal(CaseStudyPreview)
