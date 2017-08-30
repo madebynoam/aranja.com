@@ -1,18 +1,37 @@
-import React from 'react'
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import classNames from 'classnames'
 import Header from '../Header'
 import Footer from '../Footer'
 import './styles.css'
 
-const Page = ({ name, children }) => {
-  const isHome = name === 'Home'
+class Page extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      isMounted: false,
+    }
+  }
+
+  componentDidMount() {
+    this.setState({
+      isMounted: true
+    })
+  }
+
+  render() { 
+    const { isMounted } = this.state
+    const { name, children } = this.props
+    const isHome = name === 'Home'
+ 
   return (
-    <div className="Page">
+    <div className={classNames('Page', isMounted && 'is-mounted')}>
       <Header active={name} inversed={isHome} fixed={isHome} />
       {children}
       <Footer />
     </div>
   )
+  }
 }
 
 Page.propTypes = {

@@ -8,10 +8,10 @@ import CaseStudyPreview from '../../components/CaseStudyPreview'
 const Overview = ({ content, hero, casestudies }) =>
   <Editable model={content}>
     <Page name="Work">
-      <Intro project="Recent work" description="We've been busy. Take a look at our latest work." />
+      <Intro project="We've been busy" description="Have a look around at some of our latest projects" />
       <Hero hero={hero} />
       {casestudies.items.map((study, index) =>
-        <CaseStudyPreview key={study.fields.projectName} title={study.fields.projectName} description={study.fields.projectDescription} slug={study.fields.slug} img={study.fields.heroImage.fields.file.url} url={`/work/${study.fields.slug}`} alignment={index % 2 === 0 ? 'left' : 'right'}/>
+        <CaseStudyPreview key={study.fields.projectName} title={study.fields.projectName} duration={study.fields.projectDuration} description={study.fields.projectDescription} slug={study.fields.slug} img={study.fields.heroImage.fields.file.url} url={`/work/${study.fields.slug}`} alignment={index % 2 === 0 ? 'left' : 'right'}/>
       )}
     </Page>
   </Editable>

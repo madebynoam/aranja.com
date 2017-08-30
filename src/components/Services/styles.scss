@@ -3,56 +3,41 @@
 @import '../../utils/responsive';
 
 .Service {
+  --offset: 8rem;
+  @media only screen and (min-width: $md) and (max-width: $xlg) {
+    --offset: between(80px, 128px, $md, $xlg);
+  }
+
   display: flex;
   flex-wrap: wrap;
   padding-top: var(--ms3);
   position: relative;
   z-index: 3;
-
+  
   @include respond-to(md) {
     flex-wrap: nowrap;
+    margin: 0 -6.25rem;
     padding-top: 0;
   }
 }
 
 .Service-contentWrap {
-  
   @include respond-to(md) {
     align-items: center;
     display: flex;
     flex: 1;
-    padding-top: var(--ms1);
-
+    padding: var(--offset);
+    
     .Services > div:nth-child(even) .Service &,
-    .EditModal:nth-child(even) .Service &
-     {
+    .EditModal:nth-child(even) .Service & {
       order: 2;
     }
   }
 }
 
 .Service-content {
-  padding-bottom: var(--ms1);
   @include respond-to(md) {
-    padding: 0;
-  }
-}
-
-.Service-copy,
-.Service-heading {
-  --offset: 8rem;
-
-  @media only screen and (min-width: $md) and (max-width: $xlg) {
-    --offset: between(80px, 128px, $md, $xlg);
-  }
-  @include respond-to(md) {
-    padding-right: var(--offset);
-
-    .EditModal:nth-child(even) .Service &,
-    .Services > div:nth-child(even) .Service & {
-      padding-left: var(--offset);
-      padding-right: 0;
-    }
+    max-width: 90%;
   }
 }
 
@@ -74,18 +59,11 @@
   
   @include respond-to(md) {
     flex: 0 1 auto;
-    margin-right: -18.5%;
     max-height: 620px;
-    width: 68.5%;
-    .EditModal:nth-child(even) .Service & {
-      margin-left: -18.5%;
-      margin-right: 0;
-      order: 1;
-    }
+    width: 50%;
 
+    .EditModal:nth-child(even) .Service &,
     .Services > div:nth-child(even) .Service & {
-      margin-left: -18.5%;
-      margin-right: 0;
       order: 1;
     }
   }
@@ -102,6 +80,44 @@
 
   .Services > div:first-child .Service & {
     background-position: center;
+  }
+
+  &::before {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 100%;
+    background-color: aliceblue;
+    z-index: 2;
+    transition: transform 0s;
+    content: '';
+
+    .Service.is-visible & {
+      transition: transform 1s $ease-reveal;
+      transform: translateX(100%);
+    }
+  }
+
+  &::after {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateX(0);
+    width: 100%;
+    height: 100%;
+    background-color: $white;
+    z-index: 2;
+    transition: transform 0s;
+    content: '';
+
+    .Service.is-visible & {
+      transition: transform 1s $ease-reveal;
+      transform: translateX(100%);
+    }
   }
 }
 
