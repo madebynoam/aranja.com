@@ -68,12 +68,6 @@
 .CaseStudyPreview-description {
   opacity: 0.8;
   padding-bottom: var(--ms2);
-
-  .CaseStudyPreview.is-alignedRight & {
-    @include respond-to(md) {
-      // margin-left: auto;
-    }
-  }
 }
 
 .CaseStudyPreview-background {
@@ -85,15 +79,10 @@
   .CaseStudyPreview.is-alignedRight & {
     @include respond-to(md) {
       order: -1;
-      // left: 0; 
-      // right: auto;
     }
   }
 
   @include respond-to(md) {
-    // position: absolute;
-    // right: 0;
-    // top: 0;
     width: 60%;
 
     &::before {
