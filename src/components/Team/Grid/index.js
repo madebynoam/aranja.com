@@ -12,15 +12,17 @@ class TeamGrid extends Component {
   constructor() {
     super()
     this.state = {
-      isVisible: false,
+      isVisible: false
     }
     this.imageNodes = []
     this.animationDuration = 1.5
   }
 
   componentDidMount() {
-    this.textNodes = this.componentRef.querySelectorAll('[data-animate=\'text\']')
-    this.imageNodes = this.componentRef.querySelectorAll('[data-animate=\'image\']')
+    this.textNodes = this.componentRef.querySelectorAll("[data-animate='text']")
+    this.imageNodes = this.componentRef.querySelectorAll(
+      "[data-animate='image']"
+    )
     TweenMax.set(this.imageNodes, { autoAlpha: 0, y: 80 })
   }
 
@@ -43,9 +45,9 @@ class TeamGrid extends Component {
       {
         autoAlpha: 1,
         y: 0,
-        ease,
+        ease
       },
-      this.animationDuration / 3,
+      this.animationDuration / 3
     )
   }
 
@@ -66,30 +68,26 @@ class TeamGrid extends Component {
             this.componentRef = componentRef
           }}
         >
-          <div className="Team-gridPart">
-            <div className="Team-gridImageMask">
-              <div
-                className="Team-gridImage"
-                style={{ backgroundImage: `url(${teamPhoto00})` }}
-                data-animate="image"
-              />
-            </div>
+          <div className="Team-gridImageMask" data-image="large">
+            <div
+              className="Team-gridImage"
+              style={{ backgroundImage: `url(${teamPhoto00})` }}
+              data-animate="image"
+            />
           </div>
-          <div className="Team-gridPart">
-            <div className="Team-gridImageMask">
-              <div
-                className="Team-gridImage"
-                style={{ backgroundImage: `url(${teamPhoto01})` }}
-                data-animate="image"
-              />
-            </div>
-            <div className="Team-gridImageMask">
-              <div
-                className="Team-gridImage"
-                style={{ backgroundImage: `url(${teamPhoto02})` }}
-                data-animate="image"
-              />
-            </div>
+          <div className="Team-gridImageMask" data-image="small">
+            <div
+              className="Team-gridImage"
+              style={{ backgroundImage: `url(${teamPhoto01})` }}
+              data-animate="image"
+            />
+          </div>
+          <div className="Team-gridImageMask" data-image="small">
+            <div
+              className="Team-gridImage"
+              style={{ backgroundImage: `url(${teamPhoto02})` }}
+              data-animate="image"
+            />
           </div>
         </div>
       </VisibilitySensor>
