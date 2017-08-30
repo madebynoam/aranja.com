@@ -1,8 +1,8 @@
 @import '../../../utils/vars.scss';
+@import '../../../utils/responsive.scss';
 
 .DeviceSection {
   display: flex;
-  align-items: center;
 }
 
 .DeviceSection-copy {
@@ -11,10 +11,15 @@
 }
 
 .DeviceSection-device {
+  display: none;
   position: relative;
   flex: 0 1 35%;
   max-width: 20rem;
   transform: translateY(#{calc(-100% - 8rem)}) translateY(calc(var(--parallax) * #{calc(100% + 8rem)}));
+
+  @include respond-to(md) {
+    display: block;
+  }
 }
 
 .Device {

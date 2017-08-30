@@ -22,18 +22,19 @@
 }
 
 .ContentSection {
-  padding: 1rem;
+  padding: var(--ms4);
 
   @include respond-to(md) {
-    padding: 5rem 18%;
+    padding: var(--ms4) 20%;
   }
+
   &--gray {
     background: $barelyWhite;
   }
 
   &--tall {
     @include respond-to(md) {
-      padding: 8rem 18%;
+      padding: var(--ms6) 20%;
       min-height: 45rem;
     }
   }

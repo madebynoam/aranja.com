@@ -13,7 +13,7 @@ const ContentSectionCopy = ({ heading, copy, lede, half }) => {
       )}
     >
       {heading &&
-        <H1 top="small" bottom="small">
+        <H1 bottom="small">
           {heading}
         </H1>}
       {copy &&
