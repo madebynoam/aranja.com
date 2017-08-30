@@ -30,15 +30,20 @@
 }
 
 .CaseStudyGrid-itemWrap {
+  cursor: pointer;
   display: flex;
   flex: 1;
   font-family: serif;
   font-style: italic;
   justify-content: center;
   overflow: hidden;
+  padding: var(--ms0);
   position: relative;
   transform-origin: bottom right;
-  cursor: pointer;
+
+  &:not(:last-child) {
+    padding-right: 0;
+  }
 
   @include respond-to(md) {
     padding: var(--ms1);
