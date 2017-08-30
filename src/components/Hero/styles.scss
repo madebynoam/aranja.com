@@ -59,10 +59,10 @@
   font-size: between(40px, 90px, $sm, $lg);
 
   @include respond-to(md) {
-    max-width: 900px;
+    max-width: 18ch;
   }
 
   @include respond-to(lg) {
-    font-size: 90px;
+    font-size: var(--ms5);
   }
 }

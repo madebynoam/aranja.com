@@ -22,11 +22,7 @@
     outline: none;
     background: $light;
   }
-  
-  &:hover {
-    background: $light;
-  }
-  
+    
   &--light {
     color: $white;
     border-color: $white;
@@ -34,5 +30,8 @@
   
   @include respond-to(md) {
     display: inline-block;
+    &:hover {
+      background: $light;
+    }  
   }
 }

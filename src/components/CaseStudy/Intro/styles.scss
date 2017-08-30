@@ -5,20 +5,29 @@
 .Intro {
   display: flex;
   flex-wrap: wrap;
+  padding: var(--ms2);
 
   @include respond-to(md) {
+    min-height: between(200px, 448px, $md, $lg);
     flex-wrap: nowrap;
+    padding: 0;
+  }
+  @include respond-to(lg) {
+    min-height: 28rem;
   }
 }
 
 .Intro-split {
   display: flex;
-  padding: var(--ms1);
-  
+  padding-bottom: var(--ms1);
+
   @include respond-to(md) {
-    padding: var(--ms5);
-    min-height: 28rem;
+    padding: var(--ms4);
     align-items: flex-end;
     width: 50%; 
+  }
+
+  > h1 {
+    line-height: 1;
   }
 }

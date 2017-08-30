@@ -66,7 +66,11 @@ html {
 
 body {
   color: $dark;
-  margin-bottom: 20rem;
+  margin-bottom: between(200px, 320px, $sm, $md); //Footer min-height
+
+  @include respond-to(md) {
+    margin-bottom: 20rem;
+  }
 }
 
 @font-face {

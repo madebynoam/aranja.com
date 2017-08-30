@@ -33,7 +33,7 @@ class CaseStudyGrid extends Component {
         minTopValue={400}
         partialVisibility
       >
-        <Section noPadding top="medium">
+        <Section noPadding top="medium" bottom="medium">
           <div className={classnames('CaseStudyGrid', 'is-visible')}>
             <H3 component="div" className="CaseStudyGrid-heading" bottom="xsmall">
               <EditInline format="plain" field="fields.content.portfolioHeading">Latest case studies</EditInline>

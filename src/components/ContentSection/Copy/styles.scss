@@ -14,5 +14,7 @@
   }
 }
 .ContentSectionCopy-half {
-  max-width: 50%;
+  @include respond-to(lg) {
+    max-width: 50%;
+  }
 }

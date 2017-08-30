@@ -7,7 +7,7 @@
   // and therefor mantains its own padding.
   padding: 0 between(16px, 100px, $sm, $xlg);
   
-  align-items: baseline;
+  align-items: center;
   background: $blue;
   bottom: 0;
   color: $white;
@@ -17,7 +17,7 @@
   left: 0;
   margin: auto;
   max-width: $pageMaxWidth;
-  min-height: 20rem;
+  min-height: between(200px, 320px, $sm, $md);
   position: fixed;
   right: 0;
   text-align: center;
@@ -25,8 +25,10 @@
   z-index: -1;
   
   @include respond-to(md) {
+    align-items: baseline;
     text-align: left;
-  }  
+    min-height: 20rem;
+  }
   @include respond-to(xlg) {
     padding: 0 13.5%;
   }

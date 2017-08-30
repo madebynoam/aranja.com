@@ -7,7 +7,7 @@
   position: relative;
   z-index: 3;
   flex-wrap: wrap;
-  padding-top: var(--ms3);
+  padding-top: var(--ms4);
 
   @include respond-to(md) {
     flex-wrap: nowrap;
@@ -31,18 +31,32 @@
   }
 }
 
+.Service-content {
+  padding-bottom: var(--ms1);
+  @include respond-to(md) {
+    padding: 0;
+  }
+}
+
 .Service-copy,
 .Service-heading {
+  --offset: 8rem;
+  @media only screen and (min-width: $md) and (max-width: $xlg) {
+    --offset: between(80px, 128px, $md, $xlg);
+  }
   @include respond-to(md) {
-    $offset: 8rem;
-    padding-right: $offset;
+    padding-right: var(--offset);
 
     .EditModal:nth-child(even) .Service &,
     .Services > div:nth-child(even) .Service & {
-      padding-left: $offset;
+      padding-left: var(--offset);
       padding-right: 0;
     }
   }
+}
+
+.Service-heading {
+  line-height: 1.1;
 }
 
 .Service-imageWrapper {

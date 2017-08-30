@@ -1,8 +1,12 @@
 .Floater {
   width: 80%;
   margin: 0 auto;
-  min-height: 600px;
   position: relative;
+  &::after {
+    content: '';
+    display: block;
+    padding-bottom: 83%;
+  }
 }
 
 .Floater-single {

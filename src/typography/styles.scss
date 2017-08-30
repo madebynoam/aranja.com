@@ -11,7 +11,7 @@
   font-family: $headingFontFamily, serif;
   font-size: var(--ms4);
   font-weight: 600;
-  line-height: 1.25;
+  line-height: inherit;
   margin: 0;
 }
 
@@ -19,7 +19,7 @@
   font-family: $headingFontFamily, serif;  
   font-size: var(--ms3);
   font-weight: 600;
-  line-height: 1.25;
+  line-height: inherit;
   margin: 0;
 }
 
@@ -27,7 +27,7 @@
   font-family: $headingFontFamily, serif;  
   font-size: var(--ms2);
   font-weight: 600;
-  line-height: 1.25;
+  line-height: inherit;
   margin: 0;
 }
 
