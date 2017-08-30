@@ -8,6 +8,7 @@
     --offset: between(80px, 128px, $md, $xlg);
   }
 
+  margin: 0 -6.25rem;
   display: flex;
   flex-wrap: wrap;
   padding-top: var(--ms3);
@@ -26,7 +27,7 @@
     align-items: center;
     display: flex;
     flex: 1;
-    padding: var(--offset) 0;
+    padding: var(--offset);
     
     .Services > div:nth-child(even) .Service &,
     .EditModal:nth-child(even) .Service &
@@ -37,23 +38,8 @@
 }
 
 .Service-content {
-  padding-bottom: var(--ms1);
   @include respond-to(md) {
     max-width: 90%;
-    padding: 0;
-  }
-}
-
-.Service-copy,
-.Service-heading {
-  @include respond-to(md) {
-    padding-right: var(--offset);
-
-    .EditModal:nth-child(even) .Service &,
-    .Services > div:nth-child(even) .Service & {
-      padding-left: var(--offset);
-      padding-right: 0;
-    }
   }
 }
 
@@ -65,28 +51,16 @@
   overflow: hidden;
   position: relative;
   width: 100%;
-
-  &::before {
-    content: '';
-    display: block;
-    padding-bottom: 75%;
-    width: 100%;
-  }
   
   @include respond-to(md) {
     flex: 0 1 auto;
-    margin-right: -18.5%;
     max-height: 620px;
-    width: 68.5%;
+    width: 50%;
     .EditModal:nth-child(even) .Service & {
-      margin-left: -18.5%;
-      margin-right: 0;
       order: 1;
     }
 
     .Services > div:nth-child(even) .Service & {
-      margin-left: -18.5%;
-      margin-right: 0;
       order: 1;
     }
   }
@@ -103,6 +77,44 @@
 
   .Services > div:first-child .Service & {
     background-position: center;
+  }
+
+  &::before {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 100%;
+    background-color: aliceblue;
+    z-index: 2;
+    transition: transform 0s;
+    content: '';
+
+    .Service.is-visible & {
+      transition: transform 1.5s $ease-reveal;
+      transform: translateX(100%);
+    }
+  }
+
+  &::after {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateX(0);
+    width: 100%;
+    height: 100%;
+    background-color: $white;
+    z-index: 2;
+    transition: transform 0s;
+    content: '';
+
+    .Service.is-visible & {
+      transition: transform 1.5s $ease-reveal;
+      transform: translateX(100%);
+    }
   }
 }
 

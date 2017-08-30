@@ -50,7 +50,7 @@ export const withReveal = (
 
       return (
         <VisibilitySensor
-          active
+          active={!isVisible}
           onChange={isVisible => this.onChange(isVisible)}
           intervalDelay={intervalDelay}
           minTopValue={minTopValue}
