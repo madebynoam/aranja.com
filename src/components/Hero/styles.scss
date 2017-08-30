@@ -4,14 +4,9 @@
 
 .Hero {
   color: $white;
-  // display: flex;
   height: 100%;
   position: relative;
   z-index: 1;
-  // align-items: center;
-  // flex-direction: column;
-  // justify-content: center;
-  // width: 100%;
 
   &.darken {
     &::before {
@@ -60,6 +55,7 @@
 
   @include respond-to(md) {
     max-width: 16ch;
+    padding: 0;
   }
 
   @include respond-to(lg) {

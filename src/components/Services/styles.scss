@@ -4,10 +4,10 @@
 
 .Service {
   display: flex;
+  flex-wrap: wrap;
+  padding-top: var(--ms3);
   position: relative;
   z-index: 3;
-  flex-wrap: wrap;
-  padding-top: var(--ms4);
 
   @include respond-to(md) {
     flex-wrap: nowrap;
@@ -41,6 +41,7 @@
 .Service-copy,
 .Service-heading {
   --offset: 8rem;
+
   @media only screen and (min-width: $md) and (max-width: $xlg) {
     --offset: between(80px, 128px, $md, $xlg);
   }
@@ -73,8 +74,8 @@
   
   @include respond-to(md) {
     flex: 0 1 auto;
-    max-height: 620px;
     margin-right: -18.5%;
+    max-height: 620px;
     width: 68.5%;
     .EditModal:nth-child(even) .Service & {
       margin-left: -18.5%;

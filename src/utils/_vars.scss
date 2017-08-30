@@ -1,9 +1,8 @@
-@import './functions';
-
 $sm: 375px;
 $md: 768px;
 $lg: 1024px;
 $xlg: 1440px;
+
 $pageMaxWidth: 1800px;
 
 $black: #292d3c;
@@ -15,8 +14,9 @@ $barelyWhite: #f1f1f1;
 $red: #eb3659;
 $dark: #3c435f;
 $copy: #6f7489;
+
 $bodyPadding: 20px;
 
 $bodyFontFamily: 'proxima-nova';
 $headingFontFamily: 'proxima-nova';
-$condensedFontFamily: 'FFDIN';
+$condensedFontFamily: 'mono45-headline';

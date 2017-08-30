@@ -14,7 +14,6 @@
 }
 
 .Header-logo {
-  // width: 8rem;
   width: between(96px, 128px, $sm, $md);
   @include respond-to(md) {
     width: 8rem;
@@ -24,17 +23,26 @@
 .Menu {
   display: flex;
   justify-content: space-between;
-  width: 12rem;
-  margin-left: auto;  
+  max-width: between(140px, 240px, $sm, $md);
+  margin-left: auto;
+  width: 100%;
+
+  @include respond-to(md) {
+    max-width: 15rem;
+  }
 }
 
 .Menu-item {
-  font-size: var(--ms0);
-  font-family: 'FFDIN';
-  font-weight: 600;
+  font-size: between(14px, 18px, $sm, $lg);
+  font-family: 'mono45-headline';
   text-transform: uppercase;
   text-decoration: none;
-  letter-spacing: 0.045em;
+  letter-spacing: 0.075em;
+
+  @include respond-to(md) {
+    font-size: 18px;
+  }
+
   &.is-active {
     box-shadow: 0 2px 0 currentColor;
   }

@@ -16,7 +16,7 @@
 }
 
 .t-h2 {
-  font-family: $headingFontFamily, serif;  
+  font-family: $headingFontFamily, serif;
   font-size: var(--ms3);
   font-weight: 600;
   line-height: inherit;
@@ -24,7 +24,7 @@
 }
 
 .t-h3 {
-  font-family: $headingFontFamily, serif;  
+  font-family: $headingFontFamily, serif;
   font-size: var(--ms2);
   font-weight: 600;
   line-height: inherit;
@@ -65,12 +65,18 @@
 
 // Typekit specials
 
-  p, h1, h2, h3, span, strong, a {
-    .wf-loading & {
-      opacity: 0 !important;
-    }
-    .wf-active & {
-      opacity: 1;
-      transition: opacity 0.25s ease-in;
+p,
+h1,
+h2,
+h3,
+span,
+strong,
+a {
+  .wf-loading & {
+    opacity: 0 !important;
+    transition: opacity 0.25s ease-in;
+  }
+  .wf-active & {
+    opacity: 1;
   }
 }
