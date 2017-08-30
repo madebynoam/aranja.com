@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
-import { TweenMax, Expo } from 'gsap'
+import { TweenMax, Power4 } from 'gsap'
 import VisibilitySensor from 'react-visibility-sensor'
 import teamPhoto00 from './00.jpg'
 import teamPhoto01 from './01.jpg'
 import teamPhoto02 from './02.jpg'
 import './styles.css'
 
-const ease = Expo.easeOut
+const ease = Power4.easeOut
 
 class TeamGrid extends Component {
   constructor() {
@@ -19,9 +19,9 @@ class TeamGrid extends Component {
   }
 
   componentDidMount() {
-    this.textNodes = this.componentRef.querySelectorAll("[data-animate='text']")
+    this.textNodes = this.componentRef.querySelectorAll('[data-animate="text"]')
     this.imageNodes = this.componentRef.querySelectorAll(
-      "[data-animate='image']"
+      '[data-animate="image"]'
     )
     TweenMax.set(this.imageNodes, { autoAlpha: 0, y: 80 })
   }
@@ -47,7 +47,7 @@ class TeamGrid extends Component {
         y: 0,
         ease
       },
-      this.animationDuration / 3
+      this.animationDuration / 8
     )
   }
 

@@ -8,12 +8,12 @@
   padding: var(--ms2);
 
   @include respond-to(md) {
-    min-height: between(200px, 448px, $md, $lg);
+    min-height: between(200px, 416px, $md, $lg);
     flex-wrap: nowrap;
     padding: 0;
   }
   @include respond-to(lg) {
-    min-height: 28rem;
+    min-height: 26rem;
   }
 }
 
