@@ -111,9 +111,44 @@
   position: absolute;
   top: 0;
   width: 100%;
+  transition: transform 0.5s ease-in-out;
 
-  .CaseStudyGrid.is-visible & {
-    transition: transform 0.2s cubic-bezier(.3, .27, .35, .77);
+  &::before {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateX(-100%);
+    width: 100%;
+    height: 100%;
+    background-color: aliceblue;
+    z-index: 2;
+    transition: transform 0s;
+    content: '';
+
+    .CaseStudyGrid.is-visible & {
+      transition: transform 1s $ease-reveal;
+      transform: translateX(100%);
+    }
+  }
+
+  &::after {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateX(0);
+    width: 100%;
+    height: 100%;
+    background-color: $white;
+    z-index: 2;
+    transition: transform 0s;
+    content: '';
+
+    .CaseStudyGrid.is-visible & {
+      transition: transform 1s $ease-reveal;
+      transform: translateX(100%);
+    }
   }
 }
 

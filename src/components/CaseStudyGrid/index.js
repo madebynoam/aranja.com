@@ -28,13 +28,13 @@ class CaseStudyGrid extends Component {
     return (
       <VisibilitySensor
         onChange={isVisible => this.onChange(isVisible)}
-        active={!isVisible}
+        active={true}
         intervalDelay={250}
-        minTopValue={400}
+        minTopValue={100}
         partialVisibility
       >
         <Section noPadding top="medium">
-          <div className={classnames('CaseStudyGrid', 'is-visible')}>
+          <div className={classnames('CaseStudyGrid', isVisible && 'is-visible')}>
             <H3 component="div" className="CaseStudyGrid-heading" bottom="xsmall">
               <EditInline format="plain" field="fields.content.portfolioHeading">Latest case studies</EditInline>
             </H3>
@@ -55,6 +55,7 @@ class CaseStudyGrid extends Component {
                       {item.fields.projectName}
                     </p>}
                   <div className="CaseStudyGrid-item">
+                    <i className="CaseStudyGrid-animatedOverlay before" />
                     <div
                       className="CaseStudyGrid-image"
                       style={{
