@@ -6,16 +6,19 @@
   align-items: center;
   display: flex;
   flex-direction: column;
-  margin: $ms3 0;
   position: relative;
   z-index: 1;
   opacity: 0;
-  transform: translateY($ms2);
+  transform: translateY(var(--ms2));
   transition: all 0.5s ease-out;
-
+  
   &.is-visible {
     transform: translateY(0);
     opacity: 1;
+  }
+  
+  @include respond-to(md) {
+    margin: var(--ms3) 0;
   }
 }
 

@@ -44,7 +44,7 @@
 }
 
 .CaseStudyPreview-title {
-  padding-bottom: $ms1;
+  padding-bottom: var(--ms1);
   color: $blue;
   transition: color 0.2s;
 }
@@ -52,7 +52,7 @@
 .CaseStudyPreview-description {
   max-width: 80%;
   opacity: 0.6;
-  padding-bottom: $ms1;
+  padding-bottom: var(--ms1);
 
   .CaseStudyPreview.is-alignedRight & {
     @include respond-to(md) {
@@ -104,14 +104,6 @@
     display: block;
     padding-top: 50%;
   }
-}
-
-.CaseStudyPreview-logo {
-  display: none;
-  position: absolute;
-  right: 20%;
-  top: 20%;
-  width: 13rem;
 }
 
 .CaseStudyPreview-parallaxTitle {

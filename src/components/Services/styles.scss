@@ -7,7 +7,7 @@
   position: relative;
   z-index: 3;
   flex-wrap: wrap;
-  padding: $ms2 0;
+  padding: var(--ms2) 0;
 
   @include respond-to(md) {
     flex-wrap: nowrap;
@@ -16,35 +16,28 @@
 }
 
 .Service-contentWrap {
+  padding-top: var(--ms1);
+
   @include respond-to(md) {
     align-items: center;
     display: flex;
     flex: 1;
-  
-    .EditModal:nth-child(even) .Service & {
+
+    .Services > div:nth-child(even) .Service &,
+    .EditModal:nth-child(even) .Service &
+     {
       order: 2;
-      text-align: right;
-    }
-  
-    .Services > div:nth-child(even) .Service & {
-      order: 2;
-      text-align: right;
     }
   }
 }
 
-.Service-copy {
-  color: $copy;
-  
+.Service-copy,
+.Service-heading {
   @include respond-to(md) {
     $offset: 8rem;
     padding-right: $offset;
-  
-    .EditModal:nth-child(even) .Service & {
-      padding-left: $offset;
-      padding-right: 0;
-    }
-  
+
+    .EditModal:nth-child(even) .Service &,
     .Services > div:nth-child(even) .Service & {
       padding-left: $offset;
       padding-right: 0;

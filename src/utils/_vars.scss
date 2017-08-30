@@ -1,3 +1,5 @@
+@import './functions';
+
 $sm: 375px;
 $md: 768px;
 $lg: 1024px;
@@ -14,17 +16,6 @@ $red: #eb3659;
 $dark: #3c435f;
 $copy: #6f7489;
 $bodyPadding: 20px;
-
-// modularscale = base: 1rem, ratio: 1.414
-// except for $ms0 because reasons
-$ms0: 1.1rem;
-$ms1: 1.414rem;
-$ms2: 1.999rem;
-$ms3: 2.827rem;
-$ms4: 3.998rem;
-$ms5: 5.653rem;
-$ms6: 7.993rem;
-$ms7: 11.302rem;
 
 $bodyFontFamily: 'proxima-nova';
 $headingFontFamily: 'proxima-nova';

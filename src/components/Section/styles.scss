@@ -6,9 +6,9 @@
   margin: 0;
   position: relative;
   z-index: 1;
-  padding: 1rem;
-  
-  @include respond-to(md) {
+  padding: 0 between(16px, 100px, $sm, $xlg);
+
+  @include respond-to(xlg) {
     padding: 0 13.5%;
   }
 }

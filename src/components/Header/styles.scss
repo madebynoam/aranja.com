@@ -1,7 +1,9 @@
 @import '../../utils/vars';
+@import '../../utils/functions';
+@import '../../utils/responsive';
 
 .Header {
-  padding: $ms3;
+  padding: var(--ms3);
   width: 100%;
   z-index: 2;
   display: flex;
@@ -12,7 +14,11 @@
 }
 
 .Header-logo {
-  width: 8rem;
+  // width: 8rem;
+  width: between(96px, 128px, $sm, $md);
+  @include respond-to(md) {
+    width: 8rem;
+  }
 }
 
 .Menu {
@@ -23,7 +29,7 @@
 }
 
 .Menu-item {
-  font-size: $ms0;
+  font-size: var(--ms0);
   font-family: 'FFDIN';
   font-weight: 600;
   text-transform: uppercase;

@@ -9,7 +9,7 @@
 
   &.cover {
     height: 100vh;
-    padding-bottom: $ms5;
+    padding-bottom: var(--ms5);
   }
 }
 
@@ -23,7 +23,6 @@
   background-size: cover;
   flex-direction: column;
   justify-content: center;
-  margin-bottom: 2rem;
   width: 100%;
 
   &.darken {
@@ -62,17 +61,18 @@
   z-index: 2;
   
   .Hero-wrap.cover & {
-    padding-top: $ms4;
+    padding-top: var(--ms4);
   }
 }
 
 .Hero-heading {
   line-height: 1;
-  font-size: $ms2;
+  font-size: var(--ms2);
   padding: 1rem;
+
   @include respond-to(md) {
     max-width: 900px;
-    font-size: $ms5;
+    font-size: var(--ms5);
     margin-left: -20%;
   }
 }

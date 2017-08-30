@@ -1,15 +1,19 @@
+@import '../../utils/vars';
+@import '../../utils/functions';
+@import '../../utils/responsive';
+
 .ScrollIndicator {
   align-items: flex-start;
   bottom: 0;
-  display: flex;
-  height: 3rem;
+  display: none;
+  height: var(--ms3);
   justify-content: center;
   left: 0;
   margin: auto;
   overflow: hidden;
   position: absolute;
   right: 0;
-  width: 3rem;
+  width: var(--ms3);
   z-index: 2;
   span {
     $duration: 1.9s;
@@ -21,10 +25,14 @@
     display: block;
     padding-top: 100%;
     position: absolute;
-    width: 2rem;
+    width: var(--ms2);
     &:nth-child(2) {
       animation-delay: $duration / 2;
     }
+  }
+
+  @include respond-to(md) {
+    display: flex;
   }
 }
 

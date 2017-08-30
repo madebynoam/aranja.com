@@ -2,10 +2,10 @@
 
 .Video {
   opacity: 0;
-  transform: translateY($ms2);
+  transform: translateY(var(--ms2));
   transition: all 0.5s ease-out;
   width: 100%;
-  padding: $ms2;
+  padding: var(--ms2);
   background: rgba($barelyWhite, 0.333);
 
   &.has-beenSeen {

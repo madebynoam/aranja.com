@@ -6,13 +6,13 @@
 
   // CSGrid is one of the few components not inside a <Section />
   // and therefor mantains its own padding.
-  padding: 1rem;
+  padding: var(--ms0);
 
   position: relative;
   z-index: 1;
   
   @include respond-to(md) {
-    margin-top: 10rem;
+    margin-top: var(--ms6);
     padding: 0;
   }
 
@@ -22,7 +22,7 @@
 .CaseStudyGrid-items {
   display: flex;
   flex-wrap: wrap;
-  padding-bottom: $ms1;
+  padding-bottom: var(--ms1);
 }
 
 .CaseStudyGrid-heading {
@@ -46,7 +46,7 @@
   cursor: pointer;
 
   @include respond-to(md) {
-    padding: $ms1;
+    padding: var(--ms1);
   }
 
   .CaseStudyGrid.is-visible &:hover {
@@ -118,7 +118,7 @@
 
   @include respond-to(md) {
     margin: 0;
-    padding-bottom: $ms3;
+    padding-bottom: var(--ms3);
     width: auto;
   }
 }

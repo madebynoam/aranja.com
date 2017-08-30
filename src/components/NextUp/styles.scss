@@ -4,21 +4,21 @@
 .NextUp {
   display: flex;
   justify-content: flex-end;
-  padding: $ms3 0;
+  padding: var(--ms3) 0;
   position: relative;
   width: 100%;
 }
 
 .NextUp-content {
   background: $light;
-  padding: $ms0;
-  width: calc(33% - #{$ms0});
+  padding: var(--ms0);
+  width: calc(33% - #{var(--ms0)});
 }
 
 .NextUp-contentHeading {
   flex: 0 1 100%;
   font-family: 'FFDIN';
-  font-size: $ms0;
+  font-size: var(--ms0);
   margin-bottom: 1em;
   font-weight: 600;
   letter-spacing: 0.1rem;
@@ -27,7 +27,7 @@
 .NextUp-page {
   align-items: center;
   display: flex;
-  font-size: $ms2;
+  font-size: var(--ms2);
   line-height: 1;
   position: relative;
   text-decoration: none;

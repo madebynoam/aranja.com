@@ -5,8 +5,8 @@
 .Footer {
   // Footer is one of the few components not inside a <Section />
   // and therefor mantains its own padding.
-  padding: 1rem;
-
+  padding: 0 between(16px, 100px, $sm, $xlg);
+  
   align-items: baseline;
   background: $blue;
   bottom: 0;
@@ -26,6 +26,8 @@
   
   @include respond-to(md) {
     text-align: left;
+  }  
+  @include respond-to(xlg) {
     padding: 0 13.5%;
   }
 }
@@ -34,7 +36,7 @@
   font-size: 0.75rem;
   letter-spacing: 0.1rem;
   opacity: 0.5;
-  padding-bottom: $ms0;
+  padding-bottom: var(--ms0);
   text-transform: uppercase;
 }
 
@@ -62,9 +64,9 @@
 
 .Footer-socialIcon {
   img {
-    width: $ms0;
+    width: var(--ms0);
   }
   & + & {
-    margin-left: $ms0;
+    margin-left: var(--ms0);
   }
 }

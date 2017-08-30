@@ -13,16 +13,12 @@
 
 .Intro-split {
   display: flex;
-  padding: $ms1;
+  padding: var(--ms1);
   
   @include respond-to(md) {
-    padding: $ms5;
+    padding: var(--ms5);
     min-height: 28rem;
     align-items: flex-end;
     width: 50%; 
   }
-}
-
-.Intro-description {
-  font-size: 1.714rem;
 }
