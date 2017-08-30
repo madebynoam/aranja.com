@@ -4,15 +4,14 @@
 
 .Hero {
   color: $white;
-  display: flex;
+  // display: flex;
   height: 100%;
   position: relative;
   z-index: 1;
-  align-items: center;
-  background-size: cover;
-  flex-direction: column;
-  justify-content: center;
-  width: 100%;
+  // align-items: center;
+  // flex-direction: column;
+  // justify-content: center;
+  // width: 100%;
 
   &.darken {
     &::before {
@@ -45,21 +44,22 @@
 }
 
 .Hero-content {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: center;
   position: absolute;
+  width: 100%;
   z-index: 2;
-  left: 0;
-  right: 0;
-  padding: 0 10%;
-  margin: auto;
 }
 
 .Hero-heading {
   line-height: 1;
-  margin: auto;
+  // margin: auto;
   font-size: between(40px, 90px, $sm, $lg);
 
   @include respond-to(md) {
-    max-width: 18ch;
+    max-width: 16ch;
   }
 
   @include respond-to(lg) {
