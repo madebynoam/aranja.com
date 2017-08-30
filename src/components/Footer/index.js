@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Body2, H2 } from '../../typography'
+import Link from '../Link'
 import github from './github.svg'
 import facebook from './facebook.svg'
 import twitter from './twitter.svg'
@@ -35,9 +36,9 @@ class Footer extends Component {
               {data.title}
             </h1>
             <Body2>
-              <a href={data.link}>
+              <Link noStyle href={data.link}>
                 {data.content}
-              </a>
+              </Link>
             </Body2>
           </div>
         )}
@@ -45,21 +46,21 @@ class Footer extends Component {
         <div className="Footer-column">
           <h1 className="Footer-legend">Follow us</h1>
           <div className="Footer-social">
-            <a
+            <Link noStyle
               href="https://twitter.com/aranjastudio"
               className="Footer-socialIcon"
             >
               <img src={twitter} alt="Aranja on Twitter" />
-            </a>
-            <a
+            </Link>
+            <Link noStyle
               href="https://facebook.com/aranja.is"
               className="Footer-socialIcon"
             >
               <img src={facebook} alt="Aranja on Facebook" />
-            </a>
-            <a href="https://github.com/aranja" className="Footer-socialIcon">
+            </Link>
+            <Link noStyle href="https://github.com/aranja" className="Footer-socialIcon">
               <img src={github} alt="Aranja on Github" />
-            </a>
+            </Link>
           </div>
         </div>
       </section>

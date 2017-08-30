@@ -3,14 +3,16 @@
 .Link {
   position: relative;
   z-index: 1;
-  &::after {
-    background: $light;
-    bottom: 0;
-    content: '';
-    height: 0.5ch;
-    left: 0;
-    position: absolute;
-    width: 100%;
-    z-index: -1;
+  &:not(.no-style) {
+    &::after {
+      background: $light;
+      bottom: 0;
+      content: '';
+      height: 0.5ch;
+      left: 0;
+      position: absolute;
+      width: 100%;
+      z-index: -1;
+    }
   }
 }
