@@ -1,7 +1,7 @@
 import React from 'react'
 import classNames from 'classnames'
 import PropTypes from 'prop-types'
-import padding from '../utils/padding'
+import margin from '../utils/margin'
 import './styles.css'
 
 const createStyle = (defaultComponent, style, substyles = {}) => {
@@ -10,7 +10,7 @@ const createStyle = (defaultComponent, style, substyles = {}) => {
   const component = props => {
     const className = classNames(
       style,
-      padding(props.top, props.bottom),
+      margin(props.top, props.bottom),
       substyleKeys.map(key => props[key] && substyles[key]),
       props.className,
     )
@@ -18,7 +18,7 @@ const createStyle = (defaultComponent, style, substyles = {}) => {
   }
 
   component.propTypes = {
-    ...padding.propTypes,
+    ...margin.propTypes,
     children: PropTypes.node,
     component: PropTypes.node,
   }

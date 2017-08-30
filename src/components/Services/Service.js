@@ -69,7 +69,7 @@ class Service extends Component {
         onChange={isVisible => this.onChange(isVisible)}
         active={!isVisible}
         intervalDelay={100}
-        minTopValue={300}
+        minTopValue={100}
         partialVisibility
       >
         <div

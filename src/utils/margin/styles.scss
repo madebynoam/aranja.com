@@ -1,0 +1,69 @@
+@import '../functions';
+@import '../vars';
+@import '../responsive';
+
+.u-marginTopLarge {
+  margin-top: between(40px, 120px, $sm, $lg) !important;
+}
+
+.u-marginTopMedium {
+  margin-top: between(40px, 80px, $sm, $lg) !important;
+}
+
+.u-marginTopSmall {
+  margin-top: between(20px, 40px, $sm, $lg) !important;
+}
+
+.u-marginTopXSmall {
+  margin-top: between(16px, 20px, $sm, $lg) !important;
+}
+
+.u-marginBottomLarge {
+  margin-bottom: between(40px, 120px, $sm, $lg) !important;
+}
+
+.u-marginBottomMedium {
+  margin-bottom: between(40px, 80px, $sm, $lg) !important;
+}
+
+.u-marginBottomSmall {
+  margin-bottom: between(20px, 40px, $sm, $lg) !important;
+}
+
+.u-marginBottomXSmall {
+  margin-bottom: between(16px, 20px, $sm, $lg) !important;
+}
+
+@include respond-to($lg) {
+  .u-marginTopLarge {
+    margin-top: 120px !important;
+  }
+
+  .u-marginTopMedium {
+    margin-top: 80px !important;
+  }
+
+  .u-marginTopSmall {
+    margin-top: 40px !important;
+  }
+
+  .u-marginTopXSmall {
+    margin-top: 1rem !important;
+  }
+
+  .u-marginBottomLarge {
+    margin-bottom: 120px !important;
+  }
+
+  .u-marginBottomMedium {
+    margin-bottom: 80px !important;
+  }
+
+  .u-marginBottomSmall {
+    margin-bottom: 40px !important;
+  }
+
+  .u-marginBottomXSmall {
+    margin-bottom: 1rem !important;
+  }
+}

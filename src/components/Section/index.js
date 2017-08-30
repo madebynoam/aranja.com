@@ -1,10 +1,10 @@
 import React from 'react'
 import classNames from 'classnames'
-import padding from '../../utils/padding'
+import margin from '../../utils/margin'
 import './styles.css'
 
 const Section = ({ noPadding, top, bottom, className, children }) =>
-  <section className={classNames('Section', noPadding && 'no-padding', padding(top, bottom), className)}>
+  <section className={classNames('Section', noPadding && 'no-padding', margin(top, bottom), className)}>
     {children}
   </section>
 

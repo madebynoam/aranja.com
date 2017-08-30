@@ -63,4 +63,14 @@
   text-align: center;
 }
 
+// Typekit specials
 
+  p, h1, h2, h3, span, strong, a {
+    .wf-loading & {
+      opacity: 0 !important;
+    }
+    .wf-active & {
+      opacity: 1;
+      transition: opacity 0.25s ease-in;
+  }
+}

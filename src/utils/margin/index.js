@@ -4,26 +4,26 @@ import './styles.css'
 
 const classMap = {
   top: {
-    large: 'u-paddingTopLarge',
-    medium: 'u-paddingTopMedium',
-    small: 'u-paddingTopSmall',
-    xsmall: 'u-paddingTopXSmall',
+    large: 'u-marginTopLarge',
+    medium: 'u-marginTopMedium',
+    small: 'u-marginTopSmall',
+    xsmall: 'u-marginTopXSmall',
   },
   bottom: {
-    large: 'u-paddingBottomLarge',
-    medium: 'u-paddingBottomMedium',
-    small: 'u-paddingBottomSmall',
-    xsmall: 'u-paddingBottomXSmall',
+    large: 'u-marginBottomLarge',
+    medium: 'u-marginBottomMedium',
+    small: 'u-marginBottomSmall',
+    xsmall: 'u-marginBottomXSmall',
   },
 }
 
-const padding = (top, bottom) => {
+const margin = (top, bottom) => {
   return classNames(top && classMap.top[top], bottom && classMap.bottom[bottom])
 }
 
-padding.propTypes = {
+margin.propTypes = {
   top: PropTypes.oneOf(['large', 'medium', 'small', 'xsmall']),
   bottom: PropTypes.oneOf(['large', 'medium', 'small', 'xsmall']),
 }
 
-export default padding
+export default margin

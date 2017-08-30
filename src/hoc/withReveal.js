@@ -4,8 +4,8 @@ import React, { Component } from 'react'
 import VisibilitySensor from 'react-visibility-sensor'
 import PropTypes from 'prop-types'
 
-const DEFAULT_INTERVAL_DELAY = 150
-const DEFAULT_MIN_TOP_VALUE = 300
+const DEFAULT_INTERVAL_DELAY = 100
+const DEFAULT_MIN_TOP_VALUE = 100
 
 export const withReveal = (
   WrappedComponent,
