@@ -92,7 +92,7 @@ class Clients extends Component {
         minTopValue={100}
         partialVisibility
       >
-        <Section>
+        <Section top="medium">
           <div
             className="Clients"
             ref={componentRef => {

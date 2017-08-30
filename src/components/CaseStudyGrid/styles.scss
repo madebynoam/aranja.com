@@ -3,16 +3,14 @@
 @import '../../utils/responsive';
 
 .CaseStudyGrid {
-
-  // CSGrid is one of the few components not inside a <Section />
-  // and therefor mantains its own padding.
   padding: var(--ms0);
-
+  padding-top: 0;
+  
+  // margin-top: var(--ms6);
   position: relative;
   z-index: 1;
   
   @include respond-to(md) {
-    margin-top: var(--ms6);
     padding: 0;
   }
 

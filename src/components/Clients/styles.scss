@@ -5,10 +5,10 @@
 .Clients {
   position: relative;
   z-index: 1;
+  // margin-top: var(--ms6);
   
   @include respond-to(md) {
     padding: 0 5rem;
-    margin-top: var(--ms6);
   }
 }
 

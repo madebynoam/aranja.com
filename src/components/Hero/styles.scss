@@ -2,17 +2,6 @@
 @import '../../utils/vars';
 @import '../../utils/responsive';
 
-.Hero-wrap {
-  box-sizing: content-box;
-  height: 80vh;
-  position: relative;
-
-  &.cover {
-    height: 100vh;
-    padding-bottom: var(--ms5);
-  }
-}
-
 .Hero {
   color: $white;
   display: flex;
@@ -55,24 +44,25 @@
   }
 }
 
-
 .Hero-content {
   position: absolute;
   z-index: 2;
-  
-  .Hero-wrap.cover & {
-    padding-top: var(--ms4);
-  }
+  left: 0;
+  right: 0;
+  padding: 0 10%;
+  margin: auto;
 }
 
 .Hero-heading {
   line-height: 1;
-  font-size: var(--ms2);
-  padding: 1rem;
+  margin: auto;
+  font-size: between(40px, 90px, $sm, $lg);
 
   @include respond-to(md) {
     max-width: 900px;
-    font-size: var(--ms5);
-    margin-left: -20%;
+  }
+
+  @include respond-to(lg) {
+    font-size: 90px;
   }
 }

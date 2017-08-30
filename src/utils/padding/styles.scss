@@ -15,7 +15,7 @@
 }
 
 .u-paddingTopXSmall {
-  padding-top: 1rem !important;
+  padding-top: between(16px, 20px, $sm, $lg) !important;
 }
 
 .u-paddingBottomLarge {
@@ -31,7 +31,7 @@
 }
 
 .u-paddingBottomXSmall {
-  padding-bottom: 1rem !important;
+  padding-bottom: between(16px, 20px, $sm, $lg) !important;
 }
 
 @include respond-to($lg) {

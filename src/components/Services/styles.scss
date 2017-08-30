@@ -7,21 +7,21 @@
   position: relative;
   z-index: 3;
   flex-wrap: wrap;
-  padding: var(--ms2) 0;
+  padding-top: var(--ms3);
 
   @include respond-to(md) {
     flex-wrap: nowrap;
-    padding: 0;
+    padding-top: 0;
   }
 }
 
 .Service-contentWrap {
-  padding-top: var(--ms1);
-
+  
   @include respond-to(md) {
     align-items: center;
     display: flex;
     flex: 1;
+    padding-top: var(--ms1);
 
     .Services > div:nth-child(even) .Service &,
     .EditModal:nth-child(even) .Service &
