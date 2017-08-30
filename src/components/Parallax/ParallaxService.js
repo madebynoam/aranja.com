@@ -9,7 +9,6 @@ class ParallaxService {
   constructor() {
     this.items_ = []
     this.isUpdating_ = false
-    this.lastScrollPosition_ = -1
     this.scrollPosition_ = 0
     this.viewHeight_ = 0
     this.setScene()
