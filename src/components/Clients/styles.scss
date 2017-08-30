@@ -18,10 +18,11 @@
   justify-content: space-between;
   flex-wrap: wrap;
   margin-bottom: var(--ms2);
+  padding: 0 12.5%;
 
   @include respond-to(md) {
     flex-wrap: nowrap;
-    margin-bottom: 0;
+    margin: 0 auto;
   }
 }
 

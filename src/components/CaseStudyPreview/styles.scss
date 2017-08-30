@@ -24,40 +24,54 @@
 }
 
 .CaseStudyPreview-content {
+  --offset: 3rem;
+  
+  @media only screen and (min-width: $md) and (max-width: $xlg) {
+    --offset: between(30px, 70px, $md, $xlg);
+  }
+  
   position: relative;
   z-index: 2;
   
   @include respond-to(md) {
-    padding-right: 3rem;
+    padding-right: var(--offset);
     width: 40%;
   }
 
   .CaseStudyPreview.is-alignedRight & {
     
     @include respond-to(md) {
-      margin-left: auto;
-      text-align: right;
       padding-right: 0;
-      padding-left: 3rem;
+      padding-left: var(--offset);
     }  
   }
 }
 
-.CaseStudyPreview-title {
+.CaseStudyPreview-date {
+  background: rgba($light, 0.6);
+  display: inline-block;
+  font-family: 'mono45-headline';
+  letter-spacing: 0.05em;
   line-height: 1;
-  padding-bottom: var(--ms1);
-  color: $blue;
-  transition: color 0.2s;
+  margin-bottom: var(--ms2);
+  padding: 4px 8px;
+  text-transform: uppercase;
+}
+
+  .CaseStudyPreview-title {
+    line-height: 1;
+    padding-bottom: var(--ms2);
+    color: $blue;
+    transition: color 0.2s;
 }
 
 .CaseStudyPreview-description {
-  max-width: 80%;
-  opacity: 0.6;
-  padding-bottom: var(--ms1);
+  opacity: 0.8;
+  padding-bottom: var(--ms2);
 
   .CaseStudyPreview.is-alignedRight & {
     @include respond-to(md) {
-      margin-left: auto;
+      // margin-left: auto;
     }
   }
 }
@@ -70,15 +84,16 @@
   
   .CaseStudyPreview.is-alignedRight & {
     @include respond-to(md) {
-      left: 0; 
-      right: auto;
+      order: -1;
+      // left: 0; 
+      // right: auto;
     }
   }
 
   @include respond-to(md) {
-    position: absolute;
-    right: 0;
-    top: 0;
+    // position: absolute;
+    // right: 0;
+    // top: 0;
     width: 60%;
 
     &::before {
@@ -103,21 +118,6 @@
   &::before {
     content: '';
     display: block;
-    padding-top: 50%;
-  }
-}
-
-.CaseStudyPreview-parallaxTitle {
-  position: absolute;
-  opacity: 0.033;
-  font-size: 15rem;
-  bottom: -6rem;
-  z-index: -1;
-  font-weight: 700;
-  left: -10rem;
-  transform: translateX(calc(var(--parallax) * 3rem));
-  .CaseStudyPreview.is-alignedRight & {
-    left: auto;
-    right: -10rem; 
+    padding-top: 60%;
   }
 }

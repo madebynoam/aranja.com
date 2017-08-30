@@ -50,15 +50,19 @@
 
 .Hero-heading {
   line-height: 1;
-  font-size: between(40px, 90px, $sm, $lg);
+  font-size: between(40px, 100px, $sm, $lg);
   padding: 1ch;
-
+  
   @include respond-to(md) {
     max-width: 16ch;
     padding: 0;
   }
 
   @include respond-to(lg) {
-    font-size: var(--ms5);
+    font-size: 6.25rem;
+  }
+
+  @include respond-to(xlg) {
+    margin-left: -6ch;
   }
 }

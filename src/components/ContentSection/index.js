@@ -5,10 +5,7 @@ import Video from './Video'
 import ContentCopy from './Copy'
 import ContentThreeColumnCopy from './ThreeColumnCopy'
 import DeviceSection from './Device'
-import ContentQuote from '../ContentQuote'
-import CaseStudyButton from '../CaseStudy/Button'
 import Floater from './Floater'
-import ShoutOut from '../CaseStudy/ShoutOut'
 
 import './styles.css'
 
@@ -90,15 +87,6 @@ const ContentSection = ({ section }) => {
       // todo
       // return <Slideshow />
       break
-    }
-
-    case 'sectionQuote': {
-      const { attestant, quote } = section.fields
-      return (
-        <Wrapper>
-          <ContentQuote attestant={attestant} quote={quote} />
-        </Wrapper>
-      )
     }
 
     case 'sectionVideoInDevice':
