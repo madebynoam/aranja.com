@@ -14,7 +14,7 @@ class CaseStudyPreview extends Component {
         <Parallax>
           <div>
             <Link
-              skipDecorator
+              noStyle
               href={url}
               className={classNames(
                 'CaseStudyPreview',
