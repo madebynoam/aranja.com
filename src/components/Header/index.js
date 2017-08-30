@@ -1,8 +1,9 @@
 import React from 'react'
 import classNames from 'classnames'
-import './styles.css'
+import Link from '../Link'
 import logo from './logo.svg'
 import logoInversed from './logo-inverse.svg'
+import './styles.css'
 
 // Todo, we should pull available pages from Contentful
 const nav = [
@@ -19,16 +20,17 @@ const Header = ({ inversed, active, fixed }) =>
       fixed && 'is-fixed'
     )}
   >
-    <a href="/">
+    <Link noStyle href="/">
       <img
         src={inversed ? logoInversed : logo}
-        alt=""
+        alt="Aranja logo"
         className="Header-logo"
       />
-    </a>
+    </Link>
     <nav className="Menu">
       {nav.map(nav =>
-        <a
+        <Link
+          noStyle
           className={classNames(
             'Menu-item',
             active === nav.title && 'is-active'
@@ -37,7 +39,7 @@ const Header = ({ inversed, active, fixed }) =>
           key={nav.title}
         >
           {nav.title}
-        </a>
+        </Link>
       )}
     </nav>
   </header>

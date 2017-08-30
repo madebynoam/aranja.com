@@ -9,7 +9,6 @@ class ParallaxService {
   constructor() {
     this.items_ = []
     this.isUpdating_ = false
-    this.lastScrollPosition_ = -1
     this.scrollPosition_ = 0
     this.viewHeight_ = 0
     this.setScene()
@@ -27,6 +26,10 @@ class ParallaxService {
 
   addItem(item) {
     this.items_.push(item)
+  }
+
+  removeItem(item) {
+    this.items_ = this.items_.filter(x => x !== item)
   }
 
   get data() {
