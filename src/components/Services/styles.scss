@@ -8,21 +8,21 @@
     --offset: between(80px, 128px, $md, $xlg);
   }
 
-  margin: 0 -6.25rem;
   display: flex;
   flex-wrap: wrap;
   padding-top: var(--ms3);
   position: relative;
   z-index: 3;
-
+  
   @include respond-to(md) {
     flex-wrap: nowrap;
+    margin: 0 -6.25rem;
     padding-top: 0;
   }
 }
 
 .Service-contentWrap {
-  
+
   @include respond-to(md) {
     align-items: center;
     display: flex;
