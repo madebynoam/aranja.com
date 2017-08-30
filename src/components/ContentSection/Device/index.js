@@ -35,9 +35,7 @@ DeviceSection.propTypes = {
   device: PropTypes.string.isRequired,
   copy: PropTypes.string.isRequired,
   heading: PropTypes.string.isRequired,
-  image: PropTypes.shape({
-
-  }),
+  image: PropTypes.string.isRequired,
 }
 
 export default DeviceSection

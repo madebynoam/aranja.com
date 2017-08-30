@@ -11,6 +11,9 @@ class HeroPicture extends Component {
       isMounted: false,
       isLoaded: false,
     }
+  }
+
+  componentWillMount() {
     this.onLoad = this.onLoad.bind(this)
   }
 
