@@ -2,29 +2,15 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
 import { EditInline } from 'tux'
-import { H3, Body1 } from '../../typography'
+import { H1, Body1 } from '../../typography'
 import Button from '../Button'
 import Section from '../Section'
 import { withReveal } from '../../hoc/withReveal'
 import './styles.css'
 
 const CaseStudyGrid = ({ caseStudies, isVisible, hasBeenSeen }) =>
-  <Section noPadding top="medium">
+  <Section noPadding>
     <div className={classnames('CaseStudyGrid', isVisible && 'is-visible')}>
-      <H3 component="div" className="CaseStudyGrid-heading" bottom="xsmall">
-        <EditInline format="plain" field="fields.content.portfolioHeading">
-          Latest case studies
-        </EditInline>
-      </H3>
-      <Body1
-        component="div"
-        className="CaseStudyGrid-subheading"
-        bottom="medium"
-      >
-        <EditInline format="plain" field="fields.content.portfolioText">
-          Have a look at our recently published work
-        </EditInline>
-      </Body1>
       <div className="CaseStudyGrid-items">
         {caseStudies &&
           caseStudies.items.slice(0, 3).map((item, index) =>

@@ -3,61 +3,70 @@
 @import '../../utils/responsive';
 
 .CaseStudyGrid {
-  padding: var(--ms0);
-  padding-top: 0;
+  // padding: var(--ms0);
+  // padding-top: 0;
   position: relative;
   z-index: 1;
   
   @include respond-to(md) {
-    padding: 0;
+    // padding: 0;
   }
 
 }
 
 .CaseStudyGrid-items {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
   padding-bottom: var(--ms1);
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
 }
 
-.CaseStudyGrid-heading {
-  text-align: center;
-}
+// .CaseStudyGrid-heading {
+//   text-align: center;
+// }
 
-.CaseStudyGrid-subheading {
-  line-height: 1.5;
-  text-align: center;
-}
+// .CaseStudyGrid-subheading {
+//   line-height: 1.5;
+//   text-align: center;
+// }
 
 .CaseStudyGrid-itemWrap {
   cursor: pointer;
   display: flex;
-  flex: 1;
-  font-family: serif;
-  font-style: italic;
+  flex: 0 1 50%;
+  // font-family: serif;
+  // font-style: italic;
   justify-content: center;
   overflow: hidden;
-  padding: var(--ms0);
+  // padding: var(--ms0);
+  padding: var(--ms2);
   position: relative;
   transform-origin: bottom right;
 
-  &:not(:last-child) {
+  &:first-child {
+    grid-row-end: span 2;
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  &:not(:first-child) {
     padding-right: 0;
   }
 
   @include respond-to(md) {
-    padding: var(--ms1);
+    // padding: var(--ms1);
   }
 
   .CaseStudyGrid.is-visible &:hover {
     .CaseStudyGrid-item {
       transform: scale(0.9) !important;
       &::before {
-        opacity: 1;
+        // opacity: 1;
       }
     }
     .CaseStudyGrid-image {
       transform: scale(1.1) !important;
+      opacity: 0.2;
     }
     .CaseStudyGrid-caption {
       opacity: 1;
@@ -83,23 +92,24 @@
     content: '';
     background: rgba(0, 0, 0, 0.4);
     opacity: 0;
-    transition: opacity 0.2s ease-out;
+    transition: opacity 0.2s ease;
     display: block;
-    padding-top: 70%;
+    padding-top: 60%;
     width: 100%;
     z-index: 1;
   }
 }
 
 .CaseStudyGrid-caption {
-  color: $white;
-  font-size: var(--ms3);
+  color: $blue;
+  font-size: 3.7rem;
   opacity: 0;
   position: absolute;
+  font-weight: 600;
   text-align: center;
   top: 50%;
-  transform: translateY(-100%);
-  transition: all 0.1s ease-in-out;
+  transform: translateY(2rem);
+  transition: all 0.15s $reveal-ease;
   z-index: 1;
 }
 
@@ -111,7 +121,7 @@
   position: absolute;
   top: 0;
   width: 100%;
-  transition: transform 0.5s ease;
+  transition: all 0.5s ease;
 
   &::before {
     display: block;
