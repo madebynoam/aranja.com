@@ -5,8 +5,7 @@
 .Clients {
   position: relative;
   z-index: 1;
-  // margin-top: var(--ms6);
-  
+
   @include respond-to(md) {
     padding: 0 5rem;
   }
@@ -15,19 +14,21 @@
 .Clients-list {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   flex-wrap: wrap;
-  margin-bottom: var(--ms2);
-  padding: 0 12.5%;
 
   @include respond-to(md) {
-    flex-wrap: nowrap;
     margin: 0 auto;
   }
 }
 
 .Clients-heading {
+  margin: auto;
+  max-width: 12ch;
   text-align: center;
+  @include respond-to(md) {
+    max-width: initial;
+    margin: 0;
+  }
 }
 
 .Clients-subheading {
@@ -37,19 +38,27 @@
 
 .Clients-item {
   flex: 0 1 33.333%;
+  position: relative;
+
+  &::before {
+    content: '';
+    display: block;
+    padding-top: 80%;
+  }
 
   @include respond-to(md) {
-    flex: 0 1 auto;
+    flex: 0 1 25%;
   }
 }
 
 .Clients-image {
+  bottom: 0;
   display: block;
-  margin: 1rem auto;
-  max-width: 5rem;
+  left: 0;
+  margin: auto;
+  max-width: 6rem;
+  position: absolute;
+  right: 0;
+  top: 0;
   width: 100%;
-
-  @include respond-to(md) {
-    margin: 0 auto;
-  }
 }

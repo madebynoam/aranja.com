@@ -35,7 +35,7 @@ const CaseStudy = ({ content, caseStudy, caseStudies }) => {
             </div>
           </div>
         </Section>
-        <CaseStudyGrid caseStudies={caseStudies} />
+        <CaseStudyGrid caseStudies={caseStudies} button="View all studies" />
       </Page>
     </Editable>
   )

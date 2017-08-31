@@ -3,68 +3,43 @@
 @import '../../utils/responsive';
 
 .CaseStudyGrid {
-  padding: var(--ms0);
-  padding-top: 0;
   position: relative;
   z-index: 1;
-  
-  @include respond-to(md) {
-    padding: 0;
-  }
-
 }
 
 .CaseStudyGrid-items {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-gap: 2rem;
   padding-bottom: var(--ms1);
-}
-
-.CaseStudyGrid-heading {
-  text-align: center;
-}
-
-.CaseStudyGrid-subheading {
-  line-height: 1.5;
-  text-align: center;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
 }
 
 .CaseStudyGrid-itemWrap {
   cursor: pointer;
   display: flex;
-  flex: 1;
-  font-family: serif;
-  font-style: italic;
+  flex: 0 1 50%;
   justify-content: center;
   overflow: hidden;
-  padding: var(--ms0);
   position: relative;
   transform-origin: bottom right;
 
-  &:not(:last-child) {
-    padding-right: 0;
-  }
-
-  @include respond-to(md) {
-    padding: var(--ms1);
+  &:first-child {
+    grid-row-end: span 2;
   }
 
   .CaseStudyGrid.is-visible &:hover {
     .CaseStudyGrid-item {
       transform: scale(0.9) !important;
-      &::before {
-        opacity: 1;
-      }
     }
     .CaseStudyGrid-image {
       transform: scale(1.1) !important;
+      opacity: 0.2;
     }
     .CaseStudyGrid-caption {
       opacity: 1;
-      transform: translateY(-50%);
     }
   }
-
 }
 
 .CaseStudyGrid-item {
@@ -83,24 +58,28 @@
     content: '';
     background: rgba(0, 0, 0, 0.4);
     opacity: 0;
-    transition: opacity 0.2s ease-out;
+    transition: opacity 0.2s ease;
     display: block;
-    padding-top: 70%;
+    padding-top: 60%;
     width: 100%;
     z-index: 1;
   }
 }
 
 .CaseStudyGrid-caption {
-  color: $white;
+  color: $blue;
   font-size: var(--ms3);
   opacity: 0;
+  letter-spacing: 0.05em;
   position: absolute;
+  font-weight: 600;
   text-align: center;
+  font-family: $monospace;
   top: 50%;
-  transform: translateY(-100%);
-  transition: all 0.1s ease-in-out;
+  transform: translateY(-50%);
+  transition: all 0.15s $ease-reveal;
   z-index: 1;
+  font-weight: 400;
 }
 
 .CaseStudyGrid-image {
@@ -111,7 +90,7 @@
   position: absolute;
   top: 0;
   width: 100%;
-  transition: transform 0.5s ease;
+  transition: all 0.5s ease;
 
   &::before {
     display: block;
@@ -121,7 +100,7 @@
     transform: translateX(-100%);
     width: 100%;
     height: 100%;
-    background-color: aliceblue;
+    background-color: $light;
     z-index: 2;
     transition: transform 0s;
     content: '';
