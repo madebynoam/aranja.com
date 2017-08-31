@@ -54,6 +54,7 @@ const CaseStudyGrid = ({ caseStudies, isVisible, hasBeenSeen }) =>
         <Button to="/work">View all studies</Button>
       </div>
     </div>
+    
   </Section>
 
 CaseStudyGrid.propTypes = {
