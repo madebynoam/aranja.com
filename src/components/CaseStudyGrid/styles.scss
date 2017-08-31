@@ -16,6 +16,7 @@
 
 .CaseStudyGrid-items {
   display: grid;
+  grid-gap: 2rem;
   padding-bottom: var(--ms1);
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
@@ -39,18 +40,18 @@
   justify-content: center;
   overflow: hidden;
   // padding: var(--ms0);
-  padding: var(--ms2);
+  // padding: var(--ms2);
   position: relative;
   transform-origin: bottom right;
 
   &:first-child {
     grid-row-end: span 2;
-    padding-right: 0;
-    padding-left: 0;
+    // padding-right: 0;
+    // padding-left: 0;
   }
 
   &:not(:first-child) {
-    padding-right: 0;
+    // padding-right: 0;
   }
 
   @include respond-to(md) {
@@ -70,7 +71,6 @@
     }
     .CaseStudyGrid-caption {
       opacity: 1;
-      transform: translateY(-50%);
     }
   }
 
@@ -102,15 +102,18 @@
 
 .CaseStudyGrid-caption {
   color: $blue;
-  font-size: 3.7rem;
+  font-size: var(--ms3);
   opacity: 0;
+  letter-spacing: 0.05em;
   position: absolute;
   font-weight: 600;
   text-align: center;
+  font-family: $monospace;
   top: 50%;
-  transform: translateY(2rem);
-  transition: all 0.15s $reveal-ease;
+  transform: translateY(-50%);
+  transition: all 0.15s $ease-reveal;
   z-index: 1;
+  font-weight: 400;
 }
 
 .CaseStudyGrid-image {

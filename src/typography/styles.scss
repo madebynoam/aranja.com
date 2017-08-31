@@ -18,17 +18,19 @@
 .t-h2 {
   font-family: $headingFontFamily, serif;
   font-size: var(--ms3);
-  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+  font-weight: 700;
   line-height: inherit;
-  margin: 0;
 }
 
 .t-h3 {
   font-family: $headingFontFamily, serif;
   font-size: var(--ms2);
-  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+  font-weight: 700;
   line-height: inherit;
-  margin: 0;
 }
 
 .t-body1 {

@@ -8,7 +8,7 @@ import Section from '../Section'
 import { withReveal } from '../../hoc/withReveal'
 import './styles.css'
 
-const CaseStudyGrid = ({ caseStudies, isVisible, hasBeenSeen }) =>
+const CaseStudyGrid = ({ caseStudies, button, isVisible, hasBeenSeen }) =>
   <Section noPadding>
     <div className={classnames('CaseStudyGrid', isVisible && 'is-visible')}>
       <div className="CaseStudyGrid-items">
@@ -36,9 +36,11 @@ const CaseStudyGrid = ({ caseStudies, isVisible, hasBeenSeen }) =>
             </a>
           )}
       </div>
-      <div className="CaseStudyGrid-button">
-        <Button to="/work">View all studies</Button>
-      </div>
+      {button &&
+        <div className="CaseStudyGrid-button">
+          <Button to="/work">{button}</Button>
+        </div>
+      }
     </div>
     
   </Section>

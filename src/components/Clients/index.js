@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import VisibilitySensor from 'react-visibility-sensor'
 import { TweenMax, Expo } from 'gsap'
-import { H3, Body1 } from '../../typography'
+import { H2, Body1 } from '../../typography'
 import './styles.css'
 import androidLogo from './android.svg'
 import facebookLogo from './facebook.svg'
@@ -39,6 +39,14 @@ const defaultClients = [
   {
     name: 'Kolibri',
     logo: kolibriLogo
+  },
+  {
+    name: 'Nest',
+    logo: nestLogo
+  },
+  {
+    name: 'Landsbankinn',
+    logo: lsbLogo
   }
 ]
 
@@ -92,18 +100,18 @@ class Clients extends Component {
         minTopValue={100}
         partialVisibility
       >
-        <Section top="medium">
+        <Section top="large" bottom="medium">
           <div
             className="Clients"
             ref={componentRef => {
               this.componentRef = componentRef
             }}
           >
-            <H3 component="div" className="Clients-heading" bottom="xsmall">
+            <H2 component="div" className="Clients-heading" bottom="xsmall">
               <EditInline format="plain" field="fields.content.clientsHeading">
                 Selected clients
               </EditInline>
-            </H3>
+            </H2>
             <Body1
               component="div"
               className="Clients-subheading"

@@ -15,13 +15,12 @@
 .Clients-list {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  // justify-content: space-between;
   flex-wrap: wrap;
-  margin-bottom: var(--ms2);
-  padding: 0 12.5%;
+  // margin-bottom: var(--ms2);
+  // padding: 0 12.5%;
 
   @include respond-to(md) {
-    flex-wrap: nowrap;
     margin: 0 auto;
   }
 }
@@ -37,19 +36,34 @@
 
 .Clients-item {
   flex: 0 1 33.333%;
+  position: relative;
+
+  &::before {
+    content: '';
+    display: block;
+    padding-top: 80%;
+  }
 
   @include respond-to(md) {
-    flex: 0 1 auto;
+    flex: 0 1 25%;
   }
 }
 
 .Clients-image {
   display: block;
-  margin: 1rem auto;
-  max-width: 5rem;
+  max-width: 6rem;
   width: 100%;
-
+  // filter: grayscale(1);
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  margin: auto;
   @include respond-to(md) {
-    margin: 0 auto;
+    &:hover {
+      filter: grayscale(0);
+    }
   }
+
 }
