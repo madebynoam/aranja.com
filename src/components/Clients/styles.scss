@@ -5,8 +5,7 @@
 .Clients {
   position: relative;
   z-index: 1;
-  // margin-top: var(--ms6);
-  
+
   @include respond-to(md) {
     padding: 0 5rem;
   }
@@ -15,10 +14,7 @@
 .Clients-list {
   display: flex;
   align-items: center;
-  // justify-content: space-between;
   flex-wrap: wrap;
-  // margin-bottom: var(--ms2);
-  // padding: 0 12.5%;
 
   @include respond-to(md) {
     margin: 0 auto;
@@ -26,7 +22,13 @@
 }
 
 .Clients-heading {
+  margin: auto;
+  max-width: 12ch;
   text-align: center;
+  @include respond-to(md) {
+    max-width: initial;
+    margin: 0;
+  }
 }
 
 .Clients-subheading {
@@ -50,20 +52,13 @@
 }
 
 .Clients-image {
-  display: block;
-  max-width: 6rem;
-  width: 100%;
-  // filter: grayscale(1);
-  position: absolute;
-  left: 0;
-  right: 0;
   bottom: 0;
-  top: 0;
+  display: block;
+  left: 0;
   margin: auto;
-  @include respond-to(md) {
-    &:hover {
-      filter: grayscale(0);
-    }
-  }
-
+  max-width: 6rem;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
 }

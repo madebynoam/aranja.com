@@ -5,7 +5,7 @@ import Services from '../../components/Services'
 import Section from '../../components/Section'
 import CaseStudyGrid from '../../components/CaseStudyGrid'
 import Clients from '../../components/Clients'
-import {H2, Body1} from '../../typography'
+import { H2, Body1 } from '../../typography'
 import { Editable } from 'tux'
 
 const Home = ({ content, hero, services, showOffs, caseStudies }) =>
@@ -14,10 +14,12 @@ const Home = ({ content, hero, services, showOffs, caseStudies }) =>
       <Hero hero={hero} title="Teamwork is the name of the game" cover />
       <Services services={services} />
       <Section top="large">
-        <H2 top="large">
+        <H2 top="large" center>
           Recent work
         </H2>
-        <Body1 bottom="medium">Take a look at some of our recent projects</Body1>
+        <Body1 bottom="medium" center>
+          Take a look at some of our recent projects
+        </Body1>
         <CaseStudyGrid caseStudies={caseStudies} />
       </Section>
       <Clients />

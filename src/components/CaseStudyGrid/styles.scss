@@ -3,15 +3,8 @@
 @import '../../utils/responsive';
 
 .CaseStudyGrid {
-  // padding: var(--ms0);
-  // padding-top: 0;
   position: relative;
   z-index: 1;
-  
-  @include respond-to(md) {
-    // padding: 0;
-  }
-
 }
 
 .CaseStudyGrid-items {
@@ -22,48 +15,22 @@
   grid-template-rows: 1fr 1fr;
 }
 
-// .CaseStudyGrid-heading {
-//   text-align: center;
-// }
-
-// .CaseStudyGrid-subheading {
-//   line-height: 1.5;
-//   text-align: center;
-// }
-
 .CaseStudyGrid-itemWrap {
   cursor: pointer;
   display: flex;
   flex: 0 1 50%;
-  // font-family: serif;
-  // font-style: italic;
   justify-content: center;
   overflow: hidden;
-  // padding: var(--ms0);
-  // padding: var(--ms2);
   position: relative;
   transform-origin: bottom right;
 
   &:first-child {
     grid-row-end: span 2;
-    // padding-right: 0;
-    // padding-left: 0;
-  }
-
-  &:not(:first-child) {
-    // padding-right: 0;
-  }
-
-  @include respond-to(md) {
-    // padding: var(--ms1);
   }
 
   .CaseStudyGrid.is-visible &:hover {
     .CaseStudyGrid-item {
       transform: scale(0.9) !important;
-      &::before {
-        // opacity: 1;
-      }
     }
     .CaseStudyGrid-image {
       transform: scale(1.1) !important;
@@ -73,7 +40,6 @@
       opacity: 1;
     }
   }
-
 }
 
 .CaseStudyGrid-item {
@@ -134,7 +100,7 @@
     transform: translateX(-100%);
     width: 100%;
     height: 100%;
-    background-color: aliceblue;
+    background-color: $light;
     z-index: 2;
     transition: transform 0s;
     content: '';
