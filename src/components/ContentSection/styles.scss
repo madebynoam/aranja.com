@@ -41,7 +41,6 @@
   &--tall {
     @include respond-to(lg) {
       padding: var(--ms6) 10%;
-      // min-height: 45rem;
     }
   }
 }
