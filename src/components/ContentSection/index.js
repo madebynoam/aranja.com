@@ -5,6 +5,7 @@ import Video from './Video'
 import ContentCopy from './Copy'
 import ContentThreeColumnCopy from './ThreeColumnCopy'
 import DeviceSection from './Device'
+import ScreenshotsGalore from './ScreenshotsGalore'
 import Floater from './Floater'
 
 import './styles.css'
@@ -99,6 +100,13 @@ const ContentSection = ({ section }) => {
             copy={copy}
             image={image.fields.file.url}
           />
+        </Wrapper>
+      )
+    case 'sectionScreenshotsGalore':
+      const { screenshots } = section.fields
+      return (
+        <Wrapper gray>
+          <ScreenshotsGalore screenshots={screenshots} />
         </Wrapper>
       )
 

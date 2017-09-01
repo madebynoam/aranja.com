@@ -1,6 +1,6 @@
 import React from 'react'
 import classNames from 'classnames'
-import { Body1, H1 } from '../../../typography'
+import { Body1, H2 } from '../../../typography'
 import './styles.css'
 
 const ContentSectionCopy = ({ heading, copy, lede, half }) => {
@@ -13,9 +13,9 @@ const ContentSectionCopy = ({ heading, copy, lede, half }) => {
       )}
     >
       {heading &&
-        <H1 bottom="small">
+        <H2 bottom="small">
           {heading}
-        </H1>}
+        </H2>}
       {copy &&
         <Body1>
           {copy}
