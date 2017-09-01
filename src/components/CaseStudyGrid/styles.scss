@@ -5,6 +5,12 @@
 .CaseStudyGrid {
   position: relative;
   z-index: 1;
+
+  @include respond-to(md) {
+    &.with-padding {
+      padding: 2rem;
+    }
+  }
 }
 
 .CaseStudyGrid-items {
@@ -138,7 +144,7 @@
 
   @include respond-to(md) {
     margin: 0;
-    padding-bottom: var(--ms3);
+    padding: var(--ms3);
     width: auto;
   }
 }

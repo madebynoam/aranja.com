@@ -1,16 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
-import { EditInline } from 'tux'
-import { H1, Body1 } from '../../typography'
 import Button from '../Button'
 import Section from '../Section'
 import { withReveal } from '../../hoc/withReveal'
 import './styles.css'
 
-const CaseStudyGrid = ({ caseStudies, button, isVisible, hasBeenSeen }) =>
+const CaseStudyGrid = ({ caseStudies, button, padding, isVisible }) =>
   <Section noPadding>
-    <div className={classnames('CaseStudyGrid', isVisible && 'is-visible')}>
+    <div className={classnames('CaseStudyGrid', isVisible && 'is-visible', padding && 'with-padding')}>
       <div className="CaseStudyGrid-items">
         {caseStudies &&
           caseStudies.items.slice(0, 3).map((item, index) =>
@@ -47,6 +45,8 @@ CaseStudyGrid.propTypes = {
       href: PropTypes.string,
     }),
   ),
+  padding: PropTypes.bool,
+  button: PropTypes.string,
 }
 
 export default withReveal(CaseStudyGrid)
