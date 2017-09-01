@@ -22,14 +22,15 @@ import TypeKit from 'react-typekit'
 export default class extends Document {
   render() {
     // TODO: Remove when headProps is gone.
-    let helmet = this.props.helmet || (this.props.headProps && this.props.headProps.helmet)
+    let helmet =
+      this.props.helmet || (this.props.headProps && this.props.headProps.helmet)
     return (
       <Html lang="en">
         <Head>
           {helmet && [
             helmet.title.toComponent(),
             helmet.meta.toComponent(),
-            helmet.link.toComponent(),
+            helmet.link.toComponent()
           ]}
           <TypeKit kitId="kee6nkk" />
         </Head>

@@ -37,6 +37,10 @@
   .CaseStudyGrid.is-visible &:hover {
     .CaseStudyGrid-item {
       transform: scale(0.9) !important;
+      &::after {
+        opacity: 1;
+        transform: scale(1);
+      }
     }
     .CaseStudyGrid-image {
       transform: scale(1.1) !important;
@@ -44,6 +48,8 @@
     }
     .CaseStudyGrid-caption {
       opacity: 1;
+    transform: translateY(0);
+      transform: translateY(-50%);
     }
   }
 }
@@ -57,7 +63,23 @@
   position: relative;
 
   .CaseStudyGrid.is-visible & {
-    transition: transform 0.2s cubic-bezier(.3, .27, .35, .77);
+    transition: transform 0.7s $ease-reveal;
+  }
+
+  &::after {
+    border: 0.25em solid currentColor;
+    content: '';
+    display: block;
+    height: calc(100% - 3rem);
+    left: 1.5rem;
+    mix-blend-mode: screen;
+    opacity: 0;
+    position: absolute;
+    top: 1.5rem;
+    transform: scale(1.05);
+    transform-origin: center;
+    transition: all 0.7s $ease-reveal;
+    width: calc(100% - 3rem);
   }
 
   &::before {
@@ -73,19 +95,18 @@
 }
 
 .CaseStudyGrid-caption {
-  color: $blue;
   font-size: var(--ms3);
+  font-weight: 700;
+  letter-spacing: 0.025em;
+  max-width: 14ch;
   opacity: 0;
-  letter-spacing: 0.05em;
   position: absolute;
-  font-weight: 600;
   text-align: center;
-  font-family: $monospace;
+  text-transform: uppercase;
   top: 50%;
-  transform: translateY(-50%);
-  transition: all 0.15s $ease-reveal;
+  transform: translateY(0);  
+  transition: all 0.4s $ease-reveal;
   z-index: 1;
-  font-weight: 400;
 }
 
 .CaseStudyGrid-image {
@@ -108,11 +129,9 @@
     height: 100%;
     background-color: $light;
     z-index: 2;
-    transition: transform 0s;
     content: '';
 
     .CaseStudyGrid.is-visible & {
-      transition: transform 1s $ease-reveal;
       transform: translateX(100%);
     }
   }
@@ -131,7 +150,7 @@
     content: '';
 
     .CaseStudyGrid.is-visible & {
-      transition: transform 1s $ease-reveal;
+      transition: transform 0.7s $ease-reveal;
       transform: translateX(100%);
     }
   }

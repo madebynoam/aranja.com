@@ -2,6 +2,7 @@ import React from 'react'
 import classNames from 'classnames'
 import Parallax from '../Parallax'
 import { withReveal } from '../../hoc/withReveal'
+import { Body2 } from '../../typography'
 import './styles.css'
 
 const SectionHero = ({ img, caption, hasBeenSeen }) =>
@@ -10,7 +11,7 @@ const SectionHero = ({ img, caption, hasBeenSeen }) =>
       <div className="SectionHero-imageWrap">
         <div className="SectionHero-image" style={{ backgroundImage: `url(${img})` }} />
       </div>
-      {caption ? <p className="SectionHero-caption">{caption}</p> : null}
+      {caption ? <Body2 className="SectionHero-caption">{caption}</Body2> : null}
     </div>
   </Parallax>
 

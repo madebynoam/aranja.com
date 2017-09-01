@@ -27,7 +27,7 @@ const CaseStudy = ({ content, caseStudy, caseStudies }) => {
         <Section className="CaseStudy-section">
           {sections.map((section, index) => <ContentSection section={section} key={index} />)}
         </Section>
-        <Section className="CaseStudy-section">
+        <Section className="CaseStudy-section" bottom="xlarge">
           <div className="ContentSection">
             <div className="CaseStudy-bottom">
               <CaseStudyButton to={projectOutgoingUrl}>Visit project</CaseStudyButton>
@@ -35,7 +35,9 @@ const CaseStudy = ({ content, caseStudy, caseStudies }) => {
             </div>
           </div>
         </Section>
+        <Section noPadding>
         <CaseStudyGrid caseStudies={caseStudies} button="View all studies" padding />
+        </Section>
       </Page>
     </Editable>
   )

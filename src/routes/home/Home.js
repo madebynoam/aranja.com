@@ -13,11 +13,11 @@ const Home = ({ content, hero, services, showOffs, caseStudies }) =>
     <Page name="Home" home>
       <Hero hero={hero} title="Teamwork is the name of the game" cover />
       <Services services={services} />
-      <Section top="large">
-        <H2 top="large" center>
+      <Section top="xlarge">
+        <H2 top="xlarge" center>
           Recent work
         </H2>
-        <Body1 bottom="medium" center>
+        <Body1 bottom="large" center>
           Take a look at some of our recent projects
         </Body1>
         <CaseStudyGrid caseStudies={caseStudies} />
