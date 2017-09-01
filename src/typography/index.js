@@ -45,6 +45,12 @@ export const H3 = createStyle('h3', 't-h3', {
   center: 't-center',
   lineHeight: 't-lineheight'
 })
+export const H4 = createStyle('h4', 't-h4', {
+  black: 't-black',
+  light: 't-light',
+  center: 't-center',
+  lineHeight: 't-lineheight'
+})
 export const Body1 = createStyle('p', 't-body1', {
   strong: 't-medium',
   center: 't-center',

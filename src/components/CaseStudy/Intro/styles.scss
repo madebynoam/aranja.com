@@ -5,10 +5,10 @@
 .Intro {
   display: flex;
   flex-wrap: wrap;
-  padding: var(--ms2);
+  // padding: var(--ms2);
 
   @include respond-to(md) {
-    min-height: between(200px, 320px, $md, $lg);
+    // min-height: between(200px, 320px, $md, $lg);
     flex-wrap: nowrap;
     padding: 0;
   }
@@ -19,10 +19,8 @@
 
 .Intro-split {
   display: flex;
-  padding-bottom: var(--ms1);
 
   @include respond-to(md) {
-    padding: var(--ms4);
     align-items: flex-end;
     width: 50%; 
   }

@@ -1,19 +1,22 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { H1, Body1 } from '../../../typography'
+import { H2, H4 } from '../../../typography'
+import Section from '../../Section'
 import './styles.css'
 
 const Intro = ({ project, description }) =>
-  <div className="Intro">
-    <div className="Intro-split">
-      <H1>{project}</H1>
+  <Section top="medium" bottom="medium">
+    <div className="Intro">
+      <div className="Intro-split">
+        <H2>{project}</H2>
+      </div>
+      <div className="Intro-split">
+        <H4 className="Intro-description">
+          {description}
+        </H4>
+      </div>
     </div>
-    <div className="Intro-split">
-      <Body1 className="Intro-description">
-        {description}
-      </Body1>
-    </div>
-  </div>
+  </Section>
 
 Intro.propTypes = {
   project: PropTypes.string,
