@@ -23,7 +23,7 @@ const Home = ({ content, hero, services, showOffs, caseStudies }) => (
         </Body1>
         <CaseStudyGrid caseStudies={caseStudies} />
       </Section>
-      <Section top="xlarge">
+      {/* <Section top="xlarge">
         <H2 top="xlarge" center>
           One family
         </H2>
@@ -31,7 +31,7 @@ const Home = ({ content, hero, services, showOffs, caseStudies }) => (
           Looking forward to Mondays since 2013
         </Body1>
         <FamilyGrid />
-      </Section>
+      </Section> */}
       <Clients />
     </Page>
   </Editable>

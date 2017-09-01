@@ -5,10 +5,8 @@
 .Intro {
   display: flex;
   flex-wrap: wrap;
-  // padding: var(--ms2);
 
   @include respond-to(md) {
-    // min-height: between(200px, 320px, $md, $lg);
     flex-wrap: nowrap;
     padding: 0;
   }
