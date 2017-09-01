@@ -1,0 +1,85 @@
+@import '../functions';
+@import '../vars';
+@import '../responsive';
+
+.u-paddingTopXLarge {
+  padding-top: between(90.448px, 127.888px, $sm, $xlg) !important;
+}
+
+.u-paddingTopLarge {
+  padding-top: between(63.986px, 90.448px, $sm, $xlg) !important;
+}
+
+.u-paddingTopMedium {
+  padding-top: between(45.232px, 63.986px, $sm, $xlg) !important;
+}
+
+.u-paddingTopSmall {
+  padding-top: between(22.624px, 45.232px, $sm, $xlg) !important;
+}
+
+.u-paddingTopXSmall {
+  padding-top: between(16px, 22.624px, $sm, $xlg) !important;
+}
+.u-paddingBottomXLarge {
+  padding-bottom: between(90.448px, 127.888px, $sm, $xlg) !important;
+}
+
+.u-paddingBottomLarge {
+  padding-bottom: between(63.986px, 90.448px, $sm, $xlg) !important;
+}
+
+.u-paddingBottomMedium {
+  padding-bottom: between(45.232px, 63.986px, $sm, $xlg) !important;
+}
+
+.u-paddingBottomSmall {
+  padding-bottom: between(22.624px, 45.232px, $sm, $xlg) !important;
+}
+
+.u-paddingBottomXSmall {
+  padding-bottom: between(16px, 22.624px, $sm, $xlg) !important;
+}
+
+
+@include respond-to(xlg) {
+  .u-paddingTopXLarge {
+    padding-top: 180px !important;
+  }
+
+  .u-paddingTopLarge {
+    padding-top: 120px !important;
+  }
+
+  .u-paddingTopMedium {
+    padding-top: 80px !important;
+  }
+
+  .u-paddingTopSmall {
+    padding-top: 40px !important;
+  }
+
+  .u-paddingTopXSmall {
+    padding-top: 1rem !important;
+  }
+
+  .u-paddingBottomXLarge {
+    padding-bottom: 180px !important;
+  }
+
+  .u-paddingBottomLarge {
+    padding-bottom: 120px !important;
+  }
+
+  .u-paddingBottomMedium {
+    padding-bottom: 80px !important;
+  }
+
+  .u-paddingBottomSmall {
+    padding-bottom: 40px !important;
+  }
+
+  .u-paddingBottomXSmall {
+    padding-bottom: 1rem !important;
+  }
+}
