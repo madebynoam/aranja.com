@@ -37,12 +37,23 @@
 
   &.is-mounted {
     &::before {
-      transform: translateX(100%);
-      transition: transform 1s $ease-reveal;
+      transform: translateX(120%);
+      transition: transform 1s $ease-pageEnter;
     }
     &::after {
-      transform: translateX(100%);
-      transition: transform 1s $ease-reveal;
+      transform: translateX(150%);
+      transition: transform 1s $ease-pageEnter;
     }
+  }
+}
+
+.Page-inner {
+  opacity: 0;
+  transform: translateX(-10%);
+  transition: all 0.5s 0.2s $ease-pageEnter;
+  
+  .Page.is-mounted & {
+    opacity: 1;
+    transform: translateX(0);
   }
 }

@@ -18,10 +18,12 @@
   text-align: center;
   width: 100%;
   z-index: -1;
+  min-height: between(200px, 400px, $sm, $md);
   
   @include respond-to(md) {
     align-items: baseline;
     text-align: left;
+    min-height: 25rem;
   }
   @include respond-to(xlg) {
     padding-left: $horizontalPadding;
