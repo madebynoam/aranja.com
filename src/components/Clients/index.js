@@ -109,7 +109,7 @@ class Clients extends Component {
           >
             <H2 component="div" className="Clients-heading" bottom="xsmall">
               <EditInline format="plain" field="fields.content.clientsHeading">
-                Selected clients
+                Trusted by the best
               </EditInline>
             </H2>
             <Body1

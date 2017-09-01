@@ -1,0 +1,70 @@
+@import '../../utils/functions';
+@import '../../utils/vars';
+@import '../../utils/responsive';
+
+.Family {
+  position: relative;
+  z-index: 1;
+
+  @include respond-to(md) {
+    // padding: 0 5rem;
+  }
+}
+
+.Family-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  // grid-gap: 2rem;
+
+}
+
+.Family-heading {
+  margin: auto;
+  max-width: 12ch;
+  text-align: center;
+  @include respond-to(md) {
+    max-width: initial;
+    margin: 0;
+  }
+}
+
+.Family-subheading {
+  text-align: center;
+  line-height: 1.5;
+}
+
+.Family-item {
+  position: relative;
+  overflow: hidden;
+  &::before {
+    content: '';
+    display: block;
+    padding-top: 80%;
+  }
+
+}
+
+.Family-image {
+  background-size: cover;
+  bottom: 0;
+  display: block;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+
+  .Family-item:nth-child(1) & {
+    animation: SwitchFrom 1s 1s ease-in-out infinite;
+  }
+  .Family-item:nth-child(2) & {
+    animation: SwitchTo 1s 1s ease-in-out infinite;
+  }
+  .Family-item:nth-child(3) & {
+    animation: SwitchFrom 1s 0s ease-in-out infinite;
+  }
+  .Family-item:nth-child(4) & {
+    animation: SwitchTo 1s 0s ease-in-out infinite;
+  }
+}

@@ -4,11 +4,12 @@ import Hero from '../../components/Hero'
 import Services from '../../components/Services'
 import Section from '../../components/Section'
 import CaseStudyGrid from '../../components/CaseStudyGrid'
+import FamilyGrid from '../../components/FamilyGrid'
 import Clients from '../../components/Clients'
 import { H2, Body1 } from '../../typography'
 import { Editable } from 'tux'
 
-const Home = ({ content, hero, services, showOffs, caseStudies }) =>
+const Home = ({ content, hero, services, showOffs, caseStudies }) => (
   <Editable model={content}>
     <Page name="Home" home>
       <Hero hero={hero} title="Teamwork is the name of the game" cover />
@@ -22,8 +23,18 @@ const Home = ({ content, hero, services, showOffs, caseStudies }) =>
         </Body1>
         <CaseStudyGrid caseStudies={caseStudies} />
       </Section>
+      <Section top="xlarge">
+        <H2 top="xlarge" center>
+          One family
+        </H2>
+        <Body1 bottom="large" center>
+          Looking forward to Mondays since 2013
+        </Body1>
+        <FamilyGrid />
+      </Section>
       <Clients />
     </Page>
   </Editable>
+)
 
 export default Home
