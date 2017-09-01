@@ -3,10 +3,6 @@
 @import '../../utils/responsive';
 
 .Footer {
-  // Footer is one of the few components not inside a <Section />
-  // and therefor mantains its own padding.
-  padding: 0 between(16px, 100px, $sm, $xlg);
-  
   align-items: center;
   background: $blue;
   bottom: 0;
@@ -16,8 +12,7 @@
   justify-content: center;
   left: 0;
   margin: auto;
-  max-width: $pageMaxWidth;
-  min-height: between(200px, 320px, $sm, $md);
+  padding: 5%;
   position: fixed;
   right: 0;
   text-align: center;
@@ -27,10 +22,10 @@
   @include respond-to(md) {
     align-items: baseline;
     text-align: left;
-    min-height: 20rem;
   }
   @include respond-to(xlg) {
-    padding: 0 13.5%;
+    padding-left: $horizontalPadding;
+    padding-right: $horizontalPadding;
   }
 }
 

@@ -26,7 +26,7 @@ class Footer extends Component {
           this.ref = ref
         }}
       >
-        <H2 className="Footer-title" top="small">
+        <H2 className="Footer-title" bottom="small">
           Get in touch
         </H2>
 

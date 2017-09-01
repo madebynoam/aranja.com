@@ -31,5 +31,5 @@
   position: absolute;
   width: 100%;
   top: 0;
-  transform: translateY(calc(var(--parallax) * #{calc(-100% - 8rem) * #{0.4}}));
+  transform: translateY(calc(var(--parallax) * #{calc(-100% - 1rem) * #{0.4}}));
 }

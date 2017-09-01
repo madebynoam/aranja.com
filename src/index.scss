@@ -41,27 +41,17 @@ html {
 
 // modularscale = base: 16px/1rem, ratio: 1.414
 // except for ms0 because reasons
+// Experimenting with not capping the values at $xlg.
 
 :root {
-  --ms0: between(11.315px, 16px, $sm, $lg);
-  --ms1: between(16px, 22.624px, $sm, $lg);
-  --ms2: between(22.624px, 31.984px, $sm, $lg);
-  --ms3: between(31.984px, 45.232px, $sm, $lg);
-  --ms4: between(45.232px, 63.968px, $sm, $lg);
-  --ms5: between(63.968px, 90.448px, $sm, $lg);
-  --ms6: between(90.448px, 127.888px, $sm, $lg);
-  --ms7: between(127.888px, 180.832px, $sm, $lg);
-  
-  @include respond-to(lg) {
-    --ms0: 16px;
-    --ms1: 22.624px;
-    --ms2: 31.948px;
-    --ms3: 45.232px;
-    --ms4: 63.968px;
-    --ms5: 90.448px;
-    --ms6: 127.888px;
-    --ms7: 180.832px;
-  }
+  --ms0: between(11.315px, 16px, $sm, $xlg);
+  --ms1: between(16px, 22.624px, $sm, $xlg);
+  --ms2: between(22.624px, 31.984px, $sm, $xlg);
+  --ms3: between(31.984px, 45.232px, $sm, $xlg);
+  --ms4: between(45.232px, 63.968px, $sm, $xlg);
+  --ms5: between(63.968px, 90.448px, $sm, $xlg);
+  --ms6: between(90.448px, 127.888px, $sm, $xlg);
+  --ms7: between(127.888px, 180.832px, $sm, $xlg);
 }
 
 body {
