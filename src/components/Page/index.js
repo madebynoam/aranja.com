@@ -5,6 +5,8 @@ import Header from '../Header'
 import Footer from '../Footer'
 import './styles.css'
 
+// todo: https://tympanus.net/codrops/2016/06/01/multi-layer-page-reveal-effects/
+
 class Page extends Component {
   constructor(props) {
     super(props)
@@ -27,7 +29,9 @@ class Page extends Component {
   return (
     <div className={classNames('Page', isMounted && 'is-mounted')}>
       <Header active={name} inversed={isHome} fixed={isHome} />
-      {children}
+        <div className="Page-inner">
+          {children}
+        </div>
       <Footer />
     </div>
   )

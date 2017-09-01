@@ -21,6 +21,7 @@ class Video extends Component {
     return (
       <div className="Video-wrapper">
         <video
+         key={description}
           className={classNames(
             'Video',
             isVisible && 'is-visible',
