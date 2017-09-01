@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { Body2, H2 } from '../../typography'
 import Link from '../Link'
 import github from './github.svg'
@@ -15,52 +15,91 @@ const data = [
   { title: 'Talk to us', content: '(+354) 696-8666', link: 'tel:+3546968666' }
 ]
 
-class Footer extends Component {
-  // Todo: https://github.com/aranja/new-aranja/issues/27
+class Footer extends React.Component {
+  constructor(...args) {
+    super(...args)
+
+    this.viewHeight = 0
+    this.pageHeight = 0
+    this.state = {
+      scroll: 1,
+    }
+
+    this.onLayout = this.onLayout.bind(this)
+    this.onScroll = this.onScroll.bind(this)
+  }
+
+  componentDidMount() {
+    window.addEventListener('scroll', this.onScroll)
+    window.addEventListener('resize', this.onLayout)
+    window.addEventListener('layout', this.onLayout)
+    this.onLayout()
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.onScroll)
+    window.removeEventListener('resize', this.onLayout)
+    window.removeEventListener('layout', this.onLayout)
+  }
+
+  onScroll() {
+    this.setState((state) => ({
+      scroll: (window.pageYOffset + this.viewHeight) / (this.pageHeight + this.viewHeight),
+    }))
+  }
+
+  onLayout() {
+    this.pageHeight = document.body.offsetHeight
+    this.viewHeight = window.innerHeight
+    // debugger
+    this.onScroll()
+  }
 
   render() {
+    console.log(this.state.scroll)
     return (
       <section
         className="Footer"
-        ref={ref => {
-          this.ref = ref
-        }}
       >
-        <H2 className="Footer-title" bottom="small">
-          Get in touch
-        </H2>
+        <div style={{
+          opacity: this.state.scroll
+        }}>
+          <H2 className="Footer-title" bottom="small">
+            Get in touch
+          </H2>
 
-        {data.map(data =>
-          <div className="Footer-column" key={data.title}>
-            <h1 className="Footer-legend">
-              {data.title}
-            </h1>
-            <Body2>
-              <Link noStyle href={data.link}>
-                {data.content}
+          {data.map(data =>
+            <div className="Footer-column" key={data.title}>
+              <h1 className="Footer-legend">
+                {data.title}
+              </h1>
+              <Body2>
+                <Link noStyle href={data.link}>
+                  {data.content}
+                </Link>
+              </Body2>
+            </div>
+          )}
+
+          <div className="Footer-column">
+            <h1 className="Footer-legend">Follow us</h1>
+            <div className="Footer-social">
+              <Link noStyle
+                href="https://twitter.com/aranjastudio"
+                className="Footer-socialIcon"
+              >
+                <img src={twitter} alt="Aranja on Twitter" />
               </Link>
-            </Body2>
-          </div>
-        )}
-
-        <div className="Footer-column">
-          <h1 className="Footer-legend">Follow us</h1>
-          <div className="Footer-social">
-            <Link noStyle
-              href="https://twitter.com/aranjastudio"
-              className="Footer-socialIcon"
-            >
-              <img src={twitter} alt="Aranja on Twitter" />
-            </Link>
-            <Link noStyle
-              href="https://facebook.com/aranja.is"
-              className="Footer-socialIcon"
-            >
-              <img src={facebook} alt="Aranja on Facebook" />
-            </Link>
-            <Link noStyle href="https://github.com/aranja" className="Footer-socialIcon">
-              <img src={github} alt="Aranja on Github" />
-            </Link>
+              <Link noStyle
+                href="https://facebook.com/aranja.is"
+                className="Footer-socialIcon"
+              >
+                <img src={facebook} alt="Aranja on Facebook" />
+              </Link>
+              <Link noStyle href="https://github.com/aranja" className="Footer-socialIcon">
+                <img src={github} alt="Aranja on Github" />
+              </Link>
+            </div>
           </div>
         </div>
       </section>
