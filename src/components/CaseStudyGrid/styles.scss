@@ -2,6 +2,8 @@
 @import '../../utils/vars';
 @import '../../utils/responsive';
 
+$maxItems: 6;
+
 .CaseStudyGrid {
   position: relative;
   z-index: 1;
@@ -16,7 +18,6 @@
 .CaseStudyGrid-items {
   display: grid;
   grid-gap: 2rem;
-  padding-bottom: var(--ms1);
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
 }
@@ -120,6 +121,17 @@
   width: 100%;
   transition: all 0.5s ease;
 
+  @for $i from 1 through $maxItems {  
+    .CaseStudyGrid.is-visible .CaseStudyGrid-itemWrap:nth-child(#{$i}) & {
+      &::before {
+        transition-delay: 0.075s * $i;
+      }
+      &::after {
+        transition-delay: 0.075s * $i;
+      }
+    }
+  }
+
   &::before {
     display: block;
     position: absolute;
@@ -135,6 +147,7 @@
     .CaseStudyGrid.is-visible & {
       transform: translateX(100%);
     }
+
   }
 
   &::after {
