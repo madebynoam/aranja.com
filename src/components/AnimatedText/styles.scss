@@ -1,0 +1,30 @@
+@import '../../utils/functions';
+@import '../../utils/vars';
+@import '../../utils/responsive';
+
+$maxChilds: 5;
+
+.AnimatedText {
+ overflow: hidden;
+ position: relative; 
+ display: block;
+
+ @for $i from 1 to $maxChilds {
+  &:nth-child(#{$i}) {
+    .AnimatedText-part {
+        transition-delay: #{($i ) / 15}s;
+    }
+  }
+ }
+}
+
+.AnimatedText-part {
+  display: block;
+  opacity: 0;
+  transition: opacity 1s ease, transform 1.3s $easeInOutQuart;
+  transform: translateY(110%);
+  &.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
