@@ -48,10 +48,11 @@
   z-index: 2;
 }
 
-.Hero-heading {
+.Hero-text {
   line-height: 1;
   font-size: between(40px, 100px, $sm, $lg);
   padding: 1ch;
+  font-weight: 500;
   
   @include respond-to(md) {
     max-width: 16ch;
@@ -59,10 +60,10 @@
   }
 
   @include respond-to(lg) {
-    font-size: 6.25rem;
+    font-size: 7.25rem;
   }
 
   @include respond-to(xlg) {
-    margin-left: -6ch;
+    margin-left: -8ch;
   }
 }

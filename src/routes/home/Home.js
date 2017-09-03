@@ -14,7 +14,7 @@ const Home = ({ content, hero, services, showOffs, caseStudies }) => (
     <Page name="Home" home>
       <Hero hero={hero} title="Teamwork is the name of the game" cover />
       <Services services={services} />
-      <Section top="xlarge">
+      <Section>
         <H2 top="xlarge" center>
           Recent work
         </H2>

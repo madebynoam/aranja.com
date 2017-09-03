@@ -22,5 +22,6 @@ $headingFontFamily: 'proxima-nova';
 $monospaceFontFamily: 'mono45-headline';
 $monospace: $monospaceFontFamily;
 
-$ease-reveal: cubic-bezier(.47,.04,.09,.98);
 $ease-pageEnter: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+$easeInOutQuart: cubic-bezier(0.77, 0, 0.175, 1);
+$ease-reveal: $easeInOutQuart; //cubic-bezier(.47,.04,.09,.98);

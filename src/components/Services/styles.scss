@@ -95,7 +95,7 @@
     content: '';
 
     .Service.is-visible & {
-      transition: transform 1s $ease-reveal;
+      transition: transform 0.8s $easeInOutQuart;
       transform: translateX(100%);
     }
   }
@@ -114,7 +114,7 @@
     content: '';
 
     .Service.is-visible & {
-      transition: transform 1s $ease-reveal;
+      transition: transform 0.8s $easeInOutQuart;
       transform: translateX(100%);
     }
   }
