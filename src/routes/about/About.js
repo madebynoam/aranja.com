@@ -6,7 +6,7 @@ import TeamGrid from '../../components/Team/Grid'
 import Section from '../../components/Section'
 import SectionHero from '../../components/SectionHero'
 import Hero from '../../components/Hero'
-import Intro from '../../components/CaseStudy/Intro'
+import Intro from '../../components/Intro'
 import teamHeroPhoto2 from '../../components/Team/Aranja00557.jpg'
 import teamHeroPhoto3 from '../../components/Team/Aranja00711-Edit.jpg'
 import '../../components/Team/styles.css'
@@ -14,10 +14,12 @@ import '../../components/Team/styles.css'
 const About = ({ content, team, hero }) =>
   <Editable model={content}>
     <Page name="About">
-      <Intro
-        project="About our company"
-        description="We are a web development studio based out of beautiful Reykjavik, Iceland."
-      />
+      <Section noPadding top="medium" bottom="medium">
+        <Intro
+          text="About our company"
+          description="We are a web development studio based out of beautiful Reykjavik, Iceland."
+        />
+      </Section>
       <Hero hero={hero} />
       <Section bottom="large">
         <div className="Team-copy">

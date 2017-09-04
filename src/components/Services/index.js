@@ -8,7 +8,7 @@ class Services extends Component {
 
     return (
       <div className="Services">
-        {services.items.sort((a, b) => a.fields.index - b.fields.index).map(service =>
+        {services.items.reverse().sort((a, b) => a.fields.index - b.fields.index).map(service =>
           <EditModal model={service} key={`modal_${service.fields.index}`}>
             <Service
               key={`service_${service.fields.index}`}

@@ -1,6 +1,6 @@
-@import '../../../utils/functions';
-@import '../../../utils/vars';
-@import '../../../utils/responsive';
+@import '../../utils/functions';
+@import '../../utils/vars';
+@import '../../utils/responsive';
 
 .Intro {
   display: flex;
@@ -11,7 +11,9 @@
     padding: 0;
   }
   @include respond-to(lg) {
-    min-height: 20rem;
+    width: 85%;
+    padding: 15rem 0 0rem 0;
+    margin: auto;
   }
 }
 
@@ -25,5 +27,9 @@
 
   > h1 {
     line-height: 1;
+  }
+
+  .Intro-main {
+    line-height: 1.15;
   }
 }

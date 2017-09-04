@@ -16,13 +16,12 @@ const Header = ({ inversed, active, fixed }) =>
   <header
     className={classNames(
       'Header',
-      inversed && 'is-inversed',
       fixed && 'is-fixed'
     )}
   >
     <Link noStyle href="/">
       <img
-        src={inversed ? logoInversed : logo}
+        src={logo}
         alt="Aranja logo"
         className="Header-logo"
       />

@@ -18,18 +18,17 @@ class Hero extends Component {
             'Hero',
             'darken',
             darken && 'darken',
-            cover && 'cover',
             parallax && 'withParallax'
           )}
         >
-          <div className="Hero-content">
+          {/* <div className="Hero-content">
             <AnimatedText
               className="Hero-text"
               component={H1}
               text={text && ['At Aranja, we like to ', 'do things properly']}
             />
-          </div>
-          <HeroPicture src={hero.hero.src} cover={cover} parallax={parallax} />
+          </div> */}
+          <HeroPicture src={hero.hero.src} parallax={parallax} />
           <ScrollIndicator />
         </div>
       </Parallax>
