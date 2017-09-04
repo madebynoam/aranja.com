@@ -21,8 +21,9 @@ class Footer extends React.Component {
 
     this.viewHeight = 0
     this.pageHeight = 0
+    this.footerHeight = 0
     this.state = {
-      scroll: 1,
+      scroll: 0
     }
 
     this.onLayout = this.onLayout.bind(this)
@@ -43,63 +44,75 @@ class Footer extends React.Component {
   }
 
   onScroll() {
-    this.setState((state) => ({
-      scroll: (window.pageYOffset + this.viewHeight) / (this.pageHeight + this.viewHeight),
+    this.setState(state => ({
+      scroll:
+        (window.pageYOffset + this.viewHeight) /
+        (this.pageHeight + this.viewHeight)
     }))
   }
 
   onLayout() {
     this.pageHeight = document.body.offsetHeight
     this.viewHeight = window.innerHeight
+    this.footerHeight = this.footer.offsetHeight
     // debugger
     this.onScroll()
   }
 
   render() {
     console.log(this.state.scroll)
+    console.log('offset = ', window.pageYOffset)
+    console.log('viewHeight = ', window.innerHeight)
+    console.log('docHeight = ', document.body.offsetHeight)
     return (
       <section
         className="Footer"
-      >
-        <div style={{
+        style={{
           opacity: this.state.scroll
-        }}>
-          <H2 className="Footer-title" bottom="small">
-            Get in touch
-          </H2>
+        }}
+        ref={footer => {
+          this.footer = footer
+        }}
+      >
+        <H2 className="Footer-title" bottom="small">
+          Get in touch
+        </H2>
 
-          {data.map(data =>
-            <div className="Footer-column" key={data.title}>
-              <h1 className="Footer-legend">
-                {data.title}
-              </h1>
-              <Body2>
-                <Link noStyle href={data.link}>
-                  {data.content}
-                </Link>
-              </Body2>
-            </div>
-          )}
+        {data.map(data => (
+          <div className="Footer-column" key={data.title}>
+            <h1 className="Footer-legend">{data.title}</h1>
+            <Body2>
+              <Link noStyle href={data.link}>
+                {data.content}
+              </Link>
+            </Body2>
+          </div>
+        ))}
 
-          <div className="Footer-column">
-            <h1 className="Footer-legend">Follow us</h1>
-            <div className="Footer-social">
-              <Link noStyle
-                href="https://twitter.com/aranjastudio"
-                className="Footer-socialIcon"
-              >
-                <img src={twitter} alt="Aranja on Twitter" />
-              </Link>
-              <Link noStyle
-                href="https://facebook.com/aranja.is"
-                className="Footer-socialIcon"
-              >
-                <img src={facebook} alt="Aranja on Facebook" />
-              </Link>
-              <Link noStyle href="https://github.com/aranja" className="Footer-socialIcon">
-                <img src={github} alt="Aranja on Github" />
-              </Link>
-            </div>
+        <div className="Footer-column">
+          <h1 className="Footer-legend">Follow us</h1>
+          <div className="Footer-social">
+            <Link
+              noStyle
+              href="https://twitter.com/aranjastudio"
+              className="Footer-socialIcon"
+            >
+              <img src={twitter} alt="Aranja on Twitter" />
+            </Link>
+            <Link
+              noStyle
+              href="https://facebook.com/aranja.is"
+              className="Footer-socialIcon"
+            >
+              <img src={facebook} alt="Aranja on Facebook" />
+            </Link>
+            <Link
+              noStyle
+              href="https://github.com/aranja"
+              className="Footer-socialIcon"
+            >
+              <img src={github} alt="Aranja on Github" />
+            </Link>
           </div>
         </div>
       </section>
