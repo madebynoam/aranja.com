@@ -42,7 +42,7 @@ class Footer extends React.Component {
 
   onScroll() {
     const ratio =
-      (window.pageYOffset / (this.pageHeight - this.viewHeight) - 1) * 10
+      (window.pageYOffset / (this.pageHeight - this.viewHeight) - 1) * 13.37
     this.footer.style.setProperty('--footer', Math.min(1, Math.max(0, ratio)))
   }
 
@@ -62,45 +62,47 @@ class Footer extends React.Component {
         }}
       >
         <div className="Footer-inner">
-          <H2 className="Footer-title" bottom="small">
-            Get in touch
-          </H2>
+          <div className="Footer-content">
+            <H2 className="Footer-title" bottom="small">
+              Get in touch
+            </H2>
 
-          {data.map(data => (
-            <div className="Footer-column" key={data.title}>
-              <h1 className="Footer-legend">{data.title}</h1>
-              <Body2>
-                <Link noStyle href={data.link}>
-                  {data.content}
+            {data.map(data => (
+              <div className="Footer-column" key={data.title}>
+                <h1 className="Footer-legend">{data.title}</h1>
+                <Body2>
+                  <Link noStyle href={data.link}>
+                    {data.content}
+                  </Link>
+                </Body2>
+              </div>
+            ))}
+
+            <div className="Footer-column">
+              <h1 className="Footer-legend">Follow us</h1>
+              <div className="Footer-social">
+                <Link
+                  noStyle
+                  href="https://twitter.com/aranjastudio"
+                  className="Footer-socialIcon"
+                >
+                  <img src={twitter} alt="Aranja on Twitter" />
                 </Link>
-              </Body2>
-            </div>
-          ))}
-
-          <div className="Footer-column">
-            <h1 className="Footer-legend">Follow us</h1>
-            <div className="Footer-social">
-              <Link
-                noStyle
-                href="https://twitter.com/aranjastudio"
-                className="Footer-socialIcon"
-              >
-                <img src={twitter} alt="Aranja on Twitter" />
-              </Link>
-              <Link
-                noStyle
-                href="https://facebook.com/aranja.is"
-                className="Footer-socialIcon"
-              >
-                <img src={facebook} alt="Aranja on Facebook" />
-              </Link>
-              <Link
-                noStyle
-                href="https://github.com/aranja"
-                className="Footer-socialIcon"
-              >
-                <img src={github} alt="Aranja on Github" />
-              </Link>
+                <Link
+                  noStyle
+                  href="https://facebook.com/aranja.is"
+                  className="Footer-socialIcon"
+                >
+                  <img src={facebook} alt="Aranja on Facebook" />
+                </Link>
+                <Link
+                  noStyle
+                  href="https://github.com/aranja"
+                  className="Footer-socialIcon"
+                >
+                  <img src={github} alt="Aranja on Github" />
+                </Link>
+              </div>
             </div>
           </div>
         </div>

@@ -10,32 +10,34 @@
   right: 0;
   width: 100%;
   z-index: -1;
-  min-height: between(200px, 400px, $sm, $md);  
   background: rgba(1, 1, 25, 0.8); //temp
 }
 
 .Footer-inner {
+  background: $blue;
+  opacity: var(--footer);
+}
+
+.Footer-content {
+  padding: 5%;
   align-items: center;
   color: $white;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  background: $blue;
-  padding: 5%;
   text-align: center;
-  opacity: var(--footer);
+  transform: translateY(-30px) translateY(calc(var(--footer) * 30px));
+  transition: transform 0.1s ease-out;
 
   @include respond-to(md) {
     align-items: baseline;
     text-align: left;
-    min-height: 25rem;
   }
   @include respond-to(xlg) {
     padding-left: $horizontalPadding;
     padding-right: $horizontalPadding;
   }
 }
-
 .Footer-legend {
   font-size: 0.75rem;
   letter-spacing: 0.1rem;
