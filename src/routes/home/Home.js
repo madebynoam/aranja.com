@@ -7,23 +7,17 @@ import Intro from '../../components/Intro'
 import CaseStudyGrid from '../../components/CaseStudyGrid'
 import FamilyGrid from '../../components/FamilyGrid'
 import Clients from '../../components/Clients'
-import { H2, Body1 } from '../../typography'
+import { H1, H2, Body1 } from '../../typography'
 import { Editable } from 'tux'
 
 const Home = ({ content, hero, services, showOffs, caseStudies }) => (
   <Editable model={content}>
     <Page name="Home" home>
       <Section noPadding top="medium" bottom="medium">
-        <Intro
-          main
-          text={(['At Aranja, we like ', 'to do things properly'])}
-        />
+        <Intro main text={['At Aranja, we like ', 'to do things properly']} />
       </Section>
       <Hero hero={hero} parallax />
       <Section bottom="xlarge">
-        <H2 top="xlarge" bottom="large" center>
-          We are a web development studio
-        </H2>
         <Services services={services} />
       </Section>
       <Section bottom="xlarge">

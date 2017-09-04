@@ -23,13 +23,12 @@
   @include respond-to(md) {
     align-items: flex-end;
     width: 50%; 
+    .Intro.main & {
+      width: 100%;
+    }
   }
 
   > h1 {
-    line-height: 1;
-  }
-
-  .Intro-main {
     line-height: 1.15;
   }
 }
