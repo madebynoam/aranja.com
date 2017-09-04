@@ -46,4 +46,4 @@ CaseStudyGrid.propTypes = {
   button: PropTypes.string,
 }
 
-export default withReveal(CaseStudyGrid)
+export default withReveal(CaseStudyGrid, { minTopValue: 30 })
