@@ -12,9 +12,11 @@ import { Editable } from 'tux'
 const Home = ({ content, hero, services, showOffs, caseStudies }) => (
   <Editable model={content}>
     <Page name="Home" home>
-      <Hero hero={hero} title="Teamwork is the name of the game" cover />
-      <Services services={services} />
-      <Section>
+      <Hero hero={hero} text cover />
+      <Section bottom="xlarge">
+        <Services services={services} />
+      </Section>
+      <Section bottom="xlarge">
         <H2 top="xlarge" center>
           Recent work
         </H2>
@@ -23,15 +25,15 @@ const Home = ({ content, hero, services, showOffs, caseStudies }) => (
         </Body1>
         <CaseStudyGrid caseStudies={caseStudies} />
       </Section>
-      {/* <Section top="xlarge">
-        <H2 top="xlarge" center>
+      <Section top="xlarge" bottom="xlarge">
+        <H2 center>
           One family
         </H2>
         <Body1 bottom="large" center>
           Looking forward to Mondays since 2013
         </Body1>
         <FamilyGrid />
-      </Section> */}
+      </Section>
       <Clients />
     </Page>
   </Editable>

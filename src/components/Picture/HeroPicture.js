@@ -26,7 +26,7 @@ class HeroPicture extends Component {
   }
 
   render() {
-    const { src, cover, ...props } = this.props
+    const { src, cover, parallax, ...props } = this.props
     const { isMounted, isLoaded } = this.state
 
     if (!Array.isArray(src)) {
@@ -41,7 +41,7 @@ class HeroPicture extends Component {
 
     return (
       <picture
-        className={classNames('HeroPicture', isLoaded && 'is-loaded', cover && 'cover')}
+        className={classNames('HeroPicture', isLoaded && 'is-loaded', cover && 'cover', parallax && 'withParallax')}
         style={style}
       >
         {isMounted &&

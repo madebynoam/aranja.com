@@ -1,25 +1,47 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import classNames from 'classnames'
-import { H1, H3 } from '../../typography'
 import ScrollIndicator from '../ScrollIndicator'
 import AnimatedText from '../AnimatedText'
 import HeroPicture from '../Picture/HeroPicture'
-
+import Parallax from '../Parallax'
+import { H1, H2 } from '../../typography'
 import './styles.css'
 
 class Hero extends Component {
   render() {
-    const { hero, title, darken, cover } = this.props
-    return <div className={classNames("Hero", "darken", darken && "darken", cover && "cover")}>
-        <div className="Hero-content">
-          <h1 className="Hero-text">
-            <AnimatedText text={['At Aranja, we like to ', 'do things properly' ]}/>
-          </h1>
+    const { hero, text, darken, cover, parallax } = this.props
+    return (
+      <Parallax>
+        <div
+          className={classNames(
+            'Hero',
+            'darken',
+            darken && 'darken',
+            cover && 'cover',
+            parallax && 'withParallax'
+          )}
+        >
+          <div className="Hero-content">
+            <AnimatedText
+              className="Hero-text"
+              component={H1}
+              text={text && ['At Aranja, we like to ', 'do things properly']}
+            />
+          </div>
+          <HeroPicture src={hero.hero.src} cover={cover} parallax={parallax} />
+          <ScrollIndicator />
         </div>
-        <HeroPicture src={hero.hero.src} cover={cover} />
-        <ScrollIndicator />
-      </div>;
+      </Parallax>
+    )
   }
+}
+
+Hero.propTypes = {
+  text: PropTypes.bool,
+  darken: PropTypes.bool,
+  cover: PropTypes.bool,
+  hero: PropTypes.object,
 }
 
 export default Hero

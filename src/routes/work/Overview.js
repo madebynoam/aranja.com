@@ -9,7 +9,7 @@ const Overview = ({ content, hero, casestudies }) =>
   <Editable model={content}>
     <Page name="Work">
       <Intro project="We've been busy" description="Have a look around at some of our latest projects" />
-      <Hero hero={hero} />
+      <Hero hero={hero} parallax />
       {casestudies.items.map((study, index) =>
         <CaseStudyPreview key={study.fields.projectName} title={study.fields.projectName} duration={study.fields.projectDuration} description={study.fields.projectDescription} slug={study.fields.slug} img={study.fields.heroImage.fields.file.url} url={`/work/${study.fields.slug}`} alignment={index % 2 === 0 ? 'left' : 'right'}/>
       )}

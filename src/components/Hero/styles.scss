@@ -11,9 +11,8 @@
   &.darken {
     &::before {
       content: '';
-      background: rgba(0, 0, 0, 0.15);
+      background: rgba(0, 0, 0, 0.1);
       height: 100%;
-      opacity: 1;
       position: absolute;
       transition: all 0.2s;
       width: 100%;
@@ -39,7 +38,8 @@
 }
 
 .Hero-content {
-  align-items: center;
+  align-items: flex-start;
+  flex-direction: column;
   display: flex;
   height: 100%;
   justify-content: center;
@@ -51,6 +51,8 @@
 .Hero-text {
   line-height: 1;
   font-size: between(40px, 100px, $sm, $lg);
+  transform: translateY(calc((var(--parallax) - 1) * -6rem));
+  transition: transform 0.1s ease;
   padding: 1ch;
   font-weight: 500;
   
@@ -60,10 +62,13 @@
   }
 
   @include respond-to(lg) {
-    font-size: 7.25rem;
+    //temp
+    font-size: 6.25rem;
+    margin-top: 1ch;
+    margin-left: 1ch;
+    line-height: 1.1;
   }
 
   @include respond-to(xlg) {
-    margin-left: -8ch;
   }
 }

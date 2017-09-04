@@ -27,16 +27,20 @@
 
 .HeroPicture-image,
 .HeroPicture-thumbnail {
-  bottom: 0;
-  height: 100%;
-  left: 0;
+  $offset: 1.5rem;
+  bottom: -#{$offset};
+  height: calc(100% + #{$offset});
+  left: -#{$offset};
   position: absolute;
-  right: 0;
-  top: 0;
-  width: 100%;
+  right: -#{$offset};
+  top: -#{$offset};
+  width: calc(100% + #{$offset});
 
   .HeroPicture.cover & {
     object-fit: cover;
+  }
+  .HeroPicture.withParallax & {
+    transform: translateY(calc(var(--parallax) * #{$offset}))
   }
 }
 

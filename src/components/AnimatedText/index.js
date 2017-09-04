@@ -1,27 +1,42 @@
 import React, { Component } from 'react'
 import classNames from 'classnames'
+import { H1 } from '../../typography'
 import './styles.css'
 
 class AnimatedText extends Component {
   constructor(props) {
     super(props)
     this.state = {
-        isVisible: false
+      isVisible: false
     }
   }
 
   componentDidMount() {
-      this.setState({
-          isVisible: true
-      })
+    this.setState({
+      isVisible: true
+    })
   }
 
   render() {
     const { isVisible } = this.state
-    const { text } = this.props
-
-    return text.map(text => <span className="AnimatedText"><span className={classNames('AnimatedText-part', isVisible && 'is-visible')}>{text}</span> </span>)
-    
+    const { component, className, text } = this.props
+    const RenderedComponent = component ? component : H1
+    return text
+      ? <RenderedComponent className={className}>
+          {text.map(text => (
+            <span className={classNames('AnimatedText')}>
+              <span
+                className={classNames(
+                  'AnimatedText-part',
+                  isVisible && 'is-visible'
+                )}
+              >
+                {text}
+              </span>{' '}
+            </span>
+          ))}
+        </RenderedComponent>
+      : null
   }
 }
 
