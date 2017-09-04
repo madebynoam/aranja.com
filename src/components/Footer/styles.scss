@@ -3,23 +3,28 @@
 @import '../../utils/responsive';
 
 .Footer {
-  align-items: center;
-  background: $blue;
   bottom: 0;
+  left: 0;
+  margin: auto;
+  position: fixed;
+  right: 0;
+  width: 100%;
+  z-index: -1;
+  min-height: between(200px, 400px, $sm, $md);  
+  background: rgba(1, 1, 25, 0.8); //temp
+}
+
+.Footer-inner {
+  align-items: center;
   color: $white;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  left: 0;
-  margin: auto;
+  background: $blue;
   padding: 5%;
-  position: fixed;
-  right: 0;
   text-align: center;
-  width: 100%;
-  z-index: -1;
-  min-height: between(200px, 400px, $sm, $md);
-  
+  opacity: var(--footer);
+
   @include respond-to(md) {
     align-items: baseline;
     text-align: left;
