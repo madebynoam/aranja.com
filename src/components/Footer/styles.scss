@@ -3,18 +3,20 @@
 @import '../../utils/responsive';
 
 .Footer {
+  background: rgba(1, 1, 25, 0.8);
   bottom: 0;
   left: 0;
   margin: auto;
+  height: 19rem;
   position: fixed;
   right: 0;
   width: 100%;
   z-index: -1;
-  background: rgba(1, 1, 25, 0.8); //temp
 }
 
 .Footer-inner {
   background: $blue;
+  height: 100%;
   opacity: var(--footer);
 }
 
@@ -24,10 +26,11 @@
   color: $white;
   display: flex;
   flex-wrap: wrap;
+  height: 100%;
   justify-content: center;
   text-align: center;
-  transform: translateY(-30px) translateY(calc(var(--footer) * 30px));
-  transition: transform 0.1s ease-out;
+  transform: translateY(4rem) translateY(calc(var(--footer) * -4rem));
+  transition: transform 0.15s cubic-bezier(0.18, 0.77, 0.82, 0.88);
 
   @include respond-to(md) {
     align-items: baseline;
