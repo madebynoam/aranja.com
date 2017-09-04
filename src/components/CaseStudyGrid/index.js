@@ -6,7 +6,7 @@ import { withReveal } from '../../hoc/withReveal'
 import './styles.css'
 
 const CaseStudyGrid = ({ caseStudies, button, padding, isVisible }) =>
-  <div className={classnames('CaseStudyGrid', isVisible && 'is-visible', padding && 'with-padding')}>
+  <div className={classnames('CaseStudyGrid', isVisible && 'is-visible', padding && 'withPadding')}>
     <div className="CaseStudyGrid-items">
       {caseStudies &&
         caseStudies.items.slice(0, 3).map((item, index) =>

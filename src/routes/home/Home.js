@@ -14,6 +14,12 @@ const Home = ({ content, hero, services, showOffs, caseStudies }) => (
     <Page name="Home" home>
       <Hero hero={hero} text cover />
       <Section bottom="xlarge">
+        <H2 top="xlarge" center>
+          Recent work
+        </H2>
+        <Body1 bottom="large" center>
+          Take a look at some of our recent projects
+        </Body1>
         <Services services={services} />
       </Section>
       <Section bottom="xlarge">

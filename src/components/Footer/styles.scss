@@ -30,7 +30,6 @@
   justify-content: center;
   text-align: center;
   transform: translateY(4rem) translateY(calc(var(--footer) * -4rem));
-  transition: transform 0.15s cubic-bezier(0.18, 0.77, 0.82, 0.88);
 
   @include respond-to(md) {
     align-items: baseline;

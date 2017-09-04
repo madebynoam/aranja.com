@@ -12,7 +12,7 @@ import family03 from './family03.jpg'
 import family04 from './family04.jpg'
 import family05 from './family05.jpg'
 import family06 from './family06.jpg'
-import family07 from './family07.jpg'
+import family07 from './family071.jpg'
 import family08 from './family08.jpg'
 import family09 from './family09.jpg'
 
@@ -76,16 +76,12 @@ class FamilyGrid extends Component {
               <div className="Family-image" style={{ backgroundImage: `url(${family03})` }}/>
             </div>
             <div className="Family-item" data-animate>
-              <div className="Family-image" style={{ backgroundImage: `url(${family04})` }}/>
-              <div className="Family-image" style={{ backgroundImage: `url(${family06})` }}/>
-            </div>
-            <div className="Family-item" data-animate>
               <div className="Family-image" style={{ backgroundImage: `url(${family05})` }}/>
               <div className="Family-image" style={{ backgroundImage: `url(${family07})` }}/>
             </div>
             <div className="Family-item" data-animate>
-              <div className="Family-image" style={{ backgroundImage: `url(${family08})` }}/>
-              <div className="Family-image" style={{ backgroundImage: `url(${family02})` }}/>
+              <div className="Family-image" style={{ backgroundImage: `url(${family04})` }}/>
+              <div className="Family-image" style={{ backgroundImage: `url(${family06})` }}/>
             </div>
           </div>
         </div>
