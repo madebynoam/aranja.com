@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import classNames from 'classnames'
+import VisibilitySensor from 'react-visibility-sensor'
+import PropTypes from 'prop-types'
 import { H1 } from '../../typography'
 import './styles.css'
 
@@ -11,35 +13,47 @@ class AnimatedText extends Component {
     }
   }
 
-  componentDidMount() {
+  onChange(isVisible) {
     this.setState({
-      isVisible: true
+      isVisible: isVisible
     })
   }
 
   render() {
     const { isVisible } = this.state
-    const { component, className, text } = this.props
-    const RenderedComponent = component ? component : H1
-    const returnedText = Array.isArray(text) ? text : [text]
+    const { children, animation = 'AppearUp' } = this.props
 
-    return text
-      ? <RenderedComponent className={className}>
-          {returnedText.map(text => (
-            <span className={classNames('AnimatedText')}>
+    return (
+      <VisibilitySensor
+        onChange={isVisible => this.onChange(isVisible)}
+        active={!isVisible}
+        intervalDelay={0}
+        minTopValue={0}
+        partialVisibility
+      >
+        <div>
+          {children.split('\n').map(text => (
+            <span className={classNames('AnimatedText')} key={text}>
               <span
                 className={classNames(
                   'AnimatedText-part',
-                  isVisible && 'is-visible'
+                  isVisible && 'is-visible',
+                  `AnimatedText--${animation}`
                 )}
               >
                 {text}
               </span>
             </span>
           ))}
-        </RenderedComponent>
-      : null
+        </div>
+      </VisibilitySensor>
+    )
   }
+}
+
+AnimatedText.propTypes = {
+  text: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
+  animation: PropTypes.oneOf(['AppearUp', 'FadeIn'])
 }
 
 export default AnimatedText

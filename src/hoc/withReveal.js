@@ -50,11 +50,13 @@ export const withReveal = (
 
       return (
         <VisibilitySensor
+          resizeCheck={!isVisible}
           active={!isVisible}
           onChange={isVisible => this.onChange(isVisible)}
           intervalDelay={intervalDelay}
           minTopValue={minTopValue}
           partialVisibility={partialVisibility}
+          scrollDelay={100}
         >
           <WrappedComponent
             isVisible={isVisible}
