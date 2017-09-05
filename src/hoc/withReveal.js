@@ -3,12 +3,12 @@ import Observer from 'react-intersection-observer'
 
 export const withReveal = (
   WrappedComponent,
-  config,
+  className,
 ) => {
   return class extends PureComponent {
     render() {
       return (
-        <Observer triggerOnce>
+        <Observer triggerOnce className={className}>
         {inView => 
           <WrappedComponent
             isVisible={inView}
