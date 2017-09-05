@@ -3,9 +3,9 @@
 @import '../../utils/responsive';
 
 .Service {
-  --offset: 8rem;
+  --offset: 6rem;
   @media only screen and (min-width: $md) and (max-width: $xlg) {
-    --offset: between(80px, 128px, $md, $xlg);
+    --offset: between(60px, 96px, $md, $xlg);
   }
 
   display: flex;
@@ -28,8 +28,8 @@
     flex: 1;
     padding: var(--offset);
     
-    .Services > div:nth-child(even) .Service &,
-    .EditModal:nth-child(even) .Service & {
+    .Services > div:nth-child(odd) .Service &,
+    .EditModal:nth-child(odd) .Service & {
       order: 2;
     }
   }
@@ -53,7 +53,7 @@
   &::before {
     content: '';
     display: block;
-    padding-bottom: 75%;
+    padding-bottom: 100%;
     width: 100%;
   }
   
@@ -61,8 +61,8 @@
     flex: 0 1 auto;
     width: 50%;
 
-    .EditModal:nth-child(even) .Service &,
-    .Services > div:nth-child(even) .Service & {
+    .EditModal:nth-child(odd) .Service &,
+    .Services > div:nth-child(odd) .Service & {
       order: 1;
     }
   }

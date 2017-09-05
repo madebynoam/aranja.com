@@ -12,17 +12,13 @@ const nav = [
   { title: 'About', slug: 'about' }
 ]
 
-const Header = ({ inversed, active, fixed }) =>
+const Header = ({ inversed, active }) =>
   <header
-    className={classNames(
-      'Header',
-      inversed && 'is-inversed',
-      fixed && 'is-fixed'
-    )}
+    className="Header"
   >
     <Link noStyle href="/">
       <img
-        src={inversed ? logoInversed : logo}
+        src={logo}
         alt="Aranja logo"
         className="Header-logo"
       />

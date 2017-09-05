@@ -1,27 +1,30 @@
 import React from 'react'
 import { Editable } from 'tux'
-import { Body1, H3 } from '../../typography'
+import { Body1, H2, H3 } from '../../typography'
 import Page from '../../components/Page'
 import TeamGrid from '../../components/Team/Grid'
+import FamilyGrid from '../../components/FamilyGrid'
 import Section from '../../components/Section'
 import SectionHero from '../../components/SectionHero'
 import Hero from '../../components/Hero'
-import Intro from '../../components/CaseStudy/Intro'
+import Intro from '../../components/Intro'
 import teamHeroPhoto2 from '../../components/Team/Aranja00557.jpg'
 import teamHeroPhoto3 from '../../components/Team/Aranja00711-Edit.jpg'
 import '../../components/Team/styles.css'
 
-const About = ({ content, team, hero }) =>
+const About = ({ content, team, hero }) => (
   <Editable model={content}>
     <Page name="About">
-      <Intro
-        project="About our company"
-        description="We are a web development studio based out of beautiful Reykjavik, Iceland."
-      />
+      <Section noPadding top="medium" bottom="medium">
+        <Intro
+          text="About our company"
+          description="We are a web development studio based out of beautiful Reykjavik, Iceland."
+        />
+      </Section>
       <Hero hero={hero} />
       <Section bottom="large">
         <div className="Team-copy">
-          <Body1 top="large" bottom="large" center>
+          <Body1 top="xlarge" bottom="xlarge" center>
             Aranja is a small web studio based and raised in Iceland. Our goal,
             to improve the web, is only achieved with a passionate team that is
             motivated and happy. We believe that the community is what makes the
@@ -29,15 +32,13 @@ const About = ({ content, team, hero }) =>
           </Body1>
         </div>
         <TeamGrid />
-        <H3 top="large" bottom="small" center>
+        <H2 top="xlarge" center>
           Focus on quality
-        </H3>
-        <div className="Team-copy">
-          <Body1 bottom="medium" center>
-            We focus on doing quality work, keeping the client happy and the
-            community amazed.
-          </Body1>
-        </div>
+        </H2>
+        <Body1 bottom="large" center>
+          We focus on doing quality work, keeping the <br />client happy and the
+          community amazed.
+        </Body1>
         <SectionHero img={teamHeroPhoto2} caption="Hard at work" />
         <div className="Team-copy">
           <Body1 top="medium" bottom="medium" center>
@@ -49,7 +50,17 @@ const About = ({ content, team, hero }) =>
         </div>
         <SectionHero img={teamHeroPhoto3} caption="Hacking on a side-project" />
       </Section>
+      <Section top="medium" bottom="medium">
+        <H3 top="large" center>
+          One Family
+        </H3>
+        <Body1 bottom="large" center>
+          Looking forward to Mondays since 2013
+        </Body1>
+        <FamilyGrid />
+      </Section>
     </Page>
   </Editable>
+)
 
 export default About

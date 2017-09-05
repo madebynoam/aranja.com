@@ -5,12 +5,9 @@
 .Header {
   padding: var(--ms3);
   width: 100%;
-  z-index: 2;
+  z-index: 1;
   display: flex;
   justify-content: space-between;
-  &.is-fixed {
-    position: absolute;
-  }
 }
 
 .Header-logo {
@@ -41,6 +38,9 @@
 
   @include respond-to(md) {
     font-size: 18px;
+    &:hover {
+      color: $blue;
+    }
   }
 
   &.is-active {

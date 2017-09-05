@@ -10,12 +10,11 @@
   @include respond-to(md) {
     display: flex;
     align-items: center;
-    min-height: 30rem;
   }
 
   &:hover {
     .CaseStudyPreview-title {
-      color: lighten($blue, 10%);
+      color: $blue;
     }
     .CaseStudyPreview-background::after {
       opacity: 0.5;
@@ -24,7 +23,7 @@
 }
 
 .CaseStudyPreview-content {
-  --offset: 3rem;
+  --offset: 4.3rem;
   
   @media only screen and (min-width: $md) and (max-width: $xlg) {
     --offset: between(30px, 70px, $md, $xlg);
@@ -34,15 +33,15 @@
   z-index: 2;
   
   @include respond-to(md) {
-    padding-right: var(--offset);
+    margin-right: var(--offset);
     width: 40%;
   }
 
   .CaseStudyPreview.is-alignedRight & {
     
     @include respond-to(md) {
-      padding-right: 0;
-      padding-left: var(--offset);
+      margin-right: 0;
+      margin-left: var(--offset);
     }  
   }
 }
@@ -61,7 +60,6 @@
   .CaseStudyPreview-title {
     line-height: 1;
     padding-bottom: var(--ms2);
-    color: $blue;
     transition: color 0.2s;
 }
 

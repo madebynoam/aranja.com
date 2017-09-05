@@ -21,9 +21,11 @@ class AnimatedText extends Component {
     const { isVisible } = this.state
     const { component, className, text } = this.props
     const RenderedComponent = component ? component : H1
+    const returnedText = Array.isArray(text) ? text : [text]
+
     return text
       ? <RenderedComponent className={className}>
-          {text.map(text => (
+          {returnedText.map(text => (
             <span className={classNames('AnimatedText')}>
               <span
                 className={classNames(
@@ -32,7 +34,7 @@ class AnimatedText extends Component {
                 )}
               >
                 {text}
-              </span>{' '}
+              </span>
             </span>
           ))}
         </RenderedComponent>

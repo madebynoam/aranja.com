@@ -1,0 +1,42 @@
+@import '../../utils/functions';
+@import '../../utils/vars';
+@import '../../utils/responsive';
+
+.Intro {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10rem between(16px, 100px, $sm, $xlg) 0 between(16px, 100px, $sm, $xlg);
+  @include respond-to(md) {
+    flex-wrap: nowrap;
+  }
+  @include respond-to(xlg) {
+    flex-wrap: nowrap;
+    padding: 15rem $horizontalPadding 0 $horizontalPadding;
+  }
+}
+
+.Intro-split {
+  display: flex;
+
+  &:first-child {
+    flex: 1 0 auto;
+    @include respond-to(md) {
+      margin-right: 3rem;
+    }
+    @include respond-to(xlg) {
+      margin-right: 0;
+    }
+  }
+
+  @include respond-to(md) {
+    align-items: flex-end;
+    width: 50%; 
+    .Intro.main & {
+      width: 100%;
+    }
+  }
+
+  > h1 {
+    line-height: 1.15;
+  }
+}
