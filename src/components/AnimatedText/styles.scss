@@ -12,7 +12,7 @@ $maxChilds: 5;
  @for $i from 1 to $maxChilds {
   &:nth-child(#{$i}) {
     .AnimatedText-part {
-        transition-delay: #{($i ) / 15}s;
+        transition-delay: #{($i - 1) / 15}s;
     }
   }
  }

@@ -12,13 +12,13 @@ const Service = ({ heading, copy, image, isVisible, hasBeenSeen }) =>
     <div className="Service-contentWrap">
       <div className="Service-content">
         <H2 bottom="small" className="Service-heading">
-          <AnimatedText>
+          <AnimatedText uncontrolled shouldAnimate={isVisible}>
             {heading.replace(' ', '\n')}
             {/* Todo: something else. */}
           </AnimatedText>
         </H2>
         <Body1 bottom="small" className="Service-copy">
-          <AnimatedText>
+          <AnimatedText uncontrolled shouldAnimate={isVisible}>
             {copy}
           </AnimatedText>
         </Body1>
