@@ -5,9 +5,9 @@ import { withReveal } from '../../hoc/withReveal'
 import { Body2 } from '../../typography'
 import './styles.css'
 
-const SectionHero = ({ img, caption, hasBeenSeen }) =>
+const SectionHero = ({ img, caption, isVisible }) =>
   <Parallax clamp>
-    <div className={classNames('SectionHero', hasBeenSeen && 'is-visible')}>
+    <div className={classNames('SectionHero', isVisible && 'is-visible')}>
       <div className="SectionHero-imageWrap">
         <div className="SectionHero-image" style={{ backgroundImage: `url(${img})` }} />
       </div>
