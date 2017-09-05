@@ -9,7 +9,7 @@ const CaseStudyGrid = ({ caseStudies, button, padding, isVisible }) =>
   <div className={classnames('CaseStudyGrid', isVisible && 'is-visible', padding && 'withPadding')}>
     <div className="CaseStudyGrid-items">
       {caseStudies &&
-        caseStudies.items.slice(0, 3).map((item, index) =>
+        caseStudies.items.slice(0, 6).map((item, index) =>
           <a href={`/work/${item.fields.slug}`} key={index} className="CaseStudyGrid-itemWrap">
             {item.fields.projectName &&
               <p className="CaseStudyGrid-caption">

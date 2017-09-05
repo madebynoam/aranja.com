@@ -17,7 +17,7 @@ $maxItems: 6;
 
 .CaseStudyGrid-items {
   display: grid;
-  grid-gap: 2rem;
+  grid-gap: 0.5rem;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
 }
@@ -31,7 +31,8 @@ $maxItems: 6;
   position: relative;
   transform-origin: bottom right;
 
-  &:first-child {
+  &:nth-child(2),
+  &:nth-child(4) {
     grid-row-end: span 2;
   }
 
@@ -88,7 +89,7 @@ $maxItems: 6;
   text-align: center;
   text-transform: uppercase;
   top: 50%;
-  transform: translateY(0);  
+  transform: translateY(0);
   transition: all 0.4s $ease-reveal;
   z-index: 1;
 }
@@ -103,7 +104,7 @@ $maxItems: 6;
   width: 100%;
   transition: all 1s ease;
 
-  @for $i from 1 through $maxItems {  
+  @for $i from 1 through $maxItems {
     .CaseStudyGrid.is-visible .CaseStudyGrid-itemWrap:nth-child(#{$i}) & {
       &::before {
         transition-delay: 0.075s * ($i - 1);
@@ -130,7 +131,6 @@ $maxItems: 6;
       transition: transform 1s $ease-reveal;
       transform: translateY(-100%);
     }
-
   }
 
   &::after {
