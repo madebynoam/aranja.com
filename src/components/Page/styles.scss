@@ -51,6 +51,7 @@
   opacity: 0;
   transform: translateX(-10%);
   transition: all 0.5s 0.2s $ease-pageEnter;
+  will-change: transform;
   
   .Page.is-mounted & {
     opacity: 1;

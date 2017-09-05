@@ -87,11 +87,10 @@
     top: 0;
     left: 0;
     transform: translateX(-50%);
-    width: 100%;
-    height: 100%;
+    width: 101%;
+    height: 101%;
     background-color: aliceblue;
     z-index: 2;
-    transition: transform 0s;
     content: '';
 
     .Service.is-visible & {
@@ -106,11 +105,10 @@
     top: 0;
     left: 0;
     transform: translateX(0);
-    width: 100%;
-    height: 100%;
+    width: 101%;
+    height: 101%;
     background-color: $white;
     z-index: 2;
-    transition: transform 0s;
     content: '';
 
     .Service.is-visible & {
