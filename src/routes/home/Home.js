@@ -21,17 +21,6 @@ const Home = ({ content, hero, services, showOffs, caseStudies }) => (
       <Section bottom="xlarge">
         <Services services={services} />
       </Section>
-      <Section bottom="xlarge">
-        <H2 center top="xlarge">
-          <AnimatedText>Recent work</AnimatedText>
-        </H2>
-        <Body1 center bottom="large">
-          <AnimatedText>
-            Take a look at some of our recent projects
-          </AnimatedText>
-        </Body1>
-        <CaseStudyGrid caseStudies={caseStudies} />
-      </Section>
       <Section>
         <H2 center top="xlarge">
           <AnimatedText>Trusted by the best</AnimatedText>
@@ -42,6 +31,17 @@ const Home = ({ content, hero, services, showOffs, caseStudies }) => (
           </AnimatedText>
         </Body1>
         <Clients />
+      </Section>
+      <Section bottom="xlarge">
+        <H2 center top="xlarge">
+          <AnimatedText>Recent work</AnimatedText>
+        </H2>
+        <Body1 center bottom="large">
+          <AnimatedText>
+            Take a look at some of our recent projects
+          </AnimatedText>
+        </Body1>
+        <CaseStudyGrid caseStudies={caseStudies} />
       </Section>
       <NextUp />
     </Page>
