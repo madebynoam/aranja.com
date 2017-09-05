@@ -50,7 +50,6 @@ class AnimatedText extends PureComponent {
       <VisibilitySensor
         onChange={isVisible => this.onChange(isVisible)}
         active={!isVisible}
-        intervalDelay={0}
         minTopValue={0}
         partialVisibility
       >
