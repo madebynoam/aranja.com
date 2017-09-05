@@ -6543,7 +6543,7 @@ tunnel-agent@^0.6.0:
   dependencies:
     safe-buffer "^5.0.1"
 
-tux-adapter-contentful@^0.3.0-beta.3:
+tux-adapter-contentful@^0.3.0:
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/tux-adapter-contentful/-/tux-adapter-contentful-0.3.0.tgz#c8f6d496698e2e95cb8c9ef9ba913b1c2c975b32"
   dependencies:
@@ -6551,7 +6551,7 @@ tux-adapter-contentful@^0.3.0-beta.3:
     lodash "^4.17.4"
     tux "^0.3.0"
 
-tux-scripts@^0.3.0-beta.3:
+tux-scripts@^0.3.0:
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/tux-scripts/-/tux-scripts-0.3.0.tgz#15e41c757c8391b380113fe8ecbe83dbba7a6c01"
   dependencies:
@@ -6569,7 +6569,7 @@ tux-scripts@^0.3.0-beta.3:
     tux "^0.3.0"
     yargs "^6.6.0"
 
-tux@^0.3.0, tux@^0.3.0-beta.3:
+tux@^0.3.0:
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/tux/-/tux-0.3.0.tgz#9783d020ec5c2726637281755ebb29d0530f3148"
   dependencies:

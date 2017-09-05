@@ -41,7 +41,7 @@ $offset: 6rem;
   position: relative;
   overflow: hidden;
   will-change: transform;
-  transition: transform 0.4s $easeOutcirc;
+  transition: transform 0.4s $easeOutCirc;
   &::before {
     content: '';
     display: block;
