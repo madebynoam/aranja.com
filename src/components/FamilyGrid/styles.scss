@@ -2,6 +2,8 @@
 @import '../../utils/vars';
 @import '../../utils/responsive';
 
+$offset: 6rem;
+
 .Family {
   position: relative;
   z-index: 1;
@@ -13,9 +15,11 @@
 
 .Family-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 2rem;
-
+  margin-top: $offset;
+  margin-bottom: $offset;
+  transform: translateZ(1px);
 }
 
 .Family-heading {
@@ -36,13 +40,24 @@
 .Family-item {
   position: relative;
   overflow: hidden;
+  will-change: transform;
+  transition: transform 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
   &::before {
     content: '';
     display: block;
-    padding-top: 80%;
+    padding-top: 133%;
   }
-  &:nth-child(2) {
-    grid-row-end: span 2;
+  &:nth-child(3n + 1) {
+    top: -#{$offset};
+    transform: translateY(calc(var(--parallax) * #{$offset}));
+  }
+  &:nth-child(3n + 2) {
+    top: -#{$offset};
+    transform: translateY(calc(var(--parallax) * #{$offset/1.333}));
+  }
+  &:nth-child(3n + 3) {
+    top: -#{$offset};
+    transform: translateY(calc(var(--parallax) * #{$offset}));
   }
 }
 
@@ -56,4 +71,40 @@
   right: 0;
   top: 0;
   width: 100%;
+
+  &::before {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateX(-100%);
+    width: 100%;
+    height: 100%;
+    background-color: $light;
+    z-index: 2;
+    content: '';
+
+    .Family.is-visible & {
+      transform: translateX(100%);
+    }
+
+  }
+
+  &::after {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateX(0);
+    width: 100%;
+    height: 100%;
+    background-color: $white;
+    z-index: 2;
+    content: '';
+
+    .Family.is-visible & {
+      transition: transform 0.7s $ease-reveal;
+      transform: translateX(100%);
+    }
+  }
 }

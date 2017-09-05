@@ -14,7 +14,7 @@ const Home = ({ content, hero, services, showOffs, caseStudies }) => (
   <Editable model={content}>
     <Page name="Home" home>
       <Section noPadding top="medium" bottom="medium">
-        <Intro main text={['At Aranja, we like ', 'to do things properly']} />
+        <Intro main text={['We are Aranja, ', 'a creative web studio']} />
       </Section>
       <Hero hero={hero} parallax />
       <Section bottom="xlarge">
@@ -28,13 +28,6 @@ const Home = ({ content, hero, services, showOffs, caseStudies }) => (
           Take a look at some of our recent projects
         </Body1>
         <CaseStudyGrid caseStudies={caseStudies} />
-      </Section>
-      <Section top="xlarge" bottom="xlarge">
-        <H2 center>One family</H2>
-        <Body1 bottom="large" center>
-          Looking forward to Mondays since 2013
-        </Body1>
-        <FamilyGrid />
       </Section>
       <Clients />
     </Page>

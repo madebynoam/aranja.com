@@ -21,13 +21,6 @@ class Hero extends Component {
             parallax && 'withParallax'
           )}
         >
-          {/* <div className="Hero-content">
-            <AnimatedText
-              className="Hero-text"
-              component={H1}
-              text={text && ['At Aranja, we like to ', 'do things properly']}
-            />
-          </div> */}
           <HeroPicture src={hero.hero.src} parallax={parallax} />
           <ScrollIndicator />
         </div>

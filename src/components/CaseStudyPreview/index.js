@@ -18,7 +18,7 @@ class CaseStudyPreview extends Component {
       isVisible,
     } = this.props
     return (
-      <Section top="medium" bottom="medium">
+      <Section top="large" bottom="large">
         <Link
           noStyle
           href={url}
