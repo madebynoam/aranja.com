@@ -45,7 +45,7 @@ $maxChilds: 8;
     opacity: 1;
     @for $i from 1 through $maxChilds {
       &:nth-child(#{$i}) {
-        transition-delay: #{($i - 1) / 15}s;
+        transition-delay: #{($i - 1) / 25}s;
       }
      }
   }

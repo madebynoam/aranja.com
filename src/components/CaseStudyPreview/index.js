@@ -4,6 +4,7 @@ import { H1, Body1 } from '../../typography'
 import Section from '../Section'
 import Link from '../Link'
 import { withReveal } from '../../hoc/withReveal'
+import AnimatedText from '../AnimatedText'
 import './styles.css'
 
 class CaseStudyPreview extends Component {
@@ -15,7 +16,7 @@ class CaseStudyPreview extends Component {
       img,
       alignment,
       url,
-      isVisible,
+      isVisible
     } = this.props
     return (
       <Section top="large" bottom="large">
@@ -30,16 +31,22 @@ class CaseStudyPreview extends Component {
         >
           <div className="CaseStudyPreview-content">
             <p className="CaseStudyPreview-date">
-              {duration}
+              <AnimatedText uncontrolled shouldAnimate={isVisible}>
+                {duration}
+              </AnimatedText>
             </p>
             <div className="CaseStudyPreview-title">
               <H1>
-                {title}
+                <AnimatedText uncontrolled shouldAnimate={isVisible}>
+                  {title}
+                </AnimatedText>
               </H1>
             </div>
             <div className="CaseStudyPreview-description">
               <Body1>
-                {description}
+                <AnimatedText uncontrolled shouldAnimate={isVisible}>
+                  {description}
+                </AnimatedText>
               </Body1>
             </div>
           </div>
