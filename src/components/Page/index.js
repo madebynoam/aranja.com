@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
+import root from 'window-or-global'
 import Header from '../Header'
 import Footer from '../Footer'
 import './styles.css'
@@ -14,6 +15,7 @@ class Page extends Component {
   }
 
   componentDidMount() {
+    root.scrollTo(0, 0)
     this.setState({
       isMounted: true
     })
