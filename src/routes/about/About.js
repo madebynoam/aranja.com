@@ -13,7 +13,7 @@ import teamHeroPhoto2 from '../../components/Team/Aranja00557.jpg'
 import teamHeroPhoto3 from '../../components/Team/Aranja00711-Edit.jpg'
 import '../../components/Team/styles.css'
 
-const About = ({ content, team, hero }) => (
+const About = ({ content, team, hero, collage }) => (
   <Editable model={content}>
     <Page name="About">
       <Section noPadding top="medium" bottom="medium">
@@ -40,7 +40,7 @@ const About = ({ content, team, hero }) => (
             </Body1>
           </div>
         </div>
-        <TeamGrid />
+        <TeamGrid images={collage}/>
         <H2 top="xlarge" center>
           <AnimatedText>{'Focus on quality'}</AnimatedText>
         </H2>

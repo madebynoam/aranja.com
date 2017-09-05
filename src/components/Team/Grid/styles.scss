@@ -6,18 +6,18 @@
   grid-template-rows: 1fr 1fr;
 }
 
-.Team-gridImageMask[data-image="large"] {
-  grid-row-end: span 2;
-  .Team-gridImage {   
-    &::before {
-      padding-top: 135.3%;
-    }
-  }
-}
-.Team-gridImageMask[data-image="small"] {
+.Team-gridImageMask {
   .Team-gridImage {
     &::before {
       padding-top: 67.65%;
+    }
+  }
+  &:first-child {
+    grid-row-end: span 2;
+    .Team-gridImage {
+      &::before {
+        padding-top: 135.3%;
+      }
     }
   }
 }

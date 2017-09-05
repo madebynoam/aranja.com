@@ -1,9 +1,6 @@
 import React, { Component } from 'react'
 import { TweenMax, Power4 } from 'gsap'
 import VisibilitySensor from 'react-visibility-sensor'
-import teamPhoto00 from './00.jpg'
-import teamPhoto01 from './01.jpg'
-import teamPhoto02 from './02.jpg'
 import './styles.css'
 
 const ease = Power4.easeOut
@@ -53,7 +50,8 @@ class TeamGrid extends Component {
 
   render() {
     const { isVisible } = this.state
-
+    const { images } = this.props
+    console.log(images)
     return (
       <VisibilitySensor
         onChange={isVisible => this.onChange(isVisible)}
@@ -68,27 +66,15 @@ class TeamGrid extends Component {
             this.componentRef = componentRef
           }}
         >
-          <div className="Team-gridImageMask" data-image="large">
+        {images && images.items[0].fields.images.map((image, index) => 
+          <div className="Team-gridImageMask">
             <div
               className="Team-gridImage"
-              style={{ backgroundImage: `url(${teamPhoto00})` }}
+              style={{ backgroundImage: `url(${image.fields.file.url})` }}
               data-animate="image"
             />
           </div>
-          <div className="Team-gridImageMask" data-image="small">
-            <div
-              className="Team-gridImage"
-              style={{ backgroundImage: `url(${teamPhoto01})` }}
-              data-animate="image"
-            />
-          </div>
-          <div className="Team-gridImageMask" data-image="small">
-            <div
-              className="Team-gridImage"
-              style={{ backgroundImage: `url(${teamPhoto02})` }}
-              data-animate="image"
-            />
-          </div>
+        )}
         </div>
       </VisibilitySensor>
     )

@@ -7,7 +7,7 @@ import Intro from '../../components/Intro'
 import ArrowButton from '../../components/ArrowButton'
 import ShoutOut from '../../components/CaseStudy/ShoutOut'
 import Section from '../../components/Section'
-import CaseStudyGrid from '../../components/CaseStudyGrid'
+import NextUp from '../../components/NextUp'
 import { formatHero } from '../../utils/formatters'
 
 const CaseStudy = ({ content, caseStudy, caseStudies }) => {
@@ -37,9 +37,10 @@ const CaseStudy = ({ content, caseStudy, caseStudies }) => {
             </div>
           </div>
         </Section>
-        <Section noPadding>
-        <CaseStudyGrid caseStudies={caseStudies} button="View all studies" padding />
-        </Section>
+        {/* // Todo */}
+        {/* <Section noPadding>
+          <NextUp next={caseStudies.items[0]} />
+        </Section> */}
       </Page>
     </Editable>
   )

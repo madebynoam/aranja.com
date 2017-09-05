@@ -6,13 +6,14 @@ export default {
   path: '/about',
 
   async action({ context: { api } }) {
-    const [pages] = await Promise.all([
+    const [pages, collage] = await Promise.all([
       api.getEntries({ content_type: 'page' }),
+      api.getEntries({ content_type: 'collage' }),
     ])
 
     const content = pages.items.find(
       page => page.sys.id === '3X6iiQT9ZKYyIkgaIWgo6A'
     )
-    return <About hero={formatHero(content.fields.hero)} />
+    return <About hero={formatHero(content.fields.hero)} collage={collage} />
   },
 }

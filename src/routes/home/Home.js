@@ -5,7 +5,6 @@ import Services from '../../components/Services'
 import Section from '../../components/Section'
 import Intro from '../../components/Intro'
 import CaseStudyGrid from '../../components/CaseStudyGrid'
-import NextUp from '../../components/NextUp'
 import Clients from '../../components/Clients'
 import { H1, H2, Body1 } from '../../typography'
 import AnimatedText from '../../components/AnimatedText'
@@ -43,7 +42,6 @@ const Home = ({ content, hero, services, showOffs, caseStudies }) => (
         </Body1>
         <CaseStudyGrid caseStudies={caseStudies} />
       </Section>
-      <NextUp />
     </Page>
   </Editable>
 )
