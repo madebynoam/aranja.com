@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { TweenMax, Power4 } from 'gsap'
-import VisibilitySensor from 'react-visibility-sensor'
+import Observer from 'react-intersection-observer'
 import './styles.css'
 
 const ease = Power4.easeOut
@@ -49,34 +49,29 @@ class TeamGrid extends Component {
   }
 
   render() {
-    const { isVisible } = this.state
     const { images } = this.props
     console.log(images)
     return (
-      <VisibilitySensor
-        onChange={isVisible => this.onChange(isVisible)}
-        active={!isVisible}
-        intervalDelay={100}
-        minTopValue={300}
-        partialVisibility
-      >
-        <div
-          className="Team-grid"
-          ref={componentRef => {
-            this.componentRef = componentRef
-          }}
-        >
-        {images && images.items[0].fields.images.map((image, index) => 
-          <div className="Team-gridImageMask">
-            <div
-              className="Team-gridImage"
-              style={{ backgroundImage: `url(${image.fields.file.url})` }}
-              data-animate="image"
-            />
+      <Observer triggerOnce onChange={(isVisible) => this.onChange(isVisible)}>
+        {isVisible =>
+          <div
+            className="Team-grid"
+            ref={componentRef => {
+              this.componentRef = componentRef
+            }}
+          >
+          {images && images.items[0].fields.images.map((image, index) => 
+            <div className="Team-gridImageMask">
+              <div
+                className="Team-gridImage"
+                style={{ backgroundImage: `url(${image.fields.file.url})` }}
+                data-animate="image"
+              />
+            </div>
+          )}
           </div>
-        )}
-        </div>
-      </VisibilitySensor>
+        }
+      </Observer>
     )
   }
 }

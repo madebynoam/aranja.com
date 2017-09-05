@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { TweenMax, Expo } from 'gsap'
-import VisibilitySensor from 'react-visibility-sensor'
 import { Body1, Body2, H2, H3 } from '../../../typography'
 import './styles.css'
 
@@ -47,16 +46,8 @@ class ContentThreeColumnCopy extends Component {
       column3Subheading,
       column3Copy
     } = this.props
-    const { isVisible } = this.state
 
     return (
-      <VisibilitySensor
-        onChange={isVisible => this.onChange(isVisible)}
-        active={!isVisible}
-        intervalDelay={100}
-        minTopValue={300}
-        partialVisibility
-      >
         <div className="ContentSection-threeCols" ref={ref => { this.component = ref }}>
           <div className="ContentSection-column" data-animate>
             <H3 top="small" bottom="small">
@@ -83,7 +74,6 @@ class ContentThreeColumnCopy extends Component {
             </Body2>
           </div>
         </div>
-      </VisibilitySensor>
     )
   }
 }

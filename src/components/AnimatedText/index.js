@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
 import classNames from 'classnames'
-import VisibilitySensor from 'react-visibility-sensor'
+import Observer from 'react-intersection-observer'
 import PropTypes from 'prop-types'
 import { H1 } from '../../typography'
 import './styles.css'
@@ -24,21 +24,8 @@ const UnControlled = ({ shouldAnimate, children, animation }) => (
 )
 
 class AnimatedText extends PureComponent {
-  constructor(props) {
-    super(props)
-    this.state = {
-      isVisible: false
-    }
-  }
-
-  onChange(isVisible) {
-    this.setState({
-      isVisible: isVisible
-    })
-  }
 
   render() {
-    const { isVisible } = this.state
     const { children, animation = 'AppearUp', uncontrolled, shouldAnimate } = this.props
 
     // Other props can send in shouldAnimate and then we skip listening to our own state
@@ -47,13 +34,9 @@ class AnimatedText extends PureComponent {
     }
 
     return (
-      <VisibilitySensor
-        onChange={isVisible => this.onChange(isVisible)}
-        active={!isVisible}
-        minTopValue={0}
-        partialVisibility
-      >
-        <div>
+      <Observer triggerOnce>
+        {isVisible => 
+          <div>
           {children.split('\n').map(text => (
             <span className={classNames('AnimatedText')} key={text}>
               <span
@@ -68,7 +51,8 @@ class AnimatedText extends PureComponent {
             </span>
           ))}
         </div>
-      </VisibilitySensor>
+        }
+      </Observer>
     )
   }
 }
