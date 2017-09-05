@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import classNames from 'classnames'
 import VisibilitySensor from 'react-visibility-sensor'
 import PropTypes from 'prop-types'
@@ -23,7 +23,7 @@ const UnControlled = ({ shouldAnimate, children, animation }) => (
   </div>
 )
 
-class AnimatedText extends Component {
+class AnimatedText extends PureComponent {
   constructor(props) {
     super(props)
     this.state = {

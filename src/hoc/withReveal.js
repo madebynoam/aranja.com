@@ -1,17 +1,17 @@
 // Usage: withReveal(MyComponent, { intervalDelay: 150, minTopValue: 400 })
 
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import VisibilitySensor from 'react-visibility-sensor'
 import PropTypes from 'prop-types'
 
-const DEFAULT_INTERVAL_DELAY = 100
+const DEFAULT_INTERVAL_DELAY = 500
 const DEFAULT_MIN_TOP_VALUE = 100
 
 export const withReveal = (
   WrappedComponent,
   config,
 ) => {
-  return class extends Component {    
+  return class extends PureComponent {
     constructor(props) {
       super(props)
       this.state = {
