@@ -22,7 +22,9 @@ const CaseStudy = ({ content, caseStudy, caseStudies }) => {
   return (
     <Editable model={content}>
       <Page name="Work">
+      <Section noPadding top="medium" bottom="medium">
         <Intro text={projectName} description={projectDescription} />
+      </Section>
         <Hero hero={formatHero(heroImage)} />
         <Section className="CaseStudy-section">
           {sections.map((section, index) => <ContentSection section={section} key={index} />)}
