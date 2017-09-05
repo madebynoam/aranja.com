@@ -1,16 +1,16 @@
 import React from 'react'
 import classNames from 'classnames'
+import Link from '../Link'
 import './styles.css'
 
 const Button = ({ children, light, to, className }) =>
-  <a
+  <Link
+    noStyle
     role="button"
     href={to}
-    target="_blank"
-    rel="noopener noreferrer"
     className={classNames('Button', light && 'Button--light', className)}
   >
     {children}
-  </a>
+  </Link>
 
 export default Button

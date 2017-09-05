@@ -65,22 +65,6 @@ $maxItems: 6;
     transition: transform 0.7s $ease-reveal;
   }
 
-  // &::after {
-  //   border: 0.25em solid currentColor;
-  //   content: '';
-  //   display: block;
-  //   height: calc(100% - 3rem);
-  //   left: 1.5rem;
-  //   mix-blend-mode: screen;
-  //   opacity: 0;
-  //   position: absolute;
-  //   top: 1.5rem;
-  //   transform: scale(1.05);
-  //   transform-origin: center;
-  //   transition: all 0.7s $ease-reveal;
-  //   width: calc(100% - 3rem);
-  // }
-
   &::before {
     content: '';
     background: rgba(0, 0, 0, 0.4);
@@ -117,15 +101,15 @@ $maxItems: 6;
   position: absolute;
   top: 0;
   width: 100%;
-  transition: all 0.5s ease;
+  transition: all 1s ease;
 
   @for $i from 1 through $maxItems {  
     .CaseStudyGrid.is-visible .CaseStudyGrid-itemWrap:nth-child(#{$i}) & {
       &::before {
-        transition-delay: 0.075s * $i;
+        transition-delay: 0.075s * ($i - 1);
       }
       &::after {
-        transition-delay: 0.075s * $i;
+        transition-delay: 0.075s * ($i - 1);
       }
     }
   }
@@ -135,7 +119,7 @@ $maxItems: 6;
     position: absolute;
     top: 0;
     left: 0;
-    transform: translateX(-100%);
+    transform: translateY(100%);
     width: 100%;
     height: 100%;
     background-color: $light;
@@ -143,7 +127,8 @@ $maxItems: 6;
     content: '';
 
     .CaseStudyGrid.is-visible & {
-      transform: translateX(100%);
+      transition: transform 1s $ease-reveal;
+      transform: translateY(-100%);
     }
 
   }
@@ -153,17 +138,16 @@ $maxItems: 6;
     position: absolute;
     top: 0;
     left: 0;
-    transform: translateX(0);
+    transform: translateY(0);
     width: 100%;
     height: 100%;
     background-color: $white;
     z-index: 2;
-    transition: transform 0s;
     content: '';
 
     .CaseStudyGrid.is-visible & {
-      transition: transform 0.7s $ease-reveal;
-      transform: translateX(100%);
+      transition: transform 1s $ease-reveal;
+      transform: translateY(-100%);
     }
   }
 }

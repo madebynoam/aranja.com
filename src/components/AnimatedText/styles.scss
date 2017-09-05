@@ -12,7 +12,7 @@ $maxChilds: 5;
  @for $i from 1 to $maxChilds {
   &:nth-child(#{$i}) {
     .AnimatedText-part {
-        transition-delay: #{($i ) / 15}s;
+        transition-delay: #{($i - 1) / 15}s;
     }
   }
  }
@@ -20,11 +20,21 @@ $maxChilds: 5;
 
 .AnimatedText-part {
   display: block;
-  opacity: 0;
   transition: opacity 1s ease, transform 1.3s $easeInOutQuart;
-  transform: translateY(110%);
-  &.is-visible {
-    opacity: 1;
-    transform: translateY(0);
+  
+  &.AnimatedText--AppearUp {
+    opacity: 0;
+    transform: translateY(110%);
+    &.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  &.AnimatedText--FadeIn {
+    opacity: 0;
+    &.is-visible {
+      opacity: 1;
+    }
   }
 }

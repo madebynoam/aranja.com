@@ -1,9 +1,6 @@
-import React, { Component } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
-import VisibilitySensor from 'react-visibility-sensor'
-import { TweenMax, Expo } from 'gsap'
-import { H2, Body1 } from '../../typography'
-import './styles.css'
+import classNames from 'classnames'
 import androidLogo from './android.svg'
 import facebookLogo from './facebook.svg'
 import githubLogo from './github.svg'
@@ -12,8 +9,8 @@ import nestLogo from './nest.svg'
 import kolibriLogo from './kolibri.svg'
 import lsbLogo from './lsb.svg'
 import upperquadLogo from './uq.svg'
-import { EditInline } from 'tux'
-import Section from '../Section'
+import { withReveal } from '../../hoc/withReveal'
+import './styles.css'
 
 const defaultClients = [
   {
@@ -50,95 +47,17 @@ const defaultClients = [
   }
 ]
 
-const ease = Expo.easeOut
-
-class Clients extends Component {
-  constructor() {
-    super()
-    this.state = {
-      isVisible: false
-    }
-    this.animationNodes = []
-    this.animationDuration = 1
-  }
-
-  componentDidMount() {
-    this.animationNodes = this.componentRef.querySelectorAll('[data-animate]')
-    TweenMax.set(this.animationNodes, { y: -100, autoAlpha: 0 })
-  }
-
-  onChange(isVisible) {
-    if (isVisible) {
-      this.setState({
-        isVisible
-      })
-      this.handleAnimation()
-    }
-  }
-
-  handleAnimation() {
-    TweenMax.staggerTo(
-      this.animationNodes,
-      this.animationDuration,
-      {
-        y: 0,
-        autoAlpha: 1,
-        ease
-      },
-      0.1
-    )
-  }
-
-  render() {
-    const { isVisible } = this.state
-    const { clients = defaultClients } = this.props
-    return (
-      <VisibilitySensor
-        onChange={isVisible => this.onChange(isVisible)}
-        active={!isVisible}
-        intervalDelay={100}
-        minTopValue={100}
-        partialVisibility
-      >
-        <Section top="xlarge" bottom="large">
-          <div
-            className="Clients"
-            ref={componentRef => {
-              this.componentRef = componentRef
-            }}
-          >
-            <H2 component="div" className="Clients-heading" bottom="xsmall">
-              <EditInline format="plain" field="fields.content.clientsHeading">
-                Trusted by the best
-              </EditInline>
-            </H2>
-            <Body1
-              component="div"
-              className="Clients-subheading"
-              bottom="medium"
-            >
-              <EditInline format="plain" field="fields.content.clientsText">
-                We've had the pleasure of working with <br /> some of tech's
-                leading companies
-              </EditInline>
-            </Body1>
-            <ul className="Clients-list">
-              {clients.map((client, index) =>
-                <li className="Clients-item" key={index} data-animate>
-                  <img
-                    className="Clients-image"
-                    src={client.logo}
-                    alt={client.name}
-                  />
-                </li>
-              )}
-            </ul>
-          </div>
-        </Section>
-      </VisibilitySensor>
-    )
-  }
-}
+const Clients = ({ clients = defaultClients, isVisible }) => (
+  <div className={classNames('Clients', isVisible && 'is-visible')}>
+    <ul className="Clients-list">
+      {clients.map((client, index) => (
+        <li className="Clients-item" key={index}>
+          <img className="Clients-image" src={client.logo} alt={client.name} />
+        </li>
+      ))}
+    </ul>
+  </div>
+)
 
 Clients.propTypes = {
   clients: PropTypes.arrayOf(
@@ -149,4 +68,4 @@ Clients.propTypes = {
   )
 }
 
-export default Clients
+export default withReveal(Clients, { minTopValue: 200 })

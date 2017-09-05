@@ -5,28 +5,22 @@ import Parallax from '../Parallax'
 import { Body1, H2 } from '../../typography'
 import { withReveal } from '../../hoc/withReveal'
 import './styles.css'
+import AnimatedText from '../AnimatedText'
 
 const Service = ({ heading, copy, image, isVisible, hasBeenSeen }) =>
   <div className={classNames('Service', isVisible && 'is-visible')}>
     <div className="Service-contentWrap">
       <div className="Service-content">
-        <H2 className="Service-heading" bottom="small">
-          {heading.split(' ').map((word, i) => {
-            return (
-              <span className="u-mask" key={i}>
-                <span className="u-maskInner" data-animate="text">
-                  {word}
-                </span>
-              </span>
-            )
-          })}
+        <H2 bottom="small" className="Service-heading">
+          <AnimatedText uncontrolled shouldAnimate={isVisible}>
+            {heading.replace(' ', '\n')}
+            {/* Todo: something else. */}
+          </AnimatedText>
         </H2>
         <Body1 bottom="small" className="Service-copy">
-          <span className="u-mask">
-            <span className="u-maskInner" data-animate="text">
-              {copy}
-            </span>
-          </span>
+          <AnimatedText uncontrolled shouldAnimate={isVisible}>
+            {copy}
+          </AnimatedText>
         </Body1>
       </div>
     </div>

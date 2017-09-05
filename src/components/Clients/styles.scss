@@ -2,12 +2,13 @@
 @import '../../utils/vars';
 @import '../../utils/responsive';
 
+$maxChilds: 8;
+
 .Clients {
   position: relative;
   z-index: 1;
 
   @include respond-to(md) {
-    // padding: 0 5rem;
   }
 }
 
@@ -22,24 +23,12 @@
   }
 }
 
-.Clients-heading {
-  margin: auto;
-  max-width: 12ch;
-  text-align: center;
-  @include respond-to(md) {
-    max-width: initial;
-    margin: 0;
-  }
-}
-
-.Clients-subheading {
-  text-align: center;
-  line-height: 1.5;
-}
-
 .Clients-item {
   flex: 0 1 33.333%;
   position: relative;
+  opacity: 0;
+  transform: translateY(6rem);
+  transition: opacity 0.7s ease, transform 0.7s ease-in-out;
 
   &::before {
     content: '';
@@ -49,6 +38,16 @@
 
   @include respond-to(md) {
     flex: 0 1 25%;
+  }
+
+  .Clients.is-visible & {
+    transform: translateY(0);
+    opacity: 1;
+    @for $i from 1 through $maxChilds {
+      &:nth-child(#{$i}) {
+        transition-delay: #{($i - 1) / 25}s;
+      }
+     }
   }
 }
 

@@ -1,8 +1,8 @@
-@import '../../../utils/vars.scss';
-@import '../../../utils/functions.scss';
-@import '../../../utils/responsive.scss';
+@import '../../utils/vars.scss';
+@import '../../utils/functions.scss';
+@import '../../utils/responsive.scss';
 
-.CaseStudyButton {
+.ArrowButton {
   display: none;
 
   @include respond-to(md) {
@@ -25,5 +25,9 @@
     &::after {
       transform: translateX(0.85rem);
     }
+  }
+  
+  &.no-border {
+    border: 0;
   }
 }

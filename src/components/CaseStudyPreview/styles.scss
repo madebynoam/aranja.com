@@ -47,20 +47,19 @@
 }
 
 .CaseStudyPreview-date {
-  background: rgba($light, 0.6);
   display: inline-block;
   font-family: 'mono45-headline';
   letter-spacing: 0.05em;
   line-height: 1;
   margin-bottom: var(--ms2);
-  padding: 4px 8px;
+  padding: 0.25rem 0.5rem;
   text-transform: uppercase;
 }
 
-  .CaseStudyPreview-title {
-    line-height: 1;
-    padding-bottom: var(--ms2);
-    transition: color 0.2s;
+.CaseStudyPreview-title {
+  line-height: 1;
+  padding-bottom: var(--ms2);
+  transition: color 0.2s;
 }
 
 .CaseStudyPreview-description {
@@ -125,11 +124,10 @@
     height: 100%;
     background-color: aliceblue;
     z-index: 2;
-    transition: transform 0s;
     content: '';
 
     .CaseStudyPreview.is-visible & {
-      transition: transform 1s $ease-reveal;
+      transition: transform 1s $easeOutCirc;
       transform: translateX(100%);
     }
   }
@@ -144,11 +142,10 @@
     height: 100%;
     background-color: $white;
     z-index: 2;
-    transition: transform 0s;
     content: '';
 
     .CaseStudyPreview.is-visible & {
-      transition: transform 1s $ease-reveal;
+      transition: transform 1s $easeOutCirc;
       transform: translateX(100%);
     }
   }

@@ -4,7 +4,7 @@ import Hero from '../../components/Hero'
 import Page from '../../components/Page'
 import ContentSection from '../../components/ContentSection'
 import Intro from '../../components/Intro'
-import CaseStudyButton from '../../components/CaseStudy/Button'
+import ArrowButton from '../../components/ArrowButton'
 import ShoutOut from '../../components/CaseStudy/ShoutOut'
 import Section from '../../components/Section'
 import CaseStudyGrid from '../../components/CaseStudyGrid'
@@ -32,7 +32,7 @@ const CaseStudy = ({ content, caseStudy, caseStudies }) => {
         <Section className="CaseStudy-section" bottom="xlarge">
           <div className="ContentSection">
             <div className="CaseStudy-bottom">
-              <CaseStudyButton to={projectOutgoingUrl}>Visit project</CaseStudyButton>
+              <ArrowButton to={projectOutgoingUrl}>Visit project</ArrowButton>
               <ShoutOut />
             </div>
           </div>

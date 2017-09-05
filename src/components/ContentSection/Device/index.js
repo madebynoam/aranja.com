@@ -21,7 +21,7 @@ class DeviceSection extends Component {
             {copy}
           </Body1>
         </div>
-        <Parallax clamp>
+        <Parallax>
           <div className="DeviceSection-device">
             <Device device={device} image={image} />
           </div>

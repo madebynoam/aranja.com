@@ -8,6 +8,7 @@ import Section from '../../components/Section'
 import SectionHero from '../../components/SectionHero'
 import Hero from '../../components/Hero'
 import Intro from '../../components/Intro'
+import AnimatedText from '../../components/AnimatedText'
 import teamHeroPhoto2 from '../../components/Team/Aranja00557.jpg'
 import teamHeroPhoto3 from '../../components/Team/Aranja00711-Edit.jpg'
 import '../../components/Team/styles.css'
@@ -33,29 +34,29 @@ const About = ({ content, team, hero }) => (
         </div>
         <TeamGrid />
         <H2 top="xlarge" center>
-          Focus on quality
+          <AnimatedText>{'Focus on quality'}</AnimatedText>
         </H2>
         <Body1 bottom="large" center>
-          We focus on doing quality work, keeping the <br />client happy and the
-          community amazed.
+          <AnimatedText>
+            {
+              'We focus on doing quality work, keeping the\nclient happy and the community amazed.'
+            }
+          </AnimatedText>
         </Body1>
         <SectionHero img={teamHeroPhoto2} caption="Hard at work" />
         <div className="Team-copy">
           <Body1 top="medium" bottom="medium" center>
-            Instead of being a group of coworkers that only work together, we
-            are friends that just happen to also work together. Frequently, we
-            meetup after work to see the latest Marvel movie, hack on a
-            side-project or just to enjoy a dinner with our families.
+            Instead of being a group of coworkers that only work together, we are friends that just happen to also work together. Frequently, we meetup after work to see the latest Marvel movie, hack on a side-project or just to enjoy a dinner with our families.
           </Body1>
         </div>
         <SectionHero img={teamHeroPhoto3} caption="Hacking on a side-project" />
       </Section>
       <Section top="medium" bottom="medium">
         <H3 top="large" center>
-          One Family
+          <AnimatedText>{'One Family'}</AnimatedText>
         </H3>
         <Body1 bottom="large" center>
-          Looking forward to Mondays since 2013
+          <AnimatedText>{'Looking forward to Mondays since 2013'}</AnimatedText>
         </Body1>
         <FamilyGrid />
       </Section>
