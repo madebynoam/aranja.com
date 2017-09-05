@@ -16,7 +16,10 @@
 }
 
 .Intro-split {
+  align-items: flex-end;
   display: flex;
+  flex: 0 1 50%;
+  padding: 0 1rem;
 
   &:first-child {
     flex: 1 0 auto;

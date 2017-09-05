@@ -1,6 +1,6 @@
 import React from 'react'
 import { Editable } from 'tux'
-import { Body1, H2, H3 } from '../../typography'
+import { Body1, H1, H2, H3 } from '../../typography'
 import Page from '../../components/Page'
 import TeamGrid from '../../components/Team/Grid'
 import FamilyGrid from '../../components/FamilyGrid'
@@ -24,13 +24,21 @@ const About = ({ content, team, hero }) => (
       </Section>
       <Hero hero={hero} />
       <Section bottom="large">
-        <div className="Team-copy">
-          <Body1 top="xlarge" bottom="xlarge" center>
-            Aranja is a small web studio based and raised in Iceland. Our goal,
-            to improve the web, is only achieved with a passionate team that is
-            motivated and happy. We believe that the community is what makes the
-            web what it is and we intend to support that.
-          </Body1>
+        <div className="Team-copy u-paddingBottomXLarge u-paddingTopXLarge">
+          <div className="Team-copyPart">
+            <H1 center>
+              <AnimatedText>{'In a nutshell'}</AnimatedText>
+            </H1>
+          </div>
+          <div className="Team-copyPart">
+            <Body1 faint>
+              <AnimatedText>
+                {
+                  'Aranja is a small web studio based and raised in Iceland. Our goal, to improve the web, is only achieved with a passionate team that is motivated and happy. We believe that the community is what makes the web what it is and we intend to support that.'
+                }
+              </AnimatedText>
+            </Body1>
+          </div>
         </div>
         <TeamGrid />
         <H2 top="xlarge" center>
@@ -46,7 +54,10 @@ const About = ({ content, team, hero }) => (
         <SectionHero img={teamHeroPhoto2} caption="Hard at work" />
         <div className="Team-copy">
           <Body1 top="medium" bottom="medium" center>
-            Instead of being a group of coworkers that only work together, we are friends that just happen to also work together. Frequently, we meetup after work to see the latest Marvel movie, hack on a side-project or just to enjoy a dinner with our families.
+            Instead of being a group of coworkers that only work together, we
+            are friends that just happen to also work together. Frequently, we
+            meetup after work to see the latest Marvel movie, hack on a
+            side-project or just to enjoy a dinner with our families.
           </Body1>
         </div>
         <SectionHero img={teamHeroPhoto3} caption="Hacking on a side-project" />

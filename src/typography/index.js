@@ -54,8 +54,10 @@ export const H4 = createStyle('h4', 't-h4', {
 export const Body1 = createStyle('p', 't-body1', {
   strong: 't-medium',
   center: 't-center',
+  faint: 't-faint',
 })
 export const Body2 = createStyle('p', 't-body2', {
   strong: 't-medium',
   center: 't-center',
+  faint: 't-faint',
 })
