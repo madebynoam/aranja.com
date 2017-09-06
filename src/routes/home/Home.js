@@ -11,8 +11,9 @@ import { H2, Body1 } from '../../typography'
 import AnimatedText from '../../components/AnimatedText'
 import { Editable } from 'tux'
 
-const Home = ({ content, hero, services, showOffs, caseStudies }) => (
+const Home = ({ content, hero, services, showOffs, caseStudies, transitionState }) => (
   <Editable model={content}>
+    {console.log(transitionState)}
     <Page name="Home" home>
       <Helmet>
         <title>Aranja Studio – Welcome</title>
