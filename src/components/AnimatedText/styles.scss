@@ -5,23 +5,23 @@
 $maxChilds: 5;
 
 .AnimatedText {
- overflow: hidden;
- position: relative; 
- display: block;
+  overflow: hidden;
+  position: relative;
+  display: block;
 
- @for $i from 1 to $maxChilds {
-  &:nth-child(#{$i}) {
-    .AnimatedText-part {
+  @for $i from 1 to $maxChilds {
+    &:nth-child(#{$i}) {
+      .AnimatedText-part {
         transition-delay: #{($i - 1) / 15}s;
+      }
     }
   }
- }
 }
 
 .AnimatedText-part {
   display: block;
   transition: opacity 1s ease, transform 1.3s $easeInOutQuart;
-  
+
   &.AnimatedText--AppearUp {
     opacity: 0;
     transform: translateY(110%);
@@ -30,7 +30,7 @@ $maxChilds: 5;
       transform: translateY(0);
     }
   }
-  
+
   &.AnimatedText--FadeIn {
     opacity: 0;
     &.is-visible {

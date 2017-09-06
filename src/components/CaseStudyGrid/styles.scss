@@ -44,7 +44,7 @@
   position: relative;
   opacity: 0;
   transform: translateY(6rem) translateZ(1px);
-  transition: opacity 0.4s ease, transform 0.7s ease-in-out;
+  transition: opacity 0.4s ease, transform 0.4s ease-out;
   
   &.is-visible {
     opacity: 1;
