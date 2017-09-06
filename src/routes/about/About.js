@@ -15,8 +15,8 @@ import teamHeroPhoto3 from '../../components/Team/Aranja00711-Edit.jpg'
 import '../../components/Team/styles.css'
 
 const About = ({ content, team, hero, collage }) => (
+  <Page name="About">
   <Editable model={content}>
-    <Page name="About">
       <Helmet>
         <title>Aranja Studio – About</title>
       </Helmet>
@@ -75,8 +75,8 @@ const About = ({ content, team, hero, collage }) => (
         </Body1>
         <FamilyGrid />
       </Section>
-    </Page>
   </Editable>
+    </Page>
 )
 
 export default About

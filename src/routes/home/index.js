@@ -1,21 +1,6 @@
 import React from 'react'
-import Transition from 'react-transition-group/Transition'
 import Home from './Home'
 import { formatHero } from '../../utils/formatters'
-
-const duration = 300
-
-const defaultStyle = {
-  transition: `background-color ${duration}ms ease-in-out`,
-  backgroundColor: 'rebeccapurple'
-}
-
-const transitionStyles = {
-  entering: { backgroundColor: 'blue' },
-  entered: { backgroundColor: 'red' },
-  exiting: { backgroundColor: 'pink' },
-  exited: { backgroundColor: 'orange' }
-}
 
 export default {
   path: ['/', '/home'],
@@ -32,18 +17,13 @@ export default {
       page => page.sys.id === '4TC4xZTIYokUiC2IecUOc6'
     )
     return (
-      <Transition timeout={500}>
-        {state => (
-          <Home
-            transitionState={state}
-            content={content}
-            hero={formatHero(content.fields.hero)}
-            services={services}
-            showOffs={showOffs}
-            caseStudies={caseStudies}
-          />
-        )}
-      </Transition>
+      <Home
+        content={content}
+        hero={formatHero(content.fields.hero)}
+        services={services}
+        showOffs={showOffs}
+        caseStudies={caseStudies}
+      />
     )
   }
 }

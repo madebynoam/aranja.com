@@ -12,9 +12,8 @@ import AnimatedText from '../../components/AnimatedText'
 import { Editable } from 'tux'
 
 const Home = ({ content, hero, services, showOffs, caseStudies, transitionState }) => (
-  <Editable model={content}>
-    {console.log(transitionState)}
-    <Page name="Home" home>
+  <Page name="Home" home>
+    <Editable model={content}>
       <Helmet>
         <title>Aranja Studio – Welcome</title>
       </Helmet>
@@ -47,8 +46,8 @@ const Home = ({ content, hero, services, showOffs, caseStudies, transitionState 
         </Body1>
         <CaseStudyGrid caseStudies={caseStudies} />
       </Section>
-    </Page>
-  </Editable>
+    </Editable>
+  </Page>
 )
 
 export default Home
