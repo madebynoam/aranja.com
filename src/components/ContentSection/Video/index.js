@@ -19,10 +19,10 @@ class Video extends Component {
     const { isVisible } = this.props
 
     return (
-      <div className="Video-wrapper">
+      <div className={classNames('Video-wrapper', isVisible && 'is-visible')}>
         <video
           key={description}
-          className={classNames('Video', isVisible && 'is-visible')}
+          className="Video"
           loop
           src={video}
           ref={ref => {

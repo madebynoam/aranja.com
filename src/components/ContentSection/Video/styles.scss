@@ -1,26 +1,21 @@
 @import '../../../utils/vars';
 
 .Video {
+  width: 100%;
+  padding: var(--ms2);
+  background: rgba($barelyWhite, 0.333);
+}
+
+.Video-wrapper {
   opacity: 0;
   transform: translateY(var(--ms2));
   transition: all 0.5s ease-out;
   width: 100%;
-  padding: var(--ms2);
-  background: rgba($barelyWhite, 0.333);
-
-  &.has-beenSeen {
-    opacity: 0.5;
-    transform: translateY(0);
-  }
 
   &.is-visible {
     opacity: 1;
     transform: translateY(0);
   }
-}
-
-.Video-wrapper {
-  width: 100%;
 }
 
 .Video-description {
