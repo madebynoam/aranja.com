@@ -1,4 +1,5 @@
 import React from 'react'
+import { Helmet } from 'react-helmet'
 import { Editable } from 'tux'
 import Page from '../../components/Page'
 import Intro from '../../components/Intro'
@@ -9,6 +10,9 @@ import CaseStudyPreview from '../../components/CaseStudyPreview'
 const Overview = ({ content, hero, casestudies }) =>
   <Editable model={content}>
     <Page name="Work">
+      <Helmet>
+        <title>Aranja Studio – Work</title>
+      </Helmet>
       <Section noPadding top="medium" bottom="medium">
         <Intro text="We've been busy" description="Have a look around at some of our latest projects" />
       </Section>

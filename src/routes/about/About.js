@@ -1,4 +1,5 @@
 import React from 'react'
+import { Helmet } from 'react-helmet'
 import { Editable } from 'tux'
 import { Body1, H1, H2, H3 } from '../../typography'
 import Page from '../../components/Page'
@@ -16,6 +17,9 @@ import '../../components/Team/styles.css'
 const About = ({ content, team, hero, collage }) => (
   <Editable model={content}>
     <Page name="About">
+      <Helmet>
+        <title>Aranja Studio – About</title>
+      </Helmet>
       <Section noPadding top="medium" bottom="medium">
         <Intro
           text="About our company"
@@ -40,7 +44,7 @@ const About = ({ content, team, hero, collage }) => (
             </Body1>
           </div>
         </div>
-        <TeamGrid images={collage}/>
+        <TeamGrid images={collage} />
         <H2 top="xlarge" center>
           <AnimatedText>{'Focus on quality'}</AnimatedText>
         </H2>

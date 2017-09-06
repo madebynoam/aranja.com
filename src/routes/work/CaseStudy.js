@@ -1,4 +1,5 @@
 import React from 'react'
+import { Helmet } from 'react-helmet'
 import { Editable } from 'tux'
 import Hero from '../../components/Hero'
 import Page from '../../components/Page'
@@ -22,6 +23,9 @@ const CaseStudy = ({ content, caseStudy, caseStudies }) => {
   return (
     <Editable model={content}>
       <Page name="Work">
+      <Helmet>
+        <title>{`Aranja Studio – ${projectName}`}</title>
+      </Helmet>
       <Section noPadding top="medium" bottom="medium">
         <Intro text={projectName} description={projectDescription} />
       </Section>
