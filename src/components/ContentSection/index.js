@@ -3,7 +3,6 @@ import classNames from 'classnames'
 import Image from './Image'
 import Video from './Video'
 import ContentCopy from './Copy'
-import ContentThreeColumnCopy from './ThreeColumnCopy'
 import DeviceSection from './Device'
 import ScreenshotsGalore from './ScreenshotsGalore'
 import Floater from './Floater'
@@ -28,39 +27,14 @@ const ContentSection = ({ section }) => {
 
   switch (sectionId) {
     case 'section': {
-      const { lede, heading, text, closing } = section.fields
+      const { lede, heading, text, style} = section.fields
       return (
         <Wrapper tall={lede}>
           <ContentCopy
             heading={heading}
             copy={text}
             lede={lede}
-            closing={closing}
-          />
-        </Wrapper>
-      )
-    }
-
-    case 'sectionThreeColumnCopy': {
-      const {
-        heading,
-        column1Subheading,
-        column1Copy,
-        column2Subheading,
-        column2Copy,
-        column3Subheading,
-        column3Copy
-      } = section.fields
-      return (
-        <Wrapper>
-          <ContentThreeColumnCopy
-            heading={heading}
-            column1Subheading={column1Subheading}
-            column1Copy={column1Copy}
-            column2Subheading={column2Subheading}
-            column2Copy={column2Copy}
-            column3Subheading={column3Subheading}
-            column3Copy={column3Copy}
+            style={style}
           />
         </Wrapper>
       )
@@ -116,15 +90,6 @@ const ContentSection = ({ section }) => {
       return (
         <Wrapper>
           <Floater topDevice={topDevice.fields.file.url} centerDevice={centerDevice.fields.file.url} bottomDevice={bottomDevice.fields.file.url} /> 
-        </Wrapper>
-      )
-    }
-
-    case 'sectionClosing': {
-      const { heading, text, half } = section.fields
-      return (
-        <Wrapper>
-          <ContentCopy heading={heading} copy={text} half={half} />
         </Wrapper>
       )
     }

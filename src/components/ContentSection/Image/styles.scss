@@ -1,24 +1,26 @@
 @import '../../../utils/vars';
 
 .Image {
-  opacity: 0;
-  transform: translateY(var(--ms2));
-  transition: all 0.5s ease-out;
   padding: var(--ms2);
   margin: 0 var(--ms4);
   background: $barelyWhite;
-
-  &.is-visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
+  
   .ContentSection--gray & {
     background: $white;
   }
 }
 
-.Image-image {
+.Image-wrap {
+  opacity: 0;
+  transform: translateY(6rem) translateZ(1px);
+  transition: all 0.5s ease-out;
+  &.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.Image-bg {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top center;

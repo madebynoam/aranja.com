@@ -1,19 +1,20 @@
-import React, { Component } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
 import { Body2 } from '../../../typography'
 import { withReveal } from '../../../hoc/withReveal'
 import './styles.css'
 
-const Image = ({ img, caption, hasBeenSeen }) =>
-  <div className="Image-wrap">
-    <div className={classNames('Image', hasBeenSeen && 'is-visible')}>
-      <div className="Image-image" style={{ backgroundImage: `url(${img})` }} />
+const Image = ({ img, caption, isVisible }) => (
+  <div className={classNames('Image-wrap', isVisible && 'is-visible')}>
+    <div className="Image">
+      <div className="Image-bg" style={{ backgroundImage: `url(${img})` }} />
     </div>
     <Body2 top="small" bottom="small" className="Image-caption">
       {caption}
     </Body2>
   </div>
+)
 
 Image.propTypes = {
   img: PropTypes.string,

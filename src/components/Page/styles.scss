@@ -48,11 +48,5 @@
 }
 
 .Page-inner {
-  transform: translateX(-10%);
-  transition: all 0.5s 0.2s $ease-pageEnter;
-  will-change: transform;
-  
-  .Page.is-mounted & {
-    transform: translateX(0);
-  }
+
 }
