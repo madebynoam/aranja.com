@@ -45,21 +45,22 @@
   opacity: 0;
   transform: translateY(6rem) translateZ(1px);
   transition: opacity 0.4s ease, transform 0.4s ease-out;
-  
+  will-change: opacity, transform;
+  background: #3a82df;
+
   &.is-visible {
     opacity: 1;
     transform: translateY(0);
+
+    &:hover {
+      transform: translateY(0) scale(0.975);
+    }
   }
 
   &::before {
     content: '';
-    background: rgba(0, 0, 0, 0.4);
-    opacity: 0;
-    transition: opacity 0.2s ease;
     display: block;
     padding-top: 60%;
-    width: 100%;
-    z-index: 1;
   }
 }
 
@@ -71,8 +72,31 @@
   position: absolute;
   top: 0;
   width: 100%;
-  transition: all 1s ease;
+  transform: scale(1.05);
+  transition: transform 0.25s ease-out;
+  will-change: transform;
 
+  .CaseStudyGrid-itemInner.is-visible & {
+    transform: scale(1);
+  }
+  .CaseStudyGrid-itemInner.is-visible:hover & {
+    transform: scale(1.05);
+  }
+}
+
+.CaseStudyGrid-info {
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $white;
+  transform: translateY(calc(100% + 1rem));
+  transition: transform 0.25s, opacity 0.1s;
+  opacity: 0;
+  .CaseStudyGrid-item:hover & {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 .CaseStudyGrid-button {
