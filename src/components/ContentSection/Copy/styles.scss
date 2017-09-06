@@ -18,9 +18,10 @@
   }
 }
 
-.ContentSectionCopy--centered {
+.ContentSectionCopy--alignRight {
+  text-align: right;
+}
+
+.ContentSectionCopy--alignCenter {
   text-align: center;
-  @include respond-to(md) {
-    margin: auto;
-  }
 }

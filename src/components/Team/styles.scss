@@ -4,6 +4,12 @@
   display: flex;
   align-items: baseline;
   margin: 5rem 0;
+  line-height: 1.666;
+}
+
+.Team-copy--centered {
+  max-width: 55%;
+  margin: auto;
 }
 
 .Team-copyPart {

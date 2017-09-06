@@ -56,8 +56,8 @@ const About = ({ content, team, hero, collage }) => (
           </AnimatedText>
         </Body1>
         <SectionHero img={teamHeroPhoto2} caption="Hard at work" />
-        <div className="Team-copy">
-          <Body1 top="medium" bottom="medium" center>
+        <div className="Team-copy Team-copy--centered">
+          <Body1 top="large" bottom="large">
             Instead of being a group of coworkers that only work together, we
             are friends that just happen to also work together. Frequently, we
             meetup after work to see the latest Marvel movie, hack on a

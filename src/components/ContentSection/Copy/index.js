@@ -9,7 +9,7 @@ const ContentSectionCopy = ({ heading, copy, lede, style }) => {
       className={classNames(
         'ContentSectionCopy',
         lede && 'ContentSectionCopy--lede',
-        style && `ContentSectionCopy--${style.toLowerCase()}`
+        style && `ContentSectionCopy--${style}`
       )}
     >
       {heading && <H2 bottom="small">{heading}</H2>}

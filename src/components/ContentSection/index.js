@@ -5,11 +5,13 @@ import Video from './Video'
 import ContentCopy from './Copy'
 import DeviceSection from './Device'
 import ScreenshotsGalore from './ScreenshotsGalore'
+import TechStack from './TechStack'
 import Floater from './Floater'
+import { H3 } from '../../typography'
 
 import './styles.css'
 
-const Wrapper = ({ children, tall, gray, className }) =>
+const Wrapper = ({ children, tall, gray, className }) => (
   <div
     className={classNames(
       className,
@@ -20,6 +22,7 @@ const Wrapper = ({ children, tall, gray, className }) =>
   >
     {children}
   </div>
+)
 
 const ContentSection = ({ section }) => {
   if (!section) return
@@ -27,7 +30,7 @@ const ContentSection = ({ section }) => {
 
   switch (sectionId) {
     case 'section': {
-      const { lede, heading, text, style} = section.fields
+      const { lede, heading, text, style } = section.fields
       return (
         <Wrapper tall={lede}>
           <ContentCopy
@@ -53,7 +56,10 @@ const ContentSection = ({ section }) => {
       const { video, description } = section.fields
       return (
         <Wrapper tall>
-          <Video video={video && video.fields.file.url} description={description} />
+          <Video
+            video={video && video.fields.file.url}
+            description={description}
+          />
         </Wrapper>
       )
     }
@@ -62,6 +68,16 @@ const ContentSection = ({ section }) => {
       // todo
       // return <Slideshow />
       break
+    }
+
+    case 'sectionTechStack': {
+      const { technology } = section.fields
+      return (
+        <Wrapper>
+          <H3 center bottom="medium">Technology used</H3>
+          <TechStack techStack={technology} />
+        </Wrapper>
+      )
     }
 
     case 'sectionVideoInDevice':
@@ -84,12 +100,15 @@ const ContentSection = ({ section }) => {
         </Wrapper>
       )
 
-
     case 'sectionFloatingScreenshots': {
       const { topDevice, centerDevice, bottomDevice } = section.fields
       return (
         <Wrapper>
-          <Floater topDevice={topDevice.fields.file.url} centerDevice={centerDevice.fields.file.url} bottomDevice={bottomDevice.fields.file.url} /> 
+          <Floater
+            topDevice={topDevice.fields.file.url}
+            centerDevice={centerDevice.fields.file.url}
+            bottomDevice={bottomDevice.fields.file.url}
+          />
         </Wrapper>
       )
     }
