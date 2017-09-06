@@ -20,4 +20,4 @@ Image.propTypes = {
   caption: PropTypes.string
 }
 
-export default withReveal(Image, { minTopValue: 400 })
+export default withReveal(Image)

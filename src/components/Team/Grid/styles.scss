@@ -1,12 +1,31 @@
+$maxImgs: 3;
+
 .Team-grid {
   z-index: 1;
   position: relative;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
+  overflow: hidden;
 }
 
 .Team-gridImageMask {
+  opacity: 0;
+  will-change: opacity, transform;
+  transform: translateY(10rem) translateZ(1px);
+  transition: opacity 0.4s ease, transform 0.5s ease-out;
+
+  @for $i from 1 through $maxImgs {
+    &:nth-child(#{$i}) {
+      transition-delay: #{($i - 1) / 15}s;
+    }
+  }
+
+  &.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
   .Team-gridImage {
     &::before {
       padding-top: 67.65%;

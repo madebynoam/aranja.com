@@ -62,4 +62,4 @@ FamilyGrid.propTypes = {
   isVisible: PropTypes.bool
 }
 
-export default withReveal(FamilyGrid, { minTopValue: 30 })
+export default withReveal(FamilyGrid)

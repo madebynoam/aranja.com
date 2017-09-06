@@ -68,4 +68,4 @@ Clients.propTypes = {
   )
 }
 
-export default withReveal(Clients, { minTopValue: 200 })
+export default withReveal(Clients)
