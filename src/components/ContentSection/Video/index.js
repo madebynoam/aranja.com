@@ -16,17 +16,13 @@ class Video extends Component {
 
   render() {
     const { video, description } = this.props
-    const { isVisible, hasBeenSeen } = this.props
+    const { isVisible } = this.props
 
     return (
       <div className="Video-wrapper">
         <video
-         key={description}
-          className={classNames(
-            'Video',
-            isVisible && 'is-visible',
-            hasBeenSeen && 'has-beenSeen'
-          )}
+          key={description}
+          className={classNames('Video', isVisible && 'is-visible')}
           loop
           src={video}
           ref={ref => {
@@ -46,4 +42,4 @@ Video.propTypes = {
   description: PropTypes.string.isRequired
 }
 
-export default withReveal(Video)
+export default withReveal(Video, { triggerOnce: false, threshold: '0.4' })
