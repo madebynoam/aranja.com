@@ -1,0 +1,54 @@
+@import '../../../utils/vars.scss';
+@import '../../../utils/responsive.scss';
+$maxItems: 9;
+
+.TechStack {
+  @include respond-to(sm) {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
+  }
+  @include respond-to(md) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.TechStack-logo {
+  max-width: var(--ms4);
+  max-height: var(--ms4);
+  margin-right: var(--ms1);
+}
+
+
+.TechStack-item {
+  display: flex;
+  padding: var(--ms2);
+  align-items: center;
+
+  opacity: 0;
+  transform: translateY(6rem);
+  transition: opacity 0.7s ease, transform 0.7s ease-in-out;
+
+  .TechStack.is-visible & {
+    transform: translateY(0);
+    opacity: 1;
+    @for $i from 1 through $maxItems {
+      &:nth-child(#{$i}) {
+        transition-delay: #{($i - 1) / 25}s;
+      }
+     }
+  }
+}
+
+.TechStack-info {
+
+}
+
+.TechStack-name {
+  font-size: var(--ms1);
+}
+
+.TechStack-description {
+  font-size: var(--ms0);
+  color: $copy;
+}

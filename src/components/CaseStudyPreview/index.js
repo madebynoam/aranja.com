@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import classNames from 'classnames'
-import { H1, Body1 } from '../../typography'
+import { H2, Body1 } from '../../typography'
 import Section from '../Section'
 import Link from '../Link'
 import { withReveal } from '../../hoc/withReveal'
@@ -36,11 +36,11 @@ class CaseStudyPreview extends Component {
               </AnimatedText>
             </p>
             <div className="CaseStudyPreview-title">
-              <H1>
+              <H2>
                 <AnimatedText uncontrolled shouldAnimate={isVisible}>
                   {title}
                 </AnimatedText>
-              </H1>
+              </H2>
             </div>
             <div className="CaseStudyPreview-description">
               <Body1>

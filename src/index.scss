@@ -39,19 +39,18 @@ html {
 // $ms6: 7.993rem; // 127.888px
 // $ms7: 11.302rem; // 180.832px
 
-// modularscale = base: 16px/1rem, ratio: 1.414
-// except for ms0 because reasons
-// Experimenting with not capping the values at $xlg.
+// modularscale = base: 16px/1rem, ratio: 1.333
+// Experimenting with not capping the values at $xlg with a media query.
 
 :root {
-  --ms0: between(11.315px, 16px, $sm, $xlg);
-  --ms1: between(16px, 22.624px, $sm, $xlg);
-  --ms2: between(22.624px, 31.984px, $sm, $xlg);
-  --ms3: between(31.984px, 45.232px, $sm, $xlg);
-  --ms4: between(45.232px, 63.968px, $sm, $xlg);
-  --ms5: between(63.968px, 90.448px, $sm, $xlg);
-  --ms6: between(90.448px, 127.888px, $sm, $xlg);
-  --ms7: between(127.888px, 180.832px, $sm, $xlg);
+  --ms0: between(12px, 16px, $sm, $xlg);
+  --ms1: between(16px, 21.328px, $sm, $xlg);
+  --ms2: between(21.328px, 28.43px, $sm, $xlg);
+  --ms3: between(28.43px, 37.897px, $sm, $xlg);
+  --ms4: between(37.897px, 50.517px, $sm, $xlg);
+  --ms5: between(50.517px, 67.34px, $sm, $xlg);
+  --ms6: between(67.34px, 89.764px, $sm, $xlg);
+  --ms7: between(89.764px, 119.665px, $sm, $xlg);
 }
 
 body {

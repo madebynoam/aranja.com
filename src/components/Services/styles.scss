@@ -21,6 +21,10 @@
   }
 }
 
+.Service-copy {
+  color: $copy;
+}
+
 .Service-contentWrap {
   @include respond-to(md) {
     align-items: center;
@@ -37,12 +41,12 @@
 
 .Service-content {
   @include respond-to(md) {
-    max-width: 90%;
+    max-width: 25rem;
   }
 }
 
 .Service-heading {
-  line-height: 1.1;
+  line-height: 1.2;
 }
 
 .Service-imageWrapper {

@@ -3,14 +3,15 @@ import classNames from 'classnames'
 import Image from './Image'
 import Video from './Video'
 import ContentCopy from './Copy'
-import ContentThreeColumnCopy from './ThreeColumnCopy'
 import DeviceSection from './Device'
 import ScreenshotsGalore from './ScreenshotsGalore'
+import TechStack from './TechStack'
 import Floater from './Floater'
+import { H3 } from '../../typography'
 
 import './styles.css'
 
-const Wrapper = ({ children, tall, gray, className }) =>
+const Wrapper = ({ children, tall, gray, className }) => (
   <div
     className={classNames(
       className,
@@ -21,6 +22,7 @@ const Wrapper = ({ children, tall, gray, className }) =>
   >
     {children}
   </div>
+)
 
 const ContentSection = ({ section }) => {
   if (!section) return
@@ -28,39 +30,14 @@ const ContentSection = ({ section }) => {
 
   switch (sectionId) {
     case 'section': {
-      const { lede, heading, text, closing } = section.fields
+      const { lede, heading, text, style } = section.fields
       return (
         <Wrapper tall={lede}>
           <ContentCopy
             heading={heading}
             copy={text}
             lede={lede}
-            closing={closing}
-          />
-        </Wrapper>
-      )
-    }
-
-    case 'sectionThreeColumnCopy': {
-      const {
-        heading,
-        column1Subheading,
-        column1Copy,
-        column2Subheading,
-        column2Copy,
-        column3Subheading,
-        column3Copy
-      } = section.fields
-      return (
-        <Wrapper>
-          <ContentThreeColumnCopy
-            heading={heading}
-            column1Subheading={column1Subheading}
-            column1Copy={column1Copy}
-            column2Subheading={column2Subheading}
-            column2Copy={column2Copy}
-            column3Subheading={column3Subheading}
-            column3Copy={column3Copy}
+            style={style}
           />
         </Wrapper>
       )
@@ -79,7 +56,10 @@ const ContentSection = ({ section }) => {
       const { video, description } = section.fields
       return (
         <Wrapper tall>
-          <Video video={video && video.fields.file.url} description={description} />
+          <Video
+            video={video && video.fields.file.url}
+            description={description}
+          />
         </Wrapper>
       )
     }
@@ -88,6 +68,16 @@ const ContentSection = ({ section }) => {
       // todo
       // return <Slideshow />
       break
+    }
+
+    case 'sectionTechStack': {
+      const { technology } = section.fields
+      return (
+        <Wrapper>
+          <H3 center bottom="medium">Technology used</H3>
+          <TechStack techStack={technology} />
+        </Wrapper>
+      )
     }
 
     case 'sectionVideoInDevice':
@@ -110,21 +100,15 @@ const ContentSection = ({ section }) => {
         </Wrapper>
       )
 
-
     case 'sectionFloatingScreenshots': {
       const { topDevice, centerDevice, bottomDevice } = section.fields
       return (
         <Wrapper>
-          <Floater topDevice={topDevice.fields.file.url} centerDevice={centerDevice.fields.file.url} bottomDevice={bottomDevice.fields.file.url} /> 
-        </Wrapper>
-      )
-    }
-
-    case 'sectionClosing': {
-      const { heading, text, half } = section.fields
-      return (
-        <Wrapper>
-          <ContentCopy heading={heading} copy={text} half={half} />
+          <Floater
+            topDevice={topDevice.fields.file.url}
+            centerDevice={centerDevice.fields.file.url}
+            bottomDevice={bottomDevice.fields.file.url}
+          />
         </Wrapper>
       )
     }

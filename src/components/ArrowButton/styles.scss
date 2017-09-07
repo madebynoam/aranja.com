@@ -21,9 +21,9 @@
     transition: transform 0.25s;
   }
 
-  .Button:hover & {
+  &.Button:hover {
     &::after {
-      transform: translateX(0.85rem);
+      transform: translateX(0.5rem);
     }
   }
   

@@ -28,7 +28,11 @@
 }
 
 .ContentSection {
-  padding: var(--ms4);
+  padding: var(--ms2);
+
+  @include respond-to(md) {
+    padding: var(--ms4);
+  }
 
   @include respond-to(lg) {
     padding: var(--ms4) 10%;

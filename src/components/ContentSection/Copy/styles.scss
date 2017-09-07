@@ -3,8 +3,12 @@
 @import '../../../utils/responsive';
 
 .ContentSectionCopy {
+  margin: var(--ms2) auto;
+  @include respond-to(md) {
+    max-width: 55%;
+  }
 }
-.ContentSectionCopy-lede {
+.ContentSectionCopy--lede {
   @include respond-to(md) {
     max-width: 50%;
   }
@@ -13,8 +17,11 @@
     opacity: 0.8;
   }
 }
-.ContentSectionCopy-half {
-  @include respond-to(lg) {
-    max-width: 50%;
-  }
+
+.ContentSectionCopy--alignRight {
+  text-align: right;
+}
+
+.ContentSectionCopy--alignCenter {
+  text-align: center;
 }

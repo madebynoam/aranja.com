@@ -9,7 +9,7 @@
 
 .t-h1 {
   font-family: $headingFontFamily, serif;
-  font-size: var(--ms4);
+  font-size: var(--ms5);
   font-weight: 600;
   line-height: inherit;
   margin: 0;
@@ -17,16 +17,14 @@
 
 .t-h2 {
   font-family: $headingFontFamily, serif;
-  font-size: var(--ms3);
-  text-transform: uppercase;
-  letter-spacing: 0.025em;
+  font-size: var(--ms4);
   font-weight: 700;
   line-height: inherit;
 }
 
 .t-h3 {
   font-family: $headingFontFamily, serif;
-  font-size: var(--ms2);
+  font-size: var(--ms3);
   text-transform: uppercase;
   letter-spacing: 0.025em;
   font-weight: 700;
