@@ -2,18 +2,18 @@
 
 .Team-copy {
   display: flex;
-  align-items: baseline;
-  margin: 5rem 0;
+  align-items: center;
+  margin: var(--ms5) 0;
   line-height: 1.666;
 }
 
 .Team-copy--centered {
   max-width: 55%;
-  margin: auto;
+  margin: 0 auto;
 }
 
 .Team-copyPart {
   flex: 0 1 50%;
-  margin: auto;
+  margin: 0 auto;
   max-width: 38rem;
 }

@@ -45,7 +45,7 @@ const About = ({ content, team, hero, collage }) => (
           </div>
         </div>
         <TeamGrid images={collage} />
-        <H2 top="xlarge" center>
+        <H2 top="xlarge" bottom="xsmall" center>
           <AnimatedText>{'Focus on quality'}</AnimatedText>
         </H2>
         <Body1 bottom="large" center>
@@ -67,7 +67,7 @@ const About = ({ content, team, hero, collage }) => (
         <SectionHero img={teamHeroPhoto3} caption="Hacking on a side-project" />
       </Section>
       <Section top="medium" bottom="medium">
-        <H3 top="large" center>
+        <H3 top="medium" bottom="xsmall" center>
           <AnimatedText>{'One Family'}</AnimatedText>
         </H3>
         <Body1 bottom="large" center>

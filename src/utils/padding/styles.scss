@@ -2,43 +2,48 @@
 @import '../vars';
 @import '../responsive';
 
+// Padding top
+
 .u-paddingTopXLarge {
-  padding-top: between(90.448px, 127.888px, $sm, $xlg) !important;
+  padding-top: between(89.764px, 119.665px, $sm, $xlg) !important;
 }
 
 .u-paddingTopLarge {
-  padding-top: between(63.986px, 90.448px, $sm, $xlg) !important;
+  padding-top: between(50.517px, 67.34px, $sm, $xlg) !important;
 }
 
 .u-paddingTopMedium {
-  padding-top: between(45.232px, 63.986px, $sm, $xlg) !important;
+  padding-top: between(28.43px, 37.897px, $sm, $xlg) !important;
 }
 
 .u-paddingTopSmall {
-  padding-top: between(22.624px, 45.232px, $sm, $xlg) !important;
+  padding-top: between(16px, 21.328px, $sm, $xlg) !important;
 }
 
 .u-paddingTopXSmall {
-  padding-top: between(16px, 22.624px, $sm, $xlg) !important;
+  padding-top: between(12px, 16px, $sm, $xlg) !important;
 }
+
+// Padding bottom
+
 .u-paddingBottomXLarge {
-  padding-bottom: between(90.448px, 127.888px, $sm, $xlg) !important;
+  padding-bottom: between(89.764px, 119.665px, $sm, $xlg) !important;
 }
 
 .u-paddingBottomLarge {
-  padding-bottom: between(63.986px, 90.448px, $sm, $xlg) !important;
+  padding-bottom: between(50.517px, 67.34px, $sm, $xlg) !important;
 }
 
 .u-paddingBottomMedium {
-  padding-bottom: between(45.232px, 63.986px, $sm, $xlg) !important;
+  padding-bottom: between(28.43px, 37.897px, $sm, $xlg) !important;
 }
 
 .u-paddingBottomSmall {
-  padding-bottom: between(22.624px, 45.232px, $sm, $xlg) !important;
+  padding-bottom: between(16px, 21.328px, $sm, $xlg) !important;
 }
 
 .u-paddingBottomXSmall {
-  padding-bottom: between(16px, 22.624px, $sm, $xlg) !important;
+  padding-bottom: between(12px, 16px, $sm, $xlg) !important;
 }
 
 

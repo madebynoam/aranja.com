@@ -14,7 +14,7 @@ const Overview = ({ content, hero, casestudies }) =>
         <title>Aranja Studio – Work</title>
       </Helmet>
       <Section noPadding top="medium" bottom="medium">
-        <Intro text="We've been busy" description="Have a look around at some of our latest projects" />
+        <Intro text="We've been busy" description="Have a look at some of our latest projects" />
       </Section>
       <Hero hero={hero} parallax />
       {casestudies.items.map((study, index) =>
