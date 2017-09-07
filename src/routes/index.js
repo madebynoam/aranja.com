@@ -5,20 +5,9 @@ import home from './home'
 import work from './work'
 import about from './about'
 import notFound from './not-found'
+import Page from '../components/Page'
 
-const duration = 300
-
-const defaultStyle = {
-  transition: `background-color ${duration}ms ease-in-out`,
-  backgroundColor: 'rebeccapurple'
-}
-
-const transitionStyles = {
-  entering: { backgroundColor: 'blue' },
-  entered: { backgroundColor: 'red' },
-  exiting: { backgroundColor: 'pink' },
-  exited: { backgroundColor: 'orange' }
-}
+const transitionDuration = 1300
 
 export default [
   {
@@ -27,7 +16,7 @@ export default [
       const element = await data.next()
       return (
         <TransitionGroup>
-          {element}
+          {[element]}
         </TransitionGroup>
       )
     },
@@ -36,18 +25,13 @@ export default [
       children: [home, work, about, notFound],
       action: async data => {
         const element = await data.next()
+        const key = data.context.history.location.pathname
         return (
-          <Transition timeout={duration}>
+          <Transition key={key} timeout={transitionDuration}>
             {state => (
-              <div
-                style={{
-                  ...defaultStyle,
-                  ...transitionStyles[state]
-                }}
-              >
-                {console.log(state)}
+              <Page transitionState={state}>
                 {element}
-              </div>
+              </Page>
             )}
           </Transition>
         )

@@ -18,15 +18,14 @@ class Page extends Component {
   }
 
   render() {
-    const { name, children, in: inProp } = this.props
-    const isHome = name === 'Home'
+    const { name, children, transitionState } = this.props
 
     return (
       <div className="Page">
-            <Header active={name} inversed={isHome} fixed={isHome} />
-            <div className="Page-inner">{children}</div>
-            <Footer />
-          </div>
+        <Header active={name} />
+        <div className="Page-inner">{children}</div>
+        <Footer />
+      </div>
     )
   }
 }

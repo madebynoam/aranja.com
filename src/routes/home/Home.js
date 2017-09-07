@@ -12,42 +12,40 @@ import AnimatedText from '../../components/AnimatedText'
 import { Editable } from 'tux'
 
 const Home = ({ content, hero, services, showOffs, caseStudies, transitionState }) => (
-  <Page name="Home" home>
-    <Editable model={content}>
-      <Helmet>
-        <title>Aranja Studio – Welcome</title>
-      </Helmet>
-      <Section noPadding top="medium" bottom="medium">
-        <Intro main text={'We are Aranja,\na creative web studio'} />
-      </Section>
-      <Hero hero={hero} parallax />
-      <Section bottom="xlarge">
-        <Services services={services} />
-      </Section>
-      <Section>
-        <H2 center top="xlarge">
-          <AnimatedText>Trusted by the best</AnimatedText>
-        </H2>
-        <Body1 center bottom="large">
-          <AnimatedText>
-            {'We\'ve had the pleasure of working with\nsome of tech\'s leading companies'}
-          </AnimatedText>
-        </Body1>
-        <Clients />
-      </Section>
-      <Section bottom="xlarge">
-        <H2 center top="xlarge">
-          <AnimatedText>Recent work</AnimatedText>
-        </H2>
-        <Body1 center bottom="large">
-          <AnimatedText>
-            Take a look at some of our recent projects
-          </AnimatedText>
-        </Body1>
-        <CaseStudyGrid caseStudies={caseStudies} />
-      </Section>
-    </Editable>
-  </Page>
+  <Editable model={content}>
+    <Helmet>
+      <title>Aranja Studio – Welcome</title>
+    </Helmet>
+    <Section noPadding top="medium" bottom="medium">
+      <Intro main text={'We are Aranja,\na creative web studio'} />
+    </Section>
+    <Hero hero={hero} parallax />
+    <Section bottom="xlarge">
+      <Services services={services} />
+    </Section>
+    <Section>
+      <H2 center top="xlarge">
+        <AnimatedText>Trusted by the best</AnimatedText>
+      </H2>
+      <Body1 center bottom="large">
+        <AnimatedText>
+          {'We\'ve had the pleasure of working with\nsome of tech\'s leading companies'}
+        </AnimatedText>
+      </Body1>
+      <Clients />
+    </Section>
+    <Section bottom="xlarge">
+      <H2 center top="xlarge">
+        <AnimatedText>Recent work</AnimatedText>
+      </H2>
+      <Body1 center bottom="large">
+        <AnimatedText>
+          Take a look at some of our recent projects
+        </AnimatedText>
+      </Body1>
+      <CaseStudyGrid caseStudies={caseStudies} />
+    </Section>
+  </Editable>
 )
 
 export default Home
