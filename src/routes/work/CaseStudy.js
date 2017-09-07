@@ -22,7 +22,6 @@ const CaseStudy = ({ content, caseStudy, caseStudies }) => {
 
   return (
     <Editable model={content}>
-      <Page name="Work">
       <Helmet>
         <title>{`Aranja Studio – ${projectName}`}</title>
       </Helmet>
@@ -45,7 +44,6 @@ const CaseStudy = ({ content, caseStudy, caseStudies }) => {
         {/* <Section noPadding>
           <NextUp next={caseStudies.items[0]} />
         </Section> */}
-      </Page>
     </Editable>
   )
 }

@@ -8,18 +8,6 @@
   position: relative;
   z-index: 1;
 
-  &.darken {
-    &::before {
-      content: '';
-      background: rgba(0, 0, 0, 0.1);
-      height: 100%;
-      position: absolute;
-      transition: all 0.2s;
-      width: 100%;
-      z-index: 1;
-    }
-  }
-
   &.cover {
     &::after {
       background: $blue;
@@ -46,29 +34,4 @@
   position: absolute;
   width: 100%;
   z-index: 2;
-}
-
-.Hero-text {
-  line-height: 1;
-  font-size: between(40px, 100px, $sm, $lg);
-  transform: translateY(calc((var(--parallax) - 1) * -6rem));
-  transition: transform 0.1s ease;
-  padding: 1ch;
-  font-weight: 500;
-  
-  @include respond-to(md) {
-    max-width: 16ch;
-    padding: 0;
-  }
-
-  @include respond-to(lg) {
-    //temp
-    font-size: 6.25rem;
-    margin-top: 1ch;
-    margin-left: 1ch;
-    line-height: 1.1;
-  }
-
-  @include respond-to(xlg) {
-  }
 }
