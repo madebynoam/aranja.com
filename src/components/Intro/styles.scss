@@ -10,7 +10,6 @@
     flex-wrap: nowrap;
   }
   @include respond-to(xlg) {
-    flex-wrap: nowrap;
     padding: 10rem $horizontalPadding 0 $horizontalPadding;
   }
 }

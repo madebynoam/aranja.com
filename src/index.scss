@@ -55,9 +55,4 @@ html {
 
 body {
   color: $dark;
-  margin-bottom: between(200px, 300px, $sm, $md); //Footer min-height
-
-  @include respond-to(md) {
-    margin-bottom: 19rem;
-  }
 }

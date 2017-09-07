@@ -15,18 +15,18 @@
   overflow: hidden;
   position: relative;
   width: 100%;
-  transform: translateY(50%);
-  transition: transform 1.3s 0.1s cubic-bezier(0.77, 0, 0.175, 1);
-
-  &.is-loaded {
+  // transform: translateY(50%);
+  // transition: transform 1.3s 0.1s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: opacity 1s 0.05s ease, transform 1.3s 0.05s $easeInOutQuart;
+  opacity: 0;
+  transform: translateY(5rem);
+  &.is-visible {
+    opacity: 1;
     transform: translateY(0);
   }
-  &.cover {
-    height: 45vh;
 
-    @include respond-to(md) {
-      height: 100vh;
-    }
+  @include respond-to(md) {
+    min-height: 65vh;
   }
 }
 

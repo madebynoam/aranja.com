@@ -3,6 +3,7 @@ import minBy from 'lodash/minBy'
 import classNames from 'classnames'
 import Img from './Img'
 import Picture from './Picture'
+import { withReveal } from '../../hoc/withReveal'
 
 class HeroPicture extends Component {
   constructor(props) {
@@ -26,7 +27,7 @@ class HeroPicture extends Component {
   }
 
   render() {
-    const { src, cover, parallax, ...props } = this.props
+    const { src, cover, parallax, isVisible, ...props } = this.props
     const { isMounted, isLoaded } = this.state
 
     if (!Array.isArray(src)) {
@@ -41,7 +42,7 @@ class HeroPicture extends Component {
 
     return (
       <picture
-        className={classNames('HeroPicture', isLoaded && 'is-loaded', cover && 'cover', parallax && 'withParallax')}
+        className={classNames('HeroPicture', isVisible && 'is-visible', isLoaded && 'is-loaded', parallax && 'withParallax')}
         style={style}
       >
         {isMounted &&
@@ -62,4 +63,4 @@ class HeroPicture extends Component {
   }
 }
 
-export default HeroPicture
+export default withReveal(HeroPicture)

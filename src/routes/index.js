@@ -6,8 +6,9 @@ import work from './work'
 import about from './about'
 import notFound from './not-found'
 import Page from '../components/Page'
+import Footer from '../components/Footer'
 
-const transitionDuration = 1300
+const transitionDuration = 500
 
 export default [
   {
@@ -28,11 +29,12 @@ export default [
         const key = data.context.history.location.pathname
         return (
           <Transition key={key} timeout={transitionDuration}>
-            {state => (
-              <Page transitionState={state}>
+            {state => [
+              <Page transitionState={state} key={key}>
                 {element}
-              </Page>
-            )}
+              </Page>,
+              <Footer />
+            ]}
           </Transition>
         )
       }

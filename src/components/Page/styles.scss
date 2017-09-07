@@ -1,14 +1,23 @@
 @import '../../utils/vars.scss';
+@import '../../utils/responsive.scss';
+@import '../../utils/functions.scss';
 
 .Page {
   background: $white;
   margin: auto;
   overflow: hidden;
-  position: relative;
   width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-bottom: between(200px, 300px, $sm, $md); //Footer min-height
+
+  @include respond-to(md) {
+    margin-bottom: 19rem;
+  }
+}
 
   // &::before {
-  //   background-color: #0084ea;
   //   content: '';
   //   display: block;
   //   height: 100%;
@@ -25,7 +34,20 @@
   // }
   // &::after {
   //   transform: translateX(150%);
-  //   transition: transform 1s $ease-pageEnter;
   // }
-}
 
+.Revealer {
+  width: 100vw;
+  height: 100vh;
+  background-color: #006ad4;
+  position: fixed;
+  transition: transform 1s cubic-bezier(0.7, 0, 0.3, 1);
+  z-index: 10;
+  
+  .reveal-up {
+    transform: translateY(100%);
+  }
+  .reveal-right {
+    transform: translateX(-100%);
+  }
+}
