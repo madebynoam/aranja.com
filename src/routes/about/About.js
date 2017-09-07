@@ -16,34 +16,24 @@ import '../../components/Team/styles.css'
 
 const About = ({ content, team, hero, collage }) => (
   <Editable model={content}>
-    <Page name="About">
-      <Helmet>
-        <title>Aranja Studio – About</title>
-      </Helmet>
-      <Section noPadding top="medium" bottom="medium">
-        <Intro
-          text="About our company"
-          description="We are a web development studio based out of beautiful Reykjavik, Iceland."
-        />
-      </Section>
-      <Hero hero={hero} />
-      <Section bottom="large">
-        <div className="Team-copy u-paddingBottomXLarge u-paddingTopXLarge">
-          <div className="Team-copyPart">
-            <H1 center>
-              <AnimatedText>{'In a nutshell'}</AnimatedText>
-            </H1>
-          </div>
-          <div className="Team-copyPart">
-            <Body1 faint>
-              <AnimatedText>
-                {
-                  'Aranja is a small web studio based and raised in Iceland. Our goal, to improve the web, is only achieved with a passionate team that is motivated and happy. We believe that the community is what makes the web what it is and we intend to support that.'
-                }
-              </AnimatedText>
-            </Body1>
-          </div>
+    <Helmet>
+      <title>Aranja Studio – About</title>
+    </Helmet>
+    <Section noPadding top="medium" bottom="medium">
+      <Intro
+        text="About our company"
+        description="We are a web development studio based out of beautiful Reykjavik, Iceland."
+      />
+    </Section>
+    <Hero hero={hero} />
+    <Section bottom="large">
+      <div className="Team-copy u-paddingBottomXLarge u-paddingTopXLarge">
+        <div className="Team-copyPart">
+          <H1 center>
+            <AnimatedText>{'In a nutshell'}</AnimatedText>
+          </H1>
         </div>
+
         <TeamGrid images={collage} />
         <H2 top="xlarge" bottom="xsmall" center>
           <AnimatedText>{'Focus on quality'}</AnimatedText>
@@ -73,9 +63,18 @@ const About = ({ content, team, hero, collage }) => (
         <Body1 bottom="large" center>
           <AnimatedText>{'Looking forward to Mondays since 2013'}</AnimatedText>
         </Body1>
-        <FamilyGrid />
-      </Section>
-    </Page>
+      </div>
+      <SectionHero img={teamHeroPhoto3} caption="Hacking on a side-project" />
+    </Section>
+    <Section top="medium" bottom="medium">
+      <H3 top="large" center>
+        <AnimatedText>{'One Family'}</AnimatedText>
+      </H3>
+      <Body1 bottom="large" center>
+        <AnimatedText>{'Looking forward to Mondays since 2013'}</AnimatedText>
+      </Body1>
+      <FamilyGrid />
+    </Section>
   </Editable>
 )
 
