@@ -28,7 +28,7 @@ $maxChilds: 8;
   position: relative;
   opacity: 0;
   transform: translateY(6rem);
-  transition: opacity 0.7s ease, transform 0.7s ease-in-out;
+  transition: opacity 0.7s ease, transform 1.3s $easeInOutCustom;
 
   &::before {
     content: '';

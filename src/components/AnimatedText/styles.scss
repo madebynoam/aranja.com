@@ -20,11 +20,23 @@ $maxChilds: 5;
 
 .AnimatedText-part {
   display: block;
-  transition: opacity 1s ease, transform 1.3s $easeInOutQuart;
-
-  &.AnimatedText--AppearUp {
+  
+  &.AnimatedText--appearUpSlow {
     opacity: 0;
-    transform: translateY(110%);
+    transform: translateY(100%);
+    transition: opacity 1s ease, transform 1.3s $easeInOutQuart;
+
+    &.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  &.AnimatedText--appearUp {
+    opacity: 0;
+    transform: translateY(100%);
+    transition: opacity 0.8s ease, transform 0.8s $easeInOutCustom;
+
     &.is-visible {
       opacity: 1;
       transform: translateY(0);

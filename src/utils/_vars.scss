@@ -14,7 +14,6 @@ $barelyWhite: #f1f1f1;
 $red: #eb3659;
 $dark: #3c435f;
 $copy: #6f7489;
-
 $bodyPadding: 20px;
 
 $bodyFontFamily: 'proxima-nova';
@@ -24,5 +23,7 @@ $monospace: $monospaceFontFamily;
 
 $ease-pageEnter: ease-in-out; //cubic-bezier(0.215, 0.610, 0.355, 1.000);
 $easeInOutQuart: cubic-bezier(0.77, 0, 0.175, 1);
+$easeInOutCustom: cubic-bezier(0.5,0.11,0.17,1);
 $easeOutCirc: cubic-bezier(0.075, 0.82, 0.165, 1);
-$ease-reveal: $easeInOutQuart; //cubic-bezier(.47,.04,.09,.98);
+$easeInQuart: cubic-bezier(0.895, 0.03, 0.685, 0.22);
+$easeOutQuart: cubic-bezier(0.165, 0.84, 0.44, 1);

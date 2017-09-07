@@ -1,14 +1,18 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import root from 'window-or-global'
+import classNames from 'classnames'
 import Header from '../Header'
+import Footer from '../Footer'
 import './styles.css'
+
+// 100% right
+// -100% left
 
 const defaultStylesUp = {
   transition: `transform ${1000}ms cubic-bezier(0.7, 0, 0.3, 1)`,
   transform: 'translateY(100%)'
 }
-
 const defaultStylesRight = {
   transition: `transform ${1000}ms cubic-bezier(0.7, 0, 0.3, 1)`,
   transform: 'translateX(-100%)'
@@ -62,6 +66,9 @@ class Page extends Component {
       <div
         className="Page"
         key="bla2"
+        style={{
+          ...pageStyles[transitionState]
+        }}
       >
         <Header active={name} />
         {children}

@@ -68,4 +68,4 @@ Clients.propTypes = {
   )
 }
 
-export default withReveal(Clients)
+export default withReveal(Clients, { threshold: '0.4' })

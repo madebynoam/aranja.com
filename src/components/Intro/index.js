@@ -10,13 +10,13 @@ const Intro = ({ main, text, description }) => {
     <div className={classNames('Intro', main && 'main')}>
       <div className="Intro-split">
         <Component>
-          <AnimatedText>{text}</AnimatedText>
+          <AnimatedText animation="appearUpSlow">{text}</AnimatedText>
         </Component>
       </div>
       {description && (
         <div className="Intro-split">
         <H4 className="Intro-description">
-          <AnimatedText>{description}</AnimatedText>
+          <AnimatedText animation="appearUpSlow">{description}</AnimatedText>
         </H4>
         </div>
       )}

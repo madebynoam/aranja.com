@@ -2,6 +2,8 @@
 @import '../../utils/vars';
 @import '../../utils/responsive';
 
+$maxItems: 10;
+
 .CaseStudyGrid {
   position: relative;
   z-index: 1;
@@ -28,39 +30,27 @@
   overflow: hidden;
   position: relative;
   transform-origin: bottom right;
-
-  &:nth-child(2),
-  &:nth-child(4) {
-    grid-row-end: span 2;
-  }
-}
-
-.CaseStudyGrid-itemInner {
-  align-items: center;
-  display: flex;
-  flex: 1;
-  justify-content: center;
-  overflow: hidden;
-  position: relative;
   opacity: 0;
   transform: translateY(6rem) translateZ(1px);
   transition: opacity 0.4s ease, transform 0.4s ease-out;
   will-change: opacity, transform;
-  background: #3a82df;
-
-  &.is-visible {
-    opacity: 1;
-    transform: translateY(0);
-
-    &:hover {
-      transform: translateY(0) scale(0.975);
-    }
-  }
-
   &::before {
     content: '';
     display: block;
     padding-top: 60%;
+  }
+  &:nth-child(2),
+  &:nth-child(4) {
+    grid-row-end: span 2;
+  }
+  .CaseStudyGrid.is-visible & {
+    transform: translateY(0);
+    opacity: 1;
+    @for $i from 1 through $maxItems {
+      &:nth-child(#{$i}) {
+        transition-delay: #{($i - 1) / 25}s;
+      }
+    }
   }
 }
 
@@ -76,26 +66,11 @@
   transition: transform 0.25s ease-out;
   will-change: transform;
 
-  .CaseStudyGrid-itemInner.is-visible & {
+  .CaseStudyGrid-items.is-visible & {
     transform: scale(1);
   }
-  .CaseStudyGrid-itemInner.is-visible:hover & {
+  .CaseStudyGrid-items.is-visible:hover & {
     transform: scale(1.05);
-  }
-}
-
-.CaseStudyGrid-info {
-  z-index: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: $white;
-  transform: translateY(calc(100% + 1rem));
-  transition: transform 0.25s, opacity 0.1s;
-  opacity: 0;
-  .CaseStudyGrid-item:hover & {
-    transform: translateY(0);
-    opacity: 1;
   }
 }
 

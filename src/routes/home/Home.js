@@ -24,7 +24,7 @@ const Home = ({ content, hero, services, showOffs, caseStudies, transitionState 
       <Services services={services} />
     </Section>
     <Section>
-      <H2 center top="xlarge">
+      <H2 center top="xlarge" bottom="xsmall">
         <AnimatedText>Trusted by the best</AnimatedText>
       </H2>
       <Body1 center bottom="large">
@@ -35,7 +35,7 @@ const Home = ({ content, hero, services, showOffs, caseStudies, transitionState 
       <Clients />
     </Section>
     <Section bottom="xlarge">
-      <H2 center top="xlarge">
+      <H2 center top="xlarge" bottom="xsmall">
         <AnimatedText>Recent work</AnimatedText>
       </H2>
       <Body1 center bottom="large">

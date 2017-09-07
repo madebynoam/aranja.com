@@ -26,7 +26,7 @@ const UnControlled = ({ shouldAnimate, children, animation }) => (
 class AnimatedText extends PureComponent {
 
   render() {
-    const { children, animation = 'AppearUp', uncontrolled, shouldAnimate } = this.props
+    const { children, animation = 'appearUp', uncontrolled, shouldAnimate } = this.props
 
     // Other props can send in shouldAnimate and then we skip listening to our own state
     if (uncontrolled) {
@@ -38,7 +38,7 @@ class AnimatedText extends PureComponent {
         {isVisible => 
           <div>
           {children.split('\n').map(text => (
-            <span className={classNames('AnimatedText')} key={text}>
+            <span className="AnimatedText" key={text}>
               <span
                 className={classNames(
                   'AnimatedText-part',
