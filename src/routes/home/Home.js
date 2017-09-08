@@ -29,18 +29,18 @@ const Home = ({ content, hero, services, showOffs, caseStudies }) => (
       </H2>
       <Body1 center bottom="large">
         <AnimatedText>
-          {'We\'ve had the pleasure of working with\nsome of tech\'s leading companies'}
+          {'We\'ve had the pleasure of working with great companies,\ninspiring teams and brilliant people.'}
         </AnimatedText>
       </Body1>
       <Clients />
     </Section>
     <Section bottom="xlarge">
       <H2 center top="xlarge" bottom="xsmall">
-        <AnimatedText>Recent work</AnimatedText>
+        <AnimatedText>Case Studies</AnimatedText>
       </H2>
       <Body1 center bottom="large">
         <AnimatedText>
-          Take a look at some of our recent projects
+          Check out our project highlights.
         </AnimatedText>
       </Body1>
       <CaseStudyGrid caseStudies={caseStudies} />
