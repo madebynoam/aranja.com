@@ -29,7 +29,7 @@ const Header = ({ inversed, active }) =>
           noStyle
           className={classNames(
             'Menu-item',
-            active === nav.title && 'is-active'
+            active == nav.title.toLowerCase() && 'is-active'
           )}
           href={`/${nav.slug}`}
           key={nav.title}

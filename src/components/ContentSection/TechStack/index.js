@@ -9,7 +9,7 @@ const TechStack = ({ techStack, isVisible }) => {
       {techStack &&
         Array.isArray(techStack) &&
         techStack.map(item => (
-          <div className="TechStack-item">
+          <div className="TechStack-item" key={item.fields.techName}>
             <img
               className="TechStack-logo"
               src={item.fields.icon.fields.file.url}

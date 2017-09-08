@@ -1,19 +1,28 @@
-@import '../../utils/vars.scss';
+@import '../../utils/functions';
+@import '../../utils/vars';
+@import '../../utils/responsive';
 
 .Team-copy {
-  display: flex;
-  align-items: center;
-  margin: var(--ms5) 0;
   line-height: 1.666;
+  @include respond-to(md) {
+    align-items: center;
+    display: flex;
+    margin: var(--ms5) 0;
+  }
 }
 
 .Team-copy--centered {
-  max-width: 55%;
-  margin: 0 auto;
+  @include respond-to(md) {
+    max-width: 55%;
+    margin: 0 auto;
+  }
+
 }
 
 .Team-copyPart {
-  flex: 0 1 50%;
-  margin: 0 auto;
-  max-width: 38rem;
+  @include respond-to(md) {
+    flex: 0 1 50%;
+    margin: 0 auto;
+    max-width: 38rem;
+  }
 }

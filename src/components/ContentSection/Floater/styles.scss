@@ -1,11 +1,19 @@
+@import '../../../utils/functions';
+@import '../../../utils/vars';
+@import '../../../utils/responsive';
+
 .Floater {
-  width: 60%;
   margin: 0 auto;
   position: relative;
+  width: 100%;
   &::after {
     content: '';
     display: block;
     padding-bottom: 83%;
+  }
+
+  @include respond-to(md) {
+    width: 60%;
   }
 }
 
@@ -16,23 +24,41 @@
   // bottom layer
   &:nth-child(1) {
     transform:
-    translateX(calc(var(--parallax) * -10rem))
-    translateY(10rem)
-    translateY(calc(var(--parallax) * -6rem));
+    translateX(calc(var(--parallax) * -5rem))
+    translateY(5rem)
+    translateY(calc(var(--parallax) * -3rem));
+
+    @include respond-to(md) {
+      transform:
+      translateX(calc(var(--parallax) * -10rem))
+      translateY(10rem)
+      translateY(calc(var(--parallax) * -6rem));
+      }
   }
 
   // center layer
   &:nth-child(2) {
     transform:
-    translateY(5rem)
-    translateY(calc(var(--parallax) * -4rem));
+    translateY(2.5rem)
+    translateY(calc(var(--parallax) * -2rem));
+    @include respond-to(md) {
+      transform:
+      translateY(5rem)
+      translateY(calc(var(--parallax) * -4rem));
+      }
   }
 
   // top layer
   &:nth-child(3) {
     transform:
-    translateX(calc(var(--parallax) * 10rem))
+    translateX(calc(var(--parallax) * 5rem))
     translateY(0rem)
-    translateY(calc(var(--parallax) * -2rem));
+    translateY(calc(var(--parallax) * -1rem));
+    @include respond-to(md) {
+      transform:
+      translateX(calc(var(--parallax) * 10rem))
+      translateY(0rem)
+      translateY(calc(var(--parallax) * -2rem));
+      }
   }
 }

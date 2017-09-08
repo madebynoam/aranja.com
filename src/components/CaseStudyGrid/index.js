@@ -1,49 +1,38 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
-import Observer from 'react-intersection-observer'
 import Button from '../Button'
+import Link from '../Link'
 import { H3 } from '../../typography'
+import { withReveal } from '../../hoc/withReveal'
 import './styles.css'
 
-const CaseStudyGrid = ({ caseStudies, button, padding }) => (
-  <div className={classNames('CaseStudyGrid', padding && 'withPadding')}>
-    {console.log(caseStudies)}
+const CaseStudyGrid = ({ caseStudies, button, padding, isVisible }) => (
+  <div
+    className={classNames(
+      'CaseStudyGrid',
+      isVisible && 'is-visible',
+      padding && 'withPadding'
+    )}
+  >
     <div className="CaseStudyGrid-items">
-      {caseStudies &&
-        caseStudies.items.slice(0, 6).map((item, index) => (
-          <Observer
-            triggerOnce
-            threshold="0.2"
-            tag="a"
-            className={classNames(
-              'CaseStudyGrid-item',
-              item.fields.featured && 'is-featured'
-            )}
-            href={`/work/${item.fields.slug}`}
-          >
-            {isVisible => (
-              <div
-                className={classNames(
-                  'CaseStudyGrid-itemInner',
-                  isVisible && 'is-visible'
-                )}
-                key={index}
-              >
-                <div
-                  className="CaseStudyGrid-image"
-                  style={{
-                    backgroundImage: `url(${item &&
-                      item.fields.heroImage.fields.file.url})`
-                  }}
-                />
-                <div className="CaseStudyGrid-info">
-                  <H3>{item.fields.projectName}</H3>
-                </div>
-              </div>
-            )}
-          </Observer>
-        ))}
+      {caseStudies.items.slice(0, 6).map(item => (
+        <Link
+          noStyle
+          className="CaseStudyGrid-item"
+          href={`/work/${item.fields.slug}`}
+          key={item.fields.slug}
+        >
+          <H3 className="CaseStudyGrid-itemTitle">{item.fields.projectName}</H3>
+          <div
+            className="CaseStudyGrid-image"
+            style={{
+              backgroundImage: `url(${item &&
+                item.fields.heroImage.fields.file.url})`
+            }}
+          />
+        </Link>
+      ))}
     </div>
     {button && (
       <div className="CaseStudyGrid-button">
@@ -59,4 +48,4 @@ CaseStudyGrid.propTypes = {
   button: PropTypes.string
 }
 
-export default CaseStudyGrid
+export default withReveal(CaseStudyGrid)

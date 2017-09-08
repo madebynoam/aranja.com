@@ -7,8 +7,10 @@
 }
 
 .DeviceSection-copy {
-  flex: 0 1 65%;
-  padding-right: 25%;
+  @include respond-to(md) {
+    flex: 0 1 65%;
+    padding-right: 25%;
+  }
 }
 
 .DeviceSection-device {

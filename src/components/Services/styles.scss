@@ -3,14 +3,9 @@
 @import '../../utils/responsive';
 
 .Service {
-  --offset: 6rem;
-  @media only screen and (min-width: $md) and (max-width: $xlg) {
-    --offset: between(60px, 96px, $md, $xlg);
-  }
-
   display: flex;
   flex-wrap: wrap;
-  padding-top: var(--ms3);
+  margin-top: 6rem;
   position: relative;
   z-index: 3;
   
@@ -30,15 +25,11 @@
     align-items: center;
     display: flex;
     flex: 1;
-    padding: var(--offset);
+    padding: between(60px, 96px, $sm, $md);
     .Services > div:nth-child(odd) .Service &,
     .EditModal:nth-child(odd) .Service & {
       order: 2;
     }
-  }
-
-  @include respond-to(lg) {
-    margin-left: between(20px, 40px, $lg, $xlg);
   }
 }
 

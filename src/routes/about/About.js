@@ -1,8 +1,7 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
 import { Editable } from 'tux'
-import { Body1, H1, H2, H3 } from '../../typography'
-import Page from '../../components/Page'
+import { Body1, H1, H2 } from '../../typography'
 import TeamGrid from '../../components/Team/Grid'
 import FamilyGrid from '../../components/FamilyGrid'
 import Section from '../../components/Section'
@@ -10,8 +9,8 @@ import SectionHero from '../../components/SectionHero'
 import Hero from '../../components/Hero'
 import Intro from '../../components/Intro'
 import AnimatedText from '../../components/AnimatedText'
-import teamHeroPhoto2 from '../../components/Team/Aranja00557.jpg'
-import teamHeroPhoto3 from '../../components/Team/Aranja00711-Edit.jpg'
+import teamHeroPhoto1 from '../../components/Team/foosball.jpg'
+import teamHeroPhoto2 from '../../components/Team/aranja-hack-night.jpg'
 import '../../components/Team/styles.css'
 
 const About = ({ content, team, hero, collage }) => (
@@ -54,7 +53,7 @@ const About = ({ content, team, hero, collage }) => (
           }
         </AnimatedText>
       </Body1>
-      <SectionHero img={teamHeroPhoto2} caption="Hard at work" />
+      <SectionHero img={teamHeroPhoto1} caption="Hard at work" />
       <div className="Team-copy Team-copy--centered">
         <Body1 top="large" bottom="large">
           Instead of being a group of coworkers that only work together, we are
@@ -63,12 +62,12 @@ const About = ({ content, team, hero, collage }) => (
           just to enjoy a dinner with our families.
         </Body1>
       </div>
-      <SectionHero img={teamHeroPhoto3} caption="Hacking on a side-project" />
+      <SectionHero img={teamHeroPhoto2} caption="Hacking on a side-project" />
     </Section>
     <Section top="medium" bottom="medium">
-      <H3 top="large" center>
+      <H2 top="large" center>
         <AnimatedText>{'One Family'}</AnimatedText>
-      </H3>
+      </H2>
       <Body1 bottom="large" center>
         <AnimatedText>{'Looking forward to Mondays since 2013'}</AnimatedText>
       </Body1>

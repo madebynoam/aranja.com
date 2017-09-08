@@ -57,7 +57,7 @@ class Page extends Component {
     return [
       <div
         className="Revealer reveal-right"
-        key="bla1"
+        key="revealer"
         style={{
           ...defaultStylesRight,
           ...revealStylesRight[transitionState]
@@ -65,7 +65,7 @@ class Page extends Component {
       />,
       <div
         className="Page"
-        key="bla2"
+        key="page"
         style={{
           ...pageStyles[transitionState]
         }}
@@ -75,11 +75,6 @@ class Page extends Component {
       </div>
     ]
   }
-}
-
-Page.propTypes = {
-  name: PropTypes.string,
-  children: PropTypes.array
 }
 
 export default Page

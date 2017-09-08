@@ -3,11 +3,15 @@
 @import '../../utils/responsive';
 
 .Header {
-  padding: var(--ms4) var(--ms6);
   width: 100%;
   z-index: 1;
   display: flex;
   justify-content: space-between;
+  padding: between(25.253px, 67.34px, $sm, $xlg) between(16px, 44.875px, $sm, $xlg);
+
+  @include respond-to(md) {
+    padding: var(--ms4) var(--ms6);
+  }
 }
 
 .Header-logo {
@@ -21,7 +25,6 @@
   display: flex;
   justify-content: space-between;
   max-width: between(140px, 240px, $sm, $md);
-  margin-left: auto;
   width: 100%;
 
   @include respond-to(md) {

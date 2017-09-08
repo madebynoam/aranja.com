@@ -19,7 +19,7 @@ const TeamGrid = ({ images }) => (
               <div
                 className="Team-gridImage"
                 style={{
-                  backgroundImage: `url(${image && image.fields.file.url})`
+                  backgroundImage: `url(${image && image.fields.file.url}?w=800)`
                 }}
               />
             </div>

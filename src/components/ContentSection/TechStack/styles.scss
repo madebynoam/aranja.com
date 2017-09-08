@@ -1,5 +1,6 @@
 @import '../../../utils/vars.scss';
 @import '../../../utils/responsive.scss';
+
 $maxItems: 9;
 
 .TechStack {
@@ -21,13 +22,16 @@ $maxItems: 9;
 
 
 .TechStack-item {
-  display: flex;
-  padding: var(--ms2);
   align-items: center;
-
+  display: flex;
   opacity: 0;
+  padding: var(--ms2) var(--ms0);
   transform: translateY(6rem);
   transition: opacity 0.7s ease, transform 0.7s ease-in-out;
+
+  @include respond-to(md) {
+    padding: var(--ms2);
+  }
 
   .TechStack.is-visible & {
     transform: translateY(0);

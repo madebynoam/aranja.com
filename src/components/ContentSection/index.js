@@ -7,7 +7,7 @@ import DeviceSection from './Device'
 import ScreenshotsGalore from './ScreenshotsGalore'
 import TechStack from './TechStack'
 import Floater from './Floater'
-import { H3 } from '../../typography'
+import { H2 } from '../../typography'
 
 import './styles.css'
 
@@ -74,7 +74,7 @@ const ContentSection = ({ section }) => {
       const { technology } = section.fields
       return (
         <Wrapper>
-          <H3 center bottom="medium">Technology used</H3>
+          <H2 center bottom="medium">Technology used</H2>
           <TechStack techStack={technology} />
         </Wrapper>
       )

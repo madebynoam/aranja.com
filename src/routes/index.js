@@ -26,11 +26,11 @@ export default [
       children: [home, work, about, notFound],
       action: async data => {
         const element = await data.next()
-        const key = data.context.history.location.pathname
+        const pathName = data.context.history.location.pathname
         return (
-          <Transition key={key} timeout={transitionDuration}>
+          <Transition key={pathName} timeout={transitionDuration}>
             {state => [
-              <Page transitionState={state} key={key}>
+              <Page transitionState={state} key={pathName} name={String(pathName).replace('/', '')}>
                 {element}
               </Page>,
               <Footer />

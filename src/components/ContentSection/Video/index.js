@@ -42,4 +42,4 @@ Video.propTypes = {
   description: PropTypes.string.isRequired
 }
 
-export default withReveal(Video, { triggerOnce: false, threshold: '0.4' })
+export default withReveal(Video, { triggerOnce: false, threshold: '0.3' })

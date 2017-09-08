@@ -6,7 +6,7 @@ import { H1 } from '../../typography'
 import './styles.css'
 
 const UnControlled = ({ shouldAnimate, children, animation }) => (
-  <div>
+  <span>
     {children.split('\n').map(text => (
       <span className={classNames('AnimatedText')} key={text}>
         <span
@@ -20,7 +20,7 @@ const UnControlled = ({ shouldAnimate, children, animation }) => (
         </span>
       </span>
     ))}
-  </div>
+  </span>
 )
 
 class AnimatedText extends PureComponent {
@@ -34,9 +34,9 @@ class AnimatedText extends PureComponent {
     }
 
     return (
-      <Observer triggerOnce>
+      <Observer triggerOnce tag="span">
         {isVisible => 
-          <div>
+          <span>
           {children.split('\n').map(text => (
             <span className="AnimatedText" key={text}>
               <span
@@ -50,7 +50,7 @@ class AnimatedText extends PureComponent {
               </span>
             </span>
           ))}
-        </div>
+        </span>
         }
       </Observer>
     )
@@ -59,7 +59,7 @@ class AnimatedText extends PureComponent {
 
 AnimatedText.propTypes = {
   text: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
-  animation: PropTypes.oneOf(['AppearUp', 'FadeIn'])
+  animation: PropTypes.oneOf(['appearUp', 'appearUpSlow'])
 }
 
 export default AnimatedText

@@ -17,7 +17,7 @@ const Service = ({ heading, copy, image, isVisible, hasBeenSeen }) =>
             {/* Todo: something else. */}
           </AnimatedText>
         </H2>
-        <Body1 bottom="small" className="Service-copy">
+        <Body1 bottom="medium" className="Service-copy">
           <AnimatedText uncontrolled shouldAnimate={isVisible}>
             {copy}
           </AnimatedText>
