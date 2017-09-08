@@ -20,8 +20,8 @@ const About = ({ content, team, hero, collage }) => (
     </Helmet>
     <Section noPadding top="medium" bottom="medium">
       <Intro
-        text="About our company"
-        description="We are a web development studio based out of beautiful Reykjavik, Iceland."
+        text="About us"
+        description="We are a team of developers, specialized in web technologies."
       />
     </Section>
     <Hero hero={hero} />
@@ -36,7 +36,7 @@ const About = ({ content, team, hero, collage }) => (
           <Body1 faint>
             <AnimatedText>
               {
-                'Aranja is a small web studio based and raised in Iceland. Our goal, to improve the web, is only achieved with a passionate team that is motivated and happy. We believe that the community is what makes the web what it is and we intend to support that.'
+                'Aranja is a small web studio based and raised in Iceland. Our goal, to improve the web, is achieved with a motivated team.'
               }
             </AnimatedText>
           </Body1>
@@ -69,7 +69,7 @@ const About = ({ content, team, hero, collage }) => (
         <AnimatedText>{'One Family'}</AnimatedText>
       </H2>
       <Body1 bottom="large" center>
-        <AnimatedText>{'Looking forward to Mondays since 2013'}</AnimatedText>
+        <AnimatedText>{'Looking forward to Mondays since 2014.'}</AnimatedText>
       </Body1>
       <FamilyGrid />
     </Section>
