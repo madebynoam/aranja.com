@@ -47,7 +47,7 @@ $maxChilds: 8;
       &:nth-child(#{$i}) {
         transition-delay: #{($i - 1) / 25}s;
       }
-     }
+    }
   }
 }
 

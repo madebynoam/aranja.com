@@ -31,7 +31,7 @@
     display: flex;
     flex: 1;
     padding: var(--offset);
-    
+    margin-left: between(20px, 40px, $md, $xlg);
     .Services > div:nth-child(odd) .Service &,
     .EditModal:nth-child(odd) .Service & {
       order: 2;
@@ -41,7 +41,7 @@
 
 .Service-content {
   @include respond-to(md) {
-    max-width: 25rem;
+    max-width: 26rem;
   }
 }
 

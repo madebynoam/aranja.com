@@ -66,15 +66,6 @@ const About = ({ content, team, hero, collage }) => (
       <SectionHero img={teamHeroPhoto3} caption="Hacking on a side-project" />
     </Section>
     <Section top="medium" bottom="medium">
-      <H3 top="medium" bottom="xsmall" center>
-        <AnimatedText>{'One Family'}</AnimatedText>
-      </H3>
-      <Body1 bottom="large" center>
-        <AnimatedText>{'Looking forward to Mondays since 2013'}</AnimatedText>
-      </Body1>
-      <SectionHero img={teamHeroPhoto3} caption="Hacking on a side-project" />
-    </Section>
-    <Section top="medium" bottom="medium">
       <H3 top="large" center>
         <AnimatedText>{'One Family'}</AnimatedText>
       </H3>

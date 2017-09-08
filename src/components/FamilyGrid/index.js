@@ -17,37 +17,37 @@ const FamilyGrid = ({ isVisible }) => (
       className={classNames('Family', isVisible && 'is-visible')}
     >
       <div className="Family-grid">
-        <div className="Family-item" data-animate>
+        <div className="Family-item">
           <div
             className="Family-image"
             style={{ backgroundImage: `url(${family07})` }}
           />
         </div>
-        <div className="Family-item" data-animate>
+        <div className="Family-item">
           <div
             className="Family-image"
             style={{ backgroundImage: `url(${family06})` }}
           />
         </div>
-        <div className="Family-item" data-animate>
+        <div className="Family-item">
           <div
             className="Family-image"
             style={{ backgroundImage: `url(${family03})` }}
           />
         </div>
-        <div className="Family-item" data-animate>
+        <div className="Family-item">
           <div
             className="Family-image"
             style={{ backgroundImage: `url(${family02})` }}
           />
         </div>
-        <div className="Family-item" data-animate>
+        <div className="Family-item">
           <div
             className="Family-image"
             style={{ backgroundImage: `url(${family10})` }}
           />
         </div>
-        <div className="Family-item" data-animate>
+        <div className="Family-item">
           <div
             className="Family-image"
             style={{ backgroundImage: `url(${family04})` }}
