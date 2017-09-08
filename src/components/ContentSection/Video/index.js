@@ -6,16 +6,26 @@ import { withReveal } from '../../../hoc/withReveal'
 import './styles.css'
 
 class Video extends Component {
-  componentDidUpdate(prevProps, prevState) {
-    if (this.props.isVisible) {
-      this.video.play()
-    } else {
-      this.video.pause()
+  constructor(props) {
+    super(props)
+    this.handlePlayback = this.handlePlayback.bind(this)
+  }
+
+  componentDidUpdate(prevProps) {
+    if (!prevProps.isVisible && this.props.isVisible) {
+      this.handlePlayback(true)
+    }
+    if (prevProps.isVisible && !this.props.isVisible) {
+      this.handlePlayback(false)
     }
   }
 
+  handlePlayback(shouldPlay) {
+    shouldPlay ? this.video.play() : this.video.pause()
+  }
+
   render() {
-    const { video, description } = this.props
+    const { video, fallbackVideo, description } = this.props
     const { isVisible } = this.props
 
     return (
@@ -24,11 +34,13 @@ class Video extends Component {
           key={description}
           className="Video"
           loop
-          src={video}
           ref={ref => {
             this.video = ref
           }}
-        />
+        >
+          <source src={video} type="video/webm" />
+          {fallbackVideo && <source src={fallbackVideo} type="video/mp4" />}
+        </video>
         <Body2 top="small" bottom="small" className="Video-description">
           {description}
         </Body2>

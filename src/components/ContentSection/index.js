@@ -53,11 +53,12 @@ const ContentSection = ({ section }) => {
     }
 
     case 'sectionVideo': {
-      const { video, description } = section.fields
+      const { video, fallbackVideo, description } = section.fields
       return (
         <Wrapper tall>
           <Video
             video={video && video.fields.file.url}
+            fallbackVideo={fallbackVideo && fallbackVideo.fields.file.url}
             description={description}
           />
         </Wrapper>
