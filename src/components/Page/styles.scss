@@ -7,34 +7,16 @@
   margin: auto;
   overflow: hidden;
   width: 100%;
-  position: absolute;
   top: 0;
+  position: absolute;
   left: 0;
   margin-bottom: between(200px, 300px, $sm, $md); //Footer min-height
+  z-index: 2;
 
   @include respond-to(md) {
     margin-bottom: 19rem;
   }
 }
-
-  // &::before {
-  //   content: '';
-  //   display: block;
-  //   height: 100%;
-  //   left: 0;
-  //   position: absolute;
-  //   top: 0;
-  //   transform: translateX(-100%);
-  //   width: 100%;
-  //   z-index: 2;
-  // }
-  // &::before {
-  //   transform: translateX(120%);
-  //   transition: transform 1s $ease-pageEnter;
-  // }
-  // &::after {
-  //   transform: translateX(150%);
-  // }
 
 .Revealer {
   width: 100vw;
@@ -43,11 +25,5 @@
   position: fixed;
   transition: transform 1s $easeInOutQuart; //cubic-bezier(0.7, 0, 0.3, 1);
   z-index: 10;
-  
-  // .reveal-up {
-  //   transform: translateY(100%);
-  // }
-  // .reveal-right {
-  //   transform: translateX(-100%);
-  // }
+
 }

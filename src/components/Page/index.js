@@ -6,49 +6,27 @@ import Header from '../Header'
 import Footer from '../Footer'
 import './styles.css'
 
-// 100% right
-// -100% left
-
-const defaultStylesUp = {
-  transition: `transform ${1000}ms cubic-bezier(0.7, 0, 0.3, 1)`,
-  transform: 'translateY(100%)'
-}
-const defaultStylesRight = {
+const defaultStyles = {
   transition: `transform ${1000}ms cubic-bezier(0.7, 0, 0.3, 1)`,
   transform: 'translateX(-100%)'
 }
 
-const revealStylesUp = {
-  entering: { transform: 'translateY(-100%)' },
-  entered: { transform: 'translateY(-100%)' },
-  exiting: { transform: 'translateY(100%)', transition: 'transform 0s' },
-  exited: { transform: 'translateY(100%)', transition: 'transform 0s' }
-}
-
-const revealStylesRight = {
-  entering: { transform: 'translateX(100%)' },
-  entered: { transform: 'translateX(100%)' },
+const revealStyles = {
+  entering: { transform: 'translateX(100%)'},
+  entered: { transform: 'translateX(100%)'},
   exiting: { transform: 'translateX(-100%)', transition: 'transform 0s' },
   exited: { transform: 'translateX(-100%)', transition: 'transform 0s' }
 }
 
 const pageStyles = {
-  entering: { zIndex: 2 },
-  entered: { zIndex: 1 },
-  exiting: { zIndex: 2 },
-  exited: { zIndex: 1 }
+  entering: { zIndex: 1, },
 }
 
 class Page extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      route: null
+  componentDidUpdate(prevProps) {
+    if (prevProps.transitionState === 'entering' && this.props.transitionState === 'entered') {
+      root.scrollTo(0, 0)
     }
-  }
-
-  componentDidMount() {
-    root.scrollTo(0, 0)
   }
 
   render() {
@@ -59,8 +37,8 @@ class Page extends Component {
         className="Revealer reveal-right"
         key="revealer"
         style={{
-          ...defaultStylesRight,
-          ...revealStylesRight[transitionState]
+          ...defaultStyles,
+          ...revealStyles[transitionState]
         }}
       />,
       <div
