@@ -1,7 +1,7 @@
 import React from 'react'
 import Document, { Html, Head, Body, App, Footer } from 'react-document'
 import TypeKit from 'react-typekit'
-
+import favicon from './assets/favicon.png'
 /**
  * This component is a template for the HTML file. You can add webfonts, meta tags,
  * or analytics to this file.
@@ -39,7 +39,7 @@ export default class extends Document {
             property="og:description"
             content="We build interactive websites."
           />
-          <link rel="shortcut icon" href="favicon.ico" />
+          <link rel="shortcut icon" href={favicon} />
         </Head>
         <Body>
           <App />
