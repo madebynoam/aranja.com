@@ -24,17 +24,18 @@
 .Menu {
   display: flex;
   justify-content: space-between;
-  max-width: between(140px, 240px, $sm, $md);
+  max-width: between(170px, 270px, $sm, $md);
   width: 100%;
 
   @include respond-to(md) {
-    max-width: 15rem;
+    max-width: 17rem;
   }
 }
 
 .Menu-item {
   font-size: between(14px, 18px, $sm, $lg);
-  font-family: 'mono45-headline';
+  font-family: $allCapsFontFamily;
+  font-weight: 500;
   text-transform: uppercase;
   text-decoration: none;
   letter-spacing: 0.075em;
@@ -47,7 +48,8 @@
   }
 
   &.is-active {
-    box-shadow: 0 2px 0 currentColor;
+    color: $blue;
+    font-weight: 600;
   }
   .Header.is-inversed & {
     color: $white;
