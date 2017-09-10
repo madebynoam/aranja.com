@@ -58,7 +58,7 @@
   &::after {
     content: '';
     display: block;
-    background: rgba(0, 106, 212, 0.27);
+    background: $light;
     position: absolute;
     bottom: 0;
     width: 100%;
