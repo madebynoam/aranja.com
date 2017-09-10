@@ -48,9 +48,11 @@
 
 .CaseStudyPreview-date {
   display: inline-block;
-  font-family: 'mono45-headline';
+  font-family: $allCapsFontFamily;
   letter-spacing: 0.05em;
+  font-size: var(--ms1);
   line-height: 1;
+  font-weight: 500;
   margin-bottom: var(--ms2);
   padding: 0.25rem 0.5rem;
   text-transform: uppercase;
