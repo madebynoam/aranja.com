@@ -64,11 +64,11 @@ $maxItems: 6;
         transition-delay: #{($i - 1) / 25}s;
       }
     }
-    &:hover {
+    /*&:hover {
       &::after {
         opacity: 1;
       }
-    }
+    }*/
   }
 }
 
@@ -81,10 +81,10 @@ $maxItems: 6;
   transition: opacity 0.4s ease, transform 0.4s $easeInOutCustom;
   will-change: opacity, transform;
   
-  .CaseStudyGrid.is-visible .CaseStudyGrid-item:hover & {
+  /*.CaseStudyGrid.is-visible .CaseStudyGrid-item:hover & {
     opacity: 1;
     transform: translateY(0);
-  }
+  }*/
 }
 
 .CaseStudyGrid-image {
