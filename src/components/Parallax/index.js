@@ -8,7 +8,6 @@ class Parallax extends Component {
     service.addItem(this)
   }
   componentDidUpdate() {
-    console.log('update')
     if (this.context.transitionState === 'entered') {
       this.cache()
     }
