@@ -11,8 +11,11 @@
   
   @include respond-to(md) {
     flex-wrap: nowrap;
-    margin: 0 -6.25rem;
+    margin: 0 between(-16px, -100px, $sm, $xlg);
     padding-top: 0;
+  }
+
+  @include respond-to(xlg) {
   }
 }
 
@@ -25,11 +28,15 @@
     align-items: center;
     display: flex;
     flex: 1;
-    padding: between(60px, 96px, $sm, $md);
+    padding: between(20px, 160px, $md, $xlg);
     .Services > div:nth-child(odd) .Service &,
     .EditModal:nth-child(odd) .Service & {
       order: 2;
     }
+  }
+
+  @include respond-to(xlg) {
+    padding: 0 10rem;
   }
 }
 
@@ -80,7 +87,7 @@
 .Service-imageInner {
   background-position: right;
   background-size: cover;
-  transform: scale(1.2) translateY(calc(var(--parallax) * 2rem));
+  transform: scale(1.15) translateY(calc(var(--parallax) * 2rem));
   height: 100%;
 
   .Services > div:first-child .Service & {
