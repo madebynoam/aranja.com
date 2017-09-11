@@ -19,8 +19,10 @@ const Home = ({ content, hero, services, showOffs, caseStudies }) => (
     <Section noPadding top="medium" bottom="medium">
       <Intro main text={'We are Aranja,\na creative web studio'} />
     </Section>
-    <Hero hero={hero} parallax />
-    <Section bottom="xlarge">
+    <Section noPadding bottom="xlarge">
+      <Hero hero={hero} parallax />
+    </Section>
+    <Section top="xlarge" bottom="xlarge">
       <Services services={services} />
     </Section>
     <Section>
