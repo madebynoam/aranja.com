@@ -8,7 +8,7 @@ import notFound from './not-found'
 import Page from '../components/Page'
 import Footer from '../components/Footer'
 
-const transitionDuration = 500
+const transitionDuration = 650
 
 export default [
   {
