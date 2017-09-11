@@ -53,7 +53,7 @@
     "now-start": "tux-scripts serve"
   },
   "now": {
-    "alias": "new.aranja.com"
+    "alias": "aranja.com"
   },
   "eslintConfig": {
     "extends": "react-app"
