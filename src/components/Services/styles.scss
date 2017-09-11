@@ -14,9 +14,6 @@
     margin: 0 between(-16px, -100px, $sm, $xlg);
     padding-top: 0;
   }
-
-  @include respond-to(xlg) {
-  }
 }
 
 .Service-copy {
