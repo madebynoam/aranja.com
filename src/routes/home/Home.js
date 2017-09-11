@@ -22,7 +22,15 @@ const Home = ({ content, hero, services, showOffs, caseStudies }) => (
     <Section noPadding bottom="xlarge">
       <Hero hero={hero} parallax />
     </Section>
-    <Section top="xlarge" bottom="xlarge">
+    <H2 center top="large" bottom="xsmall">
+        <AnimatedText>Multidisciplinary team of engineers</AnimatedText>
+      </H2>
+      <Body1 center bottom="large">
+        <AnimatedText>
+          We take on projects, big and small, and deliver products beyond expectations.
+        </AnimatedText>
+      </Body1>
+    <Section top="xlarge" bottom="large">
       <Services services={services} />
     </Section>
     <Section>
