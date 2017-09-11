@@ -14,8 +14,6 @@ class Hero extends Component {
         <div
           className={classNames(
             'Hero',
-            'darken',
-            darken && 'darken',
             parallax && 'withParallax'
           )}
         >
@@ -29,7 +27,6 @@ class Hero extends Component {
 
 Hero.propTypes = {
   text: PropTypes.bool,
-  darken: PropTypes.bool,
   cover: PropTypes.bool,
   hero: PropTypes.object,
 }

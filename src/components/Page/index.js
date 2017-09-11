@@ -3,13 +3,10 @@ import PropTypes from 'prop-types'
 import root from 'window-or-global'
 import classNames from 'classnames'
 import Header from '../Header'
-import Footer from '../Footer'
 import './styles.css'
 
 
 const revealActiveStyles = {
-  // entering: {},
-  // entered: {},
   exiting: { transition: 'transform 0s' },
   exited: { transition: 'transform 0s' }
 }
@@ -22,6 +19,9 @@ const pageStyles = {
 }
 
 class Page extends Component {
+  getChildContext() {
+    return { transitionState: this.props.transitionState }
+  }
   componentDidUpdate(prevProps) {
     if (
       prevProps.transitionState === 'entering' &&
@@ -54,4 +54,7 @@ class Page extends Component {
   }
 }
 
+Page.childContextTypes = {
+  transitionState: PropTypes.string,
+}
 export default Page

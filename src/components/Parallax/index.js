@@ -1,12 +1,18 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import service, { offsetTop } from './ParallaxService'
 
 class Parallax extends Component {
   componentDidMount() {
-    service.addItem(this)
     this.cache()
+    service.addItem(this)
   }
-
+  componentDidUpdate() {
+    console.log('update')
+    if (this.context.transitionState === 'entered') {
+      this.cache()
+    }
+  }
   componentWillUnmount() {
     service.removeItem(this)
   }
@@ -33,6 +39,10 @@ class Parallax extends Component {
       },
     })
   }
+}
+
+Parallax.contextTypes = {
+  transitionState: PropTypes.string,
 }
 
 export default Parallax
