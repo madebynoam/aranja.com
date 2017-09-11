@@ -38,7 +38,7 @@ class Page extends Component {
       <div
         className={classNames(
           'Revealer',
-          transitionState  && 'is-active',
+          transitionState && 'is-active',
         )}
         style={revealActiveStyles[transitionState]}
         key="revealer"
