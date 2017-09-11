@@ -74,16 +74,16 @@
   left: 0;
   flex: 1;
   overflow: hidden;
-
-  .Services > div:first-child .Service & {
-    background-position: center;
-  }
 }
 
 
 .Service-imageInner {
-  background-position: center;
+  background-position: right;
   background-size: cover;
   transform: scale(1.2) translateY(calc(var(--parallax) * 2rem));
   height: 100%;
+
+  .Services > div:first-child .Service & {
+    background-position: left;
+  }
 }
