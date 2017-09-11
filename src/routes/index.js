@@ -33,7 +33,7 @@ export default [
               <Page transitionState={state} key={pathName} name={String(pathName).replace('/', '')}>
                 {element}
               </Page>,
-              <Footer />
+              <Footer key='footer' />
             ]}
           </Transition>
         )

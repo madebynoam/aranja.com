@@ -4,7 +4,7 @@ import classNames from 'classnames'
 import './styles.css'
 
 const TeamGrid = ({ images }) => (
-  <Observer triggerOnce threshold="0.4" className="u-paddingBottomXLarge">
+  <Observer triggerOnce threshold={0.4} className="u-paddingBottomXLarge">
     {isVisible => (
       <div className="Team-grid">
         {images &&

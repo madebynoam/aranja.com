@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react'
 import Observer from 'react-intersection-observer'
 
-const DEFAULT_THRESHOLD = '0.2'
+const DEFAULT_THRESHOLD = 0.2
 const DEFAULT_TRIGGER_ONCE = true
 
 export const withReveal = (WrappedComponent, config) => {
