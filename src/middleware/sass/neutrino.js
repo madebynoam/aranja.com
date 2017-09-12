@@ -14,7 +14,7 @@ module.exports = (neutrino, options = {}) => {
       )
       .use('style')
         .loader(require.resolve('style-loader'))
-        .when(options.style, use => use.options(options.style))
+      .when(options.style, use => use.options(options.style))
         .end()
       .use('css')
         .loader(require.resolve('css-loader'))
@@ -23,7 +23,7 @@ module.exports = (neutrino, options = {}) => {
             minimize: isProd,
             sourceMap: isProd,
           },
-          options.css,
+          options.css
         ))
         .end()
       .use('sass')
@@ -32,6 +32,6 @@ module.exports = (neutrino, options = {}) => {
           {
             sourceMap: isProd,
           },
-          options.sass,
+          options.sass
         ))
 }
