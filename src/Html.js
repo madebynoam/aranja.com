@@ -49,7 +49,7 @@ export default class extends Document {
           <meta property="business:contact_data:region" content="Höfuðborgarsvæðið" />
           <meta property="business:contact_data:country_name" content="Iceland" />
           <meta property="business:contact_data:phone_number" content="+3546968666" />
-          <link rel="preconnect" href="//cdn.contentful.com" crossorigin="true" />
+          <link rel="preconnect" href="//cdn.contentful.com" crossOrigin="true" />
           <link rel="preconnect" href="//images.contentful.com" />
           <link rel="preconnect" href="//assets.contentful.com" />
           <link rel="shortcut icon" href="/static/favicon.png" />
