@@ -9,7 +9,7 @@ import CaseStudyGrid from '../../components/CaseStudyGrid'
 import Clients from '../../components/Clients'
 import { H2, Body1 } from '../../typography'
 import AnimatedText from '../../components/AnimatedText'
-import './styles.css'
+import './styles.scss'
 
 const Home = ({ content, hero, services, showOffs, caseStudies }) => (
   <Editable model={content}>
