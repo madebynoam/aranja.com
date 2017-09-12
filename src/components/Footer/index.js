@@ -62,7 +62,7 @@ class Footer extends React.Component {
         }}>
         <div className="Footer-inner">
           <div className="Footer-content">
-            <H2 className="Footer-title" bottom="small">
+            <H2 className="Footer-title">
               Get in touch
             </H2>
 

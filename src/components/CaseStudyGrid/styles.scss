@@ -7,7 +7,6 @@ $maxItems: 6;
 .CaseStudyGrid {
   position: relative;
   z-index: 1;
-
   @include respond-to(md) {
     &.withPadding {
       padding: 2rem;
@@ -26,19 +25,17 @@ $maxItems: 6;
 
 .CaseStudyGrid-item {
   align-items: center;
-  cursor: pointer;
   display: flex;
   flex: 0 1 50%;
   justify-content: center;
+  margin-bottom: between(16px, 100px, $sm, $xlg);
+  opacity: 0;
   overflow: hidden;
   position: relative;
   transform-origin: bottom right;
-  opacity: 0;
   transform: translateY(6rem) translateZ(1px);
   transition: opacity 0.4s ease, transform 0.4s ease-out;
   will-change: opacity, transform;
-  margin-bottom: between(16px, 100px, $sm, $xlg);
-
   @include respond-to(md) {
     margin-bottom: 0;
   }
@@ -49,14 +46,15 @@ $maxItems: 6;
     padding-top: 60%;
   }
   &::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
+    background: rgba($blue, 0.9);
     bottom: 0;
-    right: 0;
-    background: rgba(0,0,0,0.1);
+    content: '';
+    left: 0;
     opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+    top: 0;
     transition: opacity 0.25s ease;
     will-change: opacity;
   }
@@ -64,7 +62,7 @@ $maxItems: 6;
   &:nth-child(n + 4) {
     display: none;
     @include respond-to(md) {
-      display: block;
+      display: flex;
     }
   }
 
@@ -81,37 +79,49 @@ $maxItems: 6;
         transition-delay: #{($i - 1) / 25}s;
       }
     }
-    /*&:hover {
+    &:hover {
       &::after {
         opacity: 1;
       }
-    }*/
+    }
   }
 }
 
 .CaseStudyGrid-itemTitle {
-  z-index: 1;
-  opacity: 0;
-  transform: translateY(4rem);
   color: $white;
   opacity: 0;
-  transition: opacity 0.4s ease, transform 0.4s $easeInOutCustom;
+  pointer-events: none;
+  transform: translateX(-3rem);
+  transition: opacity 0.25s ease, transform 0.7s $easeOutQuart;
+  user-select: none;
   will-change: opacity, transform;
-  
-  /*.CaseStudyGrid.is-visible .CaseStudyGrid-item:hover & {
+  z-index: 1;
+
+  .CaseStudyGrid.is-visible .CaseStudyGrid-item:hover & {
     opacity: 1;
-    transform: translateY(0);
-  }*/
+    transform: translateX(0);
+  }
 }
 
-.CaseStudyGrid-image {
-  background-position: center;
-  background-size: cover;
-  height: 100%;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 100%;
+.CaseStudyGrid-imageWrap {
+  &:hover {
+    cursor: pointer;
+    .CaseStudyGrid-image {
+      transform: translateX(1rem) scale(1.1);
+    }
+  }
+  .CaseStudyGrid-image {
+    background-position: center;
+    transform: translateX(0) scale(1.1);
+    transition: transform 0.6s $easeOutQuart;
+    background-size: cover;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    will-change: transform;
+  }
 }
 
 .CaseStudyGrid-button {
