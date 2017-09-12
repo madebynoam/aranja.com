@@ -1,0 +1,17 @@
+// Home page specific styles.
+// Usually an anti pattern so think twice.
+
+@import '../../utils/functions';
+@import '../../utils/vars';
+@import '../../utils/responsive';
+
+.Home-introduction {
+  width: 90%;
+  margin: auto;
+  margin-top: between(25.253px, 67.34px, $sm, $xlg);
+
+  @include respond-to(md) {
+    width: auto;
+    margin: 0;
+  }
+}
