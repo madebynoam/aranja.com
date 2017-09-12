@@ -8,10 +8,13 @@
 }
 
 .Family-grid {
+  
+  @include respond-to(md) {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   grid-gap: 0.5rem;
+  }
 }
 
 .Family-heading {
@@ -33,11 +36,20 @@
   position: relative;
   overflow: hidden;
   will-change: transform;
+  margin-bottom: between(16px, 100px, $sm, $xlg); // same as Section padding.
+
+  @include respond-to(md) {
+    margin-bottom: 0;
+  }
 
   &::before {
     content: '';
     display: block;
-    padding-top: 50%;
+    padding-top: 75%;
+
+    @include respond-to(md) {
+      padding-top: 50%;
+    }
   }
 
   &:nth-child(1) {
