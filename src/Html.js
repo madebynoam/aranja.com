@@ -54,7 +54,7 @@ export default class extends Document {
           <link rel="preconnect" href="//assets.contentful.com" />
           <link rel="shortcut icon" href="/static/favicon.png" />
           <link rel="manifest" href="/static/manifest.json" />
-          <script src="https://cdn.polyfill.io/v2/polyfill.js?features=default,IntersectionObserver" defer />
+          <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=default,IntersectionObserver" defer />
         </Head>
         <Body>
           <App />
