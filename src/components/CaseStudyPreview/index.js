@@ -5,7 +5,7 @@ import Section from '../Section'
 import Link from '../Link'
 import { withReveal } from '../../hoc/withReveal'
 import AnimatedText from '../AnimatedText'
-import './styles.css'
+import './styles.scss'
 
 class CaseStudyPreview extends Component {
   render() {

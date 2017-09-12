@@ -5,7 +5,7 @@ import Button from '../Button'
 import Link from '../Link'
 import { H2 } from '../../typography'
 import { withReveal } from '../../hoc/withReveal'
-import './styles.css'
+import './styles.scss'
 
 const CaseStudyGrid = ({ caseStudies, button, padding, isVisible }) => (
   <div

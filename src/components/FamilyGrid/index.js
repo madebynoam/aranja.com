@@ -7,7 +7,7 @@ import family2 from './family2.jpg'
 import family3 from './family3.jpg'
 import family4 from './family4.jpg'
 import { withReveal } from '../../hoc/withReveal'
-import './styles.css'
+import './styles.scss'
 
 const FamilyGrid = ({ isVisible }) => (
   <Parallax>

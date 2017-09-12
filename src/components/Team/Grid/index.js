@@ -1,7 +1,7 @@
 import React from 'react'
 import Observer from 'react-intersection-observer'
 import classNames from 'classnames'
-import './styles.css'
+import './styles.scss'
 
 const TeamGrid = ({ images }) => (
   <Observer triggerOnce threshold={0.4} className="u-paddingBottomXLarge">

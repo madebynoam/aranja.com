@@ -8,7 +8,12 @@ module.exports = {
         },
       },
     ],
+
+    'src/middleware/sass/neutrino',
+
+    // Vendor libraries.
     neutrino => neutrino.config.entry('vendor').add('react').add('react-dom'),
+
     // Fix svg imports: https://github.com/mozilla-neutrino/neutrino-dev/issues/272
     neutrino => {
       neutrino.config.output.publicPath('/')

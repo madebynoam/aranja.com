@@ -1,6 +1,6 @@
 import React from 'react'
 import Img from './Img'
-import './styles.css'
+import './styles.scss'
 
 const Picture = (props) => <Img className="Picture" {...props} />
 

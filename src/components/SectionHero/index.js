@@ -3,7 +3,7 @@ import classNames from 'classnames'
 import Parallax from '../Parallax'
 import { withReveal } from '../../hoc/withReveal'
 import { Body2 } from '../../typography'
-import './styles.css'
+import './styles.scss'
 
 const SectionHero = ({ img, caption, isVisible }) =>
   <Parallax clamp>

@@ -1,7 +1,7 @@
 import React from 'react'
 import classNames from 'classnames'
 import { Body1, H2 } from '../../../typography'
-import './styles.css'
+import './styles.scss'
 
 const ContentSectionCopy = ({ heading, copy, lede, style }) => {
   return (

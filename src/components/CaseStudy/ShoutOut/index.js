@@ -1,7 +1,7 @@
 import React from 'react'
 import { Body1 } from '../../../typography'
 import Link from '../../Link'
-import './styles.css'
+import './styles.scss'
 
 const ShoutOut = ({}) =>
   <div className="ShoutOut">

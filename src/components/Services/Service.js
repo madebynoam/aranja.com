@@ -4,7 +4,7 @@ import classNames from 'classnames'
 import Parallax from '../Parallax'
 import { Body1, H2 } from '../../typography'
 import { withReveal } from '../../hoc/withReveal'
-import './styles.css'
+import './styles.scss'
 import AnimatedText from '../AnimatedText'
 
 const Service = ({ heading, copy, image, isVisible, index }) => (

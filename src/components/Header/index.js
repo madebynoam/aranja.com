@@ -2,7 +2,8 @@ import React from 'react'
 import classNames from 'classnames'
 import Link from '../Link'
 import logo from './logo.svg'
-import './styles.css'
+import logoInversed from './logo-inverse.svg'
+import './styles.scss'
 
 // Todo, we should pull available pages from Contentful
 const nav = [

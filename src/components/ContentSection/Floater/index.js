@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Parallax from '../../Parallax'
-import './styles.css'
+import './styles.scss'
 
 const Floater = ({ topDevice, centerDevice, bottomDevice }) =>
   <Parallax>

@@ -1,6 +1,6 @@
 import React from 'react'
 import Container from '../Container'
-import './styles.css'
+import './styles.scss'
 
 const ContactModal = ({}) =>
   <div className="ContactModal">

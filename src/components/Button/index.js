@@ -1,7 +1,7 @@
 import React from 'react'
 import classNames from 'classnames'
 import Link from '../Link'
-import './styles.css'
+import './styles.scss'
 
 const Button = ({ children, light, to, className, isExternal }) =>
   <Link

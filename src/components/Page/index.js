@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import root from 'window-or-global'
 import classNames from 'classnames'
 import Header from '../Header'
-import './styles.css'
+import './styles.scss'
 
 const pageStyles = {
   entering: { display: 'block', zIndex: 1 },

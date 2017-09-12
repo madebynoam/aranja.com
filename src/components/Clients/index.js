@@ -10,7 +10,7 @@ import kolibriLogo from './kolibri.svg'
 import lsbLogo from './lsb.svg'
 import upperquadLogo from './uq.svg'
 import { withReveal } from '../../hoc/withReveal'
-import './styles.css'
+import './styles.scss'
 
 const defaultClients = [
   {

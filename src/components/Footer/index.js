@@ -4,7 +4,7 @@ import Link from '../Link'
 import github from './github.svg'
 import facebook from './facebook.svg'
 import twitter from './twitter.svg'
-import './styles.css'
+import './styles.scss'
 
 const data = [
   {

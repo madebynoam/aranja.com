@@ -3,7 +3,7 @@ import classNames from 'classnames'
 import Observer from 'react-intersection-observer'
 import PropTypes from 'prop-types'
 import { H1 } from '../../typography'
-import './styles.css'
+import './styles.scss'
 
 const UnControlled = ({ shouldAnimate, children, animation, breakOnMobile }) => (
   <span>

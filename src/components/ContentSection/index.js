@@ -9,7 +9,7 @@ import TechStack from './TechStack'
 import Floater from './Floater'
 import { H2 } from '../../typography'
 
-import './styles.css'
+import './styles.scss'
 
 const Wrapper = ({ children, tall, gray, className }) => (
   <div

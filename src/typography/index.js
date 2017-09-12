@@ -2,7 +2,7 @@ import React from 'react'
 import classNames from 'classnames'
 import PropTypes from 'prop-types'
 import padding from '../utils/padding'
-import './styles.css'
+import './styles.scss'
 
 const createStyle = (defaultComponent, style, substyles = {}) => {
   const substyleKeys = Object.keys(substyles)

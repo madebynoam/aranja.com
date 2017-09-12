@@ -6,8 +6,8 @@ import history from 'react-chain-history'
 import helmet from 'react-chain-helmet'
 import createReactChain from 'react-chain'
 
-import './reset.css'
-import './index.css'
+import './reset.scss'
+import './index.scss'
 
 const publicUrl = process.env.PUBLIC_URL
   ? process.env.PUBLIC_URL

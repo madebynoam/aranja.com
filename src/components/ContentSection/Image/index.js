@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import classNames from 'classnames'
 import { Body2 } from '../../../typography'
 import { withReveal } from '../../../hoc/withReveal'
-import './styles.css'
+import './styles.scss'
 
 const Image = ({ img, caption, isVisible }) => (
   <div className={classNames('Image-wrap', isVisible && 'is-visible')}>

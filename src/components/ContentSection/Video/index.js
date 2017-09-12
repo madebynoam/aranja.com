@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { Body2 } from '../../../typography'
 import classNames from 'classnames'
 import { withReveal } from '../../../hoc/withReveal'
-import './styles.css'
+import './styles.scss'
 
 class Video extends Component {
   constructor(props) {

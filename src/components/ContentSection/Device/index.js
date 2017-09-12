@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { Body1, H2 } from '../../../typography'
 import Parallax from '../../Parallax'
 import Device from './Device'
-import './styles.css'
+import './styles.scss'
 
 class DeviceSection extends Component {
   render() {

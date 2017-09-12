@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
-import './styles.css'
+import './styles.scss'
 
 const classMap = {
   top: {

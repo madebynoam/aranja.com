@@ -1,7 +1,7 @@
 import React from 'react'
 import classNames from 'classnames'
 import Button from '../Button'
-import './styles.css'
+import './styles.scss'
 
 const ArrowButton = ({ to, children, noBorder }) =>
   <Button

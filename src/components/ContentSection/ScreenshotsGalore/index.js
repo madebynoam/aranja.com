@@ -2,7 +2,7 @@ import React from 'react'
 import classNames from 'classnames'
 import Parallax from '../../Parallax'
 import { withReveal } from '../../../hoc/withReveal'
-import './styles.css'
+import './styles.scss'
 
 const Wrapped = ({ img, isVisible }) => (
   <div className={classNames('ScreenshotsGalore-wrap', isVisible && 'is-visible')}>

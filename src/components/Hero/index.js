@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import classNames from 'classnames'
 import HeroPicture from '../Picture/HeroPicture'
 import Parallax from '../Parallax'
-import './styles.css'
+import './styles.scss'
 
 class Hero extends Component {
   render() {

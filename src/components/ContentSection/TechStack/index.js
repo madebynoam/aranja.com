@@ -1,6 +1,6 @@
 import React from 'react'
 import classNames from 'classnames'
-import './styles.css'
+import './styles.scss'
 import { withReveal } from '../../../hoc/withReveal'
 
 const TechStack = ({ techStack, isVisible }) => {

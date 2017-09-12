@@ -11,7 +11,7 @@ import Intro from '../../components/Intro'
 import AnimatedText from '../../components/AnimatedText'
 import teamHeroPhoto1 from '../../components/Team/foosball.jpg'
 import teamHeroPhoto2 from '../../components/Team/aranja-hack-night.jpg'
-import '../../components/Team/styles.css'
+import '../../components/Team/styles.scss'
 
 const About = ({ content, team, hero, collage }) => (
   <Editable model={content}>
