@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 import { H1, H2, H4 } from '../../typography'
 import AnimatedText from '../AnimatedText'
 import './styles.css'
+
 const Intro = ({ main, text, description }) => {
   const Component = main ? H1 : H2
   return (
