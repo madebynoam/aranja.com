@@ -2,12 +2,10 @@ import React, { Component } from 'react'
 import classNames from 'classnames'
 import PropTypes from 'prop-types'
 import Parallax from '../Parallax'
-import family02 from './family02-min.jpg'
-import family03 from './family03-min.jpg'
-import family04 from './family04-min.jpg'
-import family06 from './family06-min.jpg'
-import family07 from './family071-min.jpg'
-import family10 from './family10-min.jpg'
+import family1 from './family1.jpg'
+import family2 from './family2.jpg'
+import family3 from './family3.jpg'
+import family4 from './family4.jpg'
 import { withReveal } from '../../hoc/withReveal'
 import './styles.css'
 
@@ -20,37 +18,25 @@ const FamilyGrid = ({ isVisible }) => (
         <div className="Family-item">
           <div
             className="Family-image"
-            style={{ backgroundImage: `url(${family07})` }}
+            style={{ backgroundImage: `url(${family2})` }}
           />
         </div>
         <div className="Family-item">
           <div
             className="Family-image"
-            style={{ backgroundImage: `url(${family06})` }}
+            style={{ backgroundImage: `url(${family1})` }}
           />
         </div>
         <div className="Family-item">
           <div
             className="Family-image"
-            style={{ backgroundImage: `url(${family03})` }}
+            style={{ backgroundImage: `url(${family4})` }}
           />
         </div>
         <div className="Family-item">
           <div
             className="Family-image"
-            style={{ backgroundImage: `url(${family02})` }}
-          />
-        </div>
-        <div className="Family-item">
-          <div
-            className="Family-image"
-            style={{ backgroundImage: `url(${family10})` }}
-          />
-        </div>
-        <div className="Family-item">
-          <div
-            className="Family-image"
-            style={{ backgroundImage: `url(${family04})` }}
+            style={{ backgroundImage: `url(${family3})` }}
           />
         </div>
       </div>
