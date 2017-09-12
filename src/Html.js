@@ -40,6 +40,7 @@ export default class extends Document {
             content="We build interactive websites."
           />
           <link rel="shortcut icon" href={favicon} />
+          <link rel="manifest" href="/static/manifest.json" />
           <script src="https://cdn.polyfill.io/v2/polyfill.js?features=IntersectionObserver"></script>
         </Head>
         <Body>
