@@ -64,7 +64,7 @@
     position: absolute;
     bottom: 0;
     width: 100%;
-    transform: translateX(-101%) translateY(-70%);
+    transform: translateX(calc(-100% - 1px)) translateY(-70%);
     height: 0.5em;
     transition: transform 0.4s $easeInOutCustom;
   }
