@@ -1,7 +1,7 @@
 import React from 'react'
 import Document, { Html, Head, Body, App, Footer } from 'react-document'
 import TypeKit from 'react-typekit'
-import favicon from './assets/favicon.png'
+
 /**
  * This component is a template for the HTML file. You can add webfonts, meta tags,
  * or analytics to this file.
@@ -39,7 +39,20 @@ export default class extends Document {
             property="og:description"
             content="We build interactive websites."
           />
-          <link rel="shortcut icon" href={favicon} />
+          <meta property="og:image" content="https://www.aranja.com/static/aranja.png" />
+          <meta property="og:image:type" content="image/png" />
+          <meta property="og:image:width" content="1200" />
+          <meta property="og:image:height" content="630" />
+          <meta property="business:contact_data:street_address" content="Nóatún 17" />
+          <meta property="business:contact_data:postal_code" content="105" />
+          <meta property="business:contact_data:locality" content="Reykjavik" />
+          <meta property="business:contact_data:region" content="Höfuðborgarsvæðið" />
+          <meta property="business:contact_data:country_name" content="Iceland" />
+          <meta property="business:contact_data:phone_number" content="+3546968666" />
+          <link rel="preconnect" href="//cdn.contentful.com" crossorigin="true" />
+          <link rel="preconnect" href="//images.contentful.com" />
+          <link rel="preconnect" href="//assets.contentful.com" />
+          <link rel="shortcut icon" href="/static/favicon.png" />
           <link rel="manifest" href="/static/manifest.json" />
           <script src="https://cdn.polyfill.io/v2/polyfill.js?features=default,IntersectionObserver" defer />
         </Head>
