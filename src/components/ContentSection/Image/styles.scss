@@ -1,8 +1,8 @@
 @import '../../../utils/vars';
 
 .Image {
-  padding: var(--ms2);
-  margin: 0 var(--ms4);
+  padding: $ms2;
+  margin: 0 $ms4;
   background: $barelyWhite;
   
   .ContentSection--gray & {

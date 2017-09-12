@@ -28,17 +28,17 @@
 }
 
 .ContentSection {
-  padding: var(--ms2);
+  padding: $ms2;
 
   @include respond-to(md) {
-    padding: var(--ms4);
+    padding: $ms4;
   }
 
   @include respond-to(lg) {
-    padding: var(--ms6) 10%;
+    padding: $ms6 10%;
   }
 }
 
 .ContentSection-copy {
-  margin-bottom: var(--ms4);
+  margin-bottom: $ms4;
 }

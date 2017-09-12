@@ -2,13 +2,13 @@
 
 .Video {
   width: 100%;
-  padding: var(--ms2);
+  padding: $ms2;
   background: rgba($barelyWhite, 0.333);
 }
 
 .Video-wrapper {
   opacity: 0;
-  transform: translateY(var(--ms2));
+  transform: translateY($ms2);
   transition: all 0.5s ease-out;
   width: 100%;
   will-change: transform, opacity;

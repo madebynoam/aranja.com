@@ -3,7 +3,7 @@
 @import '../../../utils/responsive';
 
 .ContentSectionCopy {
-  margin: var(--ms2) auto;
+  margin: $ms2 auto;
   @include respond-to(md) {
     max-width: 55%;
   }

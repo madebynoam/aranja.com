@@ -42,7 +42,7 @@
   font-size: 0.75rem;
   letter-spacing: 0.1rem;
   opacity: 0.5;
-  padding-bottom: var(--ms0);
+  padding-bottom: $ms0;
   text-transform: uppercase;
 }
 
@@ -70,9 +70,9 @@
 
 .Footer-socialIcon {
   img {
-    width: var(--ms0);
+    width: $ms0;
   }
   & + & {
-    margin-left: var(--ms0);
+    margin-left: $ms0;
   }
 }

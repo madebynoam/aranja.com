@@ -7,15 +7,15 @@
   border: 1px solid $dark;
   cursor: pointer;
   display: block;
-  font-size: var(--ms0);
+  font-size: $ms0;
   color: $dark;
   font-weight: 500;
   letter-spacing: 0.025rem;
   line-height: 1;
   transition: background-color 0.1s ease-out;
-  padding: var(--ms0) var(--ms2);
+  padding: $ms0 $ms2;
   & + & {
-    margin-left: var(--ms1);
+    margin-left: $ms1;
   }
   &:focus,
   &:active {

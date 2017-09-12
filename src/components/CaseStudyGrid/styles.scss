@@ -114,7 +114,7 @@ $maxItems: 6;
 
   @include respond-to(md) {
     margin: 0;
-    padding: var(--ms3);
+    padding: $ms3;
     width: auto;
   }
 }

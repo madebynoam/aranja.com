@@ -8,14 +8,14 @@
   align-items: flex-start;
   bottom: 0;
   display: none;
-  height: var(--ms3);
+  height: $ms3;
   justify-content: center;
   left: 0;
   margin: auto;
   overflow: hidden;
   position: absolute;
   right: 0;
-  width: var(--ms3);
+  width: $ms3;
   z-index: 2;
   span {
     $duration: 1.9s;
@@ -27,7 +27,7 @@
     display: block;
     padding-top: 100%;
     position: absolute;
-    width: var(--ms2);
+    width: $ms2;
     &:nth-child(2) {
       animation-delay: $duration / 2;
     }

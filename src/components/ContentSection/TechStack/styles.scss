@@ -15,9 +15,9 @@ $maxItems: 9;
 }
 
 .TechStack-logo {
-  max-width: var(--ms4);
-  max-height: var(--ms4);
-  margin-right: var(--ms1);
+  max-width: $ms4;
+  max-height: $ms4;
+  margin-right: $ms1;
 }
 
 
@@ -25,12 +25,12 @@ $maxItems: 9;
   align-items: center;
   display: flex;
   opacity: 0;
-  padding: var(--ms2) var(--ms0);
+  padding: $ms2 $ms0;
   transform: translateY(6rem);
   transition: opacity 0.7s ease, transform 0.7s ease-in-out;
 
   @include respond-to(md) {
-    padding: var(--ms2);
+    padding: $ms2;
   }
 
   .TechStack.is-visible & {
@@ -49,10 +49,10 @@ $maxItems: 9;
 }
 
 .TechStack-name {
-  font-size: var(--ms1);
+  font-size: $ms1;
 }
 
 .TechStack-description {
-  font-size: var(--ms0);
+  font-size: $ms0;
   color: $copy;
 }

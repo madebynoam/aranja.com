@@ -7,7 +7,7 @@
   @include respond-to(md) {
     align-items: center;
     display: flex;
-    margin: var(--ms5) 0;
+    margin: $ms5 0;
   }
 }
 

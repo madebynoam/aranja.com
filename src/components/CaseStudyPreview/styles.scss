@@ -50,23 +50,23 @@
   display: inline-block;
   font-family: $allCapsFontFamily;
   letter-spacing: 0.05em;
-  font-size: var(--ms1);
+  font-size: $ms1;
   line-height: 1;
   font-weight: 500;
-  margin-bottom: var(--ms2);
+  margin-bottom: $ms2;
   padding: 0.25rem 0.5rem;
   text-transform: uppercase;
 }
 
 .CaseStudyPreview-title {
   line-height: 1;
-  padding-bottom: var(--ms2);
+  padding-bottom: $ms2;
   transition: color 0.2s;
 }
 
 .CaseStudyPreview-description {
   opacity: 0.8;
-  padding-bottom: var(--ms2);
+  padding-bottom: $ms2;
 }
 
 .CaseStudyPreview-image {

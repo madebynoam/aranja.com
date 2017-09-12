@@ -9,7 +9,7 @@
 
 .t-h1 {
   font-family: $headingFontFamily, serif;
-  font-size: var(--ms5);
+  font-size: $ms5;
   font-weight: 600;
   line-height: inherit;
   margin: 0;
@@ -17,14 +17,14 @@
 
 .t-h2 {
   font-family: $headingFontFamily, serif;
-  font-size: var(--ms4);
+  font-size: $ms4;
   font-weight: 700;
   line-height: inherit;
 }
 
 .t-h3 {
   font-family: $headingFontFamily, serif;
-  font-size: var(--ms3);
+  font-size: $ms3;
   text-transform: uppercase;
   letter-spacing: 0.025em;
   font-weight: 700;
@@ -33,19 +33,19 @@
 
 .t-h4 {
   font-family: $headingFontFamily, serif;
-  font-size: var(--ms2);
+  font-size: $ms2;
   font-weight: 400;
   line-height: inherit;
 }
 
 .t-body1 {
-  font-size: var(--ms2);
+  font-size: $ms2;
   font-weight: 400;
   margin: 0;
 }
 
 .t-body2 {
-  font-size: var(--ms1);
+  font-size: $ms1;
   font-weight: 400;
   margin: 0;
 }

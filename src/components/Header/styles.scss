@@ -10,7 +10,7 @@
   padding: between(25.253px, 67.34px, $sm, $xlg) between(16px, 44.875px, $sm, $xlg);
 
   @include respond-to(md) {
-    padding: var(--ms4) var(--ms6);
+    padding: $ms4 $ms6;
   }
 }
 
