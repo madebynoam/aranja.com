@@ -5,17 +5,11 @@ import classNames from 'classnames'
 import Header from '../Header'
 import './styles.css'
 
-
-const revealActiveStyles = {
-  exiting: { transition: 'transform 0s' },
-  exited: { transition: 'transform 0s' }
-}
-
 const pageStyles = {
-  entering: { display: 'none', zIndex: 2 },
+  entering: { display: 'block', zIndex: 1 },
   entered: { display: 'block', zIndex: 1 },
   exiting: { display: 'block', zIndex: 1 },
-  exited: { display: 'none', zIndex: -1 },
+  exited: { display: 'none', zIndex: -1 }
 }
 
 class Page extends Component {
@@ -36,15 +30,15 @@ class Page extends Component {
 
     return [
       <div
-        className={classNames(
-          'Revealer',
-          transitionState && 'is-active',
-        )}
-        style={revealActiveStyles[transitionState]}
+        className={classNames('Revealer', transitionState && 'is-active')}
         key="revealer"
       >
-        <div className="Revealer-layer" />
-        <div className="Revealer-layer" />
+        <div
+          className="Revealer-layer"
+        />
+        <div
+          className="Revealer-layer"
+        />
       </div>,
       <div className="Page" key="page" style={pageStyles[transitionState]}>
         <Header active={name} />
@@ -55,6 +49,6 @@ class Page extends Component {
 }
 
 Page.childContextTypes = {
-  transitionState: PropTypes.string,
+  transitionState: PropTypes.string
 }
 export default Page

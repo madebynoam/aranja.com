@@ -4,14 +4,14 @@
 
 .Page {
   background: $white;
+  display: none;
+  left: 0;
+  margin-bottom: between(200px, 300px, $sm, $md); //Footer min-height
   margin: auto;
   overflow: hidden;
-  width: 100%;
-  top: 0;
   position: relative;
-  left: 0;
-  display: none;
-  margin-bottom: between(200px, 304px, $sm, $md); //Footer min-height
+  top: 0;
+  width: 100%;
   z-index: 2;
   transition: opacity 0.5s;
   @include respond-to(md) {
@@ -20,25 +20,27 @@
 }
 
 .Revealer {
-  width: 100vw;
   height: 100vh;
-  position: fixed;
-  z-index: 1000;
   pointer-events: none;
-  transform: translate3d(-51%, -50%, 0) translate3d(-100%, 0, 0);
+  position: fixed;
+  transform: translate3d(-52%, -50%, 0) translate3d(-100%, 0, 0);
+  width: 100vw;
+  z-index: 1000;
 }
 
 .Revealer-layer {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 50%;
-  left: 50%;
-  background: #ddd;
-  animation-duration: 1.1s;
   animation-name: initial;
+  animation-duration: 1.1s;
   animation-timing-function: $easeInOutCustom;
-  animation-play-state: forwards;
+  height: 100%;
+  left: 52%;
+  position: absolute;
+  top: 50%;
+  width: 100%;
+
+  .Revealer.bla & {
+    animation-duration: 0;
+  }
 
   &:nth-child(1) {
     background: lighten(#006ad4, 10%);
@@ -59,8 +61,8 @@
     transform: translate3d(0, 0, 0);
   }
   30% {
-    transform: translate3d(100%, 0, 0);
     animation-timing-function: $easeInOutCustom;
+    transform: translate3d(100%, 0, 0);
   }
   100% {
     transform: translate3d(200%, 0, 0);
@@ -72,8 +74,8 @@
     transform: translate3d(0, 0, 0);
   }
   60% {
-    transform: translate3d(100%, 0, 0);
     animation-timing-function: $easeInOutCustom;
+    transform: translate3d(100%, 0, 0);
   }
   100% {
     transform: translate3d(200%, 0, 0);
