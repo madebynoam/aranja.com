@@ -9,6 +9,13 @@ $maxChilds: 5;
   position: relative;
   display: block;
 
+  &.should-breakOnMobile {
+    display: initial;
+    @include respond-to(md) {
+      display: block;
+    }
+  }
+
   @for $i from 1 to $maxChilds {
     &:nth-child(#{$i}) {
       .AnimatedText-part {
@@ -20,6 +27,13 @@ $maxChilds: 5;
 
 .AnimatedText-part {
   display: block;
+
+  .AnimatedText.should-breakOnMobile & {
+    display: initial;
+    @include respond-to(md) {
+      display: block;
+    }
+  }
   
   &.AnimatedText--appearUpSlow {
     opacity: 0;

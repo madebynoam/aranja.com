@@ -34,12 +34,12 @@ const defaultClients = [
     logo: androidLogo
   },
   {
-    name: 'Kolibri',
-    logo: kolibriLogo
-  },
-  {
     name: 'Nest',
     logo: nestLogo
+  },
+  {
+    name: 'Kolibri',
+    logo: kolibriLogo
   },
   {
     name: 'Landsbankinn',

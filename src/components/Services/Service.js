@@ -7,8 +7,14 @@ import { withReveal } from '../../hoc/withReveal'
 import './styles.css'
 import AnimatedText from '../AnimatedText'
 
-const Service = ({ heading, copy, image, isVisible, hasBeenSeen }) =>
-  <div className={classNames('Service', isVisible && 'is-visible')}>
+const Service = ({ heading, copy, image, isVisible, index }) => (
+  <div
+    className={classNames(
+      'Service',
+      isVisible && 'is-visible',
+      index === 0 && 'is-first'
+    )}
+  >
     <div className="Service-contentWrap">
       <div className="Service-content">
         <H2 bottom="small" className="Service-heading">
@@ -37,6 +43,7 @@ const Service = ({ heading, copy, image, isVisible, hasBeenSeen }) =>
       </div>
     </Parallax>
   </div>
+)
 
 Service.propTypes = {
   heading: PropTypes.string,

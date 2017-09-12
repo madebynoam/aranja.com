@@ -35,17 +35,7 @@
   }
 
   @include respond-to(lg) {
-    padding: var(--ms4) 10%;
-  }
-
-  &--gray {
-    background: $barelyWhite;
-  }
-
-  &--tall {
-    @include respond-to(lg) {
-      padding: var(--ms6) 10%;
-    }
+    padding: var(--ms6) 10%;
   }
 }
 

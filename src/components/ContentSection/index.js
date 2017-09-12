@@ -15,9 +15,7 @@ const Wrapper = ({ children, tall, gray, className }) => (
   <div
     className={classNames(
       className,
-      'ContentSection',
-      tall && 'ContentSection--tall',
-      gray && 'ContentSection--gray'
+      'ContentSection'
     )}
   >
     {children}

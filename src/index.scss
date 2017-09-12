@@ -30,27 +30,18 @@ html {
 // Using CSS vars instead of Sass vars
 // to be able to control them via MQ
 
-// $ms0: 1.1rem; // 17.6px
-// $ms1: 1.414rem; // 22.624px
-// $ms2: 1.999rem; // 31.984px
-// $ms3: 2.827rem; // 45.232px
-// $ms4: 3.998rem; // 63.968px
-// $ms5: 5.653rem; // 90.448px
-// $ms6: 7.993rem; // 127.888px
-// $ms7: 11.302rem; // 180.832px
-
 // modularscale = base: 16px/1rem, ratio: 1.333
 // Experimenting with not capping the values at $xlg with a media query.
 
 :root {
-  --ms0: between(12px, 16px, $sm, $xlg);
-  --ms1: between(16px, 21.328px, $sm, $xlg);
-  --ms2: between(21.328px, 28.43px, $sm, $xlg);
-  --ms3: between(28.43px, 37.897px, $sm, $xlg);
-  --ms4: between(37.897px, 50.517px, $sm, $xlg);
-  --ms5: between(50.517px, 67.34px, $sm, $xlg);
-  --ms6: between(67.34px, 89.764px, $sm, $xlg);
-  --ms7: between(89.764px, 119.665px, $sm, $xlg);
+  --ms0: between(9px, 16px, $sm, $xlg);
+  --ms1: between(12px, 21.328px, $sm, $xlg);
+  --ms2: between(16px, 28.43px, $sm, $xlg);
+  --ms3: between(21.328px, 37.897px, $sm, $xlg);
+  --ms4: between(28.43px, 50.517px, $sm, $xlg);
+  --ms5: between(37.897px, 67.34px, $sm, $xlg);
+  --ms6: between(50.517px, 89.764px, $sm, $xlg);
+  --ms7: between(67.34px, 119.665px, $sm, $xlg);
 }
 
 body {

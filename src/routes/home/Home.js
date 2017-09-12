@@ -19,17 +19,19 @@ const Home = ({ content, hero, services, showOffs, caseStudies }) => (
     <Section noPadding top="medium" bottom="medium">
       <Intro main text={'We are Aranja,\na creative web studio'} />
     </Section>
-    <Section noPadding bottom="xlarge">
+    <Section noPadding>
       <Hero hero={hero} parallax />
     </Section>
-    <H2 center top="large" bottom="xsmall">
+    <Section top="large" bottom="large">
+     <H2 center bottom="xsmall">
         <AnimatedText>Multidisciplinary team of engineers</AnimatedText>
       </H2>
-      <Body1 center bottom="large">
+      <Body1 center>
         <AnimatedText>
           We take on projects, big and small, and deliver products beyond expectations.
         </AnimatedText>
       </Body1>
+    </Section>
     <Section top="xlarge" bottom="large">
       <Services services={services} />
     </Section>
@@ -38,8 +40,8 @@ const Home = ({ content, hero, services, showOffs, caseStudies }) => (
         <AnimatedText>Trusted by the best</AnimatedText>
       </H2>
       <Body1 center bottom="large">
-        <AnimatedText>
-          {'We\'ve had the pleasure of working with great companies,\ninspiring teams and brilliant people.'}
+        <AnimatedText breakOnMobile>
+          {'We\'ve had the pleasure of working with great companies, \ninspiring teams and brilliant people.'}
         </AnimatedText>
       </Body1>
       <Clients />

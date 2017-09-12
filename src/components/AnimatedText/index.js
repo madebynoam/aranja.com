@@ -5,10 +5,10 @@ import PropTypes from 'prop-types'
 import { H1 } from '../../typography'
 import './styles.css'
 
-const UnControlled = ({ shouldAnimate, children, animation }) => (
+const UnControlled = ({ shouldAnimate, children, animation, breakOnMobile }) => (
   <span>
     {children.split('\n').map(text => (
-      <span className={classNames('AnimatedText')} key={text}>
+      <span className={classNames('AnimatedText', breakOnMobile && 'should-breakOnMobile')} key={text}>
         <span
           className={classNames(
             'AnimatedText-part',
@@ -26,7 +26,7 @@ const UnControlled = ({ shouldAnimate, children, animation }) => (
 class AnimatedText extends PureComponent {
 
   render() {
-    const { children, animation = 'appearUp', uncontrolled, shouldAnimate } = this.props
+    const { children, animation = 'appearUp', uncontrolled, shouldAnimate, breakOnMobile } = this.props
 
     // Other props can send in shouldAnimate and then we skip listening to our own state
     if (uncontrolled) {
@@ -38,7 +38,7 @@ class AnimatedText extends PureComponent {
         {isVisible => 
           <span>
           {children.split('\n').map(text => (
-            <span className="AnimatedText" key={text}>
+            <span className={classNames('AnimatedText', breakOnMobile && 'should-breakOnMobile')} key={text}>
               <span
                 className={classNames(
                   'AnimatedText-part',

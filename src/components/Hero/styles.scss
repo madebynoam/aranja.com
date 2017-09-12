@@ -6,12 +6,11 @@
   color: $white;
   height: 100%;
   position: relative;
-  margin-bottom: 4rem;
   overflow: hidden;
   z-index: 1;
-
+  
   @include respond-to(md) {
-    margin-bottom: 0;
+    padding-bottom: between(44.875px, 119.665px, $sm, $xlg);
   }
 }
 

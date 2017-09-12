@@ -5,7 +5,6 @@
 .Service {
   display: flex;
   flex-wrap: wrap;
-  margin-top: 6rem;
   position: relative;
   z-index: 3;
   
@@ -13,6 +12,15 @@
     flex-wrap: nowrap;
     margin: 0 between(-16px, -100px, $sm, $xlg);
     padding-top: 0;
+  }
+
+  &.is-first {
+    // Mobile helper.
+    // Emulating paddingBottomXLarge and killing it off at $md.
+    padding-bottom: between(44.875px, 119.665px, $sm, $xlg);
+    @include respond-to(md) {
+      padding-bottom: 0;
+    }
   }
 }
 
@@ -38,8 +46,13 @@
 }
 
 .Service-content {
+  text-align: center;
+  margin: auto;
+  max-width: 80%;
   @include respond-to(md) {
-    max-width: 26rem;
+    margin: 0;
+    text-align: initial;
+    max-width: 33rem;
   }
 }
 
