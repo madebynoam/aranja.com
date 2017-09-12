@@ -37,6 +37,12 @@ $maxItems: 6;
   transform: translateY(6rem) translateZ(1px);
   transition: opacity 0.4s ease, transform 0.4s ease-out;
   will-change: opacity, transform;
+  margin-bottom: between(16px, 100px, $sm, $xlg);
+
+  @include respond-to(md) {
+    margin-bottom: 0;
+  }
+
   &::before {
     content: '';
     display: block;
@@ -66,6 +72,7 @@ $maxItems: 6;
   &:nth-child(4) {
     grid-row-end: span 2;
   }
+
   .CaseStudyGrid.is-visible & {
     transform: translateY(0);
     opacity: 1;

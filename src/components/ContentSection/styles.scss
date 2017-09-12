@@ -6,11 +6,8 @@
   padding: 0; // Resets the wrapping <Section /> styles; should ideally not be declared in this file.
   .t-body1:not(.IntroSection-key):not(.IntroSection-value) {
     opacity: 0.8;
-    line-height: 1.666;
-    @include respond-to(md) {
-      font-size: 1.333rem; // Hacking this for now. I want smaller font-size and less opacity for these longer texts.
-    }
   }
+
   h1 {
     line-height: 1;
   }
@@ -37,8 +34,4 @@
   @include respond-to(lg) {
     padding: $ms6 10%;
   }
-}
-
-.ContentSection-copy {
-  margin-bottom: $ms4;
 }

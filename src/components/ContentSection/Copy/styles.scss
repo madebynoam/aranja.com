@@ -3,25 +3,13 @@
 @import '../../../utils/responsive';
 
 .ContentSectionCopy {
-  margin: $ms2 auto;
+  margin: $ms2 0;
+
   @include respond-to(md) {
     max-width: 55%;
   }
 }
-.ContentSectionCopy--lede {
-  @include respond-to(md) {
-    max-width: 50%;
-  }
-
-  .t-body1 {
-    opacity: 0.8;
-  }
-}
-
-.ContentSectionCopy--alignRight {
-  text-align: right;
-}
 
 .ContentSectionCopy--alignCenter {
-  text-align: center;
+  margin: $ms2 auto;
 }
