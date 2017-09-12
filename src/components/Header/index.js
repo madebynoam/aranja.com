@@ -2,7 +2,6 @@ import React from 'react'
 import classNames from 'classnames'
 import Link from '../Link'
 import logo from './logo.svg'
-import logoInversed from './logo-inverse.svg'
 import './styles.css'
 
 // Todo, we should pull available pages from Contentful
@@ -29,7 +28,8 @@ const Header = ({ inversed, active }) =>
           noStyle
           className={classNames(
             'Menu-item',
-            active == nav.title.toLowerCase() && 'is-active'
+            active === nav.title.toLowerCase() && 'is-active',
+            nav.title === 'Home' && active === '' && 'is-active'
           )}
           href={`/${nav.slug}`}
           key={nav.title}
