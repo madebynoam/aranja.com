@@ -41,7 +41,7 @@ export default class extends Document {
           />
           <link rel="shortcut icon" href={favicon} />
           <link rel="manifest" href="/static/manifest.json" />
-          <script src="https://cdn.polyfill.io/v2/polyfill.js?features=IntersectionObserver"></script>
+          <script src="https://cdn.polyfill.io/v2/polyfill.js?features=default,IntersectionObserver" defer />
         </Head>
         <Body>
           <App />
