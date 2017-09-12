@@ -1,0 +1,23 @@
+{
+  "lang": "en",
+  "short_name": "Aranja",
+  "name": "Aranja Studio",
+  "description": "Creative web studio",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f9f9f9",
+  "theme_color": "#006ad4",
+  "icons": [{
+    "src": "./512.png",
+    "sizes": "512x512",
+    "type": "image/png"
+  }, {
+    "src": "./256.png",
+    "sizes": "256x256",
+    "type": "image/png"
+  }, {
+    "src": "./128.png",
+    "sizes": "128x128",
+    "type": "image/png"
+  }]
+}
