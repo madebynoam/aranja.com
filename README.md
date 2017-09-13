@@ -8,6 +8,7 @@
 ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝ ╚════╝ ╚═╝  ╚═╝╚═╝ ╚═════╝ ╚═════╝ ╚═╝     ╚═╝                                                                                              
                                                                                                          
 ```
+Built with [tux](https://github.com/aranja/tux)
 
 Installation
 ------------
