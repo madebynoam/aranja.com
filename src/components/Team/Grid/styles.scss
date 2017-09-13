@@ -1,9 +1,14 @@
+@import '../../../utils/functions';
+@import '../../../utils/vars';
+@import '../../../utils/responsive';
+
 $maxImgs: 3;
 
 .Team-grid {
   z-index: 1;
   position: relative;
   display: grid;
+  grid-gap: $ms1;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   overflow: hidden;

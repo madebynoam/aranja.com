@@ -11,7 +11,7 @@ const Overview = ({ content, hero, casestudies }) =>
     <Helmet>
       <title>Aranja Studio – Work</title>
     </Helmet>
-    <Section noPadding top="medium" bottom="medium">
+    <Section noPadding top="large" bottom="large">
       <Intro text="We've been busy" description="Check out our project highlights." />
     </Section>
     <Hero hero={hero} parallax />

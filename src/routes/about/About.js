@@ -19,15 +19,15 @@ const About = ({ content, team, hero, collage }) => (
     <Helmet>
       <title>Aranja Studio – About</title>
     </Helmet>
-    <Section noPadding top="medium" bottom="medium">
+    <Section noPadding top="large" bottom="large">
       <Intro
         text="About us"
         description="We are a team of developers, specialized in web technologies."
       />
     </Section>
     <Hero hero={hero} />
-    <Section bottom="large">
-      <div className="Team-copy u-paddingBottomXLarge u-paddingTopXLarge">
+    <Section>
+      <div className="Team-copy u-paddingBottomXLarge">
         <div className="Team-copyPart">
           <H1 center>
             <EditableAnimatedText
@@ -50,7 +50,7 @@ const About = ({ content, team, hero, collage }) => (
         </div>
       </div>
       <TeamGrid images={collage} />
-      <H2 top="xlarge" bottom="xsmall" center>
+      <H2 bottom="xsmall" center>
         <EditableAnimatedText
           field="fields.content.section1Headline"
           placeholder="Focus on quality"
@@ -58,7 +58,7 @@ const About = ({ content, team, hero, collage }) => (
           {content.fields.content.section1Headline}
         </EditableAnimatedText>
       </H2>
-      <Body1 bottom="large" center>
+      <Body1 bottom="xlarge" center>
         <EditableAnimatedText
           field="fields.content.section1Tagline"
           placeholder={
@@ -70,7 +70,7 @@ const About = ({ content, team, hero, collage }) => (
       </Body1>
       <SectionHero img={teamHeroPhoto1} caption="Hard at work" />
       <div className="Team-copy Team-copy--centered">
-        <Body1 top="large" bottom="large">
+        <Body1 top="xlarge" bottom="xlarge">
           <EditableAnimatedText
             field="fields.content.section2Copy"
             placeholder={'Placeholder, nevermind me.'}
@@ -81,8 +81,8 @@ const About = ({ content, team, hero, collage }) => (
       </div>
       <SectionHero img={teamHeroPhoto2} caption="Hacking on a side-project" />
     </Section>
-    <Section top="medium" bottom="medium">
-      <H2 top="large" center>
+    <Section>
+      <H2 top="xlarge" center>
         <EditableAnimatedText
           field="fields.content.section3Headline"
           placeholder="One family"
@@ -90,7 +90,7 @@ const About = ({ content, team, hero, collage }) => (
           {content.fields.content.section3Headline}
         </EditableAnimatedText>
       </H2>
-      <Body1 bottom="large" center>
+      <Body1 bottom="xlarge" center>
         <EditableAnimatedText
           field="fields.content.section3Tagline"
           placeholder="Looking forward to Mondays since 2014."

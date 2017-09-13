@@ -7,7 +7,6 @@ import Intro from '../../components/Intro'
 import ArrowButton from '../../components/ArrowButton'
 import ShoutOut from '../../components/CaseStudy/ShoutOut'
 import Section from '../../components/Section'
-import NextUp from '../../components/NextUp'
 import { formatHero } from '../../utils/formatters'
 
 const CaseStudy = ({ content, caseStudy, caseStudies }) => {
@@ -24,7 +23,7 @@ const CaseStudy = ({ content, caseStudy, caseStudies }) => {
       <Helmet>
         <title>{`Aranja Studio – ${projectName}`}</title>
       </Helmet>
-      <Section noPadding top="medium" bottom="medium">
+      <Section noPadding top="large" bottom="large">
         <Intro text={projectName} description={projectDescription} />
       </Section>
         <Hero hero={formatHero(heroImage)} />

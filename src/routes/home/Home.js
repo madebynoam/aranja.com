@@ -16,7 +16,7 @@ const Home = ({ content, hero, services, showOffs, caseStudies }) => (
     <Helmet>
       <title>Aranja Studio – Welcome</title>
     </Helmet>
-    <Section noPadding top="medium" bottom="medium">
+    <Section noPadding top="large" bottom="large">
       <Intro main text={'We are Aranja,\na creative web studio'} />
     </Section>
     <Section noPadding>

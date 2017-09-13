@@ -10,12 +10,7 @@ class Hero extends Component {
     const { hero, parallax } = this.props
     return (
       <Parallax>
-        <div
-          className={classNames(
-            'Hero',
-            parallax && 'withParallax'
-          )}
-        >
+        <div className={classNames('Hero', parallax && 'withParallax')}>
           <HeroPicture src={hero.hero.src} parallax={parallax} />
         </div>
       </Parallax>
@@ -26,7 +21,7 @@ class Hero extends Component {
 Hero.propTypes = {
   text: PropTypes.bool,
   cover: PropTypes.bool,
-  hero: PropTypes.object,
+  hero: PropTypes.object
 }
 
 export default Hero
