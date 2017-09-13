@@ -23,7 +23,7 @@
 
   &:first-child {
     flex: 1 0 auto;
-    line-height: 1;
+    line-height: 1.01;
     padding-bottom: 1rem;
 
     @include respond-to(md) {
