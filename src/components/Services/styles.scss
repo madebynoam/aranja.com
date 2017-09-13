@@ -3,6 +3,7 @@
 @import '../../utils/responsive';
 
 .Service {
+  align-items: center;
   display: flex;
   flex-wrap: wrap;
   position: relative;
@@ -30,10 +31,8 @@
 
 .Service-contentWrap {
   @include respond-to(md) {
-    align-items: center;
-    display: flex;
-    flex: 1;
-    padding: between(20px, 160px, $md, $xlg);
+    flex: 1 1 0%;
+    padding: between(30px, 100px, $md, $xlg);
     .Services > div:nth-child(odd) .Service &,
     .EditModal:nth-child(odd) .Service & {
       order: 2;
@@ -41,7 +40,6 @@
   }
 
   @include respond-to(xlg) {
-    padding: 0 10rem;
   }
 }
 
@@ -54,7 +52,8 @@
     padding: 0;
     margin: 0;
     text-align: initial;
-    max-width: 33rem;
+    max-width: between(400px, 576px, $md, $xlg);
+    margin: auto;
   }
 }
 
