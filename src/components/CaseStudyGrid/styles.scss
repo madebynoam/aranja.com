@@ -17,7 +17,7 @@ $maxItems: 6;
 .CaseStudyGrid-items {
   @include respond-to(md) {
     display: grid;
-    grid-gap: 0.5rem;
+    grid-gap: $ms1;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
   }
