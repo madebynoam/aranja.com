@@ -9,9 +9,10 @@ import SectionHero from '../../components/SectionHero'
 import Hero from '../../components/Hero'
 import Intro from '../../components/Intro'
 import AnimatedText from '../../components/AnimatedText'
+import EditableAnimatedText from '../../components/AnimatedText/EditableAnimatedText'
 import teamHeroPhoto1 from '../../components/Team/foosball.jpg'
 import teamHeroPhoto2 from '../../components/Team/aranja-hack-night.jpg'
-import '../../components/Team/styles.scss'
+import './styles.scss'
 
 const About = ({ content, team, hero, collage }) => (
   <Editable model={content}>
@@ -29,47 +30,73 @@ const About = ({ content, team, hero, collage }) => (
       <div className="Team-copy u-paddingBottomXLarge u-paddingTopXLarge">
         <div className="Team-copyPart">
           <H1 center>
-            <AnimatedText>{'In a nutshell'}</AnimatedText>
+            <EditableAnimatedText
+              field="fields.content.headline"
+              placeholder="In a nutshell"
+            >
+              {content.fields.content.headline}
+            </EditableAnimatedText>
           </H1>
         </div>
         <div className="Team-copyPart">
           <Body1 faint>
-            <AnimatedText>
-              {
-                'Aranja is a small web studio based and raised in Iceland. Our goal, to improve the web, is achieved with a motivated team.'
-              }
-            </AnimatedText>
+            <EditableAnimatedText
+              field="fields.content.tagline"
+              placeholder="Aranja is a small web studio based and raised in Iceland. Our goal, to improve the web, is achieved with a motivated team."
+            >
+              {content.fields.content.tagline}
+            </EditableAnimatedText>
           </Body1>
         </div>
       </div>
       <TeamGrid images={collage} />
       <H2 top="xlarge" bottom="xsmall" center>
-        <AnimatedText>{'Focus on quality'}</AnimatedText>
+        <EditableAnimatedText
+          field="fields.content.section1Headline"
+          placeholder="Focus on quality"
+        >
+          {content.fields.content.section1Headline}
+        </EditableAnimatedText>
       </H2>
       <Body1 bottom="large" center>
-        <AnimatedText>
-          {
+        <EditableAnimatedText
+          field="fields.content.section1Tagline"
+          placeholder={
             'We focus on doing quality work, keeping the\nclient happy and the community amazed.'
           }
-        </AnimatedText>
+        >
+          {content.fields.content.section1Tagline}
+        </EditableAnimatedText>
       </Body1>
       <SectionHero img={teamHeroPhoto1} caption="Hard at work" />
       <div className="Team-copy Team-copy--centered">
         <Body1 top="large" bottom="large">
-          Instead of being a group of coworkers that only work together, we are
-          friends that just happen to also work together. Frequently, we meetup
-          after work to see the latest Marvel movie, hack on a side-project or
-          just to enjoy a dinner with our families.
+          <EditableAnimatedText
+            field="fields.content.section2Copy"
+            placeholder={'Placeholder, nevermind me.'}
+          >
+            {content.fields.content.section2Copy}
+          </EditableAnimatedText>
         </Body1>
       </div>
       <SectionHero img={teamHeroPhoto2} caption="Hacking on a side-project" />
     </Section>
     <Section top="medium" bottom="medium">
       <H2 top="large" center>
-        <AnimatedText>{'One Family'}</AnimatedText>
+        <EditableAnimatedText
+          field="fields.content.section3Headline"
+          placeholder="One family"
+        >
+          {content.fields.content.section3Headline}
+        </EditableAnimatedText>
       </H2>
       <Body1 bottom="large" center>
-        <AnimatedText>{'Looking forward to Mondays since 2014.'}</AnimatedText>
+        <EditableAnimatedText
+          field="fields.content.section3Tagline"
+          placeholder="Looking forward to Mondays since 2014."
+        >
+          {content.fields.content.section3Tagline}
+        </EditableAnimatedText>
       </Body1>
       <FamilyGrid />
     </Section>

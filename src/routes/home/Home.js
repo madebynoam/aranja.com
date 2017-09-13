@@ -8,7 +8,7 @@ import Intro from '../../components/Intro'
 import CaseStudyGrid from '../../components/CaseStudyGrid'
 import Clients from '../../components/Clients'
 import { H2, Body1 } from '../../typography'
-import AnimatedText from '../../components/AnimatedText'
+import EditableAnimatedText from '../../components/AnimatedText/EditableAnimatedText'
 import './styles.scss'
 
 const Home = ({ content, hero, services, showOffs, caseStudies }) => (
@@ -24,13 +24,20 @@ const Home = ({ content, hero, services, showOffs, caseStudies }) => (
     </Section>
     <Section top="large" bottom="large" className="Home-introduction">
       <H2 center bottom="xsmall">
-        <AnimatedText>Multidisciplinary team of engineers</AnimatedText>
+        <EditableAnimatedText
+          field="fields.content.headline"
+          placeholder="Multidisciplinary team of engineers"
+        >
+          {content.fields.content.headline}
+        </EditableAnimatedText>
       </H2>
       <Body1 center>
-        <AnimatedText>
-          We take on projects, big and small, and deliver products beyond
-          expectations.
-        </AnimatedText>
+        <EditableAnimatedText
+          field="fields.content.tagline"
+          placeholder="We take on projects, no matter the size, and deliver products beyond expectations"
+        >
+          {content.fields.content.tagline}
+        </EditableAnimatedText>
       </Body1>
     </Section>
     <Section top="xlarge" bottom="large">
@@ -38,23 +45,39 @@ const Home = ({ content, hero, services, showOffs, caseStudies }) => (
     </Section>
     <Section>
       <H2 center top="xlarge" bottom="xsmall">
-        <AnimatedText>Trusted by the best</AnimatedText>
+        <EditableAnimatedText
+          field="fields.content.clientsHeading"
+          placeholder="Trusted by the best"
+        >
+          {content.fields.content.clientsHeading}
+        </EditableAnimatedText>
       </H2>
       <Body1 center bottom="large">
-        <AnimatedText breakOnMobile>
-          {
-            "We've had the pleasure of working with great companies, \ninspiring teams and brilliant people."
-          }
-        </AnimatedText>
+        <EditableAnimatedText
+          field="fields.content.clientsText"
+          placeholder="We've had the pleasure of working with great companies, inspiring teams and brilliant people."
+        >
+          {content.fields.content.clientsText}
+        </EditableAnimatedText>
       </Body1>
       <Clients />
     </Section>
     <Section bottom="xlarge">
       <H2 center top="xlarge" bottom="xsmall">
-        <AnimatedText>Case Studies</AnimatedText>
+      <EditableAnimatedText
+          field="fields.content.portfolioHeading"
+          placeholder="Latest case studies."
+        >
+          {content.fields.content.portfolioHeading}
+        </EditableAnimatedText>
       </H2>
       <Body1 center bottom="large">
-        <AnimatedText>Check out our project highlights.</AnimatedText>
+      <EditableAnimatedText
+          field="fields.content.portfolioText"
+          placeholder="Check out our project highlights."
+        >
+          {content.fields.content.portfolioText}
+        </EditableAnimatedText>
       </Body1>
       <CaseStudyGrid caseStudies={caseStudies} />
     </Section>

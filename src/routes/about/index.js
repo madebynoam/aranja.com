@@ -14,6 +14,6 @@ export default {
     const content = pages.items.find(
       page => page.sys.id === '3X6iiQT9ZKYyIkgaIWgo6A'
     )
-    return <About hero={formatHero(content.fields.hero)} collage={collage} />
+    return <About content={content} hero={formatHero(content.fields.hero)} collage={collage} />
   },
 }
