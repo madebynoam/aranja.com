@@ -96,7 +96,6 @@
   background-position: right;
   background-size: cover;
   transform: scale(1.15) translateY(calc(var(--parallax) * 2rem));
-  transition: transform 0.25s ease;
   height: 100%;
 
   .Services > div:first-child .Service & {

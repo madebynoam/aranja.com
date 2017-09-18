@@ -13,8 +13,9 @@
   top: 0;
   width: 100%;
   z-index: 2;
+
   @include respond-to(md) {
-    margin-bottom: 300px;
+    margin-bottom: 307px;
   }
 }
 
@@ -37,10 +38,6 @@
   top: 50%;
   width: 100%;
 
-  .Revealer.bla & {
-    animation-duration: 0;
-  }
-
   &:nth-child(1) {
     background: #f1f4f6;
     .Revealer.is-active & {
@@ -48,7 +45,7 @@
     }
   }
   &:nth-child(2) {
-    background: $barelyWhite;
+    background: $blue;
     .Revealer.is-active & {
       animation-name: anim-effect-2-2;
     }
@@ -60,7 +57,6 @@
     transform: translate3d(0, 0, 0);
   }
   30% {
-    animation-timing-function: $easeInOutCustom;
     transform: translate3d(100%, 0, 0);
   }
   100% {

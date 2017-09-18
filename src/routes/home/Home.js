@@ -62,7 +62,7 @@ const Home = ({ content, hero, services, showOffs, caseStudies }) => (
       </Body1>
       <Clients />
     </Section>
-    <Section bottom="xlarge">
+    <Section>
       <H2 center top="xlarge" bottom="xsmall">
       <EditableAnimatedText
           field="fields.content.portfolioHeading"
