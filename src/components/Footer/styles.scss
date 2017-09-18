@@ -3,11 +3,9 @@
 @import '../../utils/responsive';
 
 .Footer {
-  // background: rgba(1, 1, 25, 0.8);
   bottom: 0;
   left: 0;
   margin: auto;
-  height: 19rem;
   position: fixed;
   right: 0;
   width: 100%;
@@ -20,9 +18,8 @@
 }
 
 .Footer-inner {
-  background: $blue;
   height: 100%;
-  // opacity: var(--footer);
+  opacity: var(--footer);
   align-items: center;
   display: flex;
   justify-content: center;
@@ -34,8 +31,7 @@
   align-items: center;
   width: 100%;
   padding: 0 3rem;
-  color: $white;
-  // transform: translateY(4rem) translateY(calc(var(--footer) * -4rem));
+  transform: translateY(4rem) translateY(calc(var(--footer) * -4rem));
 
   @include respond-to(md) {
     align-items: baseline;
@@ -54,7 +50,7 @@
 
 .Footer-title {
   flex: 0 1 100%;
-  margin-bottom: 4rem;
+  margin-bottom: $ms3;
 }
 
 .Footer-column {

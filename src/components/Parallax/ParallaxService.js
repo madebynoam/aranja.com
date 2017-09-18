@@ -1,4 +1,5 @@
 import root from 'window-or-global'
+import throttle from 'lodash.throttle'
 
 export function offsetTop(el) {
   const { top } = el.getBoundingClientRect()
@@ -20,7 +21,7 @@ class ParallaxService {
     // Might want to destroy hese at some point...
     if (typeof root.addEventListener === 'function') {
       root.addEventListener('resize', this.onResize_)
-      root.addEventListener('scroll', this.onScroll_)
+      root.addEventListener('scroll', throttle(this.onScroll_, 50))
     }
   }
 

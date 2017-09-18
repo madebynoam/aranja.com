@@ -6,9 +6,21 @@
   width: 100%;
   z-index: 1;
   display: flex;
+  position: fixed;
+  top: 0;
+  background: $white;
   justify-content: space-between;
-  padding: between(25.253px, 67.34px, $sm, $xlg) between(16px, 44.875px, $sm, $xlg);
+  padding: between(16px, 67.34px, $sm, $xlg) between(16px, 44.875px, $sm, $xlg);
+  z-index: 11;
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.333s ease, transform .3s;
 
+  &.is-collapsed {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  
   @include respond-to(md) {
     padding: $ms4 $ms6;
   }
@@ -24,11 +36,11 @@
 .Menu {
   display: flex;
   justify-content: space-between;
-  max-width: between(170px, 270px, $sm, $md);
+  max-width: between(200px, 368px, $sm, $md);
   width: 100%;
 
   @include respond-to(md) {
-    max-width: 17rem;
+    max-width: 23rem;
   }
 }
 

@@ -41,10 +41,7 @@ class Footer extends React.Component {
   }
 
   onScroll() {
-    // const ratio =
-    //   ((window.pageYOffset - this.viewHeight) / (this.pageHeight - this.viewHeight))
-
-    const ratio = ((this.bodyHeight - window.pageYOffset - this.viewHeight) / (this.pageHeight - window.pageYOffset - this.viewHeight))
+    const ratio = ((this.bodyHeight - window.pageYOffset - this.viewHeight) / (this.pageHeight - window.pageYOffset - this.viewHeight) - 1)
     this.footer.style.setProperty('--footer', ratio)
   }
 

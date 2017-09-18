@@ -39,6 +39,7 @@
     object-fit: cover;
   }
   .HeroPicture.withParallax & {
+    transition: transform 0.25s ease;
     transform: translateY(calc(var(--parallax) * #{$offset}));
   }
 }
