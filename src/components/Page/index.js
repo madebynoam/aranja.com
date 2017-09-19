@@ -18,11 +18,13 @@ class Page extends Component {
     super(props)
     this.state = {
       isAtBottom: false,
-      isAtTop: false
+      isAtTop: false,
+      forceRevealed: false,
     }
 
     this.onLayout = this.onLayout.bind(this)
     this.onScroll = this.onScroll.bind(this)
+    this.handleReveal = this.handleReveal.bind(this)
   }
 
   getChildContext() {
@@ -52,9 +54,17 @@ class Page extends Component {
   }
 
   onScroll() {
-    const { isAtBottom, isAtTop } = this.state
+    const { forceRevealed, isAtBottom, isAtTop } = this.state
     const viewLocation = this.viewHeight + window.pageYOffset
+
     if (!this.page) { return }
+
+    if (forceRevealed) {
+      this.setState({
+        forceRevealed: !forceRevealed
+      })
+    }
+
     if (viewLocation >= this.pageHeight && !isAtBottom) {
       this.setState(prevState => {
         return { isAtBottom: !prevState.isAtBottom }
@@ -80,6 +90,12 @@ class Page extends Component {
     }
   }
 
+  handleReveal() {
+    this.setState({
+      forceRevealed: true,
+    })
+  }
+
   onLayout() {
     this.pageHeight = document.body.offsetHeight
     this.viewHeight = window.innerHeight
@@ -88,7 +104,7 @@ class Page extends Component {
 
   render() {
     const { name, children, transitionState } = this.props
-    const { isAtTop, isAtBottom } = this.state
+    const { isAtTop, isAtBottom, forceRevealed } = this.state
 
     return [
       <div
@@ -108,7 +124,8 @@ class Page extends Component {
       >
         <Header
           activePage={name}
-          mode={isAtTop || isAtBottom ? 'full' : 'collapsed'}
+          mode={forceRevealed ? 'full' : isAtTop || isAtBottom ? 'full' : 'collapsed'}
+          handleReveal={this.handleReveal}
         />
         {children}
       </div>
