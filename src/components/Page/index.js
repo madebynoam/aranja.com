@@ -13,18 +13,18 @@ const pageStyles = {
   exited: { display: 'none', zIndex: -1 }
 }
 
+const TOP_THRESHOLD = 300 //px
+
 class Page extends Component {
   constructor(props) {
     super(props)
     this.state = {
       isAtBottom: false,
       isAtTop: false,
-      forceRevealed: false,
     }
 
     this.onLayout = this.onLayout.bind(this)
     this.onScroll = this.onScroll.bind(this)
-    this.handleReveal = this.handleReveal.bind(this)
   }
 
   getChildContext() {
@@ -54,16 +54,10 @@ class Page extends Component {
   }
 
   onScroll() {
-    const { forceRevealed, isAtBottom, isAtTop } = this.state
+    const { isAtBottom, isAtTop } = this.state
     const viewLocation = this.viewHeight + window.pageYOffset
 
     if (!this.page) { return }
-
-    if (forceRevealed) {
-      this.setState({
-        forceRevealed: !forceRevealed
-      })
-    }
 
     if (viewLocation >= this.pageHeight && !isAtBottom) {
       this.setState(prevState => {
@@ -77,23 +71,17 @@ class Page extends Component {
       })
     }
 
-    if (window.pageYOffset <= 0 && !isAtTop) {
+    if (window.pageYOffset <= TOP_THRESHOLD && !isAtTop) {
       this.setState(prevState => {
         return { isAtTop: !prevState.isAtTop }
       })
     }
 
-    if (window.pageYOffset > 0 && isAtTop) {
+    if (window.pageYOffset > TOP_THRESHOLD && isAtTop) {
       this.setState(prevState => {
         return { isAtTop: !prevState.isAtTop }
       })
     }
-  }
-
-  handleReveal() {
-    this.setState({
-      forceRevealed: true,
-    })
   }
 
   onLayout() {
@@ -104,7 +92,7 @@ class Page extends Component {
 
   render() {
     const { name, children, transitionState } = this.props
-    const { isAtTop, isAtBottom, forceRevealed } = this.state
+    const { isAtTop, isAtBottom } = this.state
 
     return [
       <div
@@ -124,8 +112,8 @@ class Page extends Component {
       >
         <Header
           activePage={name}
-          mode={forceRevealed ? 'full' : isAtTop || isAtBottom ? 'full' : 'collapsed'}
-          handleReveal={this.handleReveal}
+          mode={(isAtBottom || isAtTop) ? 'full' : 'collapsed'}
+          isAtBottom={isAtBottom}
         />
         {children}
       </div>

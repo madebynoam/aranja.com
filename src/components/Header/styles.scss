@@ -17,18 +17,17 @@
     content: '';
     height: 100%;
     left: 0;
-    opacity: 0;
     position: absolute;
     top: 0;
-    transform: translateY(-1rem);
+    opacity: 1;
+    transform: translateY(-2rem);
     transition: all 0.2s;
     width: 100%;
   }
-
+  
   &.is-full {
     &::after {
       transform: translateY(0);
-      opacity: 1;
     }
   }
 
@@ -56,11 +55,11 @@
   text-decoration: none;
   letter-spacing: 0.075em;
   overflow: hidden;
-  transition: opacity 0.3s, transform 0.2s ease-out;
+  transform: translateY(-1rem);
+  transition: transform 0.2s ease-out;
 
-  .Header.is-collapsed & {
-    transform: translateY(-50%);
-    opacity: 0;
+  .Header.is-full & {
+    transform: translateY(0);
   }
 
   @include respond-to(md) {
@@ -103,28 +102,19 @@
   top: $ms3;
   position: absolute;
   opacity: 0;
-  transform: translateY($ms3);
-  transition: opacity 0.3s, transform 0.3s ease-out;
-
-  .Header.is-collapsed & {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  &:active {
-    outline: 0;
-  }
-  &:hover {
-  }
-}
-
-.MenuTrigger-bar {
-  transition: transform 0.2s;
-  transform-origin: center right;
+  transform: translateY(-3rem);
+  transition: transform 0.2s ease-out;
 }
 
 .Header-logo {
   width: between(96px, 128px, $sm, $md);
+  transition: transform 0.2s ease-out;  
+  transform: translateY(-0.5rem);
   @include respond-to(md) {
     width: 8rem;
+  }
+
+  .Header.is-full & {
+    transform: translateY(0);
   }
 }
