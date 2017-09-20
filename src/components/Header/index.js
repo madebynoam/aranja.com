@@ -8,7 +8,7 @@ import './mobileMenu.scss'
 
 // Todo, we should pull available pages from Contentful
 const nav = [
-  { title: 'Home', slug: 'home' },
+  { title: 'Home', slug: '' },
   { title: 'Work', slug: 'work' },
   { title: 'About', slug: 'about' },
   // { title: 'Contact', slug: 'contact' }
