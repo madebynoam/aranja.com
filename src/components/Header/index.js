@@ -11,7 +11,7 @@ const nav = [
   { title: 'Home', slug: 'home' },
   { title: 'Work', slug: 'work' },
   { title: 'About', slug: 'about' },
-  { title: 'Contact', slug: 'contact' }
+  // { title: 'Contact', slug: 'contact' }
 ]
 
 const FULL = 'full'
