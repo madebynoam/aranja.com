@@ -21,9 +21,7 @@
 
 .Team-copyPart {
   @include respond-to(onlySmall) {
-    & + & {
-      padding-top: between(25.253px, 67.34px, $sm, $xlg); // emulating u-paddingTopLarge sizing.
-    }
+    padding-top: between(25.253px, 67.34px, $sm, $xlg); // emulating u-paddingTopLarge sizing.
   }
   @include respond-to(md) {
     flex: 0 1 50%;

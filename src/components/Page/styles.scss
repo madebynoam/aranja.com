@@ -6,8 +6,7 @@
   background: $white;
   display: none;
   left: 0;
-  padding-top: between(58px, 137px, $sm, $lg);
-  // margin-bottom: between(200px, 300px, $sm, $md); //Footer min-height
+  padding-top: 77px;
   overflow: hidden;
   position: relative;
   top: 0;
@@ -15,7 +14,7 @@
   z-index: 2;
 
   @include respond-to(md) {
-    // margin-bottom: 307px;
+    padding-top: $ms7;
   }
 }
 
@@ -39,13 +38,13 @@
   width: 100%;
 
   &:nth-child(1) {
-    background: #f1f4f6;
+    background: lighten(#006ad4, 10%);
     .Revealer.is-active & {
       animation-name: anim-effect-2-1;
     }
   }
   &:nth-child(2) {
-    background: $blue;
+    background: #006ad4;
     .Revealer.is-active & {
       animation-name: anim-effect-2-2;
     }
