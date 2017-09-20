@@ -2,6 +2,13 @@
 @import '../../utils/vars';
 @import '../../utils/responsive';
 
+$mobileVerticalOffset: 6rem;
+
+.Services {
+  @include respond-to(onlySmall) {
+    margin-bottom: -#{$mobileVerticalOffset * 2};
+  }
+}
 .Service {
   align-items: center;
   display: flex;
@@ -15,13 +22,8 @@
     padding-top: 0;
   }
 
-  &.is-first {
-    // Mobile helper.
-    // Emulating paddingBottomXLarge and killing it off at $md.
-    padding-bottom: between(44.875px, 119.665px, $sm, $xlg);
-    @include respond-to(md) {
-      padding-bottom: 0;
-    }
+  @include respond-to(onlySmall) {
+    margin-bottom: -#{$mobileVerticalOffset};
   }
 }
 
@@ -33,6 +35,7 @@
   @include respond-to(md) {
     flex: 1 1 0%;
     padding: between(30px, 100px, $md, $xlg);
+
     .Services > div:nth-child(odd) .Service &,
     .EditModal:nth-child(odd) .Service & {
       order: 2;
@@ -40,17 +43,28 @@
   }
 }
 
-.Service-content {
-  text-align: center;
-  margin: auto;
-  max-width: 80%;
-  padding-bottom: 4rem;
+.Service-content {  
   @include respond-to(md) {
     padding: 0;
     margin: 0;
-    text-align: initial;
     max-width: between(400px, 576px, $md, $xlg);
     margin: auto;
+  }
+
+  @include respond-to(onlySmall) {
+    max-width: 90%;
+    margin: 0;
+    position: relative;
+    transform: translateY(-33.333%);
+    margin-right: auto;
+    z-index: 9;
+    padding: $ms4 $ms3;
+    background: $white;
+
+    .is-first & {
+      margin-right: 0;
+      margin-left: auto;
+    }
   }
 }
 
@@ -78,6 +92,10 @@
     .Services > div:nth-child(odd) .Service & {
       order: 1;
     }
+  }
+
+  @include respond-to(onlySmall) {
+    order: -1;
   }
 }
 

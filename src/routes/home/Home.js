@@ -23,7 +23,7 @@ const Home = ({ content, hero, services, showOffs, caseStudies }) => (
       <Hero hero={hero} parallax />
     </Section>
     <Section top="large" bottom="large" className="Home-introduction">
-      <H2 center bottom="xsmall">
+      <H2 bottom="xsmall" className="Home-introductionCopy">
         <EditableAnimatedText
           field="fields.content.headline"
           placeholder="Multidisciplinary team of engineers"
@@ -31,7 +31,7 @@ const Home = ({ content, hero, services, showOffs, caseStudies }) => (
           {content.fields.content.headline}
         </EditableAnimatedText>
       </H2>
-      <Body1 center>
+      <Body1 className="Home-introductionCopy">
         <EditableAnimatedText
           field="fields.content.tagline"
           placeholder="We take on projects, no matter the size, and deliver products beyond expectations"

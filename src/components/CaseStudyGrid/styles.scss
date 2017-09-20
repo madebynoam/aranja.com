@@ -57,6 +57,10 @@ $maxItems: 6;
     top: 0;
     transition: opacity 0.25s ease;
     will-change: opacity;
+
+    @include respond-to(onlySmall) {
+      opacity: 0.9;
+    }
   }
 
   &:nth-child(n + 4) {
@@ -74,14 +78,18 @@ $maxItems: 6;
   .CaseStudyGrid.is-visible & {
     transform: translateY(0);
     opacity: 1;
+
     @for $i from 1 through $maxItems {
       &:nth-child(#{$i}) {
         transition-delay: #{($i - 1) / 25}s;
       }
     }
-    &:hover {
-      &::after {
-        opacity: 1;
+
+    @include respond-to(md) {
+      &:hover {
+        &::after {
+          opacity: 1;
+        }
       }
     }
   }
@@ -97,30 +105,45 @@ $maxItems: 6;
   will-change: opacity, transform;
   z-index: 1;
 
-  .CaseStudyGrid.is-visible .CaseStudyGrid-item:hover & {
+  @include respond-to(md) {
+    .CaseStudyGrid.is-visible .CaseStudyGrid-item:hover & {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  @include respond-to(onlySmall) {
     opacity: 1;
     transform: translateX(0);
   }
 }
 
 .CaseStudyGrid-imageWrap {
-  &:hover {
-    cursor: pointer;
-    .CaseStudyGrid-image {
-      transform: translateX(1rem) scale(1.1);
+  @include respond-to(md) {
+    &:hover {
+      cursor: pointer;
+      .CaseStudyGrid-image {
+        transform: translateX(1rem) scale(1.1);
+      }
     }
   }
+
   .CaseStudyGrid-image {
     background-position: center;
-    transform: translateX(0) scale(1.1);
-    transition: transform 0.6s $easeOutQuart;
     background-size: cover;
     height: 100%;
     left: 0;
     position: absolute;
     top: 0;
+    transform: translateX(0) scale(1.1);
+    transition: transform 0.6s $easeOutQuart;
     width: 100%;
     will-change: transform;
+
+    @include respond-to(onlySmall) {
+      .CaseStudyGrid.is-visible & {
+        transform: translateX(1rem) scale(1.1);
+      }
+    }
   }
 }
 

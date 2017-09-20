@@ -15,3 +15,9 @@
     margin: 0;
   }
 }
+
+.Home-introductionCopy {
+  @include respond-to(md) {
+    text-align: center;
+  }
+}

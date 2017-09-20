@@ -149,21 +149,6 @@
     display: block;
     z-index: 12;
   }
-
-  .MenuTrigger-bar {
-    transition: all 0.5s;
-    transform-origin: 35px 100%;
-    &:nth-child(1) {
-      transform: rotateZ(45deg);
-    }
-    &:nth-child(2) {
-      transform-origin: center;
-      transform: scaleX(0);
-    }
-    &:nth-child(3) {
-      transform: rotateZ(-45deg);
-    }
-  }
 }
 
 .Header-logo {
@@ -180,7 +165,6 @@
     }
   }
 }
-
 
 .Burger-container {
   position: relative;
