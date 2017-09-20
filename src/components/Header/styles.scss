@@ -5,7 +5,7 @@
 .Header {
   position: fixed;
   top: 0;
-  padding: $ms3;
+  padding: $ms2 $ms3;
   z-index: 11;
   align-items: center;
   width: 100%;
@@ -137,8 +137,6 @@
   display: none;
   padding: 0;
   outline: 0;
-  position: relative;
-  top: -5px;
   
   > svg {
     overflow: visible;
@@ -169,8 +167,10 @@
 }
 
 .Header-logo {
-  display: block;
   width: between(96px, 128px, $sm, $md);
+  > svg {
+    display: block;
+  }
   @include respond-to(md) {
     transition: transform 0.2s ease-out;
     transform: translateY(-0.5rem);

@@ -43,6 +43,7 @@ class Footer extends React.Component {
     if (!this.inView) {
       return
     }
+
     const scroll = window.pageYOffset
     const footerBegin = this.pageHeight - this.viewHeight
     const ratio = Math.max(0, (scroll - footerBegin) / this.footerHeight)
