@@ -31,14 +31,12 @@ class Footer extends React.Component {
   componentDidMount() {
     window.addEventListener('scroll', this.onScroll)
     window.addEventListener('resize', this.onLayout)
-    window.addEventListener('layout', this.onLayout)
     this.onLayout()
   }
 
   componentWillUnmount() {
     window.removeEventListener('scroll', this.onScroll)
     window.removeEventListener('resize', this.onLayout)
-    window.removeEventListener('layout', this.onLayout)
   }
 
   onScroll() {

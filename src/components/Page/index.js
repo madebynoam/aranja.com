@@ -36,14 +36,12 @@ class Page extends Component {
   componentDidMount() {
     window.addEventListener('scroll', throttle(this.onScroll, 100))
     window.addEventListener('resize', this.onLayout)
-    window.addEventListener('layout', this.onLayout)
     this.onLayout()
   }
 
   componentWillUnmount() {
     window.addEventListener('scroll', throttle(this.onScroll, 100))
     window.removeEventListener('resize', this.onLayout)
-    window.removeEventListener('layout', this.onLayout)
   }
 
   componentDidUpdate(prevProps) {
