@@ -15,7 +15,7 @@
   overflow: hidden;
   position: relative;
   width: 100%;
-  transition: opacity 1s 0.05s ease, transform 1.3s 0.05s $easeInOutQuart;
+  transition: opacity 1s 0.5s ease, transform 1.3s 0.25s $easeInOutQuart;
   opacity: 0;
   transform: translateY($ms5);
   &.is-visible {

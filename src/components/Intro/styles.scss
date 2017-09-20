@@ -3,8 +3,6 @@
 @import '../../utils/responsive';
 
 .Intro {
-  // padding-top: 5rem;
-  // padding-bottom: 2rem;
   @include respond-to(md) {
     display: flex;
     padding: 10rem between(16px, 100px, $sm, $xlg) 0 between(16px, 100px, $sm, $xlg);

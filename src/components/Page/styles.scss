@@ -6,16 +6,15 @@
   background: $white;
   display: none;
   left: 0;
-  margin-bottom: between(200px, 300px, $sm, $md); //Footer min-height
-  margin: auto;
+  padding-top: 77px;
   overflow: hidden;
   position: relative;
   top: 0;
   width: 100%;
   z-index: 2;
-  transition: opacity 0.5s;
+
   @include respond-to(md) {
-    margin-bottom: 19rem;
+    padding-top: $ms7;
   }
 }
 
@@ -38,10 +37,6 @@
   top: 50%;
   width: 100%;
 
-  .Revealer.bla & {
-    animation-duration: 0;
-  }
-
   &:nth-child(1) {
     background: lighten(#006ad4, 10%);
     .Revealer.is-active & {
@@ -61,7 +56,6 @@
     transform: translate3d(0, 0, 0);
   }
   30% {
-    animation-timing-function: $easeInOutCustom;
     transform: translate3d(100%, 0, 0);
   }
   100% {

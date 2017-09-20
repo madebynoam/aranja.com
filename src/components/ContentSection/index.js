@@ -63,12 +63,6 @@ const ContentSection = ({ section }) => {
       )
     }
 
-    case 'sectionSlideshow': {
-      // todo
-      // return <Slideshow />
-      break
-    }
-
     case 'sectionTechStack': {
       const { technology } = section.fields
       return (

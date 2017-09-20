@@ -20,7 +20,8 @@
 .Floater-single {
   width: 100%;
   position: absolute;
-
+  transition: transform 0.05s ease;
+  
   // bottom layer
   &:nth-child(1) {
     transform:
