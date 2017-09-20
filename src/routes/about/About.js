@@ -81,7 +81,7 @@ const About = ({ content, team, hero, collage }) => (
       </div>
       <SectionHero img={teamHeroPhoto2} caption="Hacking on a side-project" />
     </Section>
-    <Section>
+    <Section bottom="large">
       <H2 top="xlarge" center>
         <EditableAnimatedText
           field="fields.content.section3Headline"

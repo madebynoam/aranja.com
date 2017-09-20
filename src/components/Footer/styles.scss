@@ -3,17 +3,12 @@
 @import '../../utils/responsive';
 
 .Footer {
-  bottom: 0;
-  left: 0;
-  margin: auto;
-  position: fixed;
-  right: 0;
-  width: 100%;
-  z-index: -2;
-  height: between(200px, 300px, $sm, $md);
+  padding: 40px 0;
+  overflow: hidden;
+  background: $blue;
+  color: $white;
 
   @include respond-to(md) {
-    height: 18.75rem;
   }
 }
 
@@ -23,15 +18,12 @@
   align-items: center;
   display: flex;
   justify-content: center;
-}
-
-.Footer-content {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   width: 100%;
   padding: 0 3rem;
-  transform: translateY(4rem) translateY(calc(var(--footer) * -4rem));
+  transform: translateZ(1px) translateY(-4rem) translateY(calc(var(--footer) * 4rem));
 
   @include respond-to(md) {
     align-items: baseline;
@@ -40,6 +32,7 @@
     padding-right: $horizontalPadding;
   }
 }
+
 .Footer-legend {
   font-size: 0.75rem;
   letter-spacing: 0.1rem;
@@ -64,11 +57,7 @@
 .Footer-social {
   align-items: center;
   display: flex;
-  justify-content: center;
-
-  @include respond-to(md) {
-    justify-content: flex-start;
-  }
+  justify-content: flex-start;
 }
 
 .Footer-socialIcon {

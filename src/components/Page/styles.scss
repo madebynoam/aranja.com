@@ -7,7 +7,7 @@
   display: none;
   left: 0;
   padding-top: between(58px, 137px, $sm, $lg);
-  margin-bottom: between(200px, 300px, $sm, $md); //Footer min-height
+  // margin-bottom: between(200px, 300px, $sm, $md); //Footer min-height
   overflow: hidden;
   position: relative;
   top: 0;
@@ -15,7 +15,7 @@
   z-index: 2;
 
   @include respond-to(md) {
-    margin-bottom: 307px;
+    // margin-bottom: 307px;
   }
 }
 
