@@ -21,10 +21,12 @@ class Page extends Component {
     this.state = {
       isAtBottom: false,
       isAtTop: false,
+      isMobileMenuOpen: false,
     }
 
     this.onLayout = this.onLayout.bind(this)
     this.onScroll = this.onScroll.bind(this)
+    this.triggerMobileMenu = this.triggerMobileMenu.bind(this)
   }
 
   getChildContext() {
@@ -90,9 +92,17 @@ class Page extends Component {
     this.onScroll()
   }
 
+  triggerMobileMenu() {
+    this.setState(prevState => {
+      return {
+        isMobileMenuOpen: !prevState.isMobileMenuOpen
+      }
+    })
+  }
+
   render() {
     const { name, children, transitionState } = this.props
-    const { isAtTop, isAtBottom } = this.state
+    const { isAtTop, isAtBottom, isMobileMenuOpen } = this.state
 
     return [
       <div
@@ -113,7 +123,9 @@ class Page extends Component {
         <Header
           activePage={name}
           mode={(isAtBottom || isAtTop) ? 'full' : 'collapsed'}
+          isMobileMenuOpen={isMobileMenuOpen}
           isAtBottom={isAtBottom}
+          triggerMobileMenu={this.triggerMobileMenu}
         />
         {children}
       </div>
