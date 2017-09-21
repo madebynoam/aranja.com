@@ -14,7 +14,7 @@ $mobileVerticalOffset: 6rem;
   display: flex;
   flex-wrap: wrap;
   position: relative;
-  z-index: 3;
+  z-index: $z-level-2;
   
   @include respond-to(md) {
     flex-wrap: nowrap;
@@ -57,7 +57,7 @@ $mobileVerticalOffset: 6rem;
     position: relative;
     transform: translateY(-33.333%);
     margin-right: auto;
-    z-index: 9;
+    z-index: $z-level-3;
     padding: $ms4 $ms3;
     background: $white;
 

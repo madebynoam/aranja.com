@@ -2,7 +2,7 @@
 
 .Link {
   position: relative;
-  z-index: 1;
+  z-index: $z-level-1;
   &:not(.no-style) {
     &::after {
       background: $light;
