@@ -2,7 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
 import Link from '../Link'
-import logo from './logo.svg'
 import './styles.scss'
 import './mobileMenu.scss'
 
@@ -27,7 +26,7 @@ const Header = ({
   <header
     className={classNames(
       'Header',
-      mode === 'full' && 'is-full',
+      mode && `is-${mode}`,
       isMobileMenuOpen && 'mobile-menu-is-open'
     )}
   >

@@ -2,16 +2,20 @@
 @import '../../utils/responsive.scss';
 @import '../../utils/functions.scss';
 
+#app {
+  position: relative;
+}
+
 .Page {
   background: $white;
-  display: none;
   left: 0;
   padding-top: 77px;
   overflow: hidden;
   position: relative;
   top: 0;
   width: 100%;
-  z-index: 2;
+  z-index: 0;
+  transition: opacity 0.2s;
 
   @include respond-to(md) {
     padding-top: $ms7;

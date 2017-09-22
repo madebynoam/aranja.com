@@ -70,7 +70,6 @@ class Footer extends React.Component {
         >
           <div className="Footer-inner">
             <H2 className="Footer-title">Get in touch</H2>
-
             {data.map(data => (
               <div className="Footer-column" key={data.title}>
                 <h1 className="Footer-legend">{data.title}</h1>
@@ -81,7 +80,6 @@ class Footer extends React.Component {
                 </Body2>
               </div>
             ))}
-
             <div className="Footer-column">
               <h1 className="Footer-legend">Follow us</h1>
               <div className="Footer-social">

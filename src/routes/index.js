@@ -7,7 +7,6 @@ import contact from './contact'
 import about from './about'
 import notFound from './not-found'
 import Page from '../components/Page'
-import Footer from '../components/Footer'
 
 const transitionDuration = 480
 
@@ -30,12 +29,11 @@ export default [
         const pathName = data.context.history.location.pathname
         return (
           <Transition key={pathName} timeout={transitionDuration}>
-            {state => [
+            {state =>
               <Page transitionState={state} key={pathName} name={String(pathName).replace('/', '')}>
                 {element}
-              </Page>,
-              <Footer key='footer' />
-            ]}
+              </Page>
+          }
           </Transition>
         )
       }

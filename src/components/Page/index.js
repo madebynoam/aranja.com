@@ -1,16 +1,17 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import root from 'window-or-global'
-import classNames from 'classnames'
 import Header from '../Header'
+import Footer from '../Footer'
+import classNames from 'classnames'
 import throttle from 'lodash.throttle'
 import './styles.scss'
 
 const pageStyles = {
-  entering: { display: 'block', zIndex: 1 },
-  entered: { display: 'block', zIndex: 1 },
-  exiting: { display: 'block', zIndex: 1 },
-  exited: { display: 'none', zIndex: -1 }
+  entering: { position: 'absolute', zIndex: -1 },
+  entered: { position: 'relative',  zIndex: 1 },
+  exiting: { position: 'absolute', zIndex: 0 },
+  exited: { zIndex: -1, position: 'absolute' }
 }
 
 const TOP_THRESHOLD = 300 //px
@@ -126,6 +127,7 @@ class Page extends Component {
           triggerMobileMenu={this.triggerMobileMenu}
         />
         {children}
+        <Footer />
       </div>
     ]
   }
