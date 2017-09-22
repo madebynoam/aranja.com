@@ -26,21 +26,6 @@ html {
   }
 }
 
-// Using CSS vars instead of Sass vars
-// to be able to control them via MQ
-
-// modularscale = base: 16px/1rem, ratio: 1.333
-// Experimenting with not capping the values at $xlg with a media query.
-
-$ms0: between(9px, 16px, $sm, $xlg);
-$ms1: between(12px, 21.328px, $sm, $xlg);
-$ms2: between(16px, 28.43px, $sm, $xlg);
-$ms3: between(21.328px, 37.897px, $sm, $xlg);
-$ms4: between(28.43px, 50.517px, $sm, $xlg);
-$ms5: between(37.897px, 67.34px, $sm, $xlg);
-$ms6: between(50.517px, 89.764px, $sm, $xlg);
-$ms7: between(67.34px, 119.665px, $sm, $xlg);
-
 body {
   color: $dark;
 }

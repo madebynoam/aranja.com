@@ -6,7 +6,7 @@
   position: fixed;
   top: 0;
   padding: $ms2 $ms3;
-  z-index: 11;
+  z-index: $z-level-header;
   align-items: center;
   width: 100%;
   display: flex;
@@ -52,7 +52,7 @@
     transition: transform 0.5s $easeInOutCustom;
     left: 0;
     position: absolute;
-    z-index: 12;
+    z-index: $z-level-header;
     padding: 10vh 0;
 
     .Header.mobile-menu-is-open & {
@@ -147,7 +147,7 @@
     height: 35px;
     background: transparent;
     display: block;
-    z-index: 12;
+    z-index: $z-level-header;
   }
 }
 

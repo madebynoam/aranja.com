@@ -6,7 +6,7 @@ $maxItems: 6;
 
 .CaseStudyGrid {
   position: relative;
-  z-index: 1;
+  z-index: $z-level-1;
   @include respond-to(md) {
     &.withPadding {
       padding: 2rem;
@@ -103,7 +103,7 @@ $maxItems: 6;
   transition: opacity 0.25s ease, transform 0.7s $easeOutQuart;
   user-select: none;
   will-change: opacity, transform;
-  z-index: 1;
+  z-index: $z-level-1;
 
   @include respond-to(md) {
     .CaseStudyGrid.is-visible .CaseStudyGrid-item:hover & {

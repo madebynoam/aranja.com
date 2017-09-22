@@ -28,7 +28,7 @@
   position: fixed;
   transform: translate3d(-52%, -50%, 0) translate3d(-100%, 0, 0);
   width: 100vw;
-  z-index: 1000;
+  z-index: $z-level-4;
 }
 
 .Revealer-layer {
