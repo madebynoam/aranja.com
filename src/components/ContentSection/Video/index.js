@@ -31,9 +31,11 @@ class Video extends Component {
     return (
       <div className={classNames('Video-wrapper', isVisible && 'is-visible')}>
         <video
+          autoplay
+          playsInline
+          loop
           key={description}
           className="Video"
-          loop
           ref={ref => {
             this.video = ref
           }}
