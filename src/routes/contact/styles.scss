@@ -3,4 +3,53 @@
 @import '../../utils/responsive';
 
 .Contact {
+  min-height: 500px;
+
+  input, select, option, textarea {
+    background: #fcfcfc;
+    border: 1px solid #e7e7e7;
+    box-sizing: border-box;
+    display: block;
+    appearance: none;
+    -webkit-appearance: none;
+    font: inherit;
+    margin: .5rem 0;
+    padding: .5rem 1rem;
+    transition: border .2s;
+    width: 100%;
+    &:disabled {
+      color: inherit;
+    }
+  }
+
+  textarea {
+    min-height: 15rem;
+    min-width: 100%;
+    font-size: 1rem;
+  }
+
+  select {
+    text-transform: capitalize;
+  }
+}
+
+.Contact-group {
+  display: flex;
+  > .Contact-item {
+    flex: 1 1 50%;
+    margin: 0.5rem;
+    &:first-child {
+      margin-left: 0;
+    }
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &.is-unavailable {
+    color: #CCC;
+    ::placeholder {
+      color: #CCC;
+    }
+  }
 }

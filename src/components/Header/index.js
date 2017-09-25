@@ -10,7 +10,7 @@ const nav = [
   { title: 'Home', slug: '' },
   { title: 'Work', slug: 'work' },
   { title: 'About', slug: 'about' },
-  // { title: 'Contact', slug: 'contact' }
+  { title: 'Contact', slug: 'contact' }
 ]
 
 const FULL = 'full'
