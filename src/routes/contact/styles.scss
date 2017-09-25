@@ -3,7 +3,6 @@
 @import '../../utils/responsive';
 
 .Contact {
-  min-height: 500px;
 
   input, select, option, textarea {
     background: #fcfcfc;
@@ -34,15 +33,23 @@
 }
 
 .Contact-group {
-  display: flex;
-  > .Contact-item {
-    flex: 1 1 50%;
-    margin: 0.5rem;
-    &:first-child {
-      margin-left: 0;
+  @include respond-to(md) {
+    display: flex;
+    > .Contact-item {
+      flex: 1 1 50%;
+      margin: 0.5rem;
+      &:first-child {
+        margin-left: 0;
+      }
+      &:last-child {
+        margin-right: 0;
+      }
     }
-    &:last-child {
-      margin-right: 0;
+  }
+
+  .Contact-item {
+    @include respond-to(onlySmall) {
+      margin: $ms2 0;
     }
   }
 
@@ -51,5 +58,21 @@
     ::placeholder {
       color: #CCC;
     }
+  }
+}
+
+.Contact-info {
+  font-size: $ms2;
+
+  @include respond-to(md) {
+    font-size: $ms3;
+  }
+
+  strong {
+    font-weight: 600;
+  }
+
+  &:last-of-type {
+    margin-bottom: 2em;
   }
 }

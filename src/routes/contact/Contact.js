@@ -51,7 +51,7 @@ class Contact extends Component {
     return (
       <Editable>
         <Helmet>
-          <title>Aranja Studio – About</title>
+          <title>Aranja Studio – Contact us</title>
         </Helmet>
         <Section noPadding top="large" bottom="large">
           <Intro
@@ -60,7 +60,9 @@ class Contact extends Component {
           />
         </Section>
         <Hero hero={hero} />
-        <Section bottom="xlarge">
+        <Section bottom="xlarge" top="medium">
+          <Body1 className="Contact-info">To contact us, please fill out the form below</Body1>
+          <Body1 className="Contact-info">or send us an email to <strong>team@aranja.com</strong></Body1>
           <div className="Contact">
             <div className="Contact-group">
               <div className="Contact-item">
@@ -113,11 +115,11 @@ class Contact extends Component {
             <input type="submit" value="Submit" onClick={this.handleSubmit} />
           </div>
         </Section>
-        {/* <Section>
-          <Body1>Aranja ehf</Body1>
-          <Body1>Nóatún 17</Body1>
-          <Body1>105 Reykjavík, Iceland</Body1>
-        </Section> */}
+        <Section bottom="large">
+          <Body1 className="Contact-info">Want to drop in for coffee?</Body1>
+          <Body1 className="Contact-info">Our offices are located in <strong>Nóatún 17</strong>, 105 Reykjavík</Body1>
+          <Body1 className="Contact-info"></Body1>
+        </Section>
         <Map
           center={{
             lat: 64.1426374,
