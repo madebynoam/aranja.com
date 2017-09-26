@@ -13,6 +13,6 @@ export default {
     const content = pages.items.find(
       page => page.sys.id === '4R48MvJpoccAgIsKCu02GO'
     )
-    return <Contact hero={formatHero(content.fields.hero)}/>
+    return <Contact content={content} hero={formatHero(content.fields.hero)}/>
   },
 }

@@ -24,6 +24,7 @@
   textarea {
     min-height: 15rem;
     min-width: 100%;
+    max-width: 100%;
     font-size: 1rem;
   }
 
@@ -75,4 +76,9 @@
   &:last-of-type {
     margin-bottom: 2em;
   }
+}
+
+// Styles for react-form
+.FormField, .FormInput {
+  width: 100%;
 }
