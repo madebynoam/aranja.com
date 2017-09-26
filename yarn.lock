@@ -3914,10 +3914,6 @@ javascript-stringify@^1.6.0:
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/javascript-stringify/-/javascript-stringify-1.6.0.tgz#142d111f3a6e3dae8f4a9afd77d45855b5a9cce3"
 
-jquery@>=1.10.2:
-  version "3.2.1"
-  resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.2.1.tgz#5c4d9de652af6cd0a770154a631bba12b015c787"
-
 js-base64@^2.1.8, js-base64@^2.1.9:
   version "2.3.2"
   resolved "https://registry.yarnpkg.com/js-base64/-/js-base64-2.3.2.tgz#a79a923666372b580f8e27f51845c6f7e8fbfbaf"
@@ -7200,12 +7196,6 @@ universalify@^0.1.0:
 unpipe@~1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/unpipe/-/unpipe-1.0.0.tgz#b2bf4ee8514aae6165b4817829d21b2ef49904ec"
-
-uploadcare-widget@^3.1.4:
-  version "3.1.4"
-  resolved "https://registry.yarnpkg.com/uploadcare-widget/-/uploadcare-widget-3.1.4.tgz#0709cb46f43c68dfe2cc5ad5c3b261044514bba9"
-  dependencies:
-    jquery ">=1.10.2"
 
 upper-case@^1.1.1:
   version "1.1.3"
