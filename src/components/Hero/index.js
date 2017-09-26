@@ -11,7 +11,7 @@ class Hero extends Component {
     return (
       <Parallax>
         <div className={classNames('Hero', parallax && 'withParallax')}>
-          <HeroPicture src={hero.hero.src} parallax={parallax} />
+          <HeroPicture src={hero && hero.hero.src} parallax={parallax} />
         </div>
       </Parallax>
     )
