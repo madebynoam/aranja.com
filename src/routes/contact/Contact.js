@@ -62,7 +62,7 @@ class Contact extends Component {
         <Hero hero={hero} />
         <Section bottom="xlarge" top="medium">
           <Body1 className="Contact-info">To contact us, please fill out the form below</Body1>
-          <Body1 className="Contact-info">or send us an email to <strong>team@aranja.com</strong></Body1>
+          <Body1 className="Contact-info">or send us an email to <strong>hello@aranja.com</strong></Body1>
           <div className="Contact">
             <div className="Contact-group">
               <div className="Contact-item">
