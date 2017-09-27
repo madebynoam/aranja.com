@@ -23,6 +23,7 @@ const emails = {
 }
 
 class ContactForm extends Component {
+
   render() {
     const { reportSendStatus } = this.props
 
