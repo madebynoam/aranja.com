@@ -21,7 +21,14 @@ class Contact extends Component {
     this.state = {
       sender: null,
       sent: false,
+      mounted: false
     }
+  }
+
+  componentDidMount() {
+    this.setState({
+      mounted: true
+    })
   }
 
   handleSending(sender) {
@@ -29,7 +36,7 @@ class Contact extends Component {
     this.setState(prevState => {
       return {
         sent: !prevState.sent,
-        sender,
+        sender
       }
     })
   }
@@ -67,8 +74,17 @@ class Contact extends Component {
               />
             </Body1>
           ]}
-          {!sent && <ContactForm reportSendStatus={sender => this.handleSending(sender)} />}
-          {sent && sender && <Body1 className="Contact-info">Thank you for your message, {sender}! We'll be in touch shortly :)</Body1>}
+          {!sent && (
+            <ContactForm
+              reportSendStatus={sender => this.handleSending(sender)}
+            />
+          )}
+          {sent &&
+          sender && (
+            <Body1 className="Contact-info">
+              Thank you for your message, {sender}! We'll be in touch shortly :)
+            </Body1>
+          )}
         </Section>
         <Section bottom="large">
           <Body1 component="div" className="Contact-info">
@@ -87,26 +103,28 @@ class Contact extends Component {
           </Body1>
           <Body1 className="Contact-info" />
         </Section>
-        <Map
-          center={{
-            lat: 64.1426374,
-            lng: -21.9057779
-          }}
-          zoom={[13]}
-          style="mapbox://styles/mapbox/light-v9"
-          containerStyle={{
-            height: '60vh',
-            width: '100vw'
-          }}
-        >
-          <Layer
-            type="symbol"
-            id="marker"
-            layout={{ 'icon-image': 'marker-15' }}
+        {this.state.mounted && (
+          <Map
+            center={{
+              lat: 64.1426374,
+              lng: -21.9057779
+            }}
+            zoom={[13]}
+            style="mapbox://styles/mapbox/light-v9"
+            containerStyle={{
+              height: '60vh',
+              width: '100vw'
+            }}
           >
-            <Feature coordinates={[-21.9057779, 64.1426374]} />
-          </Layer>
-        </Map>
+            <Layer
+              type="symbol"
+              id="marker"
+              layout={{ 'icon-image': 'marker-15' }}
+            >
+              <Feature coordinates={[-21.9057779, 64.1426374]} />
+            </Layer>
+          </Map>
+        )}
       </Editable>
     )
   }
