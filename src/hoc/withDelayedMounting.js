@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-export const withDelayedMounting = (WrappedComponent, config) => {
+export const withDelayedMounting = WrappedComponent => {
   return class extends Component {
     constructor(props) {
       super(props)
@@ -18,7 +18,7 @@ export const withDelayedMounting = (WrappedComponent, config) => {
     render() {
       const { isMounted } = this.state
       if (isMounted) {
-        return (<WrappedComponent {...this.props} />)
+        return <WrappedComponent {...this.props} />
       } else {
         return null
       }
