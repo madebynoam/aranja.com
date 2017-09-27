@@ -1,38 +1,24 @@
 import React, { Component } from 'react'
 import { Editable, EditInline } from 'tux'
 import { Helmet } from 'react-helmet'
-import ReactMap, { Layer, Feature } from 'react-mapbox-gl'
 import Section from '../../components/Section'
 import Hero from '../../components/Hero'
 import Intro from '../../components/Intro'
-import ContactForm from './ContactForm'
+import ContactForm from '../../components/ContactForm'
+import ContactMap from '../../components/ContactMap'
 import { Body1 } from '../../typography'
 import './styles.scss'
-
-const Map = ReactMap({
-  accessToken:
-    'pk.eyJ1IjoiZGFiYmkiLCJhIjoiY2o4MDd5cWN1NjNoaDMydDVpbWtrNGN0eCJ9.jG-cF-k6i_S4ETdw1oQHKQ',
-  scrollZoom: false
-})
 
 class Contact extends Component {
   constructor(props) {
     super(props)
     this.state = {
       sender: null,
-      sent: false,
-      mounted: false
+      sent: false
     }
   }
 
-  componentDidMount() {
-    this.setState({
-      mounted: true
-    })
-  }
-
   handleSending(sender) {
-    console.log(sender)
     this.setState(prevState => {
       return {
         sent: !prevState.sent,
@@ -103,28 +89,7 @@ class Contact extends Component {
           </Body1>
           <Body1 className="Contact-info" />
         </Section>
-        {this.state.mounted && (
-          <Map
-            center={{
-              lat: 64.1426374,
-              lng: -21.9057779
-            }}
-            zoom={[13]}
-            style="mapbox://styles/mapbox/light-v9"
-            containerStyle={{
-              height: '60vh',
-              width: '100vw'
-            }}
-          >
-            <Layer
-              type="symbol"
-              id="marker"
-              layout={{ 'icon-image': 'marker-15' }}
-            >
-              <Feature coordinates={[-21.9057779, 64.1426374]} />
-            </Layer>
-          </Map>
-        )}
+        <ContactMap />
       </Editable>
     )
   }
