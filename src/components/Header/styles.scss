@@ -152,6 +152,7 @@ $maxMenuItems: 4;
 }
 
 .Header-logo {
+  padding: 1px;
   width: between(96px, 128px, $sm, $md);
   > svg {
     display: block;

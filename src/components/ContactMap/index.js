@@ -1,25 +1,6 @@
 import React from 'react'
 import GoogleMapReact from 'google-map-react'
 
-const GoogleMapConfig = {
-  key: 'AIzaSyC-d2UO9JttS2zwLqvI1LFqjWRn5g8N57Q',
-  libraries: 'places'
-}
-const AnyReactComponent = ({ text }) => (
-  <div
-    style={{
-      position: 'relative',
-      color: 'white',
-      background: 'red',
-      height: 40,
-      width: 60,
-      top: -20,
-      left: -30
-    }}
-  >
-    {text}
-  </div>
-)
 const customStyles = [
   { stylers: [{ hue: '#2c3e50' }, { saturation: 250 }] },
   {
@@ -42,6 +23,7 @@ export default class Map extends React.Component {
           defaultCenter={this.props.center}
           defaultZoom={this.props.zoom}
           options={{ styles: [...customStyles] }}
+          bootstrapURLKeys={{key: 'AIzaSyC-d2UO9JttS2zwLqvI1LFqjWRn5g8N57Q'}}
         />
       </div>
     )
