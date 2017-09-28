@@ -1,5 +1,6 @@
 import React from 'react'
 import GoogleMapReact from 'google-map-react'
+import marker from './marker.svg'
 
 const customStyles = [
   { stylers: [{ hue: '#2c3e50' }, { saturation: 250 }] },
@@ -15,6 +16,10 @@ const customStyles = [
   }
 ]
 
+const Marker = () => (
+  <img src={marker} alt="We are located at Nóatún 17, 105 Reykjavík" style={{height: 40, width: 40, transformOrigin: 'center'}} />
+)
+
 export default class Map extends React.Component {
   render() {
     return (
@@ -23,8 +28,10 @@ export default class Map extends React.Component {
           defaultCenter={this.props.center}
           defaultZoom={this.props.zoom}
           options={{ styles: [...customStyles] }}
-          bootstrapURLKeys={{key: 'AIzaSyC-d2UO9JttS2zwLqvI1LFqjWRn5g8N57Q'}}
-        />
+          bootstrapURLKeys={{key: 'AIzaSyBDDPW76s2PDSCZ49AeCenVyoVKfGY9TcM'}}
+        >
+          <Marker lng={this.props.center.lng} lat={this.props.center.lat}/>
+        </GoogleMapReact>
       </div>
     )
   }
