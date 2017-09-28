@@ -1,36 +1,57 @@
 import React from 'react'
-import { withDelayedMounting } from '../../hoc/withDelayedMounting'
+import GoogleMapReact from 'google-map-react'
 
-let Map = null
-
-// Doing everything in our power to defer Mapbox from SSR since it does not play nicely.
-
-export default withDelayedMounting(props => {
-  const { default: ReactMap, Layer, Feature } = require('react-mapbox-gl')
-  if (!Map) {
-    Map = ReactMap({
-      accessToken:
-        'pk.eyJ1IjoiZGFiYmkiLCJhIjoiY2o4MDd5cWN1NjNoaDMydDVpbWtrNGN0eCJ9.jG-cF-k6i_S4ETdw1oQHKQ',
-      scrollZoom: false
-    })
+const GoogleMapConfig = {
+  key: 'AIzaSyC-d2UO9JttS2zwLqvI1LFqjWRn5g8N57Q',
+  libraries: 'places'
+}
+const AnyReactComponent = ({ text }) => (
+  <div
+    style={{
+      position: 'relative',
+      color: 'white',
+      background: 'red',
+      height: 40,
+      width: 60,
+      top: -20,
+      left: -30
+    }}
+  >
+    {text}
+  </div>
+)
+const customStyles = [
+  { stylers: [{ hue: '#2c3e50' }, { saturation: 250 }] },
+  {
+    featureType: 'road',
+    elementType: 'geometry',
+    stylers: [{ lightness: 50 }, { visibility: 'simplified' }]
+  },
+  {
+    featureType: 'road',
+    elementType: 'labels',
+    stylers: [{ visibility: 'off' }]
   }
+]
 
-  return (
-    <Map
-      center={{
-        lat: 64.1426374,
-        lng: -21.9057779
-      }}
-      zoom={[13]}
-      style="mapbox://styles/mapbox/light-v9"
-      containerStyle={{
-        height: '60vh',
-        width: '100vw'
-      }}
-    >
-      <Layer type="symbol" id="marker" layout={{ 'icon-image': 'marker-15' }}>
-        <Feature coordinates={[-21.9057779, 64.1426374]} />
-      </Layer>
-    </Map>
-  )
-})
+export default class Map extends React.Component {
+  render() {
+    return (
+      <div style={{ height: '40vh' }}>
+        <GoogleMapReact
+          defaultCenter={this.props.center}
+          defaultZoom={this.props.zoom}
+          options={{ styles: [...customStyles] }}
+        />
+      </div>
+    )
+  }
+}
+
+Map.defaultProps = {
+  center: { lat: 64.1426374, lng: -21.9057779 },
+  zoom: 14,
+  styles: {
+    hue: '#2c3e50'
+  }
+}
