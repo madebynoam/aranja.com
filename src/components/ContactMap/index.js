@@ -17,7 +17,7 @@ const customStyles = [
 ]
 
 const Marker = () => (
-  <img src={marker} alt="We are located at Nóatún 17, 105 Reykjavík" style={{height: 40, width: 40, transformOrigin: 'center'}} />
+  <img src={marker} alt="We are located at Nóatún 17, 105 Reykjavík" style={{height: 40, width: 40, transformOrigin: 'center', userSelect: 'none'}} />
 )
 
 export default class Map extends React.Component {
@@ -38,7 +38,7 @@ export default class Map extends React.Component {
 }
 
 Map.defaultProps = {
-  center: { lat: 64.1426374, lng: -21.9057779 },
+  center: { lat: 64.142457, lng: -21.902887 },
   zoom: 14,
   styles: {
     hue: '#2c3e50'
