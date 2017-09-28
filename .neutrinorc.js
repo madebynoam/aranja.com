@@ -23,5 +23,10 @@ module.exports = {
         .loader(require.resolve('file-loader'))
         .options({ limit: 8192 })
     },
+
+    // Remove minify plugin for now, because it breaks mapbox:
+    neutrino => {
+      neutrino.config.plugins.delete('minify')
+    }
   ],
 }
