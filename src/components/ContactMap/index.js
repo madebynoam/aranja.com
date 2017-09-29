@@ -3,18 +3,34 @@ import GoogleMapReact from 'google-map-react'
 import marker from './marker.svg'
 
 const customStyles = [
-  { stylers: [{ hue: '#2c3e50' }, { saturation: 250 }] },
   {
-    featureType: 'road',
-    elementType: 'geometry',
-    stylers: [{ lightness: 50 }, { visibility: 'simplified' }]
+    stylers: [
+      {
+        hue: '#006ad4'
+      },
+      {
+        saturation: 89
+      }
+    ]
   },
   {
-    featureType: 'road',
-    elementType: 'labels',
-    stylers: [{ visibility: 'off' }]
+    featureType: 'water',
+    stylers: [
+      {
+        color: '#ffffff'
+      }
+    ]
+  },
+  {
+    featureType: 'poi',
+    stylers: [
+      {
+        visibility: 'off'
+      }
+    ]
   }
 ]
+
 
 const Marker = () => (
   <img src={marker} alt="We are located at Nóatún 17, 105 Reykjavík" style={{height: 40, width: 40, transformOrigin: 'center'}} />
