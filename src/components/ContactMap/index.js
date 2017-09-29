@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { PureComponent } from 'react'
 import GoogleMapReact from 'google-map-react'
 import marker from './marker.svg'
 
@@ -33,10 +33,10 @@ const customStyles = [
 
 
 const Marker = () => (
-  <img src={marker} alt="We are located at Nóatún 17, 105 Reykjavík" style={{height: 40, width: 40, transformOrigin: 'center', userSelect: 'none'}} />
+  <img src={marker} alt="We are located at Nóatún 17, 105 Reykjavík" style={{height: 40, width: 40, transformOrigin: 'center', userSelect: 'none', position: 'absolute', bottom: 0, transform: 'translateX(-50%)'}} />
 )
 
-export default class Map extends React.Component {
+export default class Map extends PureComponent {
   render() {
     return (
       <div style={{ height: '40vh' }}>
