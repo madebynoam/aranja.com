@@ -36,6 +36,11 @@ $maxItems: 6;
   transform: translateY(6rem) translateZ(1px);
   transition: opacity 0.4s ease, transform 0.4s ease-out;
   will-change: opacity, transform;
+
+  &.is-featured {
+    grid-row-end: span 2;
+  }
+
   @include respond-to(md) {
     margin-bottom: 0;
   }
@@ -68,11 +73,6 @@ $maxItems: 6;
     @include respond-to(md) {
       display: flex;
     }
-  }
-
-  &:nth-child(2),
-  &:nth-child(4) {
-    grid-row-end: span 2;
   }
 
   .CaseStudyGrid.is-visible & {

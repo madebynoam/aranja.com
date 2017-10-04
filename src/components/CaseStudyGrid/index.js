@@ -10,16 +10,17 @@ import './styles.scss'
 const CaseStudyGrid = ({ caseStudies, button, padding, isVisible }) => (
   <div
     className={classNames(
-      'CaseStudyGrid',
-      isVisible && 'is-visible',
-      padding && 'withPadding'
+      "CaseStudyGrid",
+      isVisible && "is-visible",
+      padding && "withPadding"
     )}
   >
     <div className="CaseStudyGrid-items">
       {caseStudies.items.slice(0, 6).map(item => (
         <Link
           noStyle
-          className="CaseStudyGrid-item"
+          className={
+            classNames('CaseStudyGrid-item', item.fields.featured === true && 'is-featured')}
           href={`/work/${item.fields.slug}`}
           key={item.fields.slug}
         >

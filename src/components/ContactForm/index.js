@@ -38,7 +38,6 @@ class ContactForm extends Component {
             method: 'POST',
             body: JSON.stringify(values)
           }).then(() => {
-            console.log('......')
             reportSendStatus(values.name)
           })
         }}
