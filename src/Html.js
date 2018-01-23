@@ -40,8 +40,8 @@ export default class extends Document {
             property="og:description"
             content="We are Aranja, a creative web studio."
           />
-          <meta property="og:image" content="https://www.aranja.com/static/aranja.png" />
-          <meta property="og:image:type" content="image/png" />
+          <meta property="og:image" content="https://www.aranja.com/static/aranja.jpg" />
+          <meta property="og:image:type" content="image/jpeg" />
           <meta property="og:image:width" content="1200" />
           <meta property="og:image:height" content="630" />
           <meta property="business:contact_data:street_address" content="Nóatún 17" />
