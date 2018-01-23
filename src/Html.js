@@ -33,6 +33,7 @@ export default class extends Document {
             helmet.link.toComponent()
           ]}
           <TypeKit kitId="kee6nkk" />
+          <meta property="og:type" content="business.business" />
           <meta property="og:url" content="http://aranja.com/" />
           <meta property="og:title" content="Aranja" />
           <meta
