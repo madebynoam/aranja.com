@@ -37,7 +37,7 @@ export default class extends Document {
           <meta property="og:title" content="Aranja" />
           <meta
             property="og:description"
-            content="We build interactive websites."
+            content="We are Aranja, a creative web studio."
           />
           <meta property="og:image" content="https://www.aranja.com/static/aranja.png" />
           <meta property="og:image:type" content="image/png" />
