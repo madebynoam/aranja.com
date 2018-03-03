@@ -41,7 +41,7 @@ class Page extends Component {
   }
 
   componentWillUnmount() {
-    window.addEventListener('scroll', throttle(this.onScroll, 100))
+    window.removeEventListener('scroll', throttle(this.onScroll, 100))
     window.removeEventListener('resize', this.onLayout)
   }
 
