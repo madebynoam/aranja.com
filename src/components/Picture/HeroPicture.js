@@ -14,21 +14,13 @@ class HeroPicture extends Component {
     }
   }
 
-  componentWillMount() {
-    this.onLoad = this.onLoad.bind(this)
-  }
-
-  componentDidMount() {
-    this.setState({ isMounted: true })
-  }
-
-  onLoad() {
+  onLoad = () => {
     this.setState({ isLoaded: true })
   }
 
   render() {
     const { src, cover, parallax, isVisible, ...props } = this.props
-    const { isMounted, isLoaded } = this.state
+    const { isLoaded } = this.state
 
     if (!Array.isArray(src)) {
       console.error('HeroPicture needs width/height metadata.')
@@ -45,18 +37,18 @@ class HeroPicture extends Component {
         className={classNames('HeroPicture', isVisible && 'is-visible', isLoaded && 'is-loaded', parallax && 'withParallax')}
         style={style}
       >
-        {isMounted &&
-          <Img
-            className="HeroPicture-image"
-            src={src}
-            role="presentation"
-            onLoad={this.onLoad}
-            {...props}
-          />}
+        <Img
+          className="HeroPicture-image"
+          src={src}
+          role="presentation"
+          onLoad={this.onLoad}
+          {...props}
+        />
         <img
           className="HeroPicture-thumbnail"
           src={smallest.src}
           role="presentation"
+          {...props}
         />
       </picture>
     )
