@@ -1,6 +1,5 @@
 import React from 'react'
 import Document, { Html, Head, Body, App, Footer } from 'react-document'
-import TypeKit from 'react-typekit'
 
 /**
  * This component is a template for the HTML file. You can add webfonts, meta tags,
@@ -32,7 +31,6 @@ export default class extends Document {
             helmet.meta.toComponent(),
             helmet.link.toComponent()
           ]}
-          <TypeKit kitId="kee6nkk" />
           <meta property="og:type" content="business.business" />
           <meta property="og:url" content="http://aranja.com/" />
           <meta property="og:title" content="Aranja" />
@@ -55,6 +53,7 @@ export default class extends Document {
           <link rel="preconnect" href="//assets.contentful.com" />
           <link rel="shortcut icon" href="/static/favicon.png" />
           <link rel="manifest" href="/static/manifest.json" />
+          <link rel="stylesheet" href="https://use.typekit.net/kee6nkk.css" />
           <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=default,IntersectionObserver" defer />
         </Head>
         <Body>
