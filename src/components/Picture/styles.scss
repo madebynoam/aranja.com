@@ -26,18 +26,19 @@
 
 .HeroPicture-image,
 .HeroPicture-thumbnail {
-  $offset: 1.5rem;
+  $offset: 10px;
   bottom: -#{$offset};
-  height: calc(100% + #{$offset});
+  height: calc(100% + #{2 * $offset});
   left: -#{$offset};
   position: absolute;
   right: -#{$offset};
   top: -#{$offset};
-  width: calc(100% + #{$offset});
+  width: calc(100% + #{2 * $offset});
 
   .HeroPicture.cover & {
     object-fit: cover;
   }
+
   .HeroPicture.withParallax & {
     transform: translateY(calc(var(--parallax) * #{$offset}));
   }
