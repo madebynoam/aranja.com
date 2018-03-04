@@ -9,6 +9,7 @@ import nestLogo from './nest.svg'
 import kolibriLogo from './kolibri.svg'
 import lsbLogo from './lsb.svg'
 import upperquadLogo from './uq.svg'
+import LazyLoad from 'react-lazyload'
 import { withReveal } from '../../hoc/withReveal'
 import './styles.scss'
 
@@ -52,7 +53,9 @@ const Clients = ({ clients = defaultClients, isVisible }) => (
     <ul className="Clients-list">
       {clients.map((client, index) => (
         <li className="Clients-item" key={index}>
-          <img className="Clients-image" src={client.logo} alt={client.name} />
+          <LazyLoad once offset={200}>
+            <img className="Clients-image" src={client.logo} alt={client.name} />
+          </LazyLoad>
         </li>
       ))}
     </ul>

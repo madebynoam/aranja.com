@@ -7,6 +7,7 @@ import Section from '../../components/Section'
 import Intro from '../../components/Intro'
 import CaseStudyGrid from '../../components/CaseStudyGrid'
 import Clients from '../../components/Clients'
+import LazyLoad from 'react-lazyload'
 import { H2, Body1 } from '../../typography'
 import EditableAnimatedText from '../../components/AnimatedText/EditableAnimatedText'
 import './styles.scss'
@@ -79,7 +80,9 @@ const Home = ({ content, hero, services, showOffs, caseStudies }) => (
           {content.fields.content.portfolioText}
         </EditableAnimatedText>
       </Body1>
-      <CaseStudyGrid caseStudies={caseStudies} />
+      <LazyLoad once offset={200}>
+        <CaseStudyGrid caseStudies={caseStudies} />
+      </LazyLoad>
     </Section>
   </Editable>
 )

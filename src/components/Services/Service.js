@@ -4,6 +4,7 @@ import classNames from 'classnames'
 import Parallax from '../Parallax'
 import { Body1, H2 } from '../../typography'
 import { withReveal } from '../../hoc/withReveal'
+import LazyLoad from 'react-lazyload'
 import './styles.scss'
 import AnimatedText from '../AnimatedText'
 
@@ -33,12 +34,14 @@ const Service = ({ heading, copy, image, isVisible, index }) => (
     <Parallax clamp>
       <div className="Service-imageWrapper">
         <div className="Service-image" data-animate="image">
-          <div
-            className="Service-imageInner"
-            style={{
-              backgroundImage: `url(${image})`
-            }}
-          />
+          <LazyLoad once offset={200}>
+            <div
+              className="Service-imageInner"
+              style={{
+                backgroundImage: `url(${image})`
+              }}
+            />
+          </LazyLoad>
         </div>
       </div>
     </Parallax>

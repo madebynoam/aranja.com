@@ -5854,6 +5854,10 @@ react-intersection-observer@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/react-intersection-observer/-/react-intersection-observer-1.0.1.tgz#0bb936f4bb4819dae1945e379a43010a0ffbaf30"
 
+react-lazyload@^2.3.0:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/react-lazyload/-/react-lazyload-2.3.0.tgz#ccb134223012447074a96543954f44b055dc6185"
+
 react-markdown@^2.5.0:
   version "2.5.0"
   resolved "https://registry.yarnpkg.com/react-markdown/-/react-markdown-2.5.0.tgz#b1c61904fee5895886803bd9df7db23c3dc3a89e"
