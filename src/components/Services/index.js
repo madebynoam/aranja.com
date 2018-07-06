@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
-import Service from './Service'
-import { EditModal } from 'tux'
+import React, { Component } from "react";
+import Service from "./Service";
+import { EditModal } from "tux";
 
 const Services = ({ services }) => (
   <div className="Services">
@@ -11,16 +11,13 @@ const Services = ({ services }) => (
         <EditModal model={service} key={`modal_${service.fields.index}`}>
           <Service
             heading={service.fields.title}
-            image={
-              service.fields.image &&
-              `${service.fields.image.fields.file.url}?w=1000`
-            }
+            image={service.fields.image}
             copy={service.fields.text}
             index={index}
           />
         </EditModal>
       ))}
   </div>
-)
+);
 
-export default Services
+export default Services;
