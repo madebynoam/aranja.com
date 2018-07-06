@@ -1,11 +1,12 @@
-import React, { Component } from 'react'
-import classNames from 'classnames'
-import { H2, Body1 } from '../../typography'
-import Section from '../Section'
-import Link from '../Link'
-import { withReveal } from '../../hoc/withReveal'
-import AnimatedText from '../AnimatedText'
-import './styles.scss'
+import React, { Component } from "react";
+import classNames from "classnames";
+import { H2, Body1 } from "../../typography";
+import Section from "../Section";
+import Link from "../Link";
+import { withReveal } from "../../hoc/withReveal";
+import AnimatedText from "../AnimatedText";
+import "./styles.scss";
+import SmartImage from "../SmartImage";
 
 class CaseStudyPreview extends Component {
   render() {
@@ -13,20 +14,20 @@ class CaseStudyPreview extends Component {
       title,
       duration,
       description,
-      img,
+      image,
       alignment,
       url,
       isVisible
-    } = this.props
+    } = this.props;
     return (
       <Section top="large" bottom="large">
         <Link
           noStyle
           href={url}
           className={classNames(
-            'CaseStudyPreview',
-            alignment === 'right' && 'is-alignedRight',
-            isVisible && 'is-visible'
+            "CaseStudyPreview",
+            alignment === "right" && "is-alignedRight",
+            isVisible && "is-visible"
           )}
         >
           <div className="CaseStudyPreview-content">
@@ -51,15 +52,19 @@ class CaseStudyPreview extends Component {
             </div>
           </div>
           <div className="CaseStudyPreview-imageWrap">
-            <div
-              className="CaseStudyPreview-image"
-              style={{ backgroundImage: `url(${img})` }}
-            />
+            <SmartImage image={image}>
+              {imageUrl => (
+                <div
+                  className="CaseStudyPreview-image"
+                  style={{ backgroundImage: `url(${imageUrl})` }}
+                />
+              )}
+            </SmartImage>
           </div>
         </Link>
       </Section>
-    )
+    );
   }
 }
 
-export default withReveal(CaseStudyPreview)
+export default withReveal(CaseStudyPreview);
