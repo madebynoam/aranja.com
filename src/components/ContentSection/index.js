@@ -45,7 +45,7 @@ const ContentSection = ({ section }) => {
       const { image, heading } = section.fields
       return (
         <Wrapper tall>
-          <Image img={image && image.fields.file.url} caption={heading} />
+          <Image image={image} caption={heading} />
         </Wrapper>
       )
     }
