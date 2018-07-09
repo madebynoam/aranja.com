@@ -2,6 +2,7 @@ import React from 'react'
 import Observer from 'react-intersection-observer'
 import classNames from 'classnames'
 import './styles.scss'
+import SmartImage from '../../SmartImage'
 
 const TeamGrid = ({ images }) => (
   <Observer triggerOnce threshold={0.4} className="u-paddingBottomXLarge">
@@ -16,12 +17,16 @@ const TeamGrid = ({ images }) => (
               )}
               key={images && image.fields.file.url}
             >
-              <div
-                className="Team-gridImage"
-                style={{
-                  backgroundImage: `url(${image && image.fields.file.url}?w=800)`
-                }}
-              />
+              <SmartImage image={image}>
+                {imageUrl => (
+                  <div
+                    className="Team-gridImage"
+                    style={{
+                      backgroundImage: `url(${imageUrl})`,
+                    }}
+                  />
+                )}
+              </SmartImage>
             </div>
           ))}
       </div>
