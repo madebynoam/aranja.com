@@ -40,6 +40,24 @@ const lazyBackground = file =>
     (background, shouldLoad) => shouldLoad && background
   )
 
+
+/* 
+SmartImage takes in a contentful file object
+and returns a function with the correct optimized url for the asset
+based on the viewport bounds.
+https://www.contentful.com/developers/docs/references/images-api/
+https://www.contentful.com/developers/docs/references/images-api/#/reference/resizing-&-cropping/specify-width-&-height/retrieve-an-image/console
+
+Example usage:
+<SmartImage image={item.fields.heroImage}>
+  {imageUrl => (
+    <div
+      style={{backgroundImage: `url(${imageUrl})`}}
+    />
+  )}
+</SmartImage>
+*/
+
 export class SmartImage extends Component {
   renderChildren = imageUrl => {
     const { image, styles, defaultWidth = 1280, children } = this.props
